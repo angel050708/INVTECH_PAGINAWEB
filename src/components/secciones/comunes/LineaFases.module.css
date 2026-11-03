@@ -1,0 +1,76 @@
+.fases {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  counter-reset: fase;
+  border-top: 2px solid var(--tinta);
+}
+.fase {
+  position: relative;
+  padding: 32px 22px 8px 0;
+}
+.fase::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  transition: background-color 0.3s;
+}
+.fase:hover::before {
+  background: var(--acento);
+}
+.numero {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--tinta);
+}
+.fase:hover .numero {
+  color: var(--acento);
+  -webkit-text-stroke-color: var(--acento);
+}
+.fase h3 {
+  margin-top: 18px;
+  font-size: 1.3rem;
+}
+.fase p {
+  margin-top: 10px;
+  font-size: 0.93rem;
+  color: var(--texto-suave);
+}
+.entregable {
+  padding-top: 12px;
+  border-top: 1px dashed var(--linea);
+  color: var(--tinta) !important;
+  font-weight: 600;
+}
+.entregable small {
+  display: block;
+  font: 500 0.7rem var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--acento-oscuro);
+}
+@media (max-width: 1100px) {
+  .fases {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 24px;
+    border-top: 0;
+  }
+  .fase {
+    border-top: 2px solid var(--tinta);
+  }
+}
+@media (max-width: 620px) {
+  .fases {
+    grid-template-columns: 1fr;
+  }
+}

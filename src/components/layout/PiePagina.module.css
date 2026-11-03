@@ -1,0 +1,64 @@
+.pie {
+  background: var(--tinta);
+  color: rgb(246 244 239 / 0.7);
+  padding: 80px var(--margen) 28px;
+  font-size: 0.95rem;
+}
+.rejilla {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.4fr 1fr;
+  gap: 48px;
+  max-width: var(--ancho);
+  margin: 0 auto;
+}
+.marca p {
+  margin-top: 18px;
+  max-width: 34ch;
+}
+.pie h2 {
+  margin-bottom: 16px;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--papel);
+}
+.pie ul {
+  display: grid;
+  gap: 10px;
+}
+.pie a {
+  color: inherit;
+  text-decoration: none;
+}
+.pie a:hover {
+  color: var(--acento);
+}
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: var(--ancho);
+  margin: 64px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgb(246 244 239 / 0.12);
+  font-size: 0.8rem;
+}
+.legal a {
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .rejilla {
+    grid-template-columns: 1fr 1fr;
+  }
+  .marca {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 520px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+}

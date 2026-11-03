@@ -1,0 +1,193 @@
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(246 244 239 / 0.86);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.conSombra {
+  border-color: var(--linea);
+  box-shadow: 0 10px 30px -24px rgb(12 20 36 / 0.5);
+}
+.franja {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px var(--margen);
+  background: var(--tinta);
+  color: rgb(246 244 239 / 0.72);
+  font-size: 0.8rem;
+}
+.franjaContacto {
+  display: flex;
+  gap: 20px;
+}
+.franja a {
+  color: var(--papel);
+  text-decoration: none;
+}
+.franja a:hover {
+  color: var(--acento);
+}
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: var(--alto-nav);
+  padding: 0 var(--margen);
+}
+.menu {
+  display: flex;
+  gap: 4px;
+  margin-right: auto;
+}
+.menu > li {
+  position: relative;
+}
+.enlace {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--tinta);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.enlace:hover {
+  background: var(--papel-2);
+}
+.enlace[aria-current='page'] {
+  color: var(--acento-oscuro);
+}
+.submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -12px;
+  width: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 10px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.25s var(--curva),
+    transform 0.25s var(--curva),
+    visibility 0.25s;
+}
+.conSubmenu:hover .submenu,
+.conSubmenu:focus-within .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.submenu a {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--tinta);
+}
+.submenu a:hover {
+  background: var(--papel-2);
+}
+.submenu strong {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.submenu span {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  line-height: 1.4;
+}
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.telefono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  color: var(--tinta);
+}
+.telefono:hover {
+  border-color: var(--tinta);
+}
+.hamburguesa,
+.soloMovil {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .franja > span:first-child {
+    display: none;
+  }
+  .franjaContacto {
+    margin-left: auto;
+  }
+  .barra {
+    justify-content: space-between;
+  }
+  .hamburguesa {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--tinta);
+    color: var(--papel);
+    cursor: pointer;
+  }
+  .soloMovil {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    inset: calc(var(--alto-nav) + 34px) 0 auto;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 12px var(--margen) 24px;
+    background: var(--papel);
+    border-bottom: 1px solid var(--linea);
+    max-height: calc(100dvh - var(--alto-nav) - 34px);
+    overflow-y: auto;
+    display: none;
+  }
+  .menu.abierto {
+    display: flex;
+  }
+  .enlace {
+    padding: 14px 4px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--linea);
+    border-radius: 0;
+  }
+  .submenu {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .acciones :global(.boton) {
+    display: none;
+  }
+  .franjaContacto a:last-child {
+    display: none;
+  }
+}

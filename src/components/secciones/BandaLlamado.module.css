@@ -1,0 +1,49 @@
+.banda {
+  padding: 0 var(--margen) clamp(64px, 9vw, 128px);
+}
+.interior {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px);
+  border-radius: var(--radio-lg);
+  background: var(--acento);
+  color: var(--tinta);
+}
+.interior::after {
+  content: '';
+  position: absolute;
+  right: -6%;
+  bottom: -40%;
+  width: 46%;
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(90deg, var(--tinta) 0 18%, transparent 18% 25%);
+  opacity: 0.1;
+  transform: rotate(-12deg);
+}
+.interior h2 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 5.4vw, 4.6rem);
+  color: var(--tinta);
+}
+.interior p {
+  max-width: 52ch;
+  margin-top: 20px;
+  font-size: 1.15rem;
+}
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+.acciones :global(.boton-acento) {
+  background: var(--tinta);
+  color: var(--papel);
+}
+.telefono {
+  color: var(--tinta);
+  text-decoration: none;
+}

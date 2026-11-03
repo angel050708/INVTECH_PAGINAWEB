@@ -1,0 +1,6 @@
+node_modules
+.next
+public
+package-lock.json
+# lo reescribe Next.js con su propio formato
+tsconfig.json
