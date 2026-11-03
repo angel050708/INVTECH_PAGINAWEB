@@ -1,0 +1,28 @@
+.cabecera {
+  background: radial-gradient(50% 90% at 100% 0%, rgb(255 90 31 / 0.2), transparent 60%), var(--tinta);
+  color: rgb(246 244 239 / 0.75);
+}
+.interior {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 112px) var(--margen) clamp(56px, 8vw, 104px);
+}
+@media (min-width: 1480px) {
+  .interior {
+    padding-inline: 0;
+  }
+}
+.cabecera :global(.etiqueta) {
+  color: var(--acento);
+}
+.cabecera h1 {
+  max-width: 20ch;
+  font-size: clamp(2.5rem, 5.8vw, 5rem);
+  letter-spacing: -0.045em;
+  color: var(--papel);
+}
+.bajada {
+  max-width: 58ch;
+  margin-top: 24px;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}

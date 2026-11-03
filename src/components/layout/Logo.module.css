@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.logo b {
+  font-weight: 800;
+}
+.fondo {
+  fill: var(--tinta);
+}
+.barras {
+  fill: var(--acento);
+}
+.claro {
+  color: var(--papel);
+}
+.claro .fondo {
+  fill: var(--papel);
+}

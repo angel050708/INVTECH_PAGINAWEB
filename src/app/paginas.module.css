@@ -1,0 +1,211 @@
+.dosColumnas {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 6vw, 112px);
+  align-items: start;
+}
+.texto {
+  display: grid;
+  gap: 18px;
+  font-size: 1.1rem;
+}
+.texto strong {
+  color: var(--tinta);
+}
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.tarjeta {
+  padding: 28px;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+.tarjeta h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+.tarjeta p {
+  color: var(--texto-suave);
+  font-size: 0.97rem;
+}
+.sigla {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--tinta);
+  color: var(--acento);
+  font: 600 0.78rem var(--mono);
+}
+.numero {
+  display: block;
+  margin-bottom: 28px;
+  font: 500 0.8rem var(--mono);
+  color: var(--acento-oscuro);
+}
+.fondoAlterno {
+  background: var(--papel-2);
+}
+.lista {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--linea);
+}
+.lista li {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--linea);
+  color: var(--tinta);
+}
+.lista li svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--acento-oscuro);
+}
+.resultado {
+  margin-top: 40px;
+  padding: 28px;
+  border-left: 4px solid var(--acento);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  background: var(--tinta);
+  color: var(--papel);
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.resultado small {
+  display: block;
+  margin-bottom: 8px;
+  font: 500 0.75rem var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+.listaServicios {
+  border-top: 1px solid var(--linea);
+}
+.filaServicio {
+  display: grid;
+  grid-template-columns: 64px 1fr 1.3fr 40px;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--linea);
+  color: var(--texto);
+  text-decoration: none;
+  transition: padding 0.4s var(--curva);
+}
+.filaServicio:hover {
+  padding-left: 16px;
+}
+.filaServicio:hover .flechaFila {
+  background: var(--acento);
+  color: var(--tinta);
+}
+.iconoFila {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--tinta);
+  color: var(--acento);
+}
+.filaServicio h2 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+.flechaFila {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--linea);
+  color: var(--tinta);
+  transition: all 0.3s;
+}
+.otros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.otros a {
+  padding: 10px 16px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.otros a:hover {
+  border-color: var(--tinta);
+}
+.contacto {
+  display: grid;
+  gap: 14px;
+}
+.datoContacto {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  color: var(--tinta);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+a.datoContacto:hover {
+  border-color: var(--tinta);
+}
+.datoContacto small {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+}
+.datoContacto strong {
+  font-family: var(--display);
+  font-size: 1.2rem;
+}
+.datoContacto > span:first-child {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--acento);
+}
+.legal {
+  max-width: 72ch;
+  display: grid;
+  gap: 16px;
+}
+.legal h2 {
+  margin-top: 24px;
+  font-size: 1.5rem;
+}
+@media (max-width: 960px) {
+  .dosColumnas {
+    grid-template-columns: 1fr;
+  }
+  .tarjetas {
+    grid-template-columns: 1fr 1fr;
+  }
+  .filaServicio {
+    grid-template-columns: 56px 1fr 40px;
+  }
+  .filaServicio p {
+    grid-column: 2 / 3;
+  }
+}
+@media (max-width: 600px) {
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
