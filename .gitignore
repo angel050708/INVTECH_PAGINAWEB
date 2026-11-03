@@ -1,0 +1,36 @@
+# dependencias
+node_modules/
+
+# build y caché de Next.js
+.next/
+out/
+build/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# variables de entorno (secretos)
+.env
+.env.*
+!.env.example
+
+# Vercel / Netlify
+.vercel/
+.netlify/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# sistema y editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# herramientas locales de IA/editor
+.claude/
