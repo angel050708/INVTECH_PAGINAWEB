@@ -11,7 +11,7 @@ export function ServiciosInicio() {
         <div className={styles.cabeza}>
           <div {...revelarAlScroll()}>
             <p className="etiqueta">Servicios</p>
-            <h2 className="titulo-seccion">Business Central, hecho para cómo se trabaja aquí.</h2>
+            <h2 className="titulo-seccion">Lo que construimos sobre Business Central</h2>
           </div>
           <Link href="/servicios/" className="enlace-flecha" {...revelarAlScroll(1)}>
             Ver todos los servicios <Icono nombre="flecha" tamano={18} />

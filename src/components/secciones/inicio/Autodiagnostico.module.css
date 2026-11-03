@@ -1,5 +1,5 @@
 .seccion {
-  background: var(--papel-2);
+  border-top: 1px solid var(--linea);
 }
 .rejilla {
   display: grid;
@@ -62,16 +62,20 @@
   border: 1.5px solid var(--texto-suave);
   border-radius: 6px;
   color: transparent;
-  transition: all 0.2s var(--curva);
+  transition:
+    transform 0.2s var(--curva),
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
 }
 .activa {
   border-color: var(--tinta);
-  background: rgb(255 90 31 / 0.08);
+  background: var(--acento-suave);
 }
 .activa .caja {
   border-color: var(--acento);
   background: var(--acento);
-  color: var(--tinta);
+  color: #fff;
   transform: scale(1.08);
 }
 .resultado {

@@ -49,7 +49,7 @@ export function FormularioContacto() {
     const texto = armarMensaje(datos);
     const destino =
       canal === 'correo'
-        ? `mailto:${CONTACTO.correo}?subject=${encodeURIComponent(`Solicitud de información — ${datos.empresa.trim()}`)}&body=${encodeURIComponent(texto)}`
+        ? `mailto:${CONTACTO.correo}?subject=${encodeURIComponent(`Solicitud de información: ${datos.empresa.trim()}`)}&body=${encodeURIComponent(texto)}`
         : enlaceWhatsapp(texto);
 
     window.open(destino, canal === 'correo' ? '_self' : '_blank', 'noopener');
@@ -125,6 +125,7 @@ function Campo({ nombre, etiqueta, tipo = 'text', error, autoComplete, multiline
     id,
     name: nombre,
     autoComplete,
+    spellCheck: tipo === 'email' ? false : undefined,
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? `${id}-error` : undefined,
   };

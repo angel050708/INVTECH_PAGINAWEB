@@ -5,39 +5,23 @@ import styles from './HeroInicio.module.css';
 
 export function HeroInicio() {
   return (
-    <section className={`${styles.hero} grano`}>
+    <section className={styles.hero}>
       <div className={styles.interior}>
         <div className={styles.texto}>
-          <p className={styles.sello}>
-            <span className={styles.punto} aria-hidden="true" /> Microsoft Dynamics 365 Business Central ·
-            Honduras
-          </p>
-          <h1>
-            Toda su empresa, <em>cuadrada</em> en un solo sistema.
-          </h1>
+          <p className={styles.sello}>Microsoft Dynamics 365 Business Central</p>
+          <h1>Implementación de Business Central para empresas en Honduras</h1>
           <p className={styles.bajada}>
-            Implementamos Business Central adaptado a Honduras: facturación con CAI, retenciones, integración
-            con su punto de venta e informes que su gerencia sí usa.
+            Configuramos el ERP de Microsoft con la facturación del SAR, lo conectamos a su punto de venta y
+            preparamos los informes que su gerencia revisa cada semana.
           </p>
           <div className={styles.acciones}>
             <Link href="/contacto/" className="boton boton-acento boton-grande">
               Agendar diagnóstico <Icono nombre="flecha" tamano={18} />
             </Link>
-            <Link href="/metodologia/" className="boton boton-borde boton-grande">
-              Cómo trabajamos
+            <Link href="/servicios/" className="boton boton-borde boton-grande">
+              Ver servicios
             </Link>
           </div>
-          <ul className={styles.pruebas}>
-            <li>
-              <strong>6 fases</strong> con entregables claros
-            </li>
-            <li>
-              <strong>Localización</strong> fiscal SAR
-            </li>
-            <li>
-              <strong>Nube</strong>, local o híbrido
-            </li>
-          </ul>
         </div>
         <LibroMayor />
       </div>

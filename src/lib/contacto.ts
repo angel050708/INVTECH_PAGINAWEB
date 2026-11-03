@@ -43,5 +43,7 @@ export function armarMensaje(datos: DatosContacto): string {
     intereses.length > 0 ? `Interés: ${intereses.join(', ')}` : '',
   ].filter(Boolean);
 
-  return ['Solicitud de información — invtech.pro', datosLinea.join('\n'), datos.mensaje.trim()].join('\n\n');
+  return ['Solicitud de información desde invtech.pro', datosLinea.join('\n'), datos.mensaje.trim()].join(
+    '\n\n',
+  );
 }

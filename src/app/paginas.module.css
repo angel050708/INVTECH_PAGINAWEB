@@ -128,7 +128,9 @@
   border-radius: 50%;
   border: 1px solid var(--linea);
   color: var(--tinta);
-  transition: all 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .otros {
   display: flex;

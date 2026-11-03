@@ -1,5 +1,6 @@
 .seccion {
   background: var(--papel-2);
+  border-block: 1px solid var(--linea);
 }
 .cabeza {
   display: flex;
@@ -22,7 +23,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 250px;
+  min-height: 230px;
   padding: 28px;
   border: 1px solid var(--linea);
   border-radius: var(--radio);
@@ -36,14 +37,18 @@
 }
 .celda:nth-child(1) .tarjeta {
   background: var(--tinta);
-  color: rgb(246 244 239 / 0.72);
+  color: rgb(255 255 255 / 0.75);
   border-color: var(--tinta);
 }
 .celda:nth-child(1) h3 {
   color: var(--papel);
 }
+.celda:nth-child(1) .icono {
+  background: rgb(255 255 255 / 0.1);
+  color: #9cc3ff;
+}
 .celda:nth-child(1) .mas {
-  color: var(--acento);
+  color: #9cc3ff;
 }
 .tarjeta:hover {
   transform: translateY(-4px);
@@ -56,8 +61,8 @@
   height: 52px;
   margin-bottom: auto;
   border-radius: 12px;
-  background: var(--acento);
-  color: var(--tinta);
+  background: var(--acento-suave);
+  color: var(--acento);
 }
 .tarjeta h3 {
   margin-top: 40px;
@@ -65,7 +70,7 @@
   letter-spacing: -0.025em;
 }
 .celda:nth-child(-n + 2) h3 {
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
   max-width: 18ch;
 }
 .tarjeta p {

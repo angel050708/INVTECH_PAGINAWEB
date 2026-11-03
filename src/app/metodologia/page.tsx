@@ -32,7 +32,7 @@ export default function PaginaMetodologia() {
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
               <p className="etiqueta">Conceptos básicos</p>
-              <h2 className="titulo-seccion">Los documentos y momentos que ordenan el proyecto.</h2>
+              <h2 className="titulo-seccion">Documentos y etapas clave del proyecto</h2>
             </div>
           </div>
           <ul className={styles.tarjetas}>
@@ -47,7 +47,7 @@ export default function PaginaMetodologia() {
         </div>
       </section>
 
-      <BandaLlamado titulo="Empecemos por el diagnóstico." />
+      <BandaLlamado titulo="Empecemos por el diagnóstico" />
     </>
   );
 }

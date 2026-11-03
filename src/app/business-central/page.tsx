@@ -4,6 +4,7 @@ import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { Beneficios } from '@/components/secciones/comunes/Beneficios';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
+import { DiagramaModulos } from '@/components/secciones/comunes/DiagramaModulos';
 import { Icono } from '@/components/ui/Icono';
 import styles from '../paginas.module.css';
 
@@ -53,7 +54,10 @@ export default function PaginaBusinessCentral() {
         <div className={`contenedor ${styles.dosColumnas}`}>
           <div {...revelarAlScroll()}>
             <p className="etiqueta">Qué es</p>
-            <h2 className="titulo-seccion">Solución empresarial unificada para empresas en crecimiento.</h2>
+            <h2 className="titulo-seccion">Solución empresarial unificada para empresas en crecimiento</h2>
+            <div style={{ marginTop: 48 }}>
+              <DiagramaModulos />
+            </div>
           </div>
           <div className={styles.texto} {...revelarAlScroll(1)}>
             <p>
@@ -83,7 +87,7 @@ export default function PaginaBusinessCentral() {
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
               <p className="etiqueta">Modalidades</p>
-              <h2 className="titulo-seccion">Donde mejor le funcione.</h2>
+              <h2 className="titulo-seccion">Nube, local o híbrido</h2>
             </div>
           </div>
           <ul className={styles.tarjetas}>

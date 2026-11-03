@@ -16,15 +16,15 @@ export default function PaginaQuienesSomos() {
     <>
       <CabeceraPagina
         etiqueta="Sobre nosotros"
-        titulo="Más que un proveedor de soluciones de TI."
+        titulo="Más que un proveedor de soluciones de TI"
         bajada="Los negocios no se tratan solo de resolver problemas: se trata de brindar soluciones que ayuden a mejorar la vida de las personas."
       />
 
       <section className="seccion">
         <div className={`contenedor ${styles.dosColumnas}`}>
           <div {...revelarAlScroll()}>
-            <p className="etiqueta">Nuestra historia</p>
-            <h2 className="titulo-seccion">Creadores de cambio, no solo de soluciones.</h2>
+            <p className="etiqueta">Quiénes somos</p>
+            <h2 className="titulo-seccion">Nuestra historia</h2>
           </div>
           <div className={styles.texto} {...revelarAlScroll(1)}>
             <p>
@@ -44,7 +44,7 @@ export default function PaginaQuienesSomos() {
         <div className={`contenedor ${styles.dosColumnas}`}>
           <div {...revelarAlScroll()}>
             <p className="etiqueta">Nuestra visión</p>
-            <h2 className="titulo-seccion">Crecer junto con nuestros clientes.</h2>
+            <h2 className="titulo-seccion">Crecer junto con nuestros clientes</h2>
           </div>
           <div className={styles.texto} {...revelarAlScroll(1)}>
             <p>
@@ -66,7 +66,7 @@ export default function PaginaQuienesSomos() {
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
               <p className="etiqueta">Nuestros valores</p>
-              <h2 className="titulo-seccion">Equidad, transparencia, compromiso y honestidad.</h2>
+              <h2 className="titulo-seccion">Equidad, transparencia, compromiso y honestidad</h2>
             </div>
           </div>
           <ul className={styles.tarjetas}>

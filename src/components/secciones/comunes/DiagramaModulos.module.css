@@ -1,0 +1,81 @@
+.diagrama {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+.diagrama::before {
+  content: '';
+  position: absolute;
+  inset: 17%;
+  border: 1px dashed var(--linea);
+  border-radius: 50%;
+}
+.centro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.centro small {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+.centro strong {
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
+}
+.modulos li {
+  --angulo: calc(var(--i) * 60deg - 90deg);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  width: 130px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: var(--texto);
+  transform: translate(-50%, -50%) rotate(var(--angulo)) translateX(min(39vw, 200px))
+    rotate(calc(-1 * var(--angulo)));
+}
+.icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  background: var(--papel);
+  color: var(--acento);
+}
+@media (max-width: 520px) {
+  .diagrama {
+    aspect-ratio: auto;
+  }
+  .diagrama::before {
+    display: none;
+  }
+  .centro {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .modulos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .modulos li {
+    position: static;
+    width: auto;
+    transform: none;
+  }
+}

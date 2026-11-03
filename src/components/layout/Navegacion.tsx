@@ -35,7 +35,7 @@ export function Navegacion() {
   return (
     <header className={unirClases(styles.cabecera, conSombra && styles.conSombra)}>
       <div className={styles.franja}>
-        <span>Partner de Microsoft Dynamics 365 Business Central en {CONTACTO.pais}</span>
+        <span>Implementación de Microsoft Dynamics 365 Business Central en {CONTACTO.pais}</span>
         <span className={styles.franjaContacto}>
           <a href={CONTACTO.telefonoEnlace}>{CONTACTO.telefono}</a>
           <a href={`mailto:${CONTACTO.correo}`}>{CONTACTO.correo}</a>

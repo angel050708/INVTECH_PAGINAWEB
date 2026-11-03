@@ -4,23 +4,20 @@
   gap: 10px;
   font-family: var(--display);
   font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--tinta);
   text-decoration: none;
 }
 .logo b {
-  font-weight: 800;
+  font-weight: 700;
 }
 .fondo {
-  fill: var(--tinta);
+  fill: var(--acento);
 }
 .barras {
-  fill: var(--acento);
+  fill: #fff;
 }
 .claro {
   color: var(--papel);
-}
-.claro .fondo {
-  fill: var(--papel);
 }

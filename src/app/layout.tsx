@@ -1,7 +1,7 @@
 // Va primero: los estilos de cada componente deben cargarse después para poder sobrescribir los globales.
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { RevelarAlScroll } from '@/components/efectos/RevelarAlScroll';
 import { Navegacion } from '@/components/layout/Navegacion';
@@ -11,9 +11,8 @@ import { NOMBRE_SITIO } from '@/data/sitio';
 import { unirClases } from '@/lib/clases';
 import { SITIO_INDEXABLE, SITIO_URL } from '@/lib/sitio-url';
 
-const fuenteDisplay = Bricolage_Grotesque({ subsets: ['latin'], variable: '--fuente-display' });
-const fuenteSans = Instrument_Sans({ subsets: ['latin'], variable: '--fuente-sans' });
-const fuenteMono = JetBrains_Mono({ subsets: ['latin'], variable: '--fuente-mono' });
+const fuenteSans = Geist({ subsets: ['latin'], variable: '--fuente-sans' });
+const fuenteMono = Geist_Mono({ subsets: ['latin'], variable: '--fuente-mono' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITIO_URL),
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0c1424',
+  themeColor: '#0b1f3a',
 };
 
 const SCRIPT_ACTIVAR_ANIMACIONES = "document.documentElement.classList.add('js')";
@@ -39,7 +38,7 @@ export default function LayoutRaiz({ children }: { children: ReactNode }) {
     <html
       lang="es"
       data-scroll-behavior="smooth"
-      className={unirClases(fuenteDisplay.variable, fuenteSans.variable, fuenteMono.variable)}
+      className={unirClases(fuenteSans.variable, fuenteMono.variable)}
       suppressHydrationWarning
     >
       <head>

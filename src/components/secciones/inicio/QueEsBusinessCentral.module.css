@@ -1,49 +1,30 @@
 .rejilla {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(32px, 6vw, 112px);
-}
-.columna {
-  padding-top: 40px;
-}
-.grande {
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
-  line-height: 1.5;
-  color: var(--tinta);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
 }
 .subtitulo {
-  margin: 40px 0 12px;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--texto-suave);
+  margin: 36px 0 8px;
+  font-weight: 600;
+  color: var(--tinta);
 }
 .senales {
-  margin-bottom: 36px;
-  border-top: 1px solid var(--linea);
+  margin-bottom: 32px;
 }
 .senales li {
   display: flex;
-  gap: 16px;
-  padding: 18px 0;
+  gap: 12px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--linea);
 }
-.senales span {
+.senales svg {
   flex: none;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--tinta);
+  margin-top: 3px;
   color: var(--acento);
 }
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .rejilla {
     grid-template-columns: 1fr;
-  }
-  .columna {
-    padding-top: 0;
   }
 }

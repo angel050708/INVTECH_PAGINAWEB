@@ -1,25 +1,22 @@
 .cabecera {
-  background: radial-gradient(50% 90% at 100% 0%, rgb(255 90 31 / 0.2), transparent 60%), var(--tinta);
-  color: rgb(246 244 239 / 0.75);
+  background: var(--papel-2);
+  border-bottom: 1px solid var(--linea);
+  color: var(--texto-suave);
 }
 .interior {
   max-width: var(--ancho);
   margin: 0 auto;
   padding: clamp(56px, 8vw, 112px) var(--margen) clamp(56px, 8vw, 104px);
 }
-@media (min-width: 1480px) {
+@media (min-width: 1380px) {
   .interior {
     padding-inline: 0;
   }
 }
-.cabecera :global(.etiqueta) {
-  color: var(--acento);
-}
 .cabecera h1 {
-  max-width: 20ch;
-  font-size: clamp(2.5rem, 5.8vw, 5rem);
-  letter-spacing: -0.045em;
-  color: var(--papel);
+  max-width: 24ch;
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  letter-spacing: -0.035em;
 }
 .bajada {
   max-width: 58ch;

@@ -86,7 +86,7 @@ export const SERVICIOS: Servicio[] = [
     titulo: 'Informes personalizados',
     corto: 'Los reportes que su gerencia sí usa, dentro del ERP.',
     resumen:
-      'Diseñamos los informes y documentos que su operación necesita —estados de cuenta, ventas por estación, cartera— con los datos en tiempo real de Business Central.',
+      'Diseñamos los informes y documentos que su operación necesita, como estados de cuenta, ventas por estación o cartera, con los datos en tiempo real de Business Central.',
     icono: 'grafica',
     problema:
       'Los reportes estándar no siempre responden las preguntas del negocio, y armar cada informe en Excel cada mes no escala.',

@@ -1,0 +1,32 @@
+.ecosistema {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.interior {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+.titulo {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  text-align: center;
+}
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 44px;
+}
+.logos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--tinta);
+}
+.logos img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}

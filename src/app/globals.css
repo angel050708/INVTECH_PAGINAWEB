@@ -2,28 +2,29 @@
    Tokens de diseño
    ========================================================= */
 :root {
-  --tinta: #0c1424;
-  --tinta-2: #16213a;
-  --papel: #f6f4ef;
-  --papel-2: #ebe7de;
-  --linea: #dcd6c9;
-  --texto: #2c3446;
-  --texto-suave: #5d6577;
-  --acento: #ff5a1f;
-  --acento-oscuro: #c63d0c;
-  --verde: #1f9d55;
+  --tinta: #0b1f3a;
+  --tinta-2: #12294a;
+  --papel: #ffffff;
+  --papel-2: #f3f5f8;
+  --linea: #e1e6ee;
+  --texto: #2a3447;
+  --texto-suave: #5b6578;
+  --acento: #0f62d6;
+  --acento-oscuro: #0a4aa8;
+  --acento-suave: #e8f0fc;
+  --verde: #12805c;
 
   /* Las variables --fuente-* las define next/font en app/layout.tsx */
-  --display: var(--fuente-display), 'Segoe UI', system-ui, sans-serif;
+  --display: var(--fuente-sans), 'Segoe UI', system-ui, sans-serif;
   --sans: var(--fuente-sans), 'Segoe UI', system-ui, sans-serif;
   --mono: var(--fuente-mono), ui-monospace, Consolas, monospace;
 
-  --radio: 14px;
-  --radio-lg: 28px;
-  --sombra: 0 30px 60px -30px rgb(12 20 36 / 0.45);
-  --ancho: 1320px;
-  --margen: clamp(16px, 5vw, 80px);
-  --alto-nav: 76px;
+  --radio: 12px;
+  --radio-lg: 20px;
+  --sombra: 0 24px 48px -28px rgb(11 31 58 / 0.28);
+  --ancho: 1240px;
+  --margen: clamp(16px, 5vw, 72px);
+  --alto-nav: 72px;
   --curva: cubic-bezier(0.16, 1, 0.3, 1);
 
   color-scheme: light;
@@ -56,6 +57,8 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 img,
@@ -69,9 +72,9 @@ h2,
 h3 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 700;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   color: var(--tinta);
   text-wrap: balance;
 }
@@ -99,7 +102,7 @@ a {
 }
 
 ::selection {
-  background: var(--acento);
+  background: var(--acento-suave);
   color: var(--tinta);
 }
 
@@ -125,38 +128,26 @@ a {
   margin: 0 auto;
   padding: 0 var(--margen);
 }
-@media (min-width: 1480px) {
+@media (min-width: 1380px) {
   .contenedor {
     padding: 0;
   }
 }
 
 .seccion {
-  padding: clamp(72px, 10vw, 152px) 0;
+  padding: clamp(64px, 8vw, 120px) 0;
 }
 
 .etiqueta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--acento-oscuro);
-}
-.etiqueta::before {
-  content: '';
-  width: 22px;
-  height: 2px;
-  background: currentColor;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acento);
 }
 
 .titulo-seccion {
-  font-size: clamp(2.1rem, 4.6vw, 3.9rem);
-  max-width: 18ch;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  max-width: 22ch;
 }
 
 .entrada {
@@ -190,25 +181,26 @@ a {
 }
 .boton-acento {
   background: var(--acento);
-  color: var(--tinta);
+  color: #fff;
 }
 .boton-acento:hover {
-  background: var(--tinta);
-  color: var(--papel);
+  background: var(--acento-oscuro);
 }
 .boton-borde {
   border-color: currentColor;
   color: inherit;
   background: transparent;
 }
-.boton-borde:hover {
-  background: var(--papel);
+.boton-borde {
+  border-color: var(--linea);
   color: var(--tinta);
-  border-color: var(--papel);
+}
+.boton-borde:hover {
+  border-color: var(--tinta);
 }
 .boton-grande {
-  min-height: 56px;
-  padding: 0 28px;
+  min-height: 52px;
+  padding: 0 24px;
   font-size: 1.02rem;
 }
 
@@ -225,21 +217,6 @@ a {
 }
 .enlace-flecha:hover svg {
   transform: translateX(4px);
-}
-
-/* Grano sutil sobre fondos oscuros */
-.grano {
-  position: relative;
-  isolation: isolate;
-}
-.grano::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* =========================================================

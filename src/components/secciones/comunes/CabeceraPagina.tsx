@@ -11,7 +11,7 @@ interface Props {
 /** Encabezado de las páginas internas. */
 export function CabeceraPagina({ etiqueta, titulo, bajada, children }: Props) {
   return (
-    <section className={`${styles.cabecera} grano`}>
+    <section className={`${styles.cabecera}`}>
       <div className={styles.interior}>
         <p className="etiqueta">{etiqueta}</p>
         <h1>{titulo}</h1>

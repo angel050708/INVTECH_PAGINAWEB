@@ -12,7 +12,7 @@ export function Logo({ claro = false }: { claro?: boolean }) {
         <rect width="32" height="32" rx="8" className={styles.fondo} />
         <path d="M8 24V9h4v15zM14 24V14h4v10zM20 24v-5h4v5z" className={styles.barras} />
       </svg>
-      <span>
+      <span translate="no">
         Inv<b>Tech</b>
       </span>
     </Link>

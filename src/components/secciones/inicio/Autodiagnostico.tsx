@@ -45,11 +45,11 @@ export function Autodiagnostico() {
     <section className={`seccion ${styles.seccion}`}>
       <div className={`contenedor ${styles.rejilla}`}>
         <div>
-          <p className="etiqueta">Diagnóstico de 30 segundos</p>
+          <p className="etiqueta">Diagnóstico rápido</p>
           <h2 className="titulo-seccion">¿Qué le está costando tiempo hoy?</h2>
           <p className="entrada">
-            Marque lo que le suena familiar. Le mostramos qué parte de nuestro trabajo resuelve cada punto y
-            llega al formulario con todo listo.
+            Marque las situaciones que vive su empresa. Le mostramos el servicio que atiende cada una y le
+            llevamos al formulario con su selección.
           </p>
         </div>
 

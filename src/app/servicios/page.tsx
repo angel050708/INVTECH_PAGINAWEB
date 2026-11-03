@@ -18,7 +18,7 @@ export default function PaginaServicios() {
     <>
       <CabeceraPagina
         etiqueta="Servicios"
-        titulo="Business Central, adaptado a su operación."
+        titulo="Servicios sobre Business Central"
         bajada="Además de implementar, construimos lo que el estándar no trae: la parte fiscal de Honduras, la conexión con su punto de venta y los informes de su negocio."
       />
       <section className="seccion">

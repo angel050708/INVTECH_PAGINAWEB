@@ -8,7 +8,7 @@ export function PreguntasFrecuentes() {
       <div className={`contenedor ${styles.rejilla}`}>
         <div {...revelarAlScroll()}>
           <p className="etiqueta">Preguntas frecuentes</p>
-          <h2 className="titulo-seccion">Antes de empezar.</h2>
+          <h2 className="titulo-seccion">Lo que suelen preguntarnos</h2>
         </div>
         <div className={styles.lista}>
           {PREGUNTAS.map((item, indice) => (

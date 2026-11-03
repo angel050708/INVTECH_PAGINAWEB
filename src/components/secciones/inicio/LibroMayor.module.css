@@ -1,28 +1,23 @@
 .marco {
-  position: relative;
   margin: 0;
-  transform: rotate(-1.5deg);
 }
 .ventana {
-  position: relative;
-  border: 1px solid rgb(246 244 239 / 0.14);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgb(22 33 58 / 0.95), rgb(12 20 36 / 0.95));
-  box-shadow:
-    0 50px 100px -40px rgb(0 0 0 / 0.8),
-    inset 0 1px 0 rgb(255 255 255 / 0.06);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: rgb(246 244 239 / 0.85);
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+  background: var(--papel);
+  box-shadow: var(--sombra);
+  font-size: 0.85rem;
   overflow: hidden;
 }
 .barra {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 12px 16px;
-  border-bottom: 1px solid rgb(246 244 239 / 0.08);
-  color: rgb(246 244 239 / 0.55);
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--linea);
+  background: var(--tinta);
+  color: rgb(255 255 255 / 0.85);
+  font-weight: 500;
 }
 .puntos {
   display: flex;
@@ -32,45 +27,31 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgb(246 244 239 / 0.18);
-}
-.encabezado {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgb(246 244 239 / 0.08);
-}
-.encabezado div {
-  padding: 14px 16px;
-  background: var(--tinta-2);
-}
-.encabezado small {
-  display: block;
-  color: rgb(246 244 239 / 0.45);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.encabezado strong {
-  font-weight: 500;
-  color: var(--papel);
+  background: rgb(255 255 255 / 0.25);
 }
 .filas li {
   display: grid;
   grid-template-columns: 1fr 1.6fr auto 22px;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px;
-  border-bottom: 1px solid rgb(246 244 239 / 0.06);
-  animation: entrar 7s var(--curva) infinite;
-  animation-delay: calc(var(--i) * 0.45s);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--linea);
+  animation: entrar 8s var(--curva) infinite;
+  animation-delay: calc(var(--i) * 0.5s);
 }
 .origen {
-  color: rgb(246 244 239 / 0.5);
+  color: var(--texto-suave);
+}
+.documento {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--tinta);
 }
 .monto {
   text-align: right;
-  color: var(--papel);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--tinta);
 }
 .estado {
   display: grid;
@@ -78,26 +59,25 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgb(31 157 85 / 0.2);
-  color: #4ade80;
+  background: var(--acento-suave);
+  color: var(--acento);
   font-size: 0.7rem;
-  animation: marcar 7s var(--curva) infinite;
-  animation-delay: calc(var(--i) * 0.45s + 0.5s);
+  animation: marcar 8s var(--curva) infinite;
+  animation-delay: calc(var(--i) * 0.5s + 0.5s);
 }
 .pie {
   display: flex;
   justify-content: space-between;
-  padding: 14px 16px;
-  color: rgb(246 244 239 / 0.55);
-}
-.pie b {
-  color: var(--papel);
+  padding: 14px 18px;
+  background: var(--papel-2);
+  color: var(--texto-suave);
 }
 .vivo {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #4ade80;
+  color: var(--verde);
+  font-weight: 500;
 }
 .vivo::before {
   content: '';
@@ -105,46 +85,14 @@
   height: 7px;
   border-radius: 50%;
   background: currentColor;
-  animation: latido 1.8s ease-in-out infinite;
 }
-.nota {
-  position: absolute;
-  left: -28px;
-  bottom: -26px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 12px;
-  background: var(--acento);
-  color: var(--tinta);
-  font: 700 0.78rem var(--mono);
-  transform: rotate(3deg);
-  box-shadow: 0 20px 40px -20px rgb(0 0 0 / 0.7);
-}
-.linea {
-  position: relative;
-  width: 56px;
-  height: 2px;
-  background: rgb(12 20 36 / 0.25);
-  overflow: hidden;
-}
-.linea::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  width: 40%;
-  background: var(--tinta);
-  animation: flujo 1.4s linear infinite;
-}
-
 @keyframes entrar {
   0% {
     opacity: 0;
-    transform: translateX(-14px);
+    transform: translateY(6px);
   }
-  8%,
-  86% {
+  6%,
+  90% {
     opacity: 1;
     transform: none;
   }
@@ -154,44 +102,19 @@
 }
 @keyframes marcar {
   0%,
-  4% {
+  3% {
     transform: scale(0);
   }
-  10%,
+  8%,
   100% {
     transform: scale(1);
-  }
-}
-@keyframes latido {
-  50% {
-    opacity: 0.3;
-  }
-}
-@keyframes flujo {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(250%);
-  }
-}
-
-@media (max-width: 960px) {
-  .marco {
-    transform: none;
-  }
-  .nota {
-    left: 12px;
   }
 }
 @media (max-width: 520px) {
   .filas li {
     grid-template-columns: 1fr auto 20px;
   }
-  .origen {
+  .documento {
     display: none;
-  }
-  .ventana {
-    font-size: 0.7rem;
   }
 }
