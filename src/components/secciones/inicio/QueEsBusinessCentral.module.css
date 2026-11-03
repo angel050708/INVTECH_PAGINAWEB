@@ -1,0 +1,49 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 112px);
+}
+.columna {
+  padding-top: 40px;
+}
+.grande {
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--tinta);
+}
+.subtitulo {
+  margin: 40px 0 12px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texto-suave);
+}
+.senales {
+  margin-bottom: 36px;
+  border-top: 1px solid var(--linea);
+}
+.senales li {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.senales span {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--tinta);
+  color: var(--acento);
+}
+@media (max-width: 860px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+  .columna {
+    padding-top: 0;
+  }
+}

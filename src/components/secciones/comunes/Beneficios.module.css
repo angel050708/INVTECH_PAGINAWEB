@@ -1,0 +1,50 @@
+.seccion {
+  background: var(--tinta);
+  color: rgb(246 244 239 / 0.7);
+}
+.seccion h2,
+.seccion h3 {
+  color: var(--papel);
+}
+.seccion :global(.etiqueta) {
+  color: var(--acento);
+}
+.lista {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  margin-top: 64px;
+  background: rgb(246 244 239 / 0.12);
+  border: 1px solid rgb(246 244 239 / 0.12);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.lista li {
+  padding: 32px 24px 40px;
+  background: var(--tinta);
+  transition: background-color 0.3s;
+}
+.lista li:hover {
+  background: var(--tinta-2);
+}
+.indice {
+  font: 500 0.8rem var(--mono);
+  color: var(--acento);
+}
+.lista h3 {
+  margin: 48px 0 10px;
+  font-size: 1.3rem;
+}
+.lista p {
+  font-size: 0.93rem;
+}
+@media (max-width: 1100px) {
+  .lista {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .lista {
+    grid-template-columns: 1fr;
+  }
+}

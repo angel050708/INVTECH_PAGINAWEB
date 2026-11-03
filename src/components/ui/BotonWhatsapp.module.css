@@ -1,0 +1,18 @@
+.boton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #1f9d55;
+  color: #fff;
+  box-shadow: 0 14px 30px -12px rgb(12 20 36 / 0.6);
+  transition: transform 0.3s var(--curva);
+}
+.boton:hover {
+  transform: translateY(-3px) scale(1.04);
+}

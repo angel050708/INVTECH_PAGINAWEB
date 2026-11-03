@@ -1,0 +1,121 @@
+.formulario {
+  display: grid;
+  gap: 22px;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra);
+}
+.formulario h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+.nota {
+  margin-top: -14px;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+.dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.campo {
+  display: grid;
+  gap: 6px;
+}
+.campo label,
+.intereses legend {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tinta);
+}
+.campo input,
+.campo textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--tinta);
+  transition: border-color 0.2s;
+}
+.campo textarea {
+  resize: vertical;
+}
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--tinta);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(255 90 31 / 0.35);
+}
+.campo [aria-invalid] {
+  border-color: #b3261e;
+}
+.error {
+  font-size: 0.85rem;
+  color: #b3261e;
+}
+.intereses {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.intereses legend {
+  margin-bottom: 10px;
+}
+.intereses div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip input {
+  position: absolute;
+  opacity: 0;
+}
+.chip span {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: var(--tinta);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.chip input:checked + span {
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--papel);
+}
+.chip input:focus-visible + span {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.secundario {
+  border-color: var(--tinta);
+  color: var(--tinta);
+  background: transparent;
+}
+.secundario:hover {
+  background: var(--tinta);
+  color: var(--papel);
+}
+.estado {
+  min-height: 1.5em;
+  font-weight: 600;
+  color: var(--verde);
+}
+@media (max-width: 640px) {
+  .dos {
+    grid-template-columns: 1fr;
+  }
+}
