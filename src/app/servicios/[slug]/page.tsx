@@ -5,6 +5,8 @@ import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Icono } from '@/components/ui/Icono';
+import { PaginaContenido } from '@/components/secciones/comunes/PaginaContenido';
+import { paginaServicio, SERVICIOS_DYNAMICS } from '@/data/paginas';
 import { buscarServicio, SERVICIOS } from '@/data/servicios';
 import styles from '../../paginas.module.css';
 
@@ -15,16 +17,23 @@ interface Props {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return SERVICIOS.map((servicio) => ({ slug: servicio.slug }));
+  return [...SERVICIOS_DYNAMICS, ...SERVICIOS].map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const servicio = buscarServicio((await params).slug);
+  const { slug } = await params;
+  const original = paginaServicio(slug);
+  if (original) return { title: original.titulo, description: original.bajada.join(' ').slice(0, 160) };
+  const servicio = buscarServicio(slug);
   return servicio ? { title: servicio.titulo, description: servicio.resumen } : {};
 }
 
 export default async function PaginaServicio({ params }: Props) {
-  const servicio = buscarServicio((await params).slug);
+  const { slug } = await params;
+  const original = paginaServicio(slug);
+  if (original) return <PaginaContenido etiqueta="Servicio" pagina={original} interes={slug} />;
+
+  const servicio = buscarServicio(slug);
   if (!servicio) notFound();
 
   const otros = SERVICIOS.filter((otro) => otro.slug !== servicio.slug);

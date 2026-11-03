@@ -11,7 +11,7 @@ export interface Servicio {
   resultado: string;
 }
 
-/** Servicios que InvTech ya entrega sobre Business Central. */
+/** Especialidades de InvTech para empresas en Honduras, construidas sobre Business Central. */
 export const SERVICIOS: Servicio[] = [
   {
     slug: 'localizacion-honduras',
@@ -97,23 +97,6 @@ export const SERVICIOS: Servicio[] = [
       'Exportación a Excel y PDF',
     ],
     resultado: 'Decisiones con datos actualizados, sin armar reportes a mano.',
-  },
-  {
-    slug: 'soporte',
-    titulo: 'Soporte y mejora continua',
-    corto: 'Un equipo que conoce su sistema, después del go-live.',
-    resumen:
-      'Acompañamiento después de salir en vivo: atención de incidencias, ajustes, nuevas extensiones y capacitación para su equipo.',
-    icono: 'soporte',
-    problema:
-      'Después de la implementación aparecen dudas, cambios en el negocio y nuevos requisitos. Sin soporte cercano, el sistema se queda atrás.',
-    incluye: [
-      'Atención de incidencias y consultas de usuarios',
-      'Ajustes y nuevas extensiones en AL',
-      'Actualizaciones de las extensiones al cambiar de versión',
-      'Capacitación a nuevos usuarios',
-    ],
-    resultado: 'Un sistema que crece al ritmo de su empresa.',
   },
 ];
 

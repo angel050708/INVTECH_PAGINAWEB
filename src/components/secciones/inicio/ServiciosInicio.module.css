@@ -100,3 +100,6 @@
     grid-column: auto;
   }
 }
+.todos {
+  border-style: dashed;
+}

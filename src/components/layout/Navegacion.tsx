@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import { Icono } from '@/components/ui/Icono';
 import { unirClases } from '@/lib/clases';
 import { CONTACTO, NAVEGACION } from '@/data/sitio';
-import { SERVICIOS } from '@/data/servicios';
 import { Logo } from './Logo';
 import styles from './Navegacion.module.css';
 
@@ -47,7 +46,7 @@ export function Navegacion() {
 
         <ul id="menu-principal" className={unirClases(styles.menu, abierto && styles.abierto)}>
           {NAVEGACION.map((enlace) => (
-            <li key={enlace.href} className={enlace.href === '/servicios/' ? styles.conSubmenu : undefined}>
+            <li key={enlace.href} className={enlace.submenu ? styles.conSubmenu : undefined}>
               <Link
                 href={enlace.href}
                 className={styles.enlace}
@@ -55,17 +54,21 @@ export function Navegacion() {
               >
                 {enlace.etiqueta}
               </Link>
-              {enlace.href === '/servicios/' && (
-                <ul className={styles.submenu}>
-                  {SERVICIOS.map((servicio) => (
-                    <li key={servicio.slug}>
-                      <Link href={`/servicios/${servicio.slug}/`}>
-                        <strong>{servicio.titulo}</strong>
-                        <span>{servicio.corto}</span>
-                      </Link>
-                    </li>
+              {enlace.submenu && (
+                <div className={styles.submenu}>
+                  {enlace.submenu.map((grupo) => (
+                    <div key={grupo.titulo}>
+                      <p className={styles.grupo}>{grupo.titulo}</p>
+                      <ul>
+                        {grupo.enlaces.map((sub) => (
+                          <li key={sub.href}>
+                            <Link href={sub.href}>{sub.etiqueta}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               )}
             </li>
           ))}

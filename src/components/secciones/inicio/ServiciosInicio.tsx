@@ -33,6 +33,18 @@ export function ServiciosInicio() {
               </Link>
             </li>
           ))}
+          <li className={styles.celda} {...revelarAlScroll(SERVICIOS.length)}>
+            <Link href="/servicios/" className={`${styles.tarjeta} ${styles.todos}`}>
+              <span className={styles.icono}>
+                <Icono nombre="soporte" tamano={22} />
+              </span>
+              <h3>Implementación, auditoría y soporte de Dynamics 365</h3>
+              <p>Diez servicios para poner en marcha, revisar y mantener sus aplicaciones de Microsoft.</p>
+              <span className={styles.mas}>
+                Ver todos <Icono nombre="flecha" tamano={16} />
+              </span>
+            </Link>
+          </li>
         </ul>
       </div>
     </section>

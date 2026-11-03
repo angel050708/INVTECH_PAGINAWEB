@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CONTACTO, NAVEGACION } from '@/data/sitio';
-import { SERVICIOS } from '@/data/servicios';
+import { SERVICIOS_DYNAMICS, SOLUCIONES } from '@/data/paginas';
 import { AnioActual } from './AnioActual';
 import { Logo } from './Logo';
 import styles from './PiePagina.module.css';
@@ -31,12 +31,23 @@ export function PiePagina() {
           </ul>
         </nav>
 
+        <nav aria-label="Soluciones">
+          <h2>Soluciones</h2>
+          <ul>
+            {SOLUCIONES.map((solucion) => (
+              <li key={solucion.slug}>
+                <Link href={`/soluciones/${solucion.slug}/`}>{solucion.etiqueta}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <nav aria-label="Servicios">
           <h2>Servicios</h2>
           <ul>
-            {SERVICIOS.map((servicio) => (
+            {SERVICIOS_DYNAMICS.map((servicio) => (
               <li key={servicio.slug}>
-                <Link href={`/servicios/${servicio.slug}/`}>{servicio.titulo}</Link>
+                <Link href={`/servicios/${servicio.slug}/`}>{servicio.etiqueta}</Link>
               </li>
             ))}
           </ul>

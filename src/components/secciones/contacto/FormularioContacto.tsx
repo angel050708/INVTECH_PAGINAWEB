@@ -4,7 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
 import { Icono } from '@/components/ui/Icono';
 import { CONTACTO, enlaceWhatsapp } from '@/data/sitio';
-import { SERVICIOS } from '@/data/servicios';
+import { INTERESES } from '@/data/paginas';
 import {
   armarMensaje,
   leerIntereses,
@@ -77,14 +77,14 @@ export function FormularioContacto() {
       <fieldset className={styles.intereses}>
         <legend>¿En qué le podemos ayudar?</legend>
         <div>
-          {SERVICIOS.map((servicio) => (
-            <label key={servicio.slug} className={styles.chip}>
+          {INTERESES.map((interes) => (
+            <label key={interes.slug} className={styles.chip}>
               <input
                 type="checkbox"
-                checked={intereses.includes(servicio.slug)}
-                onChange={() => alternar(servicio.slug)}
+                checked={intereses.includes(interes.slug)}
+                onChange={() => alternar(interes.slug)}
               />
-              <span>{servicio.titulo}</span>
+              <span>{interes.etiqueta}</span>
             </label>
           ))}
         </div>

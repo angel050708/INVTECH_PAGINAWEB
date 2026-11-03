@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Icono } from '@/components/ui/Icono';
-import { buscarServicio } from '@/data/servicios';
+import { etiquetaInteres } from '@/data/paginas';
 import { unirClases } from '@/lib/clases';
 import styles from './Autodiagnostico.module.css';
 
@@ -82,7 +82,7 @@ export function Autodiagnostico() {
                 <ul className={styles.recomendados}>
                   {servicios.map((slug) => (
                     <li key={slug}>
-                      <Link href={`/servicios/${slug}/`}>{buscarServicio(slug)?.titulo}</Link>
+                      <Link href={`/servicios/${slug}/`}>{etiquetaInteres(slug)}</Link>
                     </li>
                   ))}
                 </ul>

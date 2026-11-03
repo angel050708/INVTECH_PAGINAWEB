@@ -1,12 +1,15 @@
 import type { MetadataRoute } from 'next';
+import { SERVICIOS_DYNAMICS, SOLUCIONES } from '@/data/paginas';
 import { SERVICIOS } from '@/data/servicios';
 import { SITIO_URL } from '@/lib/sitio-url';
 
 /** Páginas que Google debe conocer. Al crear una página nueva, agregarla aquí. */
 export const PAGINAS: { ruta: string; prioridad: number }[] = [
   { ruta: '/', prioridad: 1 },
-  { ruta: '/business-central/', prioridad: 0.9 },
+  { ruta: '/soluciones/', prioridad: 0.9 },
+  ...SOLUCIONES.map(({ slug }) => ({ ruta: `/soluciones/${slug}/`, prioridad: 0.8 })),
   { ruta: '/servicios/', prioridad: 0.9 },
+  ...SERVICIOS_DYNAMICS.map(({ slug }) => ({ ruta: `/servicios/${slug}/`, prioridad: 0.8 })),
   ...SERVICIOS.map((servicio) => ({ ruta: `/servicios/${servicio.slug}/`, prioridad: 0.8 })),
   { ruta: '/metodologia/', prioridad: 0.7 },
   { ruta: '/quienes-somos/', prioridad: 0.6 },

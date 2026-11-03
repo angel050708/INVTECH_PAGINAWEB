@@ -34,7 +34,7 @@ export function QueEsBusinessCentral() {
               </li>
             ))}
           </ul>
-          <Link href="/business-central/" className="enlace-flecha">
+          <Link href="/soluciones/business-central/" className="enlace-flecha">
             Conozca Business Central <Icono nombre="flecha" tamano={18} />
           </Link>
         </div>
