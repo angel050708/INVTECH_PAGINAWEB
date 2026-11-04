@@ -2,10 +2,9 @@ import type { Metadata } from 'next';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
-import { Icono } from '@/components/ui/Icono';
 import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import { VALORES } from '@/data/empresa';
-import styles from './quienes-somos.module.css';
+import styles from '../paginas.module.css';
 
 export const metadata: Metadata = {
   title: 'Quiénes somos',
@@ -13,60 +12,55 @@ export const metadata: Metadata = {
     'InvTech: consultores en Microsoft Dynamics 365 que ayudan a las empresas a transformar su operación.',
 };
 
-const PRINCIPIOS = ['Equidad', 'Transparencia', 'Compromiso', 'Honestidad'];
-
 export default function PaginaQuienesSomos() {
   return (
     <>
       <CabeceraPagina
         etiqueta="Sobre nosotros"
         titulo="Más que un proveedor de soluciones de TI"
-        bajada="Lideramos el camino en soluciones empresariales basadas en tecnología para grandes empresas, pymes y corporaciones."
+        bajada="Los negocios no se tratan solo de resolver problemas: se trata de brindar soluciones que ayuden a mejorar la vida de las personas."
         visual={<LineasCircuito />}
       />
 
-      <section className={styles.manifiesto}>
-        <div className="contenedor">
-          <blockquote {...revelarAlScroll()}>
-            <p>
-              “Los negocios no se tratan solo de brindar a las personas soluciones a sus problemas. Tiene más
-              que ver con brindar soluciones que ayuden a mejorar la vida.”
-            </p>
-            <footer>La creencia que guía a InvTech</footer>
-          </blockquote>
-        </div>
-      </section>
-
       <section className="seccion">
-        <div className={`contenedor ${styles.historia}`}>
+        <div className={`contenedor ${styles.dosColumnas}`}>
           <div {...revelarAlScroll()}>
-            <p className="etiqueta">Nuestra historia</p>
-            <h2 className="titulo-seccion">Creadores de cambio</h2>
-            <p className={styles.texto}>
-              InvTech se formó con la creencia de no solo brindar soluciones, sino también ser el creador de
-              cambios que marquen la diferencia. Nuestros consultores certificados analizan sus áreas de
-              crecimiento y le entregan una solución empresarial personalizada para lograr el máximo impacto.
-            </p>
+            <p className="etiqueta">Quiénes somos</p>
+            <h2 className="titulo-seccion">Nuestra historia</h2>
           </div>
-          <div className={styles.vision} {...revelarAlScroll(1)}>
-            <p className="etiqueta">Nuestra visión</p>
-            <h2>Una marca sinónimo de confianza, innovación tecnológica y excelencia en el servicio</h2>
+          <div className={styles.texto} {...revelarAlScroll(1)}>
             <p>
-              Transformar los negocios de nuestros clientes y acompañarlos en su transformación digital para
-              crecer juntos de forma sostenible.
+              InvTech se formó con la convicción de no solo brindar soluciones, sino de ser un agente de
+              cambio que marque la diferencia en cada empresa que acompaña.
+            </p>
+            <p>
+              Llevamos soluciones empresariales basadas en tecnología a grandes empresas, pymes y
+              corporaciones. Nuestros consultores analizan sus áreas de crecimiento y le entregan una solución
+              a la medida para lograr el máximo impacto.
             </p>
           </div>
         </div>
       </section>
 
-      <section className={styles.principios} aria-label="Nuestros principios">
-        <ul>
-          {PRINCIPIOS.map((principio, i) => (
-            <li key={principio} {...revelarAlScroll(i)}>
-              {principio}
-            </li>
-          ))}
-        </ul>
+      <section className={`seccion ${styles.fondoAlterno}`}>
+        <div className={`contenedor ${styles.dosColumnas}`}>
+          <div {...revelarAlScroll()}>
+            <p className="etiqueta">Nuestra visión</p>
+            <h2 className="titulo-seccion">Crecer junto con nuestros clientes</h2>
+          </div>
+          <div className={styles.texto} {...revelarAlScroll(1)}>
+            <p>
+              Creemos en transformar los negocios de nuestros clientes y acompañarlos en su transformación
+              digital para lograr un crecimiento sostenible. Queremos ser una marca sinónimo de confianza,
+              innovación tecnológica y excelencia en el servicio.
+            </p>
+            <p>
+              La excelencia no se logra de la noche a la mañana: se construye. Por eso entregamos soluciones
+              sostenibles y escalables que ayudan a las empresas de Honduras a crecer y mantenerse por delante
+              de la competencia.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="seccion">
@@ -74,15 +68,13 @@ export default function PaginaQuienesSomos() {
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
               <p className="etiqueta">Nuestros valores</p>
-              <h2 className="titulo-seccion">Lo que nos hace diferentes</h2>
+              <h2 className="titulo-seccion">Lo que nos distingue</h2>
             </div>
           </div>
-          <ul className={styles.valores}>
+          <ul className={styles.tarjetas}>
             {VALORES.map((valor, indice) => (
-              <li key={valor.titulo} {...revelarAlScroll(indice)}>
-                <span className={styles.icono}>
-                  <Icono nombre={valor.icono} tamano={22} />
-                </span>
+              <li key={valor.titulo} className={styles.tarjeta} {...revelarAlScroll(indice)}>
+                <span className={styles.numero}>0{indice + 1}.</span>
                 <h3>{valor.titulo}</h3>
                 <p>{valor.texto}</p>
               </li>
@@ -91,10 +83,7 @@ export default function PaginaQuienesSomos() {
         </div>
       </section>
 
-      <BandaLlamado
-        titulo="Crezcamos juntos"
-        texto="Si necesita soporte para una implementación existente o quiere actualizar su solución empresarial, lo tenemos cubierto."
-      />
+      <BandaLlamado />
     </>
   );
 }
