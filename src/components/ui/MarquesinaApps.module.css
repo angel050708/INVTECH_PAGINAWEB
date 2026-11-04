@@ -1,0 +1,50 @@
+.marquesina {
+  display: grid;
+  gap: 12px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.fila {
+  display: flex;
+  width: max-content;
+  animation: desplazar 60s linear infinite;
+}
+.fila[data-sentido='inverso'] {
+  animation-direction: reverse;
+  animation-duration: 70s;
+}
+.marquesina:hover .fila {
+  animation-play-state: paused;
+}
+.pista {
+  display: flex;
+  gap: 12px;
+  padding-right: 12px;
+}
+.pista li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px 12px 14px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--papel);
+  font-weight: 500;
+  color: var(--tinta);
+  white-space: nowrap;
+}
+.pista img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+@keyframes desplazar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fila {
+    animation-play-state: paused;
+  }
+}

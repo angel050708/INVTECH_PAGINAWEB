@@ -1,0 +1,1552 @@
+{
+  "soluciones": {
+    "business-central": {
+      "titulo": "Dynamics 365 Business Central",
+      "bajada": [
+        "Solución empresarial futurista para impulsar el cambio y potenciar el crecimiento",
+        "Dynamics 365 Business Central es una solución de gestión empresarial todo en uno diseñada para satisfacer las necesidades de las empresas en crecimiento que han superado el software ERP o que buscan modernizar sus sistemas heredados obsoletos. Haga un cambio seguro a esta plataforma basada en la nube y libere los conocimientos necesarios para trabajar de forma más inteligente."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Business Central?",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Impulse su pequeña y mediana empresa hacia la escalabilidad",
+              "texto": [
+                "Dynamics 365 Business Central es una solución avanzada basada en la nube que proporciona una ventaja competitiva a las empresas a través de sólidas capacidades de ERP.",
+                "Con aplicaciones empresariales conectadas, datos en tiempo real y colaboración, transforma la experiencia empresarial, simplificando las finanzas, las operaciones y la gestión de clientes para una toma de decisiones informada y un crecimiento empresarial acelerado."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Capacidades de negocio de Dynamics 365",
+          "intro": [
+            "La solución Microsoft Business Central va más allá de un sistema de contabilidad básico. Conecta personas, procesos y conocimientos, todo en un solo centro. Las empresas pueden utilizar esta aplicación empresarial SaaS en múltiples industrias con movilidad global."
+          ],
+          "items": [
+            {
+              "titulo": "Gestión financiera",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de ventas y pedidos",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de compras",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de almacén/inventario",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de proyectos",
+              "texto": []
+            },
+            {
+              "titulo": "Administración de manufactura",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de relaciones con el cliente",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo Business Central puede marcar la diferencia?",
+          "intro": [
+            "Operar una PYME es todo un desafío en respuesta a las numerosas e ilimitadas responsabilidades emergentes en la economía actual. Todos los días, mantenerse a la vanguardia del mercado y mantenerse al día con su visión empresarial significa asumir cualquier rol que se necesite en este momento de manera efectiva: ventas, marketing, recursos humanos (RRHH), contabilidad, compras, servicio al cliente o relaciones con inversionistas, a veces todos. En seguida.",
+            "Cambie a Microsoft Dynamics 365 Business Central para que las PYMES administren esto de manera efectiva. Desde las finanzas hasta las ventas, desde los servicios hasta los proyectos e incluso en el almacenamiento, la cadena de suministro y la fabricación, Business Central puede permitir acceso a datos, visibilidad e información en tiempo real en todo su negocio para ayudarlo a administrar mejor su negocio y crecer más.",
+            "Desbloquee mayores conocimientos financieros para fomentar decisiones más informadas con datos precisos, informes en tiempo real y cierres financieros optimizados.",
+            "Limitaciones presupuestarias y entrega a tiempo con seguimiento e informes avanzados para permitir una mejor gestión de recursos y decisiones basadas en conocimientos.",
+            "Rompa las barreras a la expansión global con dimensiones financieras personalizadas y obtenga una gestión de activos fijos multiempresa, multilingüe y multidivisa.",
+            "Mejore la agilidad y la productividad con un sistema consolidado y acceso a datos y herramientas empresariales desde cualquier lugar.",
+            "Reimagine la productividad de la cadena de suministro con una visión holística del inventario, sugerencias de reabastecimiento predictivas y un compromiso proactivo con los proveedores.",
+            "Fortalezca la seguridad para proteger su organización de filtraciones de datos, amenazas o ataques de phishing para mantener el cumplimiento.",
+            "Lleve su negocio mientras viaja con acceso a cualquier dispositivo en cualquier momento y lugar, lo que permite a las empresas implementar modelos de trabajo híbridos o remotos.",
+            "Aumente la velocidad de ventas priorizando clientes potenciales, optimizando precios y administrando centralmente todos los acuerdos y pedidos de ventas.",
+            "Supere la competencia del mercado con una solución que siempre está actualizada y que también puede personalizarse y adaptarse para satisfacer sus necesidades únicas.",
+            "Mejore el servicio brindando experiencias de cliente de extremo a extremo con registros de clientes centralizados junto con una gestión eficaz de los problemas posventa."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Desglosando Desafíos Empresariales",
+          "intro": ["¿A su negocio le resulta difícil escalar?"],
+          "items": [
+            {
+              "titulo": "Dificultad para gestionar las operaciones comerciales",
+              "texto": []
+            },
+            {
+              "titulo": "Análisis de datos manuales",
+              "texto": []
+            },
+            {
+              "titulo": "Falta de escalabilidad",
+              "texto": []
+            },
+            {
+              "titulo": "Sistemas desintegrados",
+              "texto": []
+            },
+            {
+              "titulo": "Alto costo de propiedad",
+              "texto": []
+            },
+            {
+              "titulo": "Problemas de cumplimiento normativo",
+              "texto": []
+            },
+            {
+              "titulo": "Mala gestión financiera",
+              "texto": []
+            },
+            {
+              "titulo": "Control de inventario ineficiente",
+              "texto": []
+            },
+            {
+              "titulo": "Mal servicio al cliente",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "dynamics-365": {
+      "titulo": "Microsoft Dynamics 365",
+      "bajada": [
+        "Transforme su negocio para mantenerse a la vanguardia con Dynamics 365",
+        "Dynamics 365 de Microsoft es una cartera completa de aplicaciones empresariales impulsadas por la nube que ayudan a proporcionar una plataforma integrada para la toma de decisiones basada en datos, la colaboración y flujos de trabajo optimizados, ayudando a las organizaciones a optimizar sus operaciones para mantenerse a la vanguardia."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Microsoft Dynamics 365?",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Lleve su negocio a varios niveles con Dynamics 365",
+              "texto": [
+                "Impulsado por la nube, Microsoft Dynamics 365 es un conjunto de soluciones empresariales que comprende soluciones empresariales innovadoras para gestionar de manera eficiente sus operaciones front-end y back-end. Puede ayudar a los establecimientos de pequeñas y medianas empresas con funciones relacionadas con ventas, finanzas, gestión de la cadena de suministro, servicios y más. Estas soluciones le ayudan a adaptarse a las necesidades y requisitos cambiantes del negocio, manteniendo a la vez las barreras a raya."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Analizando los principales desafíos comerciales de las PYMES",
+          "intro": [
+            "¿Está buscando optimizar las operaciones, aumentar la eficiencia e impulsar el crecimiento empresarial?",
+            "¿Estos están perjudicando su negocio?"
+          ],
+          "items": [
+            {
+              "titulo": "Los problemas de visibilidad y transparencia en toda la cadena de suministro limitan la toma de decisiones rápida",
+              "texto": []
+            },
+            {
+              "titulo": "Falta de reclutamiento cualitativo y adquisición de talento en un mercado competitivo",
+              "texto": []
+            },
+            {
+              "titulo": "Problemas relacionados con la gestión y la previsión del flujo de efectivo debido a la falta de información sobre los datos",
+              "texto": []
+            },
+            {
+              "titulo": "Falta de previsión adecuada de la demanda y capacidades precisas de planificación de inventario para las empresas",
+              "texto": []
+            },
+            {
+              "titulo": "No hay una estrategia específica de generación de leads y adquisición de clientes a disposición de una empresa.",
+              "texto": []
+            },
+            {
+              "titulo": "La falta de programación y envío eficiente de técnicos de campo conduce a una baja productividad",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Dynamics 365",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Business Central",
+              "texto": [
+                "Solución de gestión empresarial todo en uno para pequeñas y medianas empresas (PYMES) que proporciona una visión integral del negocio para tomar decisiones inteligentes."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Finanzas",
+              "texto": [
+                "Supervise las operaciones financieras en tiempo real, prediga resultados y tome decisiones basadas en datos para impulsar el crecimiento empresarial."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de Cadena de Suministros",
+              "texto": [
+                "Optimice la planificación, la producción, el inventario, el almacén y el transporte para maximizar la eficiencia y la productividad."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Recursos humanos",
+              "texto": [
+                "Cree un lugar de trabajo donde las personas y las empresas se basen en datos y automatización con Microsoft Dynamics 365 para Recursos Humanos."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Comercio",
+              "texto": [
+                "Unifique su comercio físico y digital y genere lealtad a la marca a través de un compromiso personalizado."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Operaciones de Proyecto",
+              "texto": [
+                "Obtenga la visibilidad, la colaboración y la agilidad necesarias para impulsar el éxito en su negocio centrado en proyectos."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Ventas",
+              "texto": [
+                "Activar la venta digital y la aceleración de ventas conectando personas y procesos y acortando la brecha tecnológica."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Servicio al Cliente",
+              "texto": [
+                "Descubra la solución integral que ofrece soporte coherente y conectado en todos los canales para un servicio proactivo."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Servicio de Campo",
+              "texto": [
+                "Ofrezca experiencias excepcionales a los clientes y resuelva los problemas de los clientes la primera vez, siempre y transforme digitalmente."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365",
+              "texto": []
+            },
+            {
+              "titulo": "Marketing",
+              "texto": [
+                "Interactúe con los clientes uno a uno, a escala, para construir relaciones significativas y hacer crecer su negocio."
+              ]
+            },
+            {
+              "titulo": "Aprende más",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo Microsoft Dynamics 365 puede marcar la diferencia?",
+          "intro": [
+            "Cuando las empresas se expanden, las soluciones de software que utilizan también deben cambiar. Además, lo que las empresas necesitan es una plataforma basada en la nube con una instalación de almacenamiento centralizada. Casi todo el software heredado no es adecuado para colaborar con sus compañeros de trabajo mientras viaja. Aquí es donde Microsoft Dynamics 365 acaba marcando la diferencia.",
+            "Las capacidades de inteligencia artificial de Dynamics 365 permiten a los usuarios verificar análisis predictivos sobre pronósticos de demanda, reposición de inventario, ventas, etc. Es una solución integral que ayudará a que su negocio avance varios niveles.",
+            "Mejore la transparencia financiera: todas sus finanzas seguirán siendo transparentes. Tanto las cuentas por pagar como las cuentas por cobrar son visibles. Se puede verificar todo su historial de transacciones.",
+            "Los procesos de ventas se simplifican: los vendedores se conectan con los clientes utilizando los canales de comunicación preferidos, todo gracias a Dynamics 365 for Sales.",
+            "Colabore con facilidad: colabore con expertos y realice el trabajo con facilidad. Todos los expertos en la materia están aquí para ayudarle en tiempo real.",
+            "Almacenamiento de datos designado: acceda a todos sus datos importantes desde una única ubicación (centralizada). Comparta documentos con sus compañeros de trabajo y trabaje en ellos simultáneamente.",
+            "Planificación inteligente de la cadena de suministro: puede proyectar la demanda con IA para tomar decisiones relacionadas con el inventario. La planificación de suministros orientada a prioridades es posible en tiempo real.",
+            "Marketing multicanal: dar lugar a viajes que impliquen interacciones en tiempo real a través de un amplio conjunto de canales, como notificaciones push, SMS, correo electrónico, etc."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Capacidades de Microsoft Dynamics 365",
+          "intro": [
+            "Libere todo el potencial de su negocio utilizando el innovador conjunto de soluciones Dynamics 365. Utilice soluciones especializadas para operaciones de fabricación, ventas, cadena de suministro, finanzas, marketing y servicios para hacer crecer su negocio con el tiempo.",
+            "Descubra las principales y poderosas capacidades de las soluciones Dynamics 365 para mantenerse a la vanguardia."
+          ],
+          "items": [
+            {
+              "titulo": "Business Central",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 for Sales",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 for Finance",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 SCM",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de relaciones con socios",
+              "texto": []
+            },
+            {
+              "titulo": "Cumplimiento y seguridad",
+              "texto": []
+            },
+            {
+              "titulo": "Capacidades de inteligencia artificial (IA)",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "finanzas": {
+      "titulo": "Dynamics 365 Finance",
+      "bajada": [
+        "Maximice la transparencia financiera y el éxito empresarial",
+        "Libere todo el potencial de las operaciones financieras con Dynamics 365 Finance. Obtenga una visibilidad incomparable de las diversas actividades financieras para tomar decisiones basadas en datos en tiempo real. Aumente la agilidad empresarial para adaptarse a las cambiantes necesidades regulatorias y globales de las empresas para mantenerse a la vanguardia."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Dynamics 365 Finance?",
+          "intro": [
+            "Dynamics 365 Finance es una solución de planificación de recursos empresariales (ERP) basada en la nube desarrollada por Microsoft. Está diseñado para ayudar a las organizaciones a gestionar sus operaciones financieras, optimizar sus complejos procesos financieros y obtener información sobre su desempeño financiero.",
+            "Dynamics 365 for Finance ofrece un conjunto completo de características y módulos que cubren varios aspectos de la gestión financiera, incluido el libro mayor, cuentas por pagar y por cobrar, gestión bancaria y de efectivo, elaboración de presupuestos, activos fijos, informes financieros y más. Los módulos de Dynamics 365 Finance están integrados con otras herramientas y servicios de Microsoft, como Microsoft 365 y Power BI, para brindar una experiencia conectada y fluida."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Analizar los desafíos financieros de las PYMES",
+          "intro": [
+            "¿Es usted un director financiero o un líder financiero cansado de que los sistemas heredados aumenten los riesgos regulatorios y limiten el crecimiento empresarial?",
+            "¿Estos están perjudicando su negocio?"
+          ],
+          "items": [
+            {
+              "titulo": "Los procesos financieros ineficientes provocan retrasos en el cierre y la presentación de informes financieros",
+              "texto": []
+            },
+            {
+              "titulo": "Falta de herramientas para la adquisición, retención y gestión eficaz de las relaciones con los clientes",
+              "texto": []
+            },
+            {
+              "titulo": "Desafíos para expandir su negocio a nivel mundial debido a barreras financieras y de cumplimiento geográficas y locales",
+              "texto": []
+            },
+            {
+              "titulo": "Dificultades para gestionar las aprobaciones de compras y mantener los controles financieros",
+              "texto": []
+            },
+            {
+              "titulo": "Acceso limitado al capital y presentación de informes inadecuados para los inversores",
+              "texto": []
+            },
+            {
+              "titulo": "Poca visibilidad del flujo de caja y la gestión financiera, lo que lleva a una reducción de la estabilidad financiera",
+              "texto": []
+            },
+            {
+              "titulo": "Priorización de clientes potenciales, seguimiento, visibilidad de costos operativos y gestión del flujo de efectivo insuficientes",
+              "texto": []
+            },
+            {
+              "titulo": "Herramientas inadecuadas para anticipar las crecientes complejidades empresariales",
+              "texto": []
+            },
+            {
+              "titulo": "Procesos manuales, ineficientes y propensos a errores que generan inconsistencias financieras y afectan la toma de decisiones",
+              "texto": []
+            },
+            {
+              "titulo": "Crecientes riesgos, amenazas y preocupaciones regulatorias",
+              "texto": []
+            },
+            {
+              "titulo": "Deseo de automatizar los procesos de negocio, desde los puntos de contacto con el cliente hasta los sistemas de gestión financiera",
+              "texto": []
+            },
+            {
+              "titulo": "Necesidad de herramientas avanzadas y funciones inteligentes integradas que permitan cambiar la fuerza laboral para brindar soporte a los clientes rápidamente",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo Dynamics 365 Finance puede marcar la diferencia?",
+          "intro": [
+            "Dirigir las operaciones financieras de una empresa puede ser un trabajo más fácil de decir que de hacer. Finanzas, independientemente de si una organización está centrada en productos, centrada en servicios o es una organización diversificada. Mover a los usuarios a actividades de valor agregado en lugar de tareas manuales, conectar datos entre sistemas y tener una aplicación que admita modelos de negocios cambiantes y una rápida adopción de los cambios económicos son claves para tomar decisiones efectivas que impulsen esta transformación.",
+            "Para continuar con el éxito y el crecimiento de Dynamics 365 Finance, debe centrarse en ofrecer mejoras clave que reflejen las necesidades de satisfacer a los clientes existentes. ¿Diferencia?",
+            "Mejor resultado: mejore el rendimiento de su equipo con tareas y procedimientos financieros integrados y optimizados",
+            "Acciones más rápidas: con más de 50 espacios de trabajo basados en roles, facilite acciones y decisiones rápidas del usuario",
+            "Mejor transparencia: sea más consciente de la situación financiera de su empresa a escala mundial.",
+            "Mejore la productividad: aumente la productividad de los recursos y activos mediante el uso de una fuente centralizada",
+            "Mejor toma de decisiones: obtenga decisiones más rápidas y precisas utilizando información de datos en tiempo real respaldada por IA",
+            "Adaptarse e innovar: hacer uso de tecnologías innovadoras para mejorar la agilidad empresarial y crecer más.",
+            "Tenga éxito en un mercado basado en suscripciones: facturación recurrente automatizada para desarrollar su negocio más rápido y cumplir más fácilmente con los nuevos criterios de reconocimiento de ingresos.",
+            "Proyección precisa del flujo de caja: realice un seguimiento y controle su flujo de caja en tiempo real, analice registros pasados y tendencias emergentes para realizar proyecciones precisas del flujo de caja."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Capacidades financieras de Dynamics 365",
+          "intro": [
+            "Dynamics 365 Finance ofrece capacidades integrales que van más allá de los sistemas tradicionales de gestión financiera. Sirve como un centro unificado que conecta personas, procesos y conocimientos críticos para su organización."
+          ],
+          "items": [
+            {
+              "titulo": "Reconocimiento y previsión de ingresos",
+              "texto": []
+            },
+            {
+              "titulo": "Contabilidad de proyectos",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de caja y banca",
+              "texto": []
+            },
+            {
+              "titulo": "Pagos centralizados",
+              "texto": []
+            },
+            {
+              "titulo": "Factura electrónica",
+              "texto": []
+            },
+            {
+              "titulo": "Certificaciones y acreditaciones",
+              "texto": []
+            },
+            {
+              "titulo": "Formatos de informes electrónicos",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "gestion-suministros": {
+      "titulo": "Dynamics 365 Supply Chain Management",
+      "bajada": [
+        "Cadena de suministro resiliente y ágil para impulsar la continuidad del negocio",
+        "Impulse la continuidad empresarial sostenible aprovechando las capacidades avanzadas de la ágil solución de gestión de la cadena de suministro de Dynamics 365. Obtenga visibilidad de la cadena de suministro de extremo a extremo, colaboración fluida de las partes interesadas y maximice el tiempo de actividad de los activos para operar de manera rentable durante las interrupciones."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Dynamics 365 Supply Chain Management?",
+          "intro": [
+            "Dynamics 365 Supply Chain es una solución escalable que brinda a los fabricantes, distribuidores y minoristas visibilidad en tiempo real, planificación ágil y tiempo de actividad maximizado de los activos para operar con rentabilidad durante las interrupciones.",
+            "Utilice la innovadora solución de cadena de suministro para mejorar la continuidad del negocio durante las interrupciones y garantizar una mejor colaboración entre departamentos dentro de los equipos de ventas, marketing y operaciones. Obtenga más al reducir los gastos de operaciones de la tienda mediante el cumplimiento inteligente de la demanda y la planificación optimizada del inventario, la producción, la distribución y la logística para aprovechar al máximo los recursos disponibles."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Desglosando los desafíos empresariales de la cadena de suministro moderna",
+          "intro": [
+            "¿Está buscando una solución unificada que proporcione una visión de 360 grados de las operaciones de su cadena de suministro?",
+            "¿Estos están perjudicando su negocio?"
+          ],
+          "items": [
+            {
+              "titulo": "La visibilidad limitada de la cadena de suministro dificulta la identificación de cuellos de botella, próximas interrupciones y optimización de procesos.",
+              "texto": []
+            },
+            {
+              "titulo": "La gestión ineficiente del inventario da como resultado un exceso de existencias, inmoviliza el capital y el espacio de almacenamiento, la falta de existencias conduce a la pérdida de ventas.",
+              "texto": []
+            },
+            {
+              "titulo": "Comunicación poco clara y colaboración ineficaz entre los socios, lo que genera desalineación y retrasos en las decisiones.",
+              "texto": []
+            },
+            {
+              "titulo": "La falta de capacidad para satisfacer las demandas cambiantes de los clientes conduce a desabastecimientos, exceso de existencias y oportunidades de mercado perdidas.",
+              "texto": []
+            },
+            {
+              "titulo": "La tecnología obsoleta y los sistemas dispares obstaculizan la coordinación eficiente, lo que genera errores y retrasos.",
+              "texto": []
+            },
+            {
+              "titulo": "Es difícil pronosticar con precisión la demanda de los clientes debido a la volatilidad del mercado, la evolución de las preferencias de los clientes y los datos limitados.",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo puede Dynamics 365 Supply Chain marcar la diferencia?",
+          "intro": [
+            "Desde planificación, previsión, planificación impulsada por IA, procesos de adquisición optimizados, potenciar la agilidad de fabricación hasta gestión de activos y entrega a tiempo, ¡la solución Dynamics 365 Supply Chain Management lo tiene cubierto!",
+            "Una cadena de suministro adaptable y resiliente responde rápidamente a los desafíos utilizando visibilidad en tiempo real, planificación ágil e información avanzada. Esto es con lo que sueña el propietario de una empresa de cadena de suministro.",
+            "¡Consiga esto aprovechando las funciones de gestión de la cadena de suministro de Dynamics 365!",
+            "Planificación ágil de la producción utiliza la previsión de la demanda enriquecida con IA para acortar los ciclos de planificación y lograr una agilidad de fabricación acumulada.",
+            "Resolver problemas de calidad del producto y acelere el tiempo de comercialización, cambiando las especificaciones del cliente y las piezas obsoletas para garantizar el cumplimiento y mitigar los retrasos.",
+            "Maximice el tiempo de actividad y la vida útil de los activos realizando un mantenimiento proactivo mediante el monitoreo del rendimiento de los activos en tiempo real a través de capacidades de IoT.",
+            "Optimice el inventario y la logística mediante el uso de análisis predictivos para optimizar y automatizar el inventario, el almacenamiento, el cumplimiento, el abastecimiento de materiales y la logística de la cadena de suministro.",
+            "Operaciones de fabricación innovadoras y modernas que utilizan tecnologías predictivas, IoT y realidad mixta para mejorar el rendimiento, la calidad y la entrega y, al mismo tiempo, mitigar los costos.",
+            "Gestión de información de producto para rastrear varios cambios en un producto y convertir productos estándar en productos de ingeniería."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Capacidades de la cadena de suministro de Dynamics 365",
+          "intro": [
+            "Mitigue todos los desafíos emergentes de la cadena de suministro con sus capacidades avanzadas integradas con análisis predictivo, tecnologías de IA e IoT, potenciando su negocio con visibilidad en tiempo real, planificación ágil e información avanzada. Consulte las principales capacidades de Dynamics 365 Supply Chain para obtener más información."
+          ],
+          "items": [
+            {
+              "titulo": "Planificación y distribución efectiva de la demanda",
+              "texto": []
+            },
+            {
+              "titulo": "Eliminar el exceso de existencias y los desabastecimientos",
+              "texto": []
+            },
+            {
+              "titulo": "Desarrollar un proceso de fabricación escalable",
+              "texto": []
+            },
+            {
+              "titulo": "Proceso de adquisición perfecto",
+              "texto": []
+            },
+            {
+              "titulo": "Visibilidad del inventario en tiempo real",
+              "texto": []
+            },
+            {
+              "titulo": "Menores costos de innovación de productos",
+              "texto": []
+            },
+            {
+              "titulo": "Mitigar el costoso tiempo de inactividad de las máquinas",
+              "texto": []
+            },
+            {
+              "titulo": "Crear una fábrica conectada",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "ventas": {
+      "titulo": "Dynamics 365 Sales",
+      "bajada": [
+        "Opte por ventas inteligentes digitales basadas en datos para impulsar las ventas",
+        "Utilice las potentes funciones de Dynamics 365 Sales, como la gestión de clientes potenciales, el seguimiento de oportunidades y la previsión de ventas, para capacitar a los equipos de ventas para realizar colaboraciones multifuncionales, automatizar tareas repetitivas con flujos de trabajo modernos y obtener información valiosa sobre los clientes para realizar ventas inteligentes."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Dynamics 365 Sales?",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Refine y redefina sus procesos de ventas como nunca antes",
+              "texto": [
+                "Dynamics 365 for Sales es una solución integral de gestión de relaciones con los clientes (CRM) proporcionada por Microsoft. Está diseñado para capacitar a los equipos de ventas y ayudarlos a gestionar eficazmente sus procesos de ventas, fomentar las relaciones con los clientes e impulsar el crecimiento empresarial."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Desglosando los principales desafíos de ventas",
+          "intro": [
+            "¿Busca nuevas formas de digitalizar su área de ventas para impulsar el crecimiento y la productividad?",
+            "¿Estos están perjudicando su negocio?"
+          ],
+          "items": [
+            {
+              "titulo": "Gestión y seguimiento de clientes potenciales ineficientes",
+              "texto": []
+            },
+            {
+              "titulo": "Falta de visibilidad del proceso de ventas y de las previsiones.",
+              "texto": []
+            },
+            {
+              "titulo": "Dificultad para alinear los esfuerzos de ventas y marketing.",
+              "texto": []
+            },
+            {
+              "titulo": "Compromiso y personalización limitados del cliente",
+              "texto": []
+            },
+            {
+              "titulo": "Procesos de ventas inconsistentes y falta de estandarización.",
+              "texto": []
+            },
+            {
+              "titulo": "Dificultad para acceder a datos y análisis de ventas en tiempo real",
+              "texto": []
+            },
+            {
+              "titulo": "Colaboración y comunicación ineficaces del equipo de ventas.",
+              "texto": []
+            },
+            {
+              "titulo": "Documentación e informes de ventas manuales y que consumen mucho tiempo",
+              "texto": []
+            },
+            {
+              "titulo": "Problemas con las recomendaciones oportunas de productos.",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo Dynamics 365 Sales puede marcar la diferencia?",
+          "intro": [
+            "Microsoft Dynamics 365 for Sales cambia las reglas del juego para las empresas en crecimiento, proporcionándoles las herramientas que necesitan para gestionar eficazmente sus procesos de ventas y prosperar en el competitivo mercado actual.",
+            "La solución ofrece un conjunto completo de funciones de Dynamics 365 Sales para empoderar a los equipos de ventas. Desde la gestión de clientes potenciales y el seguimiento de oportunidades hasta la previsión de ventas y el análisis del rendimiento, Dynamics 365 for Sales permite a las empresas tomar decisiones informadas e impulsar resultados.",
+            "Ayude a los vendedores a lograr ventas exitosas: el nuevo widget 'a continuación' enumerará los próximos eventos y hará recomendaciones inteligentes para que aquellos que venden se concentren en ellas.",
+            "Utilice conversaciones por SMS para interactuar con sus consumidores: los administradores pueden proporcionar números móviles de SMS individuales a cualquier usuario o equipo.",
+            "Establezca prioridades de participación para cualquier organización de ventas en el modo Enfoque: los vendedores tienen la opción de seleccionar y emplear el diseño que mejor se adapte a sus casos de uso.",
+            "Elementos de la lista de trabajo del acelerador de ventas actualizados para completar tareas rápidamente: junto con las actividades de ventas, la visualización de la lista de trabajo actualizada también incluye sugerencias inteligentes.",
+            "Análisis de datos avanzados para empoderar a los gerentes de ventas: informe a los administradores del sistema o gerentes de ventas sobre la cantidad total de registros que fueron enviados automáticamente mediante reglas de asignación.",
+            "Monitoreo armonizado de la canalización para estar al tanto de los problemas de enrutamiento: vea y administre registros que incluyen dificultades técnicas o comerciales que surgieron durante la asignación, segmentación o conexión de secuencia del vendedor.",
+            "Mejore la eficiencia de la generación de secuencias con plantillas personalizadas: para ahorrar tiempo, puede diseñar rápidamente nuevas secuencias utilizando plantillas de secuencias. Puede producir plantillas y utilizarlas en muchos contextos comerciales.",
+            "Ventas adaptables y hechas a medida para obtener el máximo: utilice la tecnología de inteligencia artificial para mapear sus necesidades de ventas únicas y adaptar su proceso de ventas según las últimas tendencias y mejores prácticas para cerrar más ventas."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Capacidades de ventas de Dynamics 365",
+          "intro": [
+            "Utilice las siguientes capacidades innovadoras e inteligentes de Dynamics 365 Sales para impulsar sus ventas e impulsar el crecimiento de los ingresos."
+          ],
+          "items": [
+            {
+              "titulo": "Acelere las ventas digitales",
+              "texto": []
+            },
+            {
+              "titulo": "Realice pagos asincrónicos con facilidad",
+              "texto": []
+            },
+            {
+              "titulo": "Vincular tácticas conversacionales con resultados comerciales",
+              "texto": []
+            },
+            {
+              "titulo": "Consejos y recomendaciones en tiempo real",
+              "texto": []
+            },
+            {
+              "titulo": "Flujos de trabajo de procesamiento de POS optimizados",
+              "texto": []
+            },
+            {
+              "titulo": "Implementar ventas de Microsoft Viva",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "servicio-cliente": {
+      "titulo": "Dynamics 365 Customer Service",
+      "bajada": [
+        "Mejore la experiencia de sus clientes para ganar clientes de por vida",
+        "Ofrezca un servicio al cliente conectado y personalizado para satisfacer las crecientes demandas de los clientes en su canal de preferencia. Adopte esta potente e innovadora solución basada en la nube para capacitar a su equipo con información en tiempo real que fomente una relación empática con sus clientes."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Qué es Dynamics 365 Customer Service?",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Aumente la excelencia de su servicio al cliente",
+              "texto": [
+                "Dynamics 365 Customer Service es una solución integral basada en la nube para impulsar interacciones fluidas con los clientes con soporte personalizado en tiempo real durante todo su recorrido. Con la ayuda de la IA generativa y la automatización, le permite ganar clientes para toda la vida adaptándose a sus necesidades cambiantes."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Desglosando los desafíos del servicio al cliente moderno",
+          "intro": [
+            "¿Quiere marcar la diferencia con una atención al cliente flexible y centrada en datos para mantenerse en la cima?"
+          ],
+          "items": [
+            {
+              "titulo": "Las comunicaciones desconectadas entre canales hacen que los clientes crean que sus problemas no les resultan familiares o no están claros.",
+              "texto": []
+            },
+            {
+              "titulo": "La falta de acceso al soporte basado en las preferencias del cliente obstaculiza la participación del cliente y la lealtad a la marca.",
+              "texto": []
+            },
+            {
+              "titulo": "Las herramientas y sistemas de servicio manuales y obsoletos de los agentes obstaculizan la productividad de los agentes.",
+              "texto": []
+            },
+            {
+              "titulo": "La falta de conocimientos integrales sobre los clientes impide interacciones fluidas entre agentes y clientes.",
+              "texto": []
+            },
+            {
+              "titulo": "La integración costosa y frágil obstaculiza su capacidad de aprovechar los beneficios de las soluciones integradas para impulsar la productividad.",
+              "texto": []
+            },
+            {
+              "titulo": "La complejidad de múltiples proveedores crea información y comunicación poco claras, lo que resulta en una mala experiencia del cliente.",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo Dynamics 365 Customer Service puede ampliar su potencial de servicio al cliente?",
+          "intro": [
+            "La sólida plataforma de gestión de clientes se adapta a las necesidades en constante evolución del cliente para ofrecer el mejor servicio al cliente de su clase. Las características y beneficios innovadores de Dynamics 365 Customer Service revolucionan las empresas que se ocupan de la participación y el soporte al cliente.",
+            "Desde aprovechar conocimientos prácticos, empoderar a los agentes con inteligencia en tiempo real y brindar soporte proactivo hasta elevar la satisfacción del cliente con comunicación omnicanal, las características de Dynamics 365 Customer Service impulsan un crecimiento empresarial inquebrantable.",
+            "Las funciones omnicanal de participación del cliente , como voz, chat en vivo, correo electrónico, SMS y redes sociales, ayudan a los agentes a conectarse rápidamente con sus clientes para brindarles soluciones personalizadas.",
+            "Las funciones de autoservicio como IVR conversacional, Chatbot virtual, portales comunitarios y búsqueda de conocimientos permiten a los clientes ayudarse a sí mismos y conectarse con los agentes de la manera que prefieran.",
+            "Los procesos y análisis de datos identifican nuevas oportunidades de mejora y automatizan la actividad de servicio al cliente con análisis conversacionales de canal, información del cliente, voz del cliente, etc.",
+            "Las herramientas de productividad de los agentes brindan información relevante a tiempo para cerrar casos más rápido utilizando plataformas de datos de clientes, recomendaciones impulsadas por IA y colaboración en equipo, etc.",
+            "Las funciones de enrutamiento unificado , como la identificación de habilidades, el análisis de sentimientos y la estimación del esfuerzo, facilitan el enrutamiento omnicanal para ayudar a los clientes a conectarse con los agentes más adecuados para resolver sus problemas.",
+            "La autenticación biométrica y la prevención del fraude proporcionan medidas de seguridad inteligentes para proteger la información del cliente de forma fácil y rápida con Nuance Gatekeeper integrado en Dynamics 365 Customer Service."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Capacidades de servicio al cliente de Dynamics 365",
+          "intro": [
+            "Utilice las siguientes poderosas capacidades de Dynamics 365 Customer Service para ayudar a que su marca se destaque y supere las expectativas del cliente, fomentando una mayor participación del cliente y satisfacción con su negocio."
+          ],
+          "items": [
+            {
+              "titulo": "Compromiso personalizado con el cliente",
+              "texto": []
+            },
+            {
+              "titulo": "Entrega de soporte proactivo",
+              "texto": []
+            },
+            {
+              "titulo": "Desempeño de agentes eficientes",
+              "texto": []
+            },
+            {
+              "titulo": "Asistencia de herramientas avanzadas",
+              "texto": []
+            },
+            {
+              "titulo": "Identificación de problemas emergentes",
+              "texto": []
+            },
+            {
+              "titulo": "Optimización de la operación del servicio",
+              "texto": []
+            },
+            {
+              "titulo": "Encuesta automática posterior a la conversación",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "servicios": {
+    "implementacion": {
+      "titulo": "Servicios de implementación de Dynamics 365",
+      "bajada": [
+        "Implemente la mejor solución empresarial de inmediato",
+        "¿Su software heredado no es lo suficientemente bueno como para superar los desafíos de los negocios modernos? Cambie a Microsoft Dynamics 365 para aprovechar la colaboración, el seguimiento de inventario en tiempo real y optimizar los procesos financieros. La implementación correcta sí importa porque sin la implementación correcta, su empresa corre el riesgo de perder oportunidades de crecimiento."
+      ],
+      "secciones": [
+        {
+          "titulo": "Papel de una implementación exitosa",
+          "intro": [
+            "La implementación adecuada de Dynamics 365 resulta ser un factor clave en el éxito de la industria. Ofrece a empresas de todos los sectores la oportunidad de optimizar los procesos para mejorar las experiencias de los clientes. Ya sea el sector manufacturero, financiero o minorista, las aplicaciones empresariales de Dynamics 365 permiten a las empresas optimizar las operaciones e impulsar el crecimiento en el entorno competitivo actual.",
+            "Un socio de implementación integrado revoluciona la industria al reunir un amplio conjunto de capacidades, como servicios de actualización e implementación sin complicaciones. Además, es importante que los socios de implementación en la industria brinden a sus clientes los mejores servicios de soporte posventa."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Principales desafíos de implementación: necesidad de Dynamics 365 ¿Servicios de implementación?",
+          "intro": [
+            "Conseguir una solución empresarial no es suficiente. Lo que se necesita en la era contemporánea es la implementación correcta. Elegir el socio de implementación adecuado es de suma importancia si busca aprovechar las próximas oportunidades comerciales. Sin embargo, existen varios desafíos al abordar la implementación."
+          ],
+          "items": [
+            {
+              "titulo": "Problemas con la adopción del usuario",
+              "texto": []
+            },
+            {
+              "titulo": "Realizar actualizaciones",
+              "texto": []
+            },
+            {
+              "titulo": "Alineación con los procesos de negocio",
+              "texto": []
+            },
+            {
+              "titulo": "Resistencia al cambio",
+              "texto": []
+            },
+            {
+              "titulo": "Problemas con la migración de datos",
+              "texto": []
+            },
+            {
+              "titulo": "Las personalizaciones pueden ser difíciles",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Beneficios de los servicios de implementación de aplicaciones empresariales de Microsoft",
+          "intro": [
+            "Ya sea soporte de Microsoft Dynamics CRM o soporte de ERP o cualquier otra aplicación empresarial de Microsoft, nuestros servicios de soporte lo cubren todo."
+          ],
+          "items": [
+            {
+              "titulo": "Mejorar los procesos de negocio",
+              "texto": []
+            },
+            {
+              "titulo": "Incrementar las habilidades del usuario",
+              "texto": []
+            },
+            {
+              "titulo": "Minimizar el tiempo de inactividad",
+              "texto": []
+            },
+            {
+              "titulo": "Acelerar los cambios",
+              "texto": []
+            },
+            {
+              "titulo": "Transición sin problemas",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "¿Cómo nuestros servicios de implementación de última generación pueden marcar la diferencia?",
+          "intro": [
+            "Nuestros servicios de implementación garantizarán que todos sus sistemas adopten Dynamics 365 sin problemas. Desde determinar los requisitos de su negocio hasta brindarle las mejores personalizaciones de Dynamics 365, lo ayudaremos con casi todo.",
+            "A continuación se ofrece un vistazo más de cerca a los principales beneficios de los servicios de implementación después de una implementación exitosa:",
+            "Automatización y colaboración: Dynamics 365, cuando se implementa correctamente, automatiza un amplio conjunto de procedimientos manuales y proporciona a los usuarios una plataforma centralizada para la colaboración.",
+            "Toma de decisiones orientada a datos: con una implementación adecuada, las soluciones de Dynamics 365 pueden proporcionar a los usuarios información valiosa para convertir su negocio en un éxito",
+            "Mejor escalabilidad y flexibilidad: Microsoft Dynamics 365 puede mejorarse para satisfacer sus crecientes requisitos a medida que crece su negocio.",
+            "Rentable: el modelo orientado a suscripción le permite adoptar los servicios de Microsoft Dynamics 365 a un costo asequible.",
+            "La comunicación es mejor: la comunicación es mejor con Dynamics 365, ya que se puede integrar con Microsoft Teams para una mejor comunicación.",
+            "Fuente de datos centralizada: puede almacenar todos sus datos en un único espacio (integrado). Compártelo con tus compañeros de trabajo con facilidad mientras trabajan juntos.",
+            "Productividad mejorada: a medida que todos los procesos recurrentes se automatizan, usted puede concentrarse en las áreas de impacto clave de su empresa.",
+            "Obtenga el máximo para mantenerse a la vanguardia: obtenga servicios de implementación sin complicaciones de nuestros expertos para aprovechar al máximo la solución Dynamics 365."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Obtenga una implementación confiable para las soluciones empresariales de Dynamics 365",
+          "intro": [
+            "Nosotros siempre nos hemos esforzado por brindar los mejores servicios de implementación a todo tipo de empresas. La idea es permitir que las empresas ganen más con las soluciones empresariales de Dynamics 365. No importa qué soluciones de Dynamics 365 esté utilizando pero tenga problemas debido a una implementación fallida o busque una implementación personalizada de una solución empresarial de Dynamics 365, lo tenemos cubierto.",
+            "Esto es lo que le ofrecemos:"
+          ],
+          "items": [
+            {
+              "titulo": "Business Central",
+              "texto": []
+            },
+            {
+              "titulo": "Finanzas",
+              "texto": []
+            },
+            {
+              "titulo": "Gestión de la cadena de suministro",
+              "texto": []
+            },
+            {
+              "titulo": "Ventas",
+              "texto": []
+            },
+            {
+              "titulo": "Servicio al Cliente",
+              "texto": []
+            },
+            {
+              "titulo": "Servicio de campo",
+              "texto": []
+            },
+            {
+              "titulo": "Marketing",
+              "texto": []
+            },
+            {
+              "titulo": "Comercio",
+              "texto": []
+            },
+            {
+              "titulo": "Recursos Humanos",
+              "texto": []
+            },
+            {
+              "titulo": "Operaciones del proyecto",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Enfoque de implementación de Business Central",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Diagnosticar",
+              "texto": [
+                "Implica tener una idea de los requisitos de la organización, el ajuste del producto y presentar una declaración de trabajo basada en los mismos."
+              ]
+            },
+            {
+              "titulo": "Análisis",
+              "texto": [
+                "Marca el inicio del proceso de implementación e implica definir las actividades que se iniciarán."
+              ]
+            },
+            {
+              "titulo": "Diseño",
+              "texto": [
+                "Identificación de requisitos de negocio y creación de Documento de Requerimientos Funcionales."
+              ]
+            },
+            {
+              "titulo": "Desarrollo",
+              "texto": [
+                "Componentes del sistema de prueba de construcción definidos y aprobados en las especificaciones de diseño."
+              ]
+            },
+            {
+              "titulo": "Despliegue",
+              "texto": [
+                "Incluye capacitación de usuarios clave, pruebas de aceptación de usuarios, incorporación de comentarios de sesiones UAT, etc."
+              ]
+            },
+            {
+              "titulo": "Operacional",
+              "texto": [
+                "Definir las actividades requeridas para completar el proyecto, brindando soporte de postproducción."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "business-central": {
+      "titulo": "Implementación de Dynamics 365 Business Central",
+      "bajada": [
+        "Aproveche las oportunidades de crecimiento, eficiencia e innovación que ofrece la implementación de Microsoft Dynamics 365 Business Central para prosperar en el competitivo panorama empresarial actual."
+      ],
+      "secciones": [
+        {
+          "titulo": "Dynamics 365 Business Central",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Solución empresarial unificada para empresas en crecimiento",
+              "texto": [
+                "Business Central es una solución ERP avanzada que ofrece aplicaciones comerciales conectadas, acceso a datos en tiempo real y una plataforma de colaboración centralizada. Revoluciona la experiencia empresarial al optimizar las finanzas, las operaciones y la gestión de clientes para una toma de decisiones informada y el crecimiento empresarial.",
+                "Business Central se puede implementar en la nube, localmente o mediante un enfoque híbrido. Si la empresa se ha expandido más allá de las capacidades de su solución contable básica o encuentra obstáculos debido a sistemas heredados desconectados, Business Central proporciona la solución ideal para sus necesidades."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Enfoque de implementación de Business Central",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Diagnosticar",
+              "texto": [
+                "Implica tener una idea de los requisitos de la organización, el ajuste del producto y presentar una declaración de trabajo basada en los mismos."
+              ]
+            },
+            {
+              "titulo": "Análisis",
+              "texto": [
+                "Marca el inicio del proceso de implementación e implica definir las actividades que se iniciarán."
+              ]
+            },
+            {
+              "titulo": "Diseño",
+              "texto": [
+                "Identificación de requisitos de negocio y creación de Documento de Requerimientos Funcionales."
+              ]
+            },
+            {
+              "titulo": "Desarrollo",
+              "texto": [
+                "Componentes del sistema de prueba de construcción definidos y aprobados en las especificaciones de diseño."
+              ]
+            },
+            {
+              "titulo": "Despliegue",
+              "texto": [
+                "Incluye capacitación de usuarios clave, pruebas de aceptación de usuarios, incorporación de comentarios de sesiones UAT, etc."
+              ]
+            },
+            {
+              "titulo": "Operacional",
+              "texto": [
+                "Definir las actividades requeridas para completar el proyecto, brindando soporte de postproducción."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Conceptos básicos de la implementación de Business Central",
+          "intro": [
+            "Al comienzo del proceso de implementación, preparamos FRD basándonos en una comprensión detallada de los procesos comerciales diarios. Este documento contiene un estudio de los procesos en curso (tal como están) y las expectativas del nuevo sistema (futuro)."
+          ],
+          "items": [
+            {
+              "titulo": "Documento de requisitos funcionales (FRD)",
+              "texto": [
+                "Al comienzo del proceso de implementación, preparamos FRD basándonos en una comprensión detallada de los procesos comerciales diarios. Este documento contiene un estudio de los procesos en curso (tal como están) y las expectativas del nuevo sistema (futuro)."
+              ]
+            },
+            {
+              "titulo": "Documentación de ajuste de espacios",
+              "texto": [
+                "Basándonos en FRD analizamos qué requisitos forman parte de la solución estándar y qué requisitos necesitarían personalizaciones. En consecuencia, preparamos la documentación de Gap-Fit con detalles sobre la personalización y configuración requeridas."
+              ]
+            },
+            {
+              "titulo": "Capacitación de usuarios clave",
+              "texto": [
+                "Los usuarios finales reciben capacitación del equipo de expertos sobre cómo utilizar el sistema después de las personalizaciones y los cambios. Nos aseguramos de que los usuarios se sientan cómodos y conozcan bien el nuevo sistema."
+              ]
+            },
+            {
+              "titulo": "Pruebas de aceptación del usuario",
+              "texto": [
+                "Esta prueba se considera completada cuando los usuarios finales dan el visto bueno después de aprender y utilizar el sistema. Este es un indicador de que el sistema se ha desarrollado y está funcionando según las expectativas establecidas durante la preparación de la documentación FRD y Gap-fit."
+              ]
+            },
+            {
+              "titulo": "Go-live",
+              "texto": [
+                "En este día, la implementación de Microsoft Business Central se activa para la fuerza laboral habitual de una organización. Según el documento FRD y Gap-fit, se cumplen todas las personalizaciones y requisitos. Toda la información y los procesos comerciales se transfieren y se realizan desde el nuevo sistema."
+              ]
+            },
+            {
+              "titulo": "Post Go-live Support",
+              "texto": [
+                "Una vez que la implementación entre en funcionamiento, se brinda servicios de asistencia como actividad de última milla en el proceso de implementación. Esto se hace para garantizar que la fuerza laboral pueda realizar sus tareas diarias en el nuevo sistema sin contratiempos ni problemas."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Beneficios de la implementación de Dynamics 365 Business Central",
+          "intro": [
+            "Una multitud de beneficios le esperan del otro lado cuando se embarca en el viaje de la implementación de Business Central."
+          ],
+          "items": [
+            {
+              "titulo": "El crecimiento del negocio",
+              "texto": []
+            },
+            {
+              "titulo": "Seguridad de datos",
+              "texto": []
+            },
+            {
+              "titulo": "Fácil de usar",
+              "texto": []
+            },
+            {
+              "titulo": "Facil de mantener",
+              "texto": []
+            },
+            {
+              "titulo": "Totalmente integrado",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "power-bi": {
+      "titulo": "Implementación de PowerBI",
+      "bajada": [
+        "Obtenga escalabilidad y conocimientos de datos más profundos",
+        "La visualización de datos de Microsoft “Power BI”, parte de las plataformas eléctricas, la implementación de Power BI permite a las empresas generar y almacenar datos organizados. Powe BI proporciona a los usuarios visualizaciones interactivas con una interfaz unificada y fácil de usar. Los usuarios pueden crear sus informes y paneles personalizados."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Por qué adquirir el servicio de implementación de Power BI?",
+          "intro": [
+            "En esencia, los datos le ayudan a resolver problemas y tomar mejores decisiones. Más de treinta y seis mil empresas utilizan los servicios de Microsoft Power BI para organizar y analizar sus datos organizacionales. Con esta solución, los usuarios finales pueden automatizar fácilmente sus tareas y tomar decisiones rápidas, informadas y basadas en datos. Permite a las empresas tener una mayor visibilidad que conduce al crecimiento. Si busca estas funcionalidades en sus procesos comerciales diarios, el Plan de implementación de Power BI es la mejor solución para usted."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Integración perfecta con su solución ERP/CRM actual",
+          "intro": [
+            "La implementación de Microsoft Power BI se integra perfectamente con las aplicaciones y soluciones existentes y, después de la implementación de Power BI, las empresas pueden continuar usando su solución ERP o CRM existente. Esta flexibilidad da como resultado una amenaza operativa cero para las empresas."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Implementación de Power BI: mejores prácticas",
+          "intro": [
+            "En el proceso de implementación, Power BI permite a los usuarios clonar contenido de una etapa del proceso a otra, generalmente desde el desarrollo hasta la prueba y desde la prueba hasta la producción. Las conexiones entre los elementos copiados se mantienen durante el proceso de copia del proyecto. Las mejores prácticas de implementación de Power BI incluyen:"
+          ],
+          "items": [
+            {
+              "titulo": "Mejoras y desarrollos",
+              "texto": []
+            },
+            {
+              "titulo": "Personalización del panel",
+              "texto": []
+            },
+            {
+              "titulo": "Autoservicio y análisis integrados",
+              "texto": []
+            },
+            {
+              "titulo": "Gobernanza e implementación de datos",
+              "texto": []
+            },
+            {
+              "titulo": "Actualizaciones y migraciones",
+              "texto": []
+            },
+            {
+              "titulo": "Soporte y mantenimiento",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Beneficios de implementar SharePoint",
+          "intro": [
+            "La implementación de SharePoint de Microsoft ofrece múltiples funcionalidades que son altamente productivas, atractivas, colaborativas y alineadas con sus necesidades comerciales. Para describir los múltiples beneficios, consulte a continuación:"
+          ],
+          "items": [
+            {
+              "titulo": "Experiencia de usuario consistente",
+              "texto": []
+            },
+            {
+              "titulo": "Cumple con los requisitos reglamentarios",
+              "texto": []
+            },
+            {
+              "titulo": "Administración centralizada",
+              "texto": []
+            },
+            {
+              "titulo": "Personalizable",
+              "texto": []
+            },
+            {
+              "titulo": "Seguridad mejorada",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "desarrollo": {
+      "titulo": "Servicio de Desarrollo de aplicaciones",
+      "bajada": [
+        "Transforme su visión en realidad con nuestro servicio de desarrollo de aplicaciones a medida, diseñado para impulsar su negocio hacia nuevas alturas.",
+        "Enfrentarse a los desafíos empresariales con soluciones preestablecidas ya no es una opción viable. Ahora, más que nunca, la personalización es clave para destacar en un mercado competitivo."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Por qué elegir nuestro Servicio de Desarrollo de Aplicaciones?",
+          "intro": [
+            "Comprendemos que cada negocio es único, y por eso, nuestras aplicaciones se adaptan a sus requerimientos específicos. Desde la concepción hasta la implementación, trabajamos estrechamente con usted para garantizar que cada detalle se ajuste perfectamente a sus objetivos comerciales.",
+            "Si está considerando actualizar desde una solución heredada, nuestra experiencia en la integración con Dynamics 365 es la clave para una transición suave. Le ayudamos a aprovechar al máximo las potentes capacidades de esta plataforma líder en el mercado."
+          ],
+          "items": []
+        },
+        {
+          "titulo": "Actualización a la Última Tecnología con Confianza",
+          "intro": [
+            "¿Está utilizando soluciones heredadas que ya no cumplen con las demandas del mercado actual? Nuestro servicio de desarrollo de aplicaciones le ofrece la oportunidad de evolucionar desde plataformas obsoletas hacia soluciones avanzadas y escalables."
+          ],
+          "items": [
+            {
+              "titulo": "Seguridad Vanguardista",
+              "texto": [
+                "Proteja su información empresarial con nuestras soluciones de desarrollo de aplicaciones que ofrecen niveles de seguridad vanguardistas, garantizando la integridad de sus datos."
+              ]
+            },
+            {
+              "titulo": "Experiencia de Usuario Intuitiva",
+              "texto": [
+                "Simplificamos su día a día con interfaces intuitivas y fáciles de usar. Facilitamos la adaptación de su equipo, optimizando la eficiencia operativa en todos los niveles."
+              ]
+            },
+            {
+              "titulo": "Analítica Avanzada",
+              "texto": [
+                "Obtenga una perspectiva más profunda de su negocio con nuestras avanzadas capacidades de análisis. Transforme datos en decisiones informadas que impulsen su crecimiento empresarial."
+              ]
+            },
+            {
+              "titulo": "Productividad sin Límites",
+              "texto": [
+                "Capacite a su equipo con herramientas diseñadas para potenciar la productividad y fomentar la colaboración. Nuestras aplicaciones están creadas para hacer que cada usuario final alcance su máximo potencial."
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Nuestros Servicios de Desarrollo de Aplicaciones",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Evaluación personalizada de sus actuales sistemas y necesidades específicas.",
+              "texto": []
+            },
+            {
+              "titulo": "Planificación meticulosa para una transición fluida y sin complicaciones.",
+              "texto": []
+            },
+            {
+              "titulo": "Implementación de las últimas aplicaciones adaptadas a su entorno empresarial.",
+              "texto": []
+            },
+            {
+              "titulo": "Capacitación completa para garantizar que su equipo saque el máximo provecho de las nuevas funcionalidades.",
+              "texto": []
+            },
+            {
+              "titulo": "Soporte continuo para abordar cualquier pregunta o inquietud durante y después del proceso de desarrollo.",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "auditoria": {
+      "titulo": "Servicios de auditoría de Dynamics 365",
+      "bajada": [
+        "Aumente el crecimiento de su negocio con los servicios de auditoría de Dynamics 365",
+        "¿No obtiene el resultado deseado de sus soluciones Microsoft Dynamics 365 existentes? ¿Está buscando servicios de auditoría confiables de Dynamics 365 para descubrir las áreas con brechas de implementación que afectan su negocio?"
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Por qué optar por los servicios de auditoría de soluciones empresariales?",
+          "intro": [
+            "Una empresa no puede mantenerse a la vanguardia sin la implementación exitosa de las soluciones Dynamics 365. Optar por los servicios de auditoría de Dynamics 365 es obligatorio para desbloquear el verdadero potencial de las soluciones implementadas en el negocio. Puede descubrir ineficiencias ocultas, optimizar los flujos de trabajo y mejorar el rendimiento del sistema.",
+            "¿Le gustaría tomar el control de sus procesos de negocio y lograr un mayor éxito con la inversión realizada en esta suite Dynamics 365? Póngase en contacto con nosotros para los servicios de Auditoría de Soluciones Microsoft Dynamics 365. ​"
+          ],
+          "items": []
+        },
+        {
+          "titulo": "¿Los servicios de auditoría pueden maximizar sus retornos?",
+          "intro": [
+            "Al aprovechar nuestros servicios de auditoría, las empresas reciben asistencia valiosa en las siguientes áreas clave:"
+          ],
+          "items": [
+            {
+              "titulo": "Continuidad del negocio",
+              "texto": []
+            },
+            {
+              "titulo": "Funcionamiento eficiente de los equipos",
+              "texto": []
+            },
+            {
+              "titulo": "La satisfacción del cliente",
+              "texto": []
+            },
+            {
+              "titulo": "Mejora tecnológica",
+              "texto": []
+            },
+            {
+              "titulo": "Agilidad organizacional",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Nuestro proceso de servicios de auditoría de Dynamics 365: ¿Cómo trabajamos?",
+          "intro": [
+            "Nuestro proceso optimizado de Servicios de auditoría de Dynamics 365 garantiza un examen exhaustivo de su modelo de negocio y su solución de negocio. Desde la evaluación inicial hasta el análisis en profundidad, brindamos información integral, recomendaciones prácticas y una hoja de ruta para optimizar su conjunto de soluciones Dynamics 365."
+          ],
+          "items": [
+            {
+              "titulo": "Estudiar operaciones comerciales",
+              "texto": []
+            },
+            {
+              "titulo": "Identificar puntos débiles",
+              "texto": []
+            },
+            {
+              "titulo": "Preparando documento de requisitos",
+              "texto": []
+            },
+            {
+              "titulo": "Realización de auditoría",
+              "texto": []
+            },
+            {
+              "titulo": "Sugerir cambios",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Soporte premium y dedicado para aplicaciones empresariales de Microsoft",
+          "intro": [
+            "No importa qué aplicaciones de Microsoft Business utilice, lo tenemos cubierto. Nuestro compromiso con la satisfacción del cliente nos impulsa a brindar servicios de soporte dinámico ininterrumpidos, confiables y de primer nivel, garantizando un mantenimiento fluido del sistema y una rápida resolución de problemas. Además, también ofrecemos soporte rentable para Dynamics NAV y AX, garantizando una continuidad empresarial perfecta."
+          ],
+          "items": [
+            {
+              "titulo": "Customer Engagement",
+              "texto": []
+            },
+            {
+              "titulo": "Business Central",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 Finance",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 SCM",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics AX",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics NAV",
+              "texto": []
+            },
+            {
+              "titulo": "Power BI",
+              "texto": []
+            },
+            {
+              "titulo": "SharePoint",
+              "texto": []
+            },
+            {
+              "titulo": "PowerApps",
+              "texto": []
+            },
+            {
+              "titulo": "Microsoft 365",
+              "texto": []
+            },
+            {
+              "titulo": "Microsoft Azure",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    },
+    "soporte": {
+      "titulo": "Servicios de soporte de Dynamics 365",
+      "bajada": [
+        "Servicios de soporte prioritarios para garantizar la continuidad del negocio",
+        "Maximice el rendimiento de sus soluciones Dynamics 365 con nuestro soporte integral. Nuestros servicios de soporte dedicados y flexibles fomentan su solución sólida para un crecimiento empresarial incondicional. Le permite aprovechar el poder de las soluciones inteligentes del conjunto de aplicaciones empresariales de Microsoft con el soporte, los conocimientos y la experiencia adecuados para marcar la diferencia."
+      ],
+      "secciones": [
+        {
+          "titulo": "¿Cómo nuestros servicios de soporte pueden garantizar operaciones comerciales ininterrumpidas?",
+          "intro": [
+            "Estamos comprometidos a ayudar a su empresa a lograr un crecimiento escalable a través de nuestros servicios de soporte premium, garantizando operaciones comerciales ininterrumpidas. Durante años, nuestro objetivo ha sido mantener su empresa actualizada en el panorama de TI en constante evolución para obtener una ventaja competitiva."
+          ],
+          "items": [
+            {
+              "titulo": "Mejorar los procesos de negocio",
+              "texto": []
+            },
+            {
+              "titulo": "Incrementar las habilidades del usuario",
+              "texto": []
+            },
+            {
+              "titulo": "Minimizar el tiempo de inactividad",
+              "texto": []
+            },
+            {
+              "titulo": "Acelerar los cambios",
+              "texto": []
+            },
+            {
+              "titulo": "Transición sin problemas",
+              "texto": []
+            },
+            {
+              "titulo": "Modelo de precios competitivo",
+              "texto": []
+            },
+            {
+              "titulo": "Soluciones de soporte personalizadas",
+              "texto": []
+            },
+            {
+              "titulo": "Mantenimiento proactivo",
+              "texto": []
+            },
+            {
+              "titulo": "Evaluación de nuevas soluciones",
+              "texto": []
+            },
+            {
+              "titulo": "ROI maximizado",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Pagar demasiado por su soporte de Dynamics 365: Elige tu plan",
+          "intro": [],
+          "items": [
+            {
+              "titulo": "Soporte ad hoc",
+              "texto": []
+            },
+            {
+              "titulo": "Soporte de horas prepagas",
+              "texto": []
+            },
+            {
+              "titulo": "Soporte Anual",
+              "texto": []
+            }
+          ]
+        },
+        {
+          "titulo": "Soporte premium y dedicado para aplicaciones empresariales de Microsoft",
+          "intro": [
+            "No importa qué aplicaciones de Microsoft Business utilice, lo tenemos cubierto. Nuestro compromiso con la satisfacción del cliente nos impulsa a brindar servicios de soporte dinámico ininterrumpidos, confiables y de primer nivel, garantizando un mantenimiento fluido del sistema y una rápida resolución de problemas. Además, también ofrecemos soporte rentable para Dynamics NAV y AX, garantizando una continuidad empresarial perfecta."
+          ],
+          "items": [
+            {
+              "titulo": "Customer Engagement",
+              "texto": []
+            },
+            {
+              "titulo": "Business Central",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 Finance",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics 365 SCM",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics AX",
+              "texto": []
+            },
+            {
+              "titulo": "Dynamics NAV",
+              "texto": []
+            },
+            {
+              "titulo": "Power BI",
+              "texto": []
+            },
+            {
+              "titulo": "SharePoint",
+              "texto": []
+            },
+            {
+              "titulo": "PowerApps",
+              "texto": []
+            },
+            {
+              "titulo": "Microsoft 365",
+              "texto": []
+            },
+            {
+              "titulo": "Microsoft Azure",
+              "texto": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

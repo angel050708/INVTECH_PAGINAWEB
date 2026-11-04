@@ -16,7 +16,7 @@ export default function PaginaContacto() {
     <>
       <CabeceraPagina
         etiqueta="Contáctenos"
-        titulo="Cuéntenos sobre su empresa."
+        titulo="Hable con un consultor"
         bajada="Creemos en conversar personalmente con cada cliente para entender sus requisitos. Escríbanos o llámenos y un consultor le responde."
       />
       <section className="seccion">

@@ -9,8 +9,8 @@ interface Props {
 }
 
 export function BandaLlamado({
-  titulo = 'Comience con InvTech hoy mismo.',
-  texto = 'Cuéntenos cómo opera hoy. En una primera conversación le decimos qué resuelve Business Central de fábrica y qué habría que adaptar.',
+  titulo = 'Comience con InvTech hoy mismo',
+  texto = 'Agende una reunión de diagnóstico. Revisamos sus procesos y le indicamos qué cubre Business Central de fábrica y qué conviene adaptar.',
 }: Props) {
   return (
     <section className={styles.banda}>

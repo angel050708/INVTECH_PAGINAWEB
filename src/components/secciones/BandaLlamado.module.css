@@ -8,8 +8,8 @@
   margin: 0 auto;
   padding: clamp(40px, 7vw, 96px);
   border-radius: var(--radio-lg);
-  background: var(--acento);
-  color: var(--tinta);
+  background: var(--tinta);
+  color: rgb(255 255 255 / 0.8);
 }
 .interior::after {
   content: '';
@@ -18,14 +18,13 @@
   bottom: -40%;
   width: 46%;
   aspect-ratio: 1;
-  background: repeating-linear-gradient(90deg, var(--tinta) 0 18%, transparent 18% 25%);
-  opacity: 0.1;
-  transform: rotate(-12deg);
+  border: 60px solid rgb(255 255 255 / 0.04);
+  border-radius: 50%;
 }
 .interior h2 {
   max-width: 16ch;
-  font-size: clamp(2.2rem, 5.4vw, 4.6rem);
-  color: var(--tinta);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  color: #fff;
 }
 .interior p {
   max-width: 52ch;
@@ -39,11 +38,7 @@
   gap: 24px;
   margin-top: 36px;
 }
-.acciones :global(.boton-acento) {
-  background: var(--tinta);
-  color: var(--papel);
-}
 .telefono {
-  color: var(--tinta);
+  color: #fff;
   text-decoration: none;
 }

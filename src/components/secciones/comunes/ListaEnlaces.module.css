@@ -1,0 +1,47 @@
+.lista {
+  border-top: 1px solid var(--linea);
+}
+.fila {
+  display: grid;
+  grid-template-columns: 150px 1.2fr 1fr 40px;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--linea);
+  color: var(--texto-suave);
+  text-decoration: none;
+  transition: padding 0.4s var(--curva);
+}
+@media (hover: hover) and (pointer: fine) {
+  .fila:hover {
+    padding-left: 12px;
+  }
+}
+.fila h2 {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+.flecha {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--linea);
+  border-radius: 50%;
+  color: var(--tinta);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.fila:hover .flecha {
+  background: var(--acento);
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .fila {
+    grid-template-columns: 1fr 40px;
+  }
+  .fila h2,
+  .fila p {
+    grid-column: 1;
+  }
+}

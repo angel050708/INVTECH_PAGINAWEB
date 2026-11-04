@@ -21,53 +21,36 @@ export const BENEFICIOS = [
 export const VALORES = [
   {
     titulo: 'Enfoque centrado en las personas',
+    icono: 'persona' as const,
     texto:
       'No solo resolvemos problemas comerciales: priorizar a las personas nos ayuda a entendernos y a construir relaciones que duran.',
   },
   {
     titulo: 'Crecer junto con el cliente',
+    icono: 'grafica' as const,
     texto:
       'Brindamos implementación y soporte para facilitar su crecimiento. La clave no es solo servir, sino crecer junto con nuestros clientes.',
   },
   {
     titulo: 'Soluciones a la medida',
+    icono: 'engranaje' as const,
     texto:
       'Trabajamos de cerca para entender las necesidades de su negocio y entregar soluciones alineadas con sus objetivos.',
   },
   {
     titulo: 'Destreza técnica',
+    icono: 'sello' as const,
     texto: 'Actualizamos nuestras habilidades constantemente para mantenernos a la vanguardia.',
   },
   {
     titulo: 'Opciones para elegir',
+    icono: 'check' as const,
     texto:
       'Si necesita soporte para una implementación existente o quiere mejorar su solución actual, lo tenemos cubierto.',
   },
   {
     titulo: 'Tecnología con impacto social',
+    icono: 'soporte' as const,
     texto: 'Creemos en devolverle a la sociedad lo que la tecnología nos permite construir.',
-  },
-];
-
-export const PREGUNTAS = [
-  {
-    pregunta: '¿Business Central sirve para una empresa mediana en Honduras?',
-    respuesta:
-      'Sí. Es el ERP de Microsoft para pequeñas y medianas empresas. Con nuestra localización cumple los requisitos del SAR: CAI, facturación fiscal y retenciones.',
-  },
-  {
-    pregunta: '¿Se instala en mis servidores o en la nube?',
-    respuesta:
-      'Business Central puede implementarse en la nube, localmente o de forma híbrida. Le recomendamos la opción según su operación y presupuesto.',
-  },
-  {
-    pregunta: '¿Ya tengo Business Central, pueden ayudarme?',
-    respuesta:
-      'Sí. Damos soporte a implementaciones existentes, desarrollamos extensiones nuevas y corregimos configuraciones que no están funcionando.',
-  },
-  {
-    pregunta: '¿Cómo empieza un proyecto con InvTech?',
-    respuesta:
-      'Con un diagnóstico: conversamos sobre sus procesos, revisamos qué cubre el estándar y le entregamos una declaración de trabajo con alcance claro.',
   },
 ];

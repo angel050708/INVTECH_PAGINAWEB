@@ -36,7 +36,7 @@
   margin-bottom: 18px;
   padding: 4px 10px;
   border-radius: 6px;
-  background: var(--tinta);
+  background: var(--acento-suave);
   color: var(--acento);
   font: 600 0.78rem var(--mono);
 }
@@ -128,7 +128,9 @@
   border-radius: 50%;
   border: 1px solid var(--linea);
   color: var(--tinta);
-  transition: all 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .otros {
   display: flex;

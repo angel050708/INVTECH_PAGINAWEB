@@ -10,7 +10,7 @@
   border-radius: 50%;
   background: #1f9d55;
   color: #fff;
-  box-shadow: 0 14px 30px -12px rgb(12 20 36 / 0.6);
+  box-shadow: 0 14px 30px -12px rgb(22 20 31 / 0.4);
   transition: transform 0.3s var(--curva);
 }
 .boton:hover {

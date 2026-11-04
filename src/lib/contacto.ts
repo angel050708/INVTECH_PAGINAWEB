@@ -1,4 +1,4 @@
-import { SERVICIOS } from '@/data/servicios';
+import { etiquetaInteres, INTERESES } from '@/data/paginas';
 
 export interface DatosContacto {
   nombre: string;
@@ -25,15 +25,13 @@ export function validarContacto(datos: DatosContacto): ErroresContacto {
 /** Convierte "a,b" (de la URL) en slugs de servicios que existen. */
 export function leerIntereses(valor: string | null | undefined): string[] {
   if (!valor) return [];
-  const validos = new Set(SERVICIOS.map((servicio) => servicio.slug));
+  const validos = new Set(INTERESES.map((interes) => interes.slug));
   return [...new Set(valor.split(','))].filter((slug) => validos.has(slug));
 }
 
 /** Texto que se envía por correo o WhatsApp. */
 export function armarMensaje(datos: DatosContacto): string {
-  const intereses = datos.intereses
-    .map((slug) => SERVICIOS.find((servicio) => servicio.slug === slug)?.titulo)
-    .filter(Boolean);
+  const intereses = datos.intereses.map(etiquetaInteres).filter(Boolean);
 
   const datosLinea = [
     `Nombre: ${datos.nombre.trim()}`,
@@ -43,5 +41,7 @@ export function armarMensaje(datos: DatosContacto): string {
     intereses.length > 0 ? `Interés: ${intereses.join(', ')}` : '',
   ].filter(Boolean);
 
-  return ['Solicitud de información — invtech.pro', datosLinea.join('\n'), datos.mensaje.trim()].join('\n\n');
+  return ['Solicitud de información desde invtech.pro', datosLinea.join('\n'), datos.mensaje.trim()].join(
+    '\n\n',
+  );
 }

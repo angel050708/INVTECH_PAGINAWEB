@@ -1,8 +1,13 @@
+import { SERVICIOS_DYNAMICS, SOLUCIONES, type EntradaMenu } from './paginas';
+
 export const NOMBRE_SITIO = 'InvTech';
 
 export interface EnlaceNavegacion {
   href: string;
   etiqueta: string;
+  /** Páginas del menú desplegable */
+  submenu?: EntradaMenu[];
+  base?: string;
 }
 
 /** Datos de contacto publicados en invtech.pro/contacto. */
@@ -15,8 +20,8 @@ export const CONTACTO = {
 } as const;
 
 export const NAVEGACION: EnlaceNavegacion[] = [
-  { href: '/business-central/', etiqueta: 'Business Central' },
-  { href: '/servicios/', etiqueta: 'Servicios' },
+  { href: '/soluciones/', etiqueta: 'Soluciones', submenu: SOLUCIONES, base: '/soluciones/' },
+  { href: '/servicios/', etiqueta: 'Servicios', submenu: SERVICIOS_DYNAMICS, base: '/servicios/' },
   { href: '/metodologia/', etiqueta: 'Metodología' },
   { href: '/quienes-somos/', etiqueta: 'Quiénes somos' },
 ];

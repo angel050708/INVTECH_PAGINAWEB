@@ -5,17 +5,17 @@ Next.js 16 (App Router) + React 19 + TypeScript + CSS Modules, Vitest, ESLint y 
 
 ## Rutas
 
-| Ruta                                 | Contenido                                                                                |
-| ------------------------------------ | ---------------------------------------------------------------------------------------- |
-| `/`                                  | Inicio: hero, servicios, 6 fases, autodiagnóstico, beneficios, preguntas                 |
-| `/business-central/`                 | Qué es Business Central, modalidades, beneficios                                         |
-| `/servicios/` y `/servicios/[slug]/` | 6 servicios (datos en `src/data/servicios.ts`)                                           |
-| `/metodologia/`                      | Fases y conceptos (FRD, Gap-Fit, UAT, go-live)                                           |
-| `/quienes-somos/`                    | Historia, visión y valores                                                               |
-| `/contacto/`                         | Formulario que abre WhatsApp o correo con el mensaje listo (`?interes=slug` lo precarga) |
-| `/privacidad/`                       | Aviso de privacidad                                                                      |
+| Ruta                                            | Contenido                                                                               |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `/`                                             | Inicio: curva 3D de aplicaciones, soluciones, servicios, 6 fases, beneficios, preguntas |
+| `/soluciones/` y `/soluciones/[slug]/`          | 6 soluciones clave de invtech.pro                                                       |
+| `/servicios/` y `/servicios/[slug]/`            | 6 servicios clave de invtech.pro                                                        |
+| `/metodologia/`                                 | Fases y conceptos (FRD, Gap-Fit, UAT, go-live)                                          |
+| `/quienes-somos/`, `/contacto/`, `/privacidad/` | Empresa, formulario (WhatsApp o correo) y privacidad                                    |
 
-`/contacto` y `/quienes-somos` mantienen las URLs del sitio anterior.
+El texto de Soluciones y Servicios está en `src/data/contenido-original.json`, tomado de invtech.pro.
+Las páginas que se dejaron de publicar redirigen a su listado (ver `next.config.ts`).
+Los logos de aplicaciones están en `public/logos/` y el logo de InvTech vectorizado en `public/logo-invtech.svg`.
 
 ## Desarrollo
 

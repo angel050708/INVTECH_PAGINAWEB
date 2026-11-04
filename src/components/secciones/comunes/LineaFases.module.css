@@ -27,11 +27,11 @@
   display: block;
   font-family: var(--display);
   font-size: clamp(2.6rem, 4vw, 3.6rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.05em;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--tinta);
+  -webkit-text-stroke: 1px var(--tinta);
 }
 .fase:hover .numero {
   color: var(--acento);
@@ -39,7 +39,7 @@
 }
 .fase h3 {
   margin-top: 18px;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
 }
 .fase p {
   margin-top: 10px;
