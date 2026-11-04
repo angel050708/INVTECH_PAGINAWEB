@@ -271,3 +271,8 @@ a {
   margin-bottom: 40px;
   text-align: center;
 }
+
+.fondo-alterno {
+  background: var(--papel-2);
+  border-block: 1px solid var(--linea);
+}

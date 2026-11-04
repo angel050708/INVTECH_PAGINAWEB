@@ -7,7 +7,6 @@ import { HeroInicio } from '@/components/secciones/inicio/HeroInicio';
 import { QueEsBusinessCentral } from '@/components/secciones/inicio/QueEsBusinessCentral';
 import { ServiciosInicio, SolucionesInicio } from '@/components/secciones/inicio/ServiciosInicio';
 import { Icono } from '@/components/ui/Icono';
-import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
 import { MarquesinaApps } from '@/components/ui/MarquesinaApps';
 
 export default function PaginaInicio() {
@@ -16,23 +15,6 @@ export default function PaginaInicio() {
       <HeroInicio />
       <QueEsBusinessCentral />
 
-      <section className="seccion" style={{ paddingTop: 0 }}>
-        <div className="contenedor">
-          <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <div>
-              <p className="etiqueta">Datos en tiempo real</p>
-              <h2 className="titulo-seccion">Cada venta, registrada en Business Central al momento</h2>
-            </div>
-            <p className="entrada" style={{ marginTop: 0, maxWidth: '44ch' }}>
-              Aplicaciones comerciales conectadas y una plataforma central: lo que pasa en su operación llega
-              a finanzas sin volver a digitarlo.
-            </p>
-          </div>
-          <div {...revelarAlScroll(1)}>
-            <FlujoFacturas />
-          </div>
-        </div>
-      </section>
       <SolucionesInicio />
       <ServiciosInicio />
 

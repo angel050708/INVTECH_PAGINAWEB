@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     'Implementamos Microsoft Dynamics 365 Business Central con localización fiscal hondureña (CAI, retenciones), integración POS para estaciones de servicio, informes y soporte.',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.svg', apple: '/apple-touch-icon.png' },
   openGraph: { type: 'website', locale: 'es_HN', siteName: NOMBRE_SITIO },
 };
 

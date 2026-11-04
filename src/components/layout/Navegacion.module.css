@@ -96,6 +96,11 @@
   visibility: visible;
   transform: none;
 }
+/* Si el cursor está sobre otro elemento del menú, solo se muestra ese desplegable */
+.menu:hover .conSubmenu:not(:hover) .submenu {
+  opacity: 0;
+  visibility: hidden;
+}
 .submenu ul {
   display: grid;
   grid-template-columns: 1fr 1fr;

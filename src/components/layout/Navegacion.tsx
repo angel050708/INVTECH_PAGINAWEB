@@ -45,7 +45,15 @@ export function Navegacion() {
       <nav className={styles.barra} aria-label="Principal">
         <Logo />
 
-        <ul id="menu-principal" className={unirClases(styles.menu, abierto && styles.abierto)}>
+        <ul
+          id="menu-principal"
+          className={unirClases(styles.menu, abierto && styles.abierto)}
+          // Al elegir una página se quita el foco del enlace, para que el desplegable se cierre
+          onClick={(evento) => {
+            if ((evento.target as HTMLElement).closest('a'))
+              (document.activeElement as HTMLElement | null)?.blur();
+          }}
+        >
           {NAVEGACION.map((enlace) => (
             <li key={enlace.href} className={enlace.submenu ? styles.conSubmenu : undefined}>
               <Link

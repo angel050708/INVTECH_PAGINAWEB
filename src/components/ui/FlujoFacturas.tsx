@@ -1,24 +1,25 @@
+import Image from 'next/image';
 import type { CSSProperties } from 'react';
+import { FechaHoy } from './FechaHoy';
 import styles from './FlujoFacturas.module.css';
 
-/** Documentos de ejemplo que ilustran el registro automático en Business Central. */
+/** Documentos de ejemplo que ilustran el registro en Business Central. */
 const DOCUMENTOS = [
-  { numero: 'FV-10482', cliente: 'Distribuidora Valle Alto', monto: '12,480.00' },
-  { numero: 'FV-10483', cliente: 'Ferretería La Esquina', monto: '3,217.50' },
-  { numero: 'FV-10484', cliente: 'Grupo Comercial Lempa', monto: '28,905.10' },
-  { numero: 'FV-10485', cliente: 'Hotel Bahía Azul', monto: '7,642.80' },
+  { numero: 'FV-10482', pedido: 'SO004728541', cliente: 'Distribuidora Valle Alto', monto: '12,480.00' },
+  { numero: 'FV-10483', pedido: 'SO004728542', cliente: 'Ferretería La Esquina', monto: '3,217.50' },
+  { numero: 'FV-10484', pedido: 'SO004728543', cliente: 'Grupo Comercial Lempa', monto: '28,905.10' },
+  { numero: 'FV-10485', pedido: 'SO004728544', cliente: 'Hotel Bahía Azul', monto: '7,642.80' },
 ];
 
+const ACCIONES = ['Nuevo', 'Procesar', 'Registro', 'Imprimir y enviar'];
+
 /**
- * Facturas que salen de la operación y aparecen registradas en una ventana de Business Central.
- * Cada documento recorre la conexión y entra al ERP unos instantes después de emitirse.
+ * Facturas emitidas que llegan, una por una, a la lista de pedidos de venta de Business Central.
+ * La ventana imita la interfaz de BC: barra de acciones, columnas y enlaces en turquesa.
  */
 export function FlujoFacturas() {
   return (
-    <figure
-      className={styles.flujo}
-      aria-label="Ilustración: facturas de venta registrándose en Business Central"
-    >
+    <figure className={styles.flujo} aria-label="Ilustración: facturas de venta llegando a Business Central">
       <div className={`${styles.ventana} ${styles.origen}`}>
         <div className={styles.barra}>
           <span className={styles.puntos} aria-hidden="true">
@@ -34,7 +35,9 @@ export function FlujoFacturas() {
               <span className={styles.icono} aria-hidden="true" />
               <span>
                 <strong>{doc.numero}</strong>
-                <small>{doc.cliente}</small>
+                <small>
+                  {doc.cliente} · <FechaHoy />
+                </small>
               </span>
               <span className={styles.monto}>L {doc.monto}</span>
             </li>
@@ -48,35 +51,39 @@ export function FlujoFacturas() {
         ))}
       </div>
 
-      <div className={`${styles.ventana} ${styles.destino}`}>
-        <div className={`${styles.barra} ${styles.barraBc}`}>
-          <span className={styles.puntos} aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          Business Central · Movimientos contables
+      <div className={`${styles.ventana} ${styles.bc}`}>
+        <div className={styles.encabezadoBc}>
+          <Image src="/logos/dynamics-365-businesscentral.svg" alt="" width={22} height={22} unoptimized />
+          <span>Dynamics 365 Business Central</span>
         </div>
-        <div className={styles.cabecera} aria-hidden="true">
-          <span>Documento</span>
-          <span>Importe</span>
-          <span>Estado</span>
-        </div>
-        <ol className={styles.filas}>
-          {DOCUMENTOS.map((doc, i) => (
-            <li key={doc.numero} style={{ '--i': i } as CSSProperties} className={styles.registrada}>
-              <span>
-                <strong>{doc.numero}</strong>
-                <small>Ventas · {doc.cliente}</small>
-              </span>
-              <span className={styles.monto}>L {doc.monto}</span>
-              <span className={styles.estado}>Registrado</span>
-            </li>
+        <div className={styles.herramientas} aria-hidden="true">
+          <strong>Pedidos venta:</strong>
+          <span className={styles.vista}>Todo</span>
+          {ACCIONES.map((accion) => (
+            <span key={accion}>{accion}</span>
           ))}
-        </ol>
-        <div className={styles.total}>
-          <span>Total del día</span>
-          <strong>L 52,245.40</strong>
+        </div>
+        <div className={styles.tabla} role="presentation">
+          <div className={styles.columnas} aria-hidden="true">
+            <span>Fecha emisión</span>
+            <span>Nº</span>
+            <span>Venta a-Nombre</span>
+            <span>Nº documento externo</span>
+            <span>Estado</span>
+          </div>
+          <ol>
+            {DOCUMENTOS.map((doc, i) => (
+              <li key={doc.numero} style={{ '--i': i } as CSSProperties} className={styles.registrada}>
+                <span className={styles.enlace}>
+                  <FechaHoy />
+                </span>
+                <span>{doc.pedido}</span>
+                <span className={styles.nombre}>{doc.cliente.toUpperCase()}</span>
+                <span>{doc.numero}</span>
+                <span className={styles.estado}>Registrado</span>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </figure>

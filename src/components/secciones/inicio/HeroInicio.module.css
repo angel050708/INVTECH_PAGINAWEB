@@ -58,3 +58,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+.lineas {
+  max-width: 360px;
+  margin-bottom: 28px;
+}
+@media (max-width: 900px) {
+  .lineas {
+    display: none;
+  }
+}
