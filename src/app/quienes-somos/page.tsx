@@ -9,67 +9,66 @@ import styles from '../paginas.module.css';
 export const metadata: Metadata = {
   title: 'Quiénes somos',
   description:
-    'InvTech: consultores en Microsoft Dynamics 365 que ayudan a las empresas a transformar su operación.',
+    'InvTech: soluciones empresariales basadas en tecnología para grandes empresas, pymes y corporaciones.',
 };
+
+/** Texto de invtech.pro/quienes-somos. */
+const BLOQUES = [
+  {
+    titulo: 'Nuestra historia',
+    parrafos: [
+      'InvTech se formó con la creencia de no solo brindar soluciones, sino también ser el creador de cambios para ofrecer soluciones que marquen la diferencia. Nuestro crecimiento (y éxito) gira en torno a una creencia constante: “los negocios no se tratan solo de brindar a las personas soluciones a sus problemas. Tiene más que ver con brindar soluciones que ayuden a mejorar la vida”.',
+      'Lideramos el camino en el suministro de soluciones empresariales basadas en tecnología a grandes empresas, pymes y corporaciones para transformar sus negocios. Nuestro personal y consultores expertos certificados lo ayudan a analizar las áreas de crecimiento potencial y le brindan una solución empresarial personalizada para lograr el máximo impacto.',
+    ],
+  },
+  {
+    titulo: 'Nuestra visión',
+    parrafos: [
+      'Creemos en transformar los negocios de nuestros clientes para obtener ganancias y ayudarlos en su viaje de transformación digital para crecer juntos y lograr un crecimiento sostenible. Nuestro objetivo es convertirnos en un líder global de TI y en una marca que sea sinónimo de confianza, innovación tecnológica y excelencia en el servicio para impulsar un cambio positivo.',
+      'La excelencia es un camino que no se logra de la noche a la mañana: hay que construir hacia él. Creemos en ofrecer lo mejor del negocio y brindar a los clientes soluciones empresariales sostenibles y escalables para ayudar a las empresas a crecer más y mantenerse por delante de la competencia.',
+    ],
+  },
+  {
+    titulo: 'Nuestros valores',
+    parrafos: [
+      'Somos una empresa impulsada por valores que asume la responsabilidad de cumplir su promesa de realizar un cambio positivo. A nuestro equipo de expertos ágiles le encanta actualizarse con el tiempo y valora profundamente los comentarios de nuestros clientes para crecer a medida que aprendemos.',
+      'No solo brindamos soluciones a sus problemas comerciales. Nuestro enfoque de priorizar a las personas nos ayuda a desarrollar un entendimiento mutuo y establecer relaciones que duren para siempre.',
+    ],
+  },
+];
 
 export default function PaginaQuienesSomos() {
   return (
     <>
       <CabeceraPagina
-        etiqueta="Sobre nosotros"
-        titulo="Más que un proveedor de soluciones de TI"
-        bajada="Los negocios no se tratan solo de resolver problemas: se trata de brindar soluciones que ayuden a mejorar la vida de las personas."
+        etiqueta="Quiénes somos"
+        titulo="Sobre nosotros"
+        bajada="Los negocios no se tratan solo de brindar soluciones a los problemas: se trata de brindar soluciones que ayuden a mejorar la vida."
         visual={<LineasCircuito />}
       />
 
-      <section className="seccion">
-        <div className={`contenedor ${styles.dosColumnas}`}>
-          <div {...revelarAlScroll()}>
-            <p className="etiqueta">Quiénes somos</p>
-            <h2 className="titulo-seccion">Nuestra historia</h2>
+      {BLOQUES.map((bloque, indice) => (
+        <section
+          key={bloque.titulo}
+          className={indice % 2 === 1 ? `seccion ${styles.fondoAlterno}` : 'seccion'}
+        >
+          <div className={`contenedor ${styles.dosColumnas}`}>
+            <h2 className="titulo-seccion" {...revelarAlScroll()}>
+              {bloque.titulo}
+            </h2>
+            <div className={styles.texto} {...revelarAlScroll(1)}>
+              {bloque.parrafos.map((parrafo) => (
+                <p key={parrafo}>{parrafo}</p>
+              ))}
+            </div>
           </div>
-          <div className={styles.texto} {...revelarAlScroll(1)}>
-            <p>
-              InvTech se formó con la convicción de no solo brindar soluciones, sino de ser un agente de
-              cambio que marque la diferencia en cada empresa que acompaña.
-            </p>
-            <p>
-              Llevamos soluciones empresariales basadas en tecnología a grandes empresas, pymes y
-              corporaciones. Nuestros consultores analizan sus áreas de crecimiento y le entregan una solución
-              a la medida para lograr el máximo impacto.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <section className={`seccion ${styles.fondoAlterno}`}>
-        <div className={`contenedor ${styles.dosColumnas}`}>
-          <div {...revelarAlScroll()}>
-            <p className="etiqueta">Nuestra visión</p>
-            <h2 className="titulo-seccion">Crecer junto con nuestros clientes</h2>
-          </div>
-          <div className={styles.texto} {...revelarAlScroll(1)}>
-            <p>
-              Creemos en transformar los negocios de nuestros clientes y acompañarlos en su transformación
-              digital para lograr un crecimiento sostenible. Queremos ser una marca sinónimo de confianza,
-              innovación tecnológica y excelencia en el servicio.
-            </p>
-            <p>
-              La excelencia no se logra de la noche a la mañana: se construye. Por eso entregamos soluciones
-              sostenibles y escalables que ayudan a las empresas de Honduras a crecer y mantenerse por delante
-              de la competencia.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="seccion">
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <div>
-              <p className="etiqueta">Nuestros valores</p>
-              <h2 className="titulo-seccion">Lo que nos distingue</h2>
-            </div>
+            <h2 className="titulo-seccion">Más que un proveedor de soluciones de TI</h2>
           </div>
           <ul className={styles.tarjetas}>
             {VALORES.map((valor, indice) => (

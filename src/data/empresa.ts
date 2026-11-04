@@ -18,39 +18,40 @@ export const BENEFICIOS = [
   },
 ];
 
+/** "Más que un proveedor de soluciones de TI", texto de invtech.pro/quienes-somos. */
 export const VALORES = [
   {
     titulo: 'Enfoque centrado en las personas',
     icono: 'persona' as const,
     texto:
-      'No solo resolvemos problemas comerciales: priorizar a las personas nos ayuda a entendernos y a construir relaciones que duran.',
+      'No solo brindamos soluciones a sus problemas comerciales. Nuestro enfoque de priorizar a las personas nos ayuda a desarrollar un entendimiento mutuo y establecer relaciones que duren para siempre.',
   },
   {
-    titulo: 'Crecer junto con el cliente',
+    titulo: 'Entrega de servicios perfecta para crecer juntos',
     icono: 'grafica' as const,
     texto:
-      'Brindamos implementación y soporte para facilitar su crecimiento. La clave no es solo servir, sino crecer junto con nuestros clientes.',
+      'Brindamos servicios de soporte e implementación perfectos para facilitar el crecimiento. La clave no es sólo servir sino crecer junto con nuestros socios y clientes a medida que les servimos.',
   },
   {
-    titulo: 'Soluciones a la medida',
+    titulo: 'Centrado en el cliente',
     icono: 'engranaje' as const,
     texto:
-      'Trabajamos de cerca para entender las necesidades de su negocio y entregar soluciones alineadas con sus objetivos.',
+      'Adoptamos un enfoque centrado en el cliente y trabajamos estrechamente con nuestros clientes para comprender sus necesidades comerciales únicas y brindarles soluciones personalizadas alineadas con sus objetivos estratégicos.',
   },
   {
-    titulo: 'Destreza técnica',
+    titulo: 'Destreza incomparable',
     icono: 'sello' as const,
-    texto: 'Actualizamos nuestras habilidades constantemente para mantenernos a la vanguardia.',
+    texto: 'Actualizamos constantemente nuestras habilidades para mantenernos a la vanguardia.',
   },
   {
     titulo: 'Opciones para elegir',
     icono: 'check' as const,
     texto:
-      'Si necesita soporte para una implementación existente o quiere mejorar su solución actual, lo tenemos cubierto.',
+      'Si necesita soporte para una implementación existente o desea actualizar su solución empresarial, lo tenemos cubierto.',
   },
   {
-    titulo: 'Tecnología con impacto social',
+    titulo: 'Impulsar el cambio social utilizando la tecnología',
     icono: 'soporte' as const,
-    texto: 'Creemos en devolverle a la sociedad lo que la tecnología nos permite construir.',
+    texto: 'La idea es devolverlo a la sociedad utilizando la tecnología.',
   },
 ];
