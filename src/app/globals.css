@@ -23,7 +23,7 @@
   --radio: 12px;
   --radio-lg: 20px;
   --sombra: 0 24px 48px -28px rgb(42 20 153 / 0.25);
-  --ancho: 1440px;
+  --ancho: 1600px;
   --margen: clamp(20px, 4vw, 64px);
   --alto-nav: 72px;
   --curva: cubic-bezier(0.23, 1, 0.32, 1);
@@ -130,7 +130,7 @@ a {
   margin: 0 auto;
   padding: 0 var(--margen);
 }
-@media (min-width: 1568px) {
+@media (min-width: 1728px) {
   .contenedor {
     padding: 0;
   }
@@ -148,8 +148,9 @@ a {
 }
 
 .titulo-seccion {
-  font-size: clamp(1.9rem, 3.6vw, 3rem);
-  max-width: 22ch;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.15;
+  max-width: 26ch;
 }
 
 .entrada {
@@ -262,4 +263,11 @@ a {
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 64px;
+}
+
+.centrado {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 40px;
+  text-align: center;
 }

@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: clamp(56px, 8vw, 112px) var(--margen) clamp(56px, 8vw, 104px);
 }
-@media (min-width: 1568px) {
+@media (min-width: 1728px) {
   .interior {
     padding-inline: 0;
   }

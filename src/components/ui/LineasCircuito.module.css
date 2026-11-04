@@ -1,0 +1,53 @@
+.lineas {
+  width: min(100%, 520px);
+  height: auto;
+  stroke: var(--acento);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.lineas path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: dibujar 1.6s var(--curva) forwards;
+}
+.lineas circle {
+  fill: var(--acento);
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation:
+    aparecer 0.4s var(--curva) 1.2s forwards,
+    latir 2.4s ease-in-out 1.8s infinite;
+}
+@keyframes dibujar {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes latir {
+  50% {
+    transform: scale(1.35);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lineas path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .lineas circle {
+    opacity: 1;
+    animation: none;
+  }
+}
