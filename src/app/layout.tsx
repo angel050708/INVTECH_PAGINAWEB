@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0b1f3a',
+  themeColor: '#16141f',
 };
 
 const SCRIPT_ACTIVAR_ANIMACIONES = "document.documentElement.classList.add('js')";

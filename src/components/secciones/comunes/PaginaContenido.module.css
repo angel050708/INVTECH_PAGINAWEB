@@ -1,7 +1,3 @@
-.bajadaExtra {
-  max-width: 64ch;
-  margin-top: 16px;
-}
 .accion {
   margin-top: 32px;
 }
@@ -41,9 +37,14 @@
   border-bottom: 1px solid var(--linea);
   color: var(--tinta);
 }
-.lista svg {
+.check {
   flex: none;
-  margin-top: 3px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: var(--acento-suave);
   color: var(--acento);
 }
 .tarjetas {
@@ -53,15 +54,10 @@
 }
 .tarjeta {
   padding: 26px;
+  border-top: 3px solid var(--acento);
   border: 1px solid var(--linea);
   border-radius: var(--radio);
   background: var(--papel);
-}
-.numero {
-  display: block;
-  margin-bottom: 20px;
-  font: 500 0.8rem var(--mono);
-  color: var(--acento);
 }
 .tarjeta h3 {
   margin-bottom: 8px;
@@ -77,5 +73,19 @@
 @media (max-width: 860px) {
   .cabeza {
     grid-template-columns: 1fr;
+  }
+}
+
+.flotar {
+  animation: flotar 6s ease-in-out infinite;
+}
+@keyframes flotar {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flotar {
+    animation: none;
   }
 }

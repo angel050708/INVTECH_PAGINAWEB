@@ -5,9 +5,8 @@ import { Icono } from '@/components/ui/Icono';
 import styles from './QueEsBusinessCentral.module.css';
 
 const SENALES = [
-  'Su sistema contable ya no da abasto con el volumen de operaciones.',
-  'Ventas, inventario y finanzas viven en programas separados.',
-  'Cada cierre de mes depende de exportar y cuadrar en Excel.',
+  'Su empresa se ha expandido más allá de las capacidades de su solución contable básica.',
+  'Encuentra obstáculos por sistemas heredados desconectados.',
 ];
 
 export function QueEsBusinessCentral() {

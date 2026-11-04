@@ -51,9 +51,9 @@ export const VALORES = [
 
 export const PREGUNTAS = [
   {
-    pregunta: '¿Business Central sirve para una empresa mediana en Honduras?',
+    pregunta: '¿Para qué tipo de empresa es Business Central?',
     respuesta:
-      'Sí. Es el ERP de Microsoft para pequeñas y medianas empresas. Con nuestra localización cumple los requisitos del SAR: CAI, facturación fiscal y retenciones.',
+      'Para empresas en crecimiento que superaron su solución contable básica o que trabajan con sistemas heredados desconectados.',
   },
   {
     pregunta: '¿Se instala en mis servidores o en la nube?',
@@ -63,7 +63,7 @@ export const PREGUNTAS = [
   {
     pregunta: '¿Ya tengo Business Central, pueden ayudarme?',
     respuesta:
-      'Sí. Damos soporte a implementaciones existentes, desarrollamos extensiones nuevas y corregimos configuraciones que no están funcionando.',
+      'Sí. Damos soporte a implementaciones existentes y le ayudamos a actualizar su solución empresarial.',
   },
   {
     pregunta: '¿Cómo empieza un proyecto con InvTech?',

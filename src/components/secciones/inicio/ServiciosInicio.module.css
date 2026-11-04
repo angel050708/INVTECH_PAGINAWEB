@@ -2,104 +2,142 @@
   background: var(--papel-2);
   border-block: 1px solid var(--linea);
 }
-.cabeza {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 56px;
-}
 .bento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-.celda:nth-child(1),
+.celda:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 .celda:nth-child(2) {
   grid-column: span 2;
 }
 .tarjeta {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 230px;
+  min-height: 200px;
   padding: 28px;
   border: 1px solid var(--linea);
-  border-radius: var(--radio);
+  border-radius: var(--radio-lg);
   background: var(--papel);
-  color: var(--texto);
+  color: var(--texto-suave);
   text-decoration: none;
   transition:
-    transform 0.4s var(--curva),
-    border-color 0.3s,
-    background-color 0.3s;
+    transform 0.3s var(--curva),
+    border-color 0.2s ease;
 }
-.celda:nth-child(1) .tarjeta {
+.celda:first-child .tarjeta {
   background: var(--tinta);
-  color: rgb(255 255 255 / 0.75);
   border-color: var(--tinta);
+  color: rgb(255 255 255 / 0.7);
 }
-.celda:nth-child(1) h3 {
-  color: var(--papel);
+.celda:first-child h3 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #fff;
 }
-.celda:nth-child(1) .icono {
-  background: rgb(255 255 255 / 0.1);
-  color: #9cc3ff;
-}
-.celda:nth-child(1) .mas {
-  color: #9cc3ff;
-}
-.tarjeta:hover {
-  transform: translateY(-4px);
-  border-color: var(--tinta);
-}
-.icono {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
+.logos {
   margin-bottom: auto;
-  border-radius: 12px;
-  background: var(--acento-suave);
-  color: var(--acento);
 }
 .tarjeta h3 {
-  margin-top: 40px;
-  font-size: 1.35rem;
-  letter-spacing: -0.025em;
-}
-.celda:nth-child(-n + 2) h3 {
-  font-size: clamp(1.4rem, 2vw, 1.75rem);
-  max-width: 18ch;
+  margin-top: 32px;
+  font-size: 1.25rem;
 }
 .tarjeta p {
-  margin-top: 10px;
-  font-size: 0.97rem;
+  margin-top: 6px;
 }
-.mas {
-  display: inline-flex;
+.flecha {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  color: var(--texto-suave);
+  transition: transform 0.3s var(--curva);
+}
+@media (hover: hover) and (pointer: fine) {
+  .tarjeta:hover {
+    transform: translateY(-4px);
+    border-color: var(--acento);
+  }
+  .tarjeta:hover .flecha {
+    transform: translate(3px, -3px) rotate(-45deg);
+    color: var(--acento);
+  }
+  .celda:first-child .tarjeta:hover .flecha {
+    color: var(--acento-claro);
+  }
+}
+.servicios {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(32px, 6vw, 112px);
+  align-items: start;
+}
+.fijo {
+  position: sticky;
+  top: calc(var(--alto-nav) + 72px);
+}
+.lista {
+  border-top: 1px solid var(--linea);
+}
+.fila {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 6px;
-  margin-top: 22px;
+  gap: 20px;
+  padding: 22px 8px;
+  border-bottom: 1px solid var(--linea);
+  color: var(--tinta);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    padding 0.3s var(--curva);
+}
+.fila strong {
+  display: block;
+  font-size: 1.15rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--acento-oscuro);
+}
+.fila small {
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+}
+.fila > svg {
+  color: var(--texto-suave);
+  transition: transform 0.3s var(--curva);
+}
+@media (hover: hover) and (pointer: fine) {
+  .fila:hover {
+    padding-left: 16px;
+    background: var(--acento-suave);
+  }
+  .fila:hover > svg {
+    transform: translateX(4px);
+    color: var(--acento);
+  }
 }
 @media (max-width: 1000px) {
   .bento {
     grid-template-columns: 1fr 1fr;
   }
+  .celda:first-child {
+    grid-row: auto;
+  }
+  .servicios {
+    grid-template-columns: 1fr;
+  }
+  .fijo {
+    position: static;
+  }
 }
-@media (max-width: 620px) {
+@media (max-width: 600px) {
   .bento {
     grid-template-columns: 1fr;
   }
-  .celda:nth-child(1),
+  .celda:first-child,
   .celda:nth-child(2) {
     grid-column: auto;
   }
-}
-.todos {
-  border-style: dashed;
 }

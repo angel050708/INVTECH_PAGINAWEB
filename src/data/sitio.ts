@@ -1,13 +1,13 @@
-import { SERVICIOS_DYNAMICS, SOLUCIONES } from './paginas';
-import { SERVICIOS } from './servicios';
+import { SERVICIOS_DYNAMICS, SOLUCIONES, type EntradaMenu } from './paginas';
 
 export const NOMBRE_SITIO = 'InvTech';
 
 export interface EnlaceNavegacion {
   href: string;
   etiqueta: string;
-  /** Columnas del menú desplegable */
-  submenu?: { titulo: string; enlaces: { href: string; etiqueta: string }[] }[];
+  /** Páginas del menú desplegable */
+  submenu?: EntradaMenu[];
+  base?: string;
 }
 
 /** Datos de contacto publicados en invtech.pro/contacto. */
@@ -20,30 +20,8 @@ export const CONTACTO = {
 } as const;
 
 export const NAVEGACION: EnlaceNavegacion[] = [
-  {
-    href: '/soluciones/',
-    etiqueta: 'Soluciones',
-    submenu: [
-      {
-        titulo: 'Microsoft Dynamics 365',
-        enlaces: SOLUCIONES.map((s) => ({ href: `/soluciones/${s.slug}/`, etiqueta: s.etiqueta })),
-      },
-    ],
-  },
-  {
-    href: '/servicios/',
-    etiqueta: 'Servicios',
-    submenu: [
-      {
-        titulo: 'Dynamics 365',
-        enlaces: SERVICIOS_DYNAMICS.map((s) => ({ href: `/servicios/${s.slug}/`, etiqueta: s.etiqueta })),
-      },
-      {
-        titulo: 'Especialidades para Honduras',
-        enlaces: SERVICIOS.map((s) => ({ href: `/servicios/${s.slug}/`, etiqueta: s.titulo })),
-      },
-    ],
-  },
+  { href: '/soluciones/', etiqueta: 'Soluciones', submenu: SOLUCIONES, base: '/soluciones/' },
+  { href: '/servicios/', etiqueta: 'Servicios', submenu: SERVICIOS_DYNAMICS, base: '/servicios/' },
   { href: '/metodologia/', etiqueta: 'Metodología' },
   { href: '/quienes-somos/', etiqueta: 'Quiénes somos' },
 ];

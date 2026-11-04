@@ -2,16 +2,17 @@
    Tokens de diseño
    ========================================================= */
 :root {
-  --tinta: #0b1f3a;
-  --tinta-2: #12294a;
+  --tinta: #16141f;
+  --tinta-2: #221f2e;
   --papel: #ffffff;
-  --papel-2: #f3f5f8;
-  --linea: #e1e6ee;
-  --texto: #2a3447;
-  --texto-suave: #5b6578;
-  --acento: #0f62d6;
-  --acento-oscuro: #0a4aa8;
-  --acento-suave: #e8f0fc;
+  --papel-2: #f6f5fa;
+  --linea: #e5e3ee;
+  --texto: #2b2838;
+  --texto-suave: #625f70;
+  --acento: #2a1499;
+  --acento-oscuro: #1f0e75;
+  --acento-claro: #a99bff;
+  --acento-suave: #eeebfb;
   --verde: #12805c;
 
   /* Las variables --fuente-* las define next/font en app/layout.tsx */
@@ -21,11 +22,12 @@
 
   --radio: 12px;
   --radio-lg: 20px;
-  --sombra: 0 24px 48px -28px rgb(11 31 58 / 0.28);
-  --ancho: 1240px;
-  --margen: clamp(16px, 5vw, 72px);
+  --sombra: 0 24px 48px -28px rgb(42 20 153 / 0.25);
+  --ancho: 1440px;
+  --margen: clamp(20px, 4vw, 64px);
   --alto-nav: 72px;
-  --curva: cubic-bezier(0.16, 1, 0.3, 1);
+  --curva: cubic-bezier(0.23, 1, 0.32, 1);
+  --curva-mov: cubic-bezier(0.77, 0, 0.175, 1);
 
   color-scheme: light;
 }
@@ -128,7 +130,7 @@ a {
   margin: 0 auto;
   padding: 0 var(--margen);
 }
-@media (min-width: 1380px) {
+@media (min-width: 1568px) {
   .contenedor {
     padding: 0;
   }
@@ -178,6 +180,7 @@ a {
 }
 .boton:active {
   transform: scale(0.97);
+  transition-duration: 100ms;
 }
 .boton-acento {
   background: var(--acento);

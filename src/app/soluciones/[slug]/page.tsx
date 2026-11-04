@@ -23,13 +23,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PaginaSolucion({ params }: Props) {
   const { slug } = await params;
   const pagina = paginaSolucion(slug);
-  if (!pagina) notFound();
+  const entrada = SOLUCIONES.find((s) => s.slug === slug);
+  if (!pagina || !entrada) notFound();
 
   const esBusinessCentral = slug === 'business-central';
   return (
     <PaginaContenido
       etiqueta="Solución"
       pagina={pagina}
+      logos={entrada.logos}
       interes="implementacion"
       extra={
         esBusinessCentral && (

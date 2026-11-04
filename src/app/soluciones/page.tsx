@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
+import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { ListaEnlaces } from '@/components/secciones/comunes/ListaEnlaces';
-import { BandaLlamado } from '@/components/secciones/BandaLlamado';
-import { paginaSolucion, SOLUCIONES } from '@/data/paginas';
+import { SOLUCIONES } from '@/data/paginas';
 
 export const metadata: Metadata = {
   title: 'Soluciones',
@@ -16,17 +16,11 @@ export default function PaginaSoluciones() {
       <CabeceraPagina
         etiqueta="Soluciones"
         titulo="Aplicaciones de Microsoft Dynamics 365"
-        bajada="Elija el área de su empresa que quiere ordenar. Cada aplicación funciona sola o conectada con las demás."
+        bajada="Cada aplicación resuelve un área de su empresa y todas trabajan conectadas."
       />
       <section className="seccion">
         <div className="contenedor">
-          <ListaEnlaces
-            enlaces={SOLUCIONES.map((s) => ({
-              href: `/soluciones/${s.slug}/`,
-              titulo: s.etiqueta,
-              texto: paginaSolucion(s.slug)?.bajada[0] ?? '',
-            }))}
-          />
+          <ListaEnlaces base="/soluciones/" entradas={SOLUCIONES} />
         </div>
       </section>
       <BandaLlamado />

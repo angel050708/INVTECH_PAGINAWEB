@@ -11,7 +11,7 @@
 }
 .conSombra {
   border-color: var(--linea);
-  box-shadow: 0 10px 30px -24px rgb(11 31 58 / 0.35);
+  box-shadow: 0 10px 30px -24px rgb(22 20 31 / 0.3);
 }
 .franja {
   display: flex;
@@ -31,7 +31,7 @@
   text-decoration: none;
 }
 .franja a:hover {
-  color: #9cc3ff;
+  color: var(--acento-claro);
 }
 .barra {
   display: flex;
@@ -62,26 +62,33 @@
   background: var(--papel-2);
 }
 .enlace[aria-current='page'] {
-  color: var(--acento-oscuro);
+  color: var(--acento);
 }
 .submenu {
   position: absolute;
-  top: calc(100% + 8px);
-  left: -12px;
-  display: flex;
-  gap: 24px;
-  padding: 18px;
+  top: calc(100% + 10px);
+  left: -16px;
+  width: 560px;
+  padding: 10px;
   background: var(--papel);
   border: 1px solid var(--linea);
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: var(--sombra);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top left;
   transition:
-    opacity 0.25s var(--curva),
-    transform 0.25s var(--curva),
-    visibility 0.25s;
+    opacity 0.2s var(--curva),
+    transform 0.2s var(--curva),
+    visibility 0.2s;
+}
+/* Puente invisible para que el menú no se cierre al bajar el cursor */
+.submenu::before {
+  content: '';
+  position: absolute;
+  inset: -12px 0 auto;
+  height: 12px;
 }
 .conSubmenu:hover .submenu,
 .conSubmenu:focus-within .submenu {
@@ -89,27 +96,58 @@
   visibility: visible;
   transform: none;
 }
-.submenu > div {
-  width: 250px;
+.submenu ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
 }
-.grupo {
-  padding: 0 10px 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--texto-suave);
+.submenu li {
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.25s var(--curva),
+    transform 0.25s var(--curva);
+  transition-delay: calc(var(--i) * 25ms);
 }
-.submenu a {
-  display: block;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 0.92rem;
+.conSubmenu:hover .submenu li,
+.conSubmenu:focus-within .submenu li {
+  opacity: 1;
+  transform: none;
+}
+.submenu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
   text-decoration: none;
   color: var(--tinta);
+  transition: background-color 0.15s ease;
 }
-.submenu a:hover {
+.submenu li a:hover {
   background: var(--papel-2);
+}
+.submenu strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.submenu small {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+.verTodo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--acento-suave);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--acento);
+  text-decoration: none;
 }
 .acciones {
   display: flex;

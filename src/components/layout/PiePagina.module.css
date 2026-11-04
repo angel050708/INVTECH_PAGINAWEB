@@ -33,7 +33,7 @@
   text-decoration: none;
 }
 .pie a:hover {
-  color: #9cc3ff;
+  color: var(--acento-claro);
 }
 .legal {
   display: flex;

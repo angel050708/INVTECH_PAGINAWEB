@@ -1,45 +1,60 @@
 .hero {
-  background: linear-gradient(180deg, var(--papel-2), var(--papel));
+  padding: clamp(48px, 7vw, 104px) 0 clamp(32px, 4vw, 56px);
+  background: radial-gradient(60% 50% at 85% 0%, var(--acento-suave), transparent 70%), var(--papel);
   border-bottom: 1px solid var(--linea);
+  overflow: hidden;
 }
-.interior {
+.texto {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: clamp(40px, 6vw, 88px);
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: end;
+  gap: clamp(32px, 5vw, 96px);
   max-width: var(--ancho);
-  margin: 0 auto;
-  padding: clamp(56px, 8vw, 112px) var(--margen);
+  margin: 0 auto clamp(24px, 4vw, 48px);
+  padding: 0 var(--margen);
 }
-@media (min-width: 1380px) {
-  .interior {
+@media (min-width: 1568px) {
+  .texto {
     padding-inline: 0;
   }
 }
 .sello {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--acento);
 }
 .hero h1 {
-  margin-top: 18px;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  letter-spacing: -0.035em;
+  margin-top: 16px;
+  font-size: clamp(2.6rem, 5.6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 .bajada {
-  max-width: 50ch;
-  margin-top: 22px;
-  font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   color: var(--texto-suave);
 }
 .acciones {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 36px;
+  margin-top: 28px;
 }
-@media (max-width: 960px) {
-  .interior {
+/* Entrada escalonada al cargar la página */
+.titular,
+.lateral {
+  animation: aparecer 0.9s var(--curva) both;
+}
+.lateral {
+  animation-delay: 0.12s;
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@media (max-width: 900px) {
+  .texto {
     grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,55 @@
+.escena {
+  --radio: clamp(520px, 62vw, 980px);
+  position: relative;
+  height: clamp(220px, 22vw, 300px);
+  overflow: hidden;
+  perspective: calc(var(--radio) * 1.25);
+  perspective-origin: 50% 50%;
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+.anillo {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: girar 90s linear infinite;
+}
+.tarjeta {
+  --angulo: calc(var(--i) * 360deg / var(--total));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  width: 210px;
+  height: 150px;
+  margin: -75px 0 0 -105px;
+  border: 1px solid var(--linea);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--papel), var(--papel-2));
+  box-shadow: 0 30px 50px -36px rgb(42 20 153 / 0.45);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--tinta);
+  backface-visibility: hidden;
+  transform: rotateY(var(--angulo)) translateZ(calc(var(--radio) * -1));
+}
+.tarjeta img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+@keyframes girar {
+  from {
+    transform: translateZ(calc(var(--radio) * 0.78)) rotateY(0deg);
+  }
+  to {
+    transform: translateZ(calc(var(--radio) * 0.78)) rotateY(-360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anillo {
+    animation-play-state: paused;
+  }
+}

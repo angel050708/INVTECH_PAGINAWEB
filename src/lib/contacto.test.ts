@@ -7,7 +7,7 @@ const base: DatosContacto = {
   correo: 'ana@elsol.hn',
   telefono: '',
   mensaje: 'Queremos integrar el POS.',
-  intereses: ['integracion-pos-gasolineras'],
+  intereses: ['power-bi'],
 };
 
 describe('validarContacto', () => {
@@ -31,7 +31,7 @@ describe('armarMensaje', () => {
   it('incluye los datos, el interés y omite el teléfono vacío', () => {
     const texto = armarMensaje(base);
     expect(texto).toContain('Empresa: Gasolinera El Sol');
-    expect(texto).toContain('Interés: Integración POS para estaciones de servicio');
+    expect(texto).toContain('Interés: Implementación de Power BI');
     expect(texto).not.toContain('Teléfono');
     expect(texto.endsWith('Queremos integrar el POS.')).toBe(true);
   });

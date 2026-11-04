@@ -1,22 +1,19 @@
 import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { Icono } from '@/components/ui/Icono';
+import { LogosApp } from '@/components/ui/LogosApp';
+import type { EntradaMenu } from '@/data/paginas';
 import styles from './ListaEnlaces.module.css';
 
-interface Enlace {
-  href: string;
-  titulo: string;
-  texto: string;
-}
-
-export function ListaEnlaces({ enlaces }: { enlaces: Enlace[] }) {
+export function ListaEnlaces({ base, entradas }: { base: string; entradas: EntradaMenu[] }) {
   return (
     <ul className={styles.lista}>
-      {enlaces.map((enlace, indice) => (
-        <li key={enlace.href} {...revelarAlScroll(indice % 6)}>
-          <Link href={enlace.href} className={styles.fila}>
-            <h2>{enlace.titulo}</h2>
-            <p>{enlace.texto}</p>
+      {entradas.map((entrada, indice) => (
+        <li key={entrada.slug} {...revelarAlScroll(indice)}>
+          <Link href={`${base}${entrada.slug}/`} className={styles.fila}>
+            <LogosApp logos={entrada.logos} tamano={30} />
+            <h2>{entrada.etiqueta}</h2>
+            <p>{entrada.resumen}</p>
             <span className={styles.flecha}>
               <Icono nombre="flecha" tamano={18} />
             </span>

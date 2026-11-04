@@ -1,0 +1,17 @@
+.logos {
+  display: inline-flex;
+}
+.logo {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  background: var(--papel);
+  box-shadow: 0 8px 20px -14px rgb(42 20 153 / 0.35);
+}
+.logo + .logo {
+  margin-left: -14px;
+}
+.logo img {
+  object-fit: contain;
+}

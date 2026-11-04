@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { Icono } from '@/components/ui/Icono';
+import { LogosApp } from '@/components/ui/LogosApp';
 import { unirClases } from '@/lib/clases';
 import { CONTACTO, NAVEGACION } from '@/data/sitio';
 import { Logo } from './Logo';
@@ -56,18 +57,22 @@ export function Navegacion() {
               </Link>
               {enlace.submenu && (
                 <div className={styles.submenu}>
-                  {enlace.submenu.map((grupo) => (
-                    <div key={grupo.titulo}>
-                      <p className={styles.grupo}>{grupo.titulo}</p>
-                      <ul>
-                        {grupo.enlaces.map((sub) => (
-                          <li key={sub.href}>
-                            <Link href={sub.href}>{sub.etiqueta}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  <ul>
+                    {enlace.submenu.map((sub, indice) => (
+                      <li key={sub.slug} style={{ '--i': indice } as CSSProperties}>
+                        <Link href={`${enlace.base}${sub.slug}/`}>
+                          <LogosApp logos={sub.logos.slice(0, 1)} tamano={22} />
+                          <span>
+                            <strong>{sub.etiqueta}</strong>
+                            <small>{sub.resumen}</small>
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={enlace.href} className={styles.verTodo}>
+                    Ver {enlace.etiqueta.toLowerCase()} <Icono nombre="flecha" tamano={16} />
+                  </Link>
                 </div>
               )}
             </li>

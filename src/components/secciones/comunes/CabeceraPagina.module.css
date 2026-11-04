@@ -1,5 +1,5 @@
 .cabecera {
-  background: var(--papel-2);
+  background: radial-gradient(50% 80% at 90% 10%, var(--acento-suave), transparent 70%), var(--papel-2);
   border-bottom: 1px solid var(--linea);
   color: var(--texto-suave);
 }
@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: clamp(56px, 8vw, 112px) var(--margen) clamp(56px, 8vw, 104px);
 }
-@media (min-width: 1380px) {
+@media (min-width: 1568px) {
   .interior {
     padding-inline: 0;
   }
@@ -22,4 +22,33 @@
   max-width: 58ch;
   margin-top: 24px;
   font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.conVisual {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 48px;
+}
+.texto {
+  animation: aparecer 0.8s var(--curva) both;
+}
+.visual {
+  display: grid;
+  place-items: center;
+  animation: aparecer 0.8s var(--curva) 0.1s both;
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@media (max-width: 860px) {
+  .conVisual {
+    grid-template-columns: 1fr;
+  }
+  .visual {
+    justify-items: start;
+  }
 }

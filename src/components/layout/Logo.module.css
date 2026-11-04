@@ -1,23 +1,12 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--display);
-  font-size: 1.35rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--tinta);
-  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
-.logo b {
-  font-weight: 700;
+.logo:hover {
+  opacity: 0.8;
 }
-.fondo {
-  fill: var(--acento);
-}
-.barras {
-  fill: #fff;
-}
-.claro {
-  color: var(--papel);
+.logo img {
+  width: auto;
+  height: 44px;
 }
