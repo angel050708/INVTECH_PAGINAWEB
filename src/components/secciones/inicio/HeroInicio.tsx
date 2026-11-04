@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icono } from '@/components/ui/Icono';
 import { CurvaApps } from '@/components/ui/CurvaApps';
+import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import styles from './HeroInicio.module.css';
 
 export function HeroInicio() {
@@ -12,6 +13,9 @@ export function HeroInicio() {
           <h1>Implementación de Dynamics 365 Business Central</h1>
         </div>
         <div className={styles.lateral}>
+          <div className={styles.lineas}>
+            <LineasCircuito />
+          </div>
           <p className={styles.bajada}>
             Aproveche las oportunidades de crecimiento, eficiencia e innovación que ofrece Business Central
             para prosperar en el competitivo panorama empresarial actual.

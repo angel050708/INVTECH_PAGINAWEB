@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { FormularioContacto } from '@/components/secciones/contacto/FormularioContacto';
 import { Icono } from '@/components/ui/Icono';
-import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import { CONTACTO, enlaceWhatsapp } from '@/data/sitio';
 import styles from '../paginas.module.css';
 
@@ -16,7 +15,6 @@ export default function PaginaContacto() {
   return (
     <>
       <CabeceraPagina
-        visual={<LineasCircuito />}
         etiqueta="Contáctenos"
         titulo="Hable con un consultor"
         bajada="Creemos en conversar personalmente con cada cliente para entender sus requisitos. Escríbanos o llámenos y un consultor le responde."
