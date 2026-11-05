@@ -22,6 +22,10 @@ export const CONTACTO = {
 export const NAVEGACION: EnlaceNavegacion[] = [
   { href: '/soluciones/', etiqueta: 'Soluciones', submenu: SOLUCIONES_MENU, base: '/soluciones/' },
   { href: '/servicios/', etiqueta: 'Servicios', submenu: SERVICIOS_MENU, base: '/servicios/' },
+  { href: '/punto-de-venta/', etiqueta: 'Punto de venta' },
+  { href: '/combustible/', etiqueta: 'Combustible' },
+  { href: '/retail/', etiqueta: 'Retail' },
+  { href: '/venta-de-equipos/', etiqueta: 'Equipos' },
   { href: '/metodologia/', etiqueta: 'Metodología' },
   { href: '/quienes-somos/', etiqueta: 'Quiénes somos' },
 ];

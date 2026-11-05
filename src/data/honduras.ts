@@ -57,44 +57,6 @@ export const ESPECIALIDADES: Especialidad[] = [
     ],
   },
   {
-    slug: 'integracion-punto-de-venta',
-    etiqueta: 'Integración con punto de venta',
-    tituloSeo: 'Integración de punto de venta con Business Central para estaciones de servicio',
-    descripcion:
-      'Conectamos el punto de venta de estaciones de servicio con Business Central: ventas, facturas y clientes de crédito se registran sin volver a digitarlos.',
-    resumen: 'Estaciones de servicio conectadas al ERP',
-    icono: 'surtidor',
-    logos: ['dynamics-365-businesscentral', 'dynamics-365-commerce'],
-    intro: [
-      'En una estación de servicio se emiten muchas facturas por turno. Pasarlas a mano al ERP genera atrasos y diferencias en los estados de cuenta.',
-      'Integramos el punto de venta con Business Central para que cada venta llegue registrada sin volver a digitarla.',
-    ],
-    puntos: [
-      {
-        titulo: 'Sincronización de ventas',
-        texto: 'Las facturas del punto de venta se envían a Business Central.',
-      },
-      {
-        titulo: 'Clientes de crédito y contado',
-        texto:
-          'Cada venta queda registrada con su cliente, al crédito o al contado, y su estado de cuenta al día.',
-      },
-      {
-        titulo: 'Productos y precios al día',
-        texto: 'Los productos y precios que define en Business Central llegan al punto de venta.',
-      },
-      {
-        titulo: 'Todas las estaciones en un lugar',
-        texto: 'Contabilidad y gerencia consultan las ventas de cada estación desde Business Central.',
-      },
-    ],
-    relacionadas: [
-      { href: '/servicios/business-central-honduras/', etiqueta: 'Business Central en Honduras' },
-      { href: '/servicios/desarrollo/', etiqueta: 'Desarrollo de aplicaciones' },
-      { href: '/servicios/soporte-post-go-live/', etiqueta: 'Soporte post go-live' },
-    ],
-  },
-  {
     slug: 'soporte-post-go-live',
     etiqueta: 'Soporte post go-live',
     tituloSeo: 'Soporte post go-live de Business Central',

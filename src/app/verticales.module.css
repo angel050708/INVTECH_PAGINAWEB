@@ -1,0 +1,77 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.chips li {
+  padding: 8px 16px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--papel);
+  font-weight: 500;
+  color: var(--tinta);
+}
+.destacado {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-left: 4px solid var(--acento);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  background: var(--acento-suave);
+  font-weight: 500;
+  color: var(--tinta);
+}
+.comparacion {
+  display: grid;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-lg);
+  overflow: hidden;
+  background: var(--papel);
+}
+.comparacion > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.comparacion > div + div {
+  border-top: 1px solid var(--linea);
+}
+.comparacion span {
+  padding: 20px 24px;
+}
+.comparacion span:first-child {
+  color: var(--texto-suave);
+  border-right: 1px solid var(--linea);
+}
+.comparacion span:last-child {
+  font-weight: 500;
+  color: var(--tinta);
+}
+.comparacion .titulos span {
+  padding: 14px 24px;
+  background: var(--tinta);
+  font-weight: 600;
+  color: #fff;
+}
+.comparacion .titulos span:last-child {
+  background: var(--acento);
+}
+.bloque + .bloque {
+  margin-top: 56px;
+}
+.siguientes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+}
+@media (max-width: 700px) {
+  .comparacion > div {
+    grid-template-columns: 1fr;
+  }
+  .comparacion span:first-child {
+    border-right: 0;
+    border-bottom: 1px dashed var(--linea);
+  }
+  .comparacion .titulos {
+    display: none !important;
+  }
+}

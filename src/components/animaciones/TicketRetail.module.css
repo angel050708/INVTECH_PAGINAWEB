@@ -1,0 +1,204 @@
+/* Ciclo de 10 s: cada producto entra con 1.1 s de diferencia y luego se descuenta en el ERP. */
+.escena {
+  --ciclo: 10s;
+  --paso: 1.1s;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 64px);
+  margin: 0;
+}
+.ticket {
+  position: relative;
+  padding: 22px 22px 28px;
+  border-radius: 14px 14px 4px 4px;
+  background: #fff;
+  box-shadow: var(--sombra);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--tinta);
+  /* Borde inferior dentado del ticket */
+  mask: radial-gradient(circle 6px at 50% 100%, transparent 98%, #000) 0 0 / 14px 100% repeat-x;
+}
+.cabecera {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--linea);
+}
+.cabecera small {
+  color: var(--texto-suave);
+}
+.ticket ol li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--linea);
+  animation: agregar var(--ciclo) var(--curva) infinite both;
+  animation-delay: calc(var(--i) * var(--paso));
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  animation: aparecerTotal var(--ciclo) var(--curva) infinite both;
+}
+.cobrado {
+  display: block;
+  margin-top: 12px;
+  padding: 6px;
+  border-radius: 6px;
+  background: rgb(18 128 92 / 0.12);
+  text-align: center;
+  font-weight: 700;
+  color: #0a5c40;
+  animation: aparecerTotal var(--ciclo) var(--curva) infinite both;
+  animation-delay: 0.4s;
+}
+.bc {
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+  background: var(--papel);
+  box-shadow: var(--sombra);
+  font-family: 'Segoe UI', var(--sans);
+  font-size: 0.85rem;
+}
+.encabezadoBc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #002050;
+  font-weight: 600;
+  color: #fff;
+}
+.columnas,
+.bc ol li {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 12px;
+  padding: 10px 16px;
+}
+.columnas {
+  border-bottom: 1px solid var(--linea);
+  font-size: 0.72rem;
+  color: var(--texto-suave);
+}
+.bc ol li {
+  border-bottom: 1px solid var(--linea);
+  color: var(--tinta);
+  animation: resaltarFila var(--ciclo) infinite;
+  animation-delay: calc(var(--i) * var(--paso) + 0.6s);
+}
+.existencias {
+  position: relative;
+  height: 1.3em;
+  overflow: hidden;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.antes,
+.despues {
+  position: absolute;
+  right: 0;
+}
+.antes {
+  animation: salir var(--ciclo) var(--curva) infinite;
+  animation-delay: calc(var(--i) * var(--paso) + 0.6s);
+}
+.despues {
+  color: #008489;
+  animation: entrar var(--ciclo) var(--curva) infinite;
+  animation-delay: calc(var(--i) * var(--paso) + 0.6s);
+}
+@keyframes agregar {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  4%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes aparecerTotal {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  50%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes resaltarFila {
+  0% {
+    background: #d9f3f4;
+  }
+  12%,
+  100% {
+    background: transparent;
+  }
+}
+@keyframes salir {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  5%,
+  80% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  92%,
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes entrar {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  5%,
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  92%,
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@media (max-width: 860px) {
+  .escena {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticket ol li,
+  .total,
+  .cobrado,
+  .bc ol li,
+  .antes,
+  .despues {
+    animation: none;
+  }
+  .antes {
+    opacity: 0;
+  }
+}

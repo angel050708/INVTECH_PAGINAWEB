@@ -1,0 +1,144 @@
+.panel {
+  margin: 0;
+  padding: clamp(18px, 2.4vw, 28px);
+  border-radius: var(--radio-lg);
+  background: #070b17;
+  color: #e7e9f2;
+  box-shadow: var(--sombra);
+}
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.encabezado strong {
+  display: block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.encabezado small {
+  color: #8a91aa;
+}
+.vivo {
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #4ade80;
+  white-space: nowrap;
+}
+.vivo::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: latir 1.6s ease-in-out infinite;
+}
+.totales {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #1c2338;
+  border-radius: 14px;
+  background: #0b1122;
+}
+.totales small,
+.producto small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a91aa;
+}
+.totales b {
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-variant-numeric: tabular-nums;
+  color: #6b8cff;
+}
+.naranja {
+  color: #fb923c !important;
+}
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.producto {
+  padding: 16px;
+  border: 1px solid #1c2338;
+  border-top: 3px solid var(--color);
+  border-radius: 14px;
+  background: #0b1122;
+}
+.producto small i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color);
+}
+.producto b {
+  display: block;
+  margin: 6px 0 4px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-variant-numeric: tabular-nums;
+}
+.producto > span {
+  display: block;
+  font-size: 0.8rem;
+  color: #8a91aa;
+  font-variant-numeric: tabular-nums;
+}
+.grafica {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #1c2338;
+  border-radius: 14px;
+  background: #0b1122;
+}
+.grafica span {
+  flex: 1;
+  height: var(--h);
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #6b8cff, #2a1499);
+  transform-origin: bottom;
+  animation: crecer 4s var(--curva) infinite;
+  animation-delay: calc(var(--i) * 60ms);
+}
+@keyframes crecer {
+  0% {
+    transform: scaleY(0.15);
+  }
+  30%,
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes latir {
+  50% {
+    opacity: 0.3;
+  }
+}
+@media (max-width: 640px) {
+  .totales,
+  .productos {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grafica span,
+  .vivo::before {
+    animation: none;
+  }
+}

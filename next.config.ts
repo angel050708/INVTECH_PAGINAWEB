@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/business-central/', destination: '/soluciones/business-central/', permanent: true },
+      { source: '/servicios/integracion-punto-de-venta/', destination: '/punto-de-venta/', permanent: true },
       { source: '/soluciones/comercio/', destination: '/soluciones/', permanent: true },
       { source: '/soluciones/marketing/', destination: '/soluciones/', permanent: true },
       { source: '/soluciones/operaciones-proyecto/', destination: '/soluciones/', permanent: true },
