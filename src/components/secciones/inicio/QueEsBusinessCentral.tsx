@@ -1,13 +1,18 @@
 import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { DiagramaModulos } from '@/components/secciones/comunes/DiagramaModulos';
+import { Confirmar } from '@/components/ui/Confirmar';
 import { Icono } from '@/components/ui/Icono';
+import { ESPECIALIDADES } from '@/data/honduras';
 import styles from './QueEsBusinessCentral.module.css';
 
-const SENALES = [
-  'Su empresa se ha expandido más allá de las capacidades de su solución contable básica.',
-  'Encuentra obstáculos por sistemas heredados desconectados.',
-];
+/** Lo propio de InvTech para Honduras; cada punto enlaza a su página. */
+const PUNTOS = ESPECIALIDADES.map((e) => ({
+  href: `/servicios/${e.slug}/`,
+  titulo: e.etiqueta,
+  texto: e.resumen,
+  confirmar: e.confirmar,
+}));
 
 export function QueEsBusinessCentral() {
   return (
@@ -15,26 +20,29 @@ export function QueEsBusinessCentral() {
       <div className={`contenedor ${styles.rejilla}`}>
         <div>
           <div {...revelarAlScroll()}>
-            <p className="etiqueta">Dynamics 365 Business Central</p>
-            <h2 className="titulo-seccion">Un solo sistema para finanzas, ventas, compras e inventario</h2>
+            <p className="etiqueta">Qué hacemos</p>
+            <h2 className="titulo-seccion">Finanzas, ventas, compras e inventario en un solo sistema</h2>
             <p className="entrada">
-              Business Central es el ERP de Microsoft para empresas en crecimiento. Funciona en la nube, en
-              sus servidores o de forma híbrida.
+              Business Central reúne la operación de su empresa. Nosotros lo implementamos en seis fases y le
+              agregamos lo que una empresa en Honduras necesita para trabajar con él desde el primer día.
             </p>
           </div>
-          <p className={styles.subtitulo} {...revelarAlScroll(1)}>
-            Le conviene si:
-          </p>
           <ul className={styles.senales}>
-            {SENALES.map((senal, indice) => (
-              <li key={senal} {...revelarAlScroll(indice + 2)}>
+            {PUNTOS.map((punto, indice) => (
+              <li key={punto.href} {...revelarAlScroll(indice + 1)}>
                 <Icono nombre="check" tamano={18} />
-                {senal}
+                <span>
+                  <Link href={punto.href} className={styles.enlacePunto}>
+                    {punto.titulo}
+                  </Link>
+                  {punto.confirmar && <Confirmar />}
+                  <small>{punto.texto}</small>
+                </span>
               </li>
             ))}
           </ul>
-          <Link href="/soluciones/business-central/" className="enlace-flecha">
-            Conozca Business Central <Icono nombre="flecha" tamano={18} />
+          <Link href="/metodologia/" className="enlace-flecha">
+            Ver la implementación en seis fases <Icono nombre="flecha" tamano={18} />
           </Link>
         </div>
         <div {...revelarAlScroll(1)}>

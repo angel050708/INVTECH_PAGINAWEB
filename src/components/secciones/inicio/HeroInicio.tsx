@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Confirmar } from '@/components/ui/Confirmar';
 import { Icono } from '@/components/ui/Icono';
 import { CurvaApps } from '@/components/ui/CurvaApps';
 import { LineasCircuito } from '@/components/ui/LineasCircuito';
@@ -10,22 +11,23 @@ export function HeroInicio() {
       <div className={styles.texto}>
         <div className={styles.titular}>
           <p className={styles.sello}>Microsoft Dynamics 365 Business Central</p>
-          <h1>Implementación de Dynamics 365 Business Central</h1>
+          <h1>Business Central para empresas de Honduras</h1>
         </div>
         <div className={styles.lateral}>
           <div className={styles.lineas}>
             <LineasCircuito />
           </div>
           <p className={styles.bajada}>
-            Aproveche las oportunidades de crecimiento, eficiencia e innovación que ofrece Business Central
-            para prosperar en el competitivo panorama empresarial actual.
+            Implementamos Business Central y lo dejamos listo para facturar en Honduras con CAI
+            <Confirmar />. También lo conectamos al punto de venta de estaciones de servicio
+            <Confirmar />.
           </p>
           <div className={styles.acciones}>
             <Link href="/contacto/" className="boton boton-acento boton-grande">
               Empieza ahora <Icono nombre="flecha" tamano={18} />
             </Link>
-            <Link href="/soluciones/" className="boton boton-borde boton-grande">
-              Ver soluciones
+            <Link href="/servicios/" className="boton boton-borde boton-grande">
+              Ver servicios
             </Link>
           </div>
         </div>

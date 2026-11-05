@@ -1,0 +1,49 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 6vw, 112px);
+  align-items: start;
+}
+.intro {
+  display: grid;
+  gap: 16px;
+  font-size: 1.15rem;
+  color: var(--texto);
+}
+.puntos {
+  border-top: 1px solid var(--linea);
+}
+.puntos li {
+  display: flex;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.puntos h2 {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+.puntos p {
+  margin-top: 4px;
+  color: var(--texto-suave);
+}
+.check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--acento-suave);
+  color: var(--acento);
+}
+.relacionadas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+}
+@media (max-width: 860px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+}

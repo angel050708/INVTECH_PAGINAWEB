@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { metadatosPagina } from '@/lib/metadatos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -6,11 +7,11 @@ import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import { VALORES } from '@/data/empresa';
 import styles from '../paginas.module.css';
 
-export const metadata: Metadata = {
-  title: 'Quiénes somos',
-  description:
-    'InvTech: soluciones empresariales basadas en tecnología para grandes empresas, pymes y corporaciones.',
-};
+export const metadata: Metadata = metadatosPagina(
+  'Quiénes somos',
+  'InvTech: soluciones empresariales basadas en tecnología para grandes empresas, pymes y corporaciones.',
+  '/quienes-somos/',
+);
 
 /** Texto de invtech.pro/quienes-somos. */
 const BLOQUES = [

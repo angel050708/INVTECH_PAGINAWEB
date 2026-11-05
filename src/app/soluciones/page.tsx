@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
+import { metadatosPagina } from '@/lib/metadatos';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { ListaEnlaces } from '@/components/secciones/comunes/ListaEnlaces';
 import { SOLUCIONES } from '@/data/paginas';
 
-export const metadata: Metadata = {
-  title: 'Soluciones',
-  description:
-    'Aplicaciones de Microsoft Dynamics 365 que implementamos: Business Central, Finance, Sales y más.',
-};
+export const metadata: Metadata = metadatosPagina(
+  'Soluciones',
+  'Aplicaciones de Microsoft Dynamics 365 que implementamos: Business Central, Finance, Sales y más.',
+  '/soluciones/',
+);
 
 export default function PaginaSoluciones() {
   return (

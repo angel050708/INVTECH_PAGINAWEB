@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { ESPECIALIDADES } from '@/data/honduras';
 import { SERVICIOS_DYNAMICS, SOLUCIONES } from '@/data/paginas';
 import { SITIO_URL } from '@/lib/sitio-url';
 
@@ -8,6 +9,7 @@ export const PAGINAS: { ruta: string; prioridad: number }[] = [
   { ruta: '/soluciones/', prioridad: 0.9 },
   ...SOLUCIONES.map(({ slug }) => ({ ruta: `/soluciones/${slug}/`, prioridad: 0.8 })),
   { ruta: '/servicios/', prioridad: 0.9 },
+  ...ESPECIALIDADES.map(({ slug }) => ({ ruta: `/servicios/${slug}/`, prioridad: 0.9 })),
   ...SERVICIOS_DYNAMICS.map(({ slug }) => ({ ruta: `/servicios/${slug}/`, prioridad: 0.8 })),
   { ruta: '/metodologia/', prioridad: 0.7 },
   { ruta: '/quienes-somos/', prioridad: 0.6 },

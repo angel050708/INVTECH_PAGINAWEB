@@ -17,6 +17,21 @@ El texto de Soluciones y Servicios está en `src/data/contenido-original.json`, 
 Las páginas que se dejaron de publicar redirigen a su listado (ver `next.config.ts`).
 Los logos de aplicaciones están en `public/logos/` y el logo de InvTech vectorizado en `public/logo-invtech.svg`.
 
+## Datos por confirmar
+
+Lo que el equipo todavía debe validar aparece en la web con la marca **[CONFIRMAR]** (componente
+`src/components/ui/Confirmar.tsx`): facturación fiscal con CAI e integración con punto de venta, en
+`src/data/honduras.ts` y en el inicio. Cuando esté confirmado, defina `NEXT_PUBLIC_OCULTAR_PENDIENTES=1` en
+Vercel o corrija el texto.
+
+## SEO
+
+- Cada página tiene su `<title>` con "Honduras" (plantilla en `src/app/layout.tsx`), descripción, URL canónica
+  y Open Graph con imagen (`src/app/opengraph-image.tsx`). Ver `src/lib/metadatos.ts`.
+- Datos estructurados Organization/ProfessionalService en todas las páginas y Service en cada servicio
+  (`src/lib/datos-estructurados.ts`).
+- `sitemap.xml` y `robots.txt` se generan solos. Solo se permite indexar con `NEXT_PUBLIC_SITIO_URL` definido.
+
 ## Desarrollo
 
 ```bash
