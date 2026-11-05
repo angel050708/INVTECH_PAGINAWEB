@@ -67,24 +67,25 @@ export const ESPECIALIDADES: Especialidad[] = [
     logos: ['dynamics-365-businesscentral', 'dynamics-365-commerce'],
     intro: [
       'En una estación de servicio se emiten muchas facturas por turno. Pasarlas a mano al ERP genera atrasos y diferencias en los estados de cuenta.',
-      'Integramos el punto de venta con Business Central para que cada venta llegue registrada y el cierre de turno se revise en un solo lugar.',
+      'Integramos el punto de venta con Business Central para que cada venta llegue registrada sin volver a digitarla.',
     ],
     puntos: [
       {
         titulo: 'Sincronización de ventas',
-        texto: 'Las facturas del punto de venta se crean como documentos en Business Central.',
+        texto: 'Las facturas del punto de venta se envían a Business Central.',
       },
       {
-        titulo: 'Clientes de crédito',
-        texto: 'Ventas a crédito asignadas al cliente correcto, con su estado de cuenta.',
+        titulo: 'Clientes de crédito y contado',
+        texto:
+          'Cada venta queda registrada con su cliente, al crédito o al contado, y su estado de cuenta al día.',
       },
       {
-        titulo: 'Revisión por turno',
-        texto: 'Diferencias y documentos pendientes visibles antes de cerrar.',
+        titulo: 'Productos y precios al día',
+        texto: 'Los productos y precios que define en Business Central llegan al punto de venta.',
       },
       {
-        titulo: 'Registro de errores',
-        texto: 'Lo que no se pudo sincronizar queda anotado para corregirlo.',
+        titulo: 'Todas las estaciones en un lugar',
+        texto: 'Contabilidad y gerencia consultan las ventas de cada estación desde Business Central.',
       },
     ],
     relacionadas: [
