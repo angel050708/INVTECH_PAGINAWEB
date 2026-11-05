@@ -4,7 +4,6 @@ import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { ListaEnlaces } from '@/components/secciones/comunes/ListaEnlaces';
 import { revelarAlScroll } from '@/components/efectos/revelar';
-import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
 import { ESPECIALIDADES } from '@/data/honduras';
 import { SERVICIOS_DYNAMICS } from '@/data/paginas';
 
@@ -31,23 +30,6 @@ export default function PaginaServicios() {
             </div>
           </div>
           <ListaEnlaces base="/servicios/" entradas={ESPECIALIDADES} />
-        </div>
-      </section>
-      <section className="seccion fondo-alterno">
-        <div className="contenedor">
-          <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <div>
-              <p className="etiqueta">Business Central en acción</p>
-              <h2 className="titulo-seccion">Cada venta, registrada en Business Central</h2>
-            </div>
-            <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
-              Business Central ofrece aplicaciones comerciales conectadas, acceso a datos en tiempo real y una
-              plataforma de colaboración centralizada.
-            </p>
-          </div>
-          <div {...revelarAlScroll(1)}>
-            <FlujoFacturas />
-          </div>
         </div>
       </section>
       <section className="seccion">

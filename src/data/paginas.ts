@@ -135,7 +135,7 @@ const enServicios = (slugs: string[]): EntradaMenu[] =>
 /** Menú de Soluciones: las aplicaciones y las soluciones propias para Honduras. */
 export const SOLUCIONES_MENU: EntradaMenu[] = [
   ...SOLUCIONES,
-  ...enServicios(['business-central-honduras', 'integracion-punto-de-venta', 'power-bi']),
+  ...enServicios(['business-central-honduras', 'power-bi']),
 ];
 
 /** Menú de Servicios: implementación, desarrollo, auditoría y soporte. */
@@ -148,8 +148,41 @@ export const SERVICIOS_MENU: EntradaMenu[] = enServicios([
   'soporte-post-go-live',
 ]);
 
+/** Páginas propias de la barra de navegación (punto de venta, combustible, retail y equipos). */
+export const VERTICALES: EntradaMenu[] = [
+  {
+    slug: 'punto-de-venta',
+    etiqueta: 'Punto de venta BCPOS',
+    logos: ['dynamics-365-commerce'],
+    resumen: 'La caja conectada a Business Central',
+    href: '/punto-de-venta/',
+  },
+  {
+    slug: 'combustible',
+    etiqueta: 'Combustible',
+    logos: ['dynamics-365-businesscentral'],
+    resumen: 'Estaciones de servicio',
+    href: '/combustible/',
+  },
+  {
+    slug: 'retail',
+    etiqueta: 'Retail',
+    logos: ['dynamics-365-commerce'],
+    resumen: 'Ferreterías, farmacias y supermercados',
+    href: '/retail/',
+  },
+  {
+    slug: 'venta-de-equipos',
+    etiqueta: 'Venta de equipos',
+    logos: ['office-365'],
+    resumen: 'Equipos, infraestructura y telecomunicaciones',
+    href: '/venta-de-equipos/',
+  },
+];
+
 /** Opciones de interés que aparecen en el formulario de contacto. */
 export const INTERESES: EntradaMenu[] = [
+  ...VERTICALES,
   ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
   ...SERVICIOS_DYNAMICS,
 ];

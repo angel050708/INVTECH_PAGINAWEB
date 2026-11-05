@@ -36,7 +36,7 @@
 .barra {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   height: var(--alto-nav);
   padding: 0 var(--margen);
 }
@@ -50,7 +50,8 @@
 }
 .enlace {
   display: block;
-  padding: 10px 14px;
+  padding: 10px 11px;
+  white-space: nowrap;
   border-radius: 8px;
   color: var(--tinta);
   font-weight: 500;
@@ -179,7 +180,7 @@
   display: none;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1320px) {
   .franja > span:first-child {
     display: none;
   }
@@ -188,6 +189,9 @@
   }
   .barra {
     justify-content: space-between;
+  }
+  .conSubmenu > .enlace + .submenu {
+    display: none;
   }
   .hamburguesa {
     display: grid;
