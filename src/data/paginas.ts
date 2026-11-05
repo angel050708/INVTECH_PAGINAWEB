@@ -1,3 +1,4 @@
+import { ESPECIALIDADES } from './honduras';
 import contenido from './contenido-original.json';
 
 export interface ItemContenido {
@@ -117,8 +118,17 @@ export function paginaServicio(slug: string): PaginaContenido | undefined {
   return ORIGINAL.servicios[slug];
 }
 
+/** Servicios del menú: los propios para Honduras primero y luego los clave de Dynamics 365. */
+export const SERVICIOS_MENU: EntradaMenu[] = [
+  ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
+  ...SERVICIOS_DYNAMICS.filter((s) => ['implementacion', 'business-central', 'soporte'].includes(s.slug)),
+];
+
 /** Opciones de interés que aparecen en el formulario de contacto. */
-export const INTERESES = SERVICIOS_DYNAMICS;
+export const INTERESES: EntradaMenu[] = [
+  ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
+  ...SERVICIOS_DYNAMICS,
+];
 
 export function etiquetaInteres(slug: string): string | undefined {
   return INTERESES.find((interes) => interes.slug === slug)?.etiqueta;

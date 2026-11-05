@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { metadatosPagina } from '@/lib/metadatos';
 import { Suspense } from 'react';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { FormularioContacto } from '@/components/secciones/contacto/FormularioContacto';
@@ -6,10 +7,11 @@ import { Icono } from '@/components/ui/Icono';
 import { CONTACTO, enlaceWhatsapp } from '@/data/sitio';
 import styles from '../paginas.module.css';
 
-export const metadata: Metadata = {
-  title: 'Contacto',
-  description: `Hable con un consultor de InvTech: ${CONTACTO.telefono} · ${CONTACTO.correo}.`,
-};
+export const metadata: Metadata = metadatosPagina(
+  'Contacto',
+  `Hable con un consultor de InvTech: ${CONTACTO.telefono} · ${CONTACTO.correo}.`,
+  '/contacto/',
+);
 
 export default function PaginaContacto() {
   return (

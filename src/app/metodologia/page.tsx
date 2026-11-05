@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { metadatosPagina } from '@/lib/metadatos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -6,11 +7,11 @@ import { LineaFases } from '@/components/secciones/comunes/LineaFases';
 import { CONCEPTOS } from '@/data/metodologia';
 import styles from '../paginas.module.css';
 
-export const metadata: Metadata = {
-  title: 'Metodología de implementación',
-  description:
-    'Diagnosticar, Análisis, Diseño, Desarrollo, Despliegue y Operacional: así implementamos Business Central, con FRD, Gap-Fit, UAT y soporte post go-live.',
-};
+export const metadata: Metadata = metadatosPagina(
+  'Implementación de Business Central en seis fases',
+  'Diagnosticar, Análisis, Diseño, Desarrollo, Despliegue y Operacional: así implementamos Business Central, con FRD, Gap-Fit, UAT y soporte post go-live.',
+  '/metodologia/',
+);
 
 export default function PaginaMetodologia() {
   return (
@@ -23,6 +24,9 @@ export default function PaginaMetodologia() {
 
       <section className="seccion">
         <div className="contenedor">
+          <h2 className="titulo-seccion" style={{ marginBottom: 48 }}>
+            Las seis fases de la implementación
+          </h2>
           <LineaFases detallada />
         </div>
       </section>

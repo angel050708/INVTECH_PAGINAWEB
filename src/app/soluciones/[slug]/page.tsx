@@ -4,6 +4,7 @@ import { Beneficios } from '@/components/secciones/comunes/Beneficios';
 import { DiagramaModulos } from '@/components/secciones/comunes/DiagramaModulos';
 import { PaginaContenido } from '@/components/secciones/comunes/PaginaContenido';
 import { paginaSolucion, SOLUCIONES } from '@/data/paginas';
+import { metadatosPagina } from '@/lib/metadatos';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -16,8 +17,12 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const pagina = paginaSolucion((await params).slug);
-  return pagina ? { title: pagina.titulo, description: pagina.bajada.join(' ').slice(0, 160) } : {};
+  const { slug } = await params;
+  const pagina = paginaSolucion(slug);
+  if (!pagina) return {};
+  const ruta = `/soluciones/${slug}/`;
+  const descripcion = pagina.bajada.join(' ').slice(0, 155);
+  return metadatosPagina(pagina.titulo, descripcion, ruta);
 }
 
 export default async function PaginaSolucion({ params }: Props) {

@@ -28,3 +28,17 @@
     grid-template-columns: 1fr;
   }
 }
+.senales {
+  margin-top: 28px;
+}
+.enlacePunto {
+  font-weight: 600;
+  color: var(--tinta);
+}
+.enlacePunto:hover {
+  color: var(--acento);
+}
+.senales small {
+  display: block;
+  color: var(--texto-suave);
+}

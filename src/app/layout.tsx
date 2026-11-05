@@ -6,7 +6,9 @@ import type { ReactNode } from 'react';
 import { RevelarAlScroll } from '@/components/efectos/RevelarAlScroll';
 import { Navegacion } from '@/components/layout/Navegacion';
 import { PiePagina } from '@/components/layout/PiePagina';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { BotonWhatsapp } from '@/components/ui/BotonWhatsapp';
+import { datosEmpresa } from '@/lib/datos-estructurados';
 import { NOMBRE_SITIO } from '@/data/sitio';
 import { unirClases } from '@/lib/clases';
 import { SITIO_INDEXABLE, SITIO_URL } from '@/lib/sitio-url';
@@ -18,13 +20,24 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITIO_URL),
   robots: SITIO_INDEXABLE ? undefined : { index: false, follow: false },
   title: {
-    default: `${NOMBRE_SITIO} · Implementación de Dynamics 365 Business Central en Honduras`,
-    template: `%s · ${NOMBRE_SITIO}`,
+    default: `Business Central para empresas de Honduras | ${NOMBRE_SITIO}`,
+    // Todas las páginas llevan "Honduras" en el <title>
+    template: `%s | ${NOMBRE_SITIO} Honduras`,
   },
   description:
-    'Implementamos Microsoft Dynamics 365 Business Central con localización fiscal hondureña (CAI, retenciones), integración POS para estaciones de servicio, informes y soporte.',
+    'Implementamos Microsoft Dynamics 365 Business Central para empresas de Honduras: facturación fiscal con CAI, integración con punto de venta, implementación en seis fases y soporte.',
   icons: { icon: '/favicon.svg', apple: '/apple-touch-icon.png' },
-  openGraph: { type: 'website', locale: 'es_HN', siteName: NOMBRE_SITIO },
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_HN',
+    siteName: NOMBRE_SITIO,
+    title: `Business Central para empresas de Honduras | ${NOMBRE_SITIO}`,
+    description:
+      'Implementación de Microsoft Dynamics 365 Business Central para empresas de Honduras, con soporte después de salir en vivo.',
+    url: '/',
+  },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {
@@ -43,6 +56,7 @@ export default function LayoutRaiz({ children }: { children: ReactNode }) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_ACTIVAR_ANIMACIONES }} />
+        <JsonLd datos={datosEmpresa()} />
       </head>
       <body>
         <a className="saltar-al-contenido" href="#contenido">
@@ -51,7 +65,9 @@ export default function LayoutRaiz({ children }: { children: ReactNode }) {
         <Navegacion />
         <main id="contenido">{children}</main>
         <PiePagina />
-        <BotonWhatsapp />
+        <aside aria-label="Contacto rápido">
+          <BotonWhatsapp />
+        </aside>
         <RevelarAlScroll />
       </body>
     </html>
