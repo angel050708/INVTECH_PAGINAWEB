@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { DiagramaModulos } from '@/components/secciones/comunes/DiagramaModulos';
-import { Confirmar } from '@/components/ui/Confirmar';
 import { Icono } from '@/components/ui/Icono';
 import { ESPECIALIDADES } from '@/data/honduras';
 import styles from './QueEsBusinessCentral.module.css';
@@ -11,7 +10,6 @@ const PUNTOS = ESPECIALIDADES.map((e) => ({
   href: `/servicios/${e.slug}/`,
   titulo: e.etiqueta,
   texto: e.resumen,
-  confirmar: e.confirmar,
 }));
 
 export function QueEsBusinessCentral() {
@@ -35,7 +33,6 @@ export function QueEsBusinessCentral() {
                   <Link href={punto.href} className={styles.enlacePunto}>
                     {punto.titulo}
                   </Link>
-                  {punto.confirmar && <Confirmar />}
                   <small>{punto.texto}</small>
                 </span>
               </li>

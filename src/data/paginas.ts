@@ -121,7 +121,7 @@ export function paginaServicio(slug: string): PaginaContenido | undefined {
 /** Servicios del menú: los propios para Honduras primero y luego los clave de Dynamics 365. */
 export const SERVICIOS_MENU: EntradaMenu[] = [
   ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
-  ...SERVICIOS_DYNAMICS.filter((s) => ['implementacion', 'business-central', 'soporte'].includes(s.slug)),
+  ...SERVICIOS_DYNAMICS.filter((s) => ['implementacion', 'business-central', 'desarrollo'].includes(s.slug)),
 ];
 
 /** Opciones de interés que aparecen en el formulario de contacto. */

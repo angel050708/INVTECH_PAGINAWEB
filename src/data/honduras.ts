@@ -30,7 +30,7 @@ export const ESPECIALIDADES: Especialidad[] = [
     tituloSeo: 'Business Central en Honduras: facturación fiscal y localización',
     descripcion:
       'Business Central configurado para empresas de Honduras: facturación fiscal con CAI, rangos autorizados y reportes para la operación local.',
-    resumen: 'Facturación fiscal con CAI y localización',
+    resumen: 'Facturación fiscal',
     icono: 'sello',
     logos: ['dynamics-365-businesscentral'],
     confirmar: true,
