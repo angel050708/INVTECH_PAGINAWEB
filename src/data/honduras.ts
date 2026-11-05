@@ -1,10 +1,6 @@
 import type { NombreIcono } from '@/components/ui/Icono';
 
-/**
- * Servicios propios de InvTech para empresas de Honduras.
- * Los textos marcados con `confirmar: true` deben validarse con el equipo antes de publicarse
- * sin marcador (ver componente Confirmar y la variable NEXT_PUBLIC_OCULTAR_PENDIENTES).
- */
+/** Servicios propios de InvTech para empresas de Honduras. */
 export interface Especialidad {
   slug: string;
   /** Nombre corto para menús y enlaces */
@@ -16,9 +12,8 @@ export interface Especialidad {
   resumen: string;
   icono: NombreIcono;
   logos: string[];
-  confirmar: boolean;
   intro: string[];
-  puntos: { titulo: string; texto: string; confirmar?: boolean }[];
+  puntos: { titulo: string; texto: string }[];
   /** Otras páginas del sitio relacionadas (enlaces internos) */
   relacionadas: { href: string; etiqueta: string }[];
 }
@@ -30,10 +25,9 @@ export const ESPECIALIDADES: Especialidad[] = [
     tituloSeo: 'Business Central en Honduras: facturación fiscal y localización',
     descripcion:
       'Business Central configurado para empresas de Honduras: facturación fiscal con CAI, rangos autorizados y reportes para la operación local.',
-    resumen: 'Facturación fiscal con CAI y localización',
+    resumen: 'Facturación fiscal',
     icono: 'sello',
     logos: ['dynamics-365-businesscentral'],
-    confirmar: true,
     intro: [
       'Business Central trae de fábrica finanzas, ventas, compras e inventario. Para facturar en Honduras necesita, además, manejar los requisitos fiscales locales dentro del mismo sistema.',
       'Configuramos esa parte para que su equipo emita, revise y reporte desde Business Central, sin hojas de cálculo aparte.',
@@ -42,22 +36,18 @@ export const ESPECIALIDADES: Especialidad[] = [
       {
         titulo: 'Facturación fiscal con CAI',
         texto: 'Control de CAI, rangos autorizados y fecha límite de emisión.',
-        confirmar: true,
       },
       {
         titulo: 'Documentos fiscales',
         texto: 'Facturas, notas de crédito y notas de débito con el formato requerido.',
-        confirmar: true,
       },
       {
         titulo: 'Retenciones',
         texto: 'Cálculo y registro de retenciones dentro de Business Central.',
-        confirmar: true,
       },
       {
         titulo: 'Reportes para declarar',
         texto: 'Información lista para preparar las declaraciones.',
-        confirmar: true,
       },
     ],
     relacionadas: [
@@ -75,7 +65,6 @@ export const ESPECIALIDADES: Especialidad[] = [
     resumen: 'Estaciones de servicio conectadas al ERP',
     icono: 'surtidor',
     logos: ['dynamics-365-businesscentral', 'dynamics-365-commerce'],
-    confirmar: true,
     intro: [
       'En una estación de servicio se emiten muchas facturas por turno. Pasarlas a mano al ERP genera atrasos y diferencias en los estados de cuenta.',
       'Integramos el punto de venta con Business Central para que cada venta llegue registrada y el cierre de turno se revise en un solo lugar.',
@@ -84,22 +73,18 @@ export const ESPECIALIDADES: Especialidad[] = [
       {
         titulo: 'Sincronización de ventas',
         texto: 'Las facturas del punto de venta se crean como documentos en Business Central.',
-        confirmar: true,
       },
       {
         titulo: 'Clientes de crédito',
         texto: 'Ventas a crédito asignadas al cliente correcto, con su estado de cuenta.',
-        confirmar: true,
       },
       {
         titulo: 'Revisión por turno',
         texto: 'Diferencias y documentos pendientes visibles antes de cerrar.',
-        confirmar: true,
       },
       {
         titulo: 'Registro de errores',
         texto: 'Lo que no se pudo sincronizar queda anotado para corregirlo.',
-        confirmar: true,
       },
     ],
     relacionadas: [
@@ -117,7 +102,6 @@ export const ESPECIALIDADES: Especialidad[] = [
     resumen: 'Acompañamiento después de salir en vivo',
     icono: 'soporte',
     logos: ['dynamics-365-businesscentral', 'dynamics-365-customer-service'],
-    confirmar: false,
     intro: [
       'Una vez que la implementación entra en funcionamiento, brindamos servicios de asistencia como actividad de última milla del proceso.',
       'El objetivo es que su equipo realice sus tareas diarias en el nuevo sistema sin contratiempos ni problemas.',

@@ -5,7 +5,6 @@ import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { ListaEnlaces } from '@/components/secciones/comunes/ListaEnlaces';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
-import { Confirmar } from '@/components/ui/Confirmar';
 import { ESPECIALIDADES } from '@/data/honduras';
 import { SERVICIOS_DYNAMICS } from '@/data/paginas';
 
@@ -38,13 +37,12 @@ export default function PaginaServicios() {
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
-              <p className="etiqueta">Integración con punto de venta</p>
+              <p className="etiqueta">Business Central en acción</p>
               <h2 className="titulo-seccion">Cada venta, registrada en Business Central</h2>
             </div>
             <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
-              Las facturas que emite su punto de venta llegan como documentos de venta a Business Central, sin
-              volver a digitarlas.
-              <Confirmar />
+              Business Central ofrece aplicaciones comerciales conectadas, acceso a datos en tiempo real y una
+              plataforma de colaboración centralizada.
             </p>
           </div>
           <div {...revelarAlScroll(1)}>
