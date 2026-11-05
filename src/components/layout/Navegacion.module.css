@@ -68,7 +68,7 @@
   position: absolute;
   top: calc(100% + 10px);
   left: -16px;
-  width: 560px;
+  width: min(820px, calc(100vw - 48px));
   padding: 10px;
   background: var(--papel);
   border: 1px solid var(--linea);
@@ -103,7 +103,7 @@
 }
 .submenu ul {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
 }
 .submenu li {

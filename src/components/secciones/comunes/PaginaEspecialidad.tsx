@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Confirmar } from '@/components/ui/Confirmar';
 import { Icono } from '@/components/ui/Icono';
 import { LogosApp } from '@/components/ui/LogosApp';
 import type { Especialidad } from '@/data/honduras';
@@ -17,12 +16,7 @@ export function PaginaEspecialidad({ especialidad: e }: { especialidad: Especial
       <JsonLd datos={datosServicio(e.tituloSeo, e.descripcion, `/servicios/${e.slug}/`)} />
       <CabeceraPagina
         etiqueta="Servicio para empresas de Honduras"
-        titulo={
-          <>
-            {e.etiqueta}
-            {e.confirmar && <Confirmar />}
-          </>
-        }
+        titulo={e.etiqueta}
         bajada={e.descripcion}
         visual={<LogosApp logos={e.logos} tamano={e.logos.length > 1 ? 64 : 96} />}
       >
@@ -47,10 +41,7 @@ export function PaginaEspecialidad({ especialidad: e }: { especialidad: Especial
                   <Icono nombre="check" tamano={16} />
                 </span>
                 <div>
-                  <h2>
-                    {punto.titulo}
-                    {punto.confirmar && <Confirmar />}
-                  </h2>
+                  <h2>{punto.titulo}</h2>
                   <p>{punto.texto}</p>
                 </div>
               </li>
