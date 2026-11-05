@@ -1,4 +1,4 @@
-import { SERVICIOS_MENU, SOLUCIONES, type EntradaMenu } from './paginas';
+import { SERVICIOS_MENU, SOLUCIONES_MENU, type EntradaMenu } from './paginas';
 
 export const NOMBRE_SITIO = 'InvTech';
 
@@ -20,7 +20,7 @@ export const CONTACTO = {
 } as const;
 
 export const NAVEGACION: EnlaceNavegacion[] = [
-  { href: '/soluciones/', etiqueta: 'Soluciones', submenu: SOLUCIONES, base: '/soluciones/' },
+  { href: '/soluciones/', etiqueta: 'Soluciones', submenu: SOLUCIONES_MENU, base: '/soluciones/' },
   { href: '/servicios/', etiqueta: 'Servicios', submenu: SERVICIOS_MENU, base: '/servicios/' },
   { href: '/metodologia/', etiqueta: 'Metodología' },
   { href: '/quienes-somos/', etiqueta: 'Quiénes somos' },
