@@ -68,7 +68,7 @@ export function Navegacion() {
                   <ul>
                     {enlace.submenu.map((sub, indice) => (
                       <li key={sub.slug} style={{ '--i': indice } as CSSProperties}>
-                        <Link href={`${enlace.base}${sub.slug}/`}>
+                        <Link href={sub.href ?? `${enlace.base}${sub.slug}/`}>
                           <LogosApp logos={sub.logos.slice(0, 1)} tamano={22} />
                           <span>
                             <strong>{sub.etiqueta}</strong>

@@ -25,6 +25,8 @@ export interface EntradaMenu {
   logos: string[];
   /** Frase corta para menús y listados */
   resumen: string;
+  /** Dirección propia cuando la página vive en otra sección */
+  href?: string;
 }
 
 /** Contenido de las páginas de Soluciones y Servicios tomado de invtech.pro. */
@@ -118,11 +120,33 @@ export function paginaServicio(slug: string): PaginaContenido | undefined {
   return ORIGINAL.servicios[slug];
 }
 
-/** Servicios del menú: todos, los propios para Honduras primero. */
-export const SERVICIOS_MENU: EntradaMenu[] = [
-  ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
-  ...SERVICIOS_DYNAMICS,
+const enServicios = (slugs: string[]): EntradaMenu[] =>
+  [...ESPECIALIDADES, ...SERVICIOS_DYNAMICS]
+    .filter((s) => slugs.includes(s.slug))
+    .sort((a, b) => slugs.indexOf(a.slug) - slugs.indexOf(b.slug))
+    .map(({ slug, etiqueta, logos, resumen }) => ({
+      slug,
+      etiqueta,
+      logos,
+      resumen,
+      href: `/servicios/${slug}/`,
+    }));
+
+/** Menú de Soluciones: las aplicaciones y las soluciones propias para Honduras. */
+export const SOLUCIONES_MENU: EntradaMenu[] = [
+  ...SOLUCIONES,
+  ...enServicios(['business-central-honduras', 'integracion-punto-de-venta', 'power-bi']),
 ];
+
+/** Menú de Servicios: implementación, desarrollo, auditoría y soporte. */
+export const SERVICIOS_MENU: EntradaMenu[] = enServicios([
+  'implementacion',
+  'business-central',
+  'desarrollo',
+  'auditoria',
+  'soporte',
+  'soporte-post-go-live',
+]);
 
 /** Opciones de interés que aparecen en el formulario de contacto. */
 export const INTERESES: EntradaMenu[] = [
