@@ -46,7 +46,11 @@ export default function PaginaQuienesSomos() {
         titulo="Sobre nosotros"
         bajada="Los negocios no se tratan solo de brindar soluciones a los problemas: se trata de brindar soluciones que ayuden a mejorar la vida."
         visual={<LineasCircuito />}
-      />
+      >
+        <p className={styles.experiencia}>
+          <strong>+10 años</strong> de experiencia en Business Central
+        </p>
+      </CabeceraPagina>
 
       {BLOQUES.map((bloque, indice) => (
         <section
