@@ -330,7 +330,7 @@ export const CATALOGO: Categoria[] = [
     descripcion:
       'Equipos para oficinas, cajas y administración, listos para trabajar con Microsoft 365 y Business Central.',
     icono: 'terminal',
-    foto: '/equipos/computadoras.jpg',
+    foto: '/equipos/oficina.jpg',
     productos: [
       { nombre: 'HP Mini PC', marca: 'hp' },
       { nombre: 'HP Power Desktop', marca: 'hp' },
