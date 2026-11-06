@@ -107,3 +107,15 @@
     height: 30px;
   }
 }
+
+@media (max-width: 480px) {
+  .opciones {
+    gap: 6px;
+  }
+  .opciones a {
+    padding: 8px 12px;
+  }
+  .icono {
+    display: none;
+  }
+}
