@@ -1,0 +1,15 @@
+.sello {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  background: #fff;
+}
+.sello img {
+  width: auto;
+  height: 44px;
+}
+.oscuro {
+  border-color: transparent;
+}

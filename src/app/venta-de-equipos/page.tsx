@@ -91,7 +91,14 @@ export default function PaginaVentaDeEquipos() {
             {[0, 1].map((copia) => (
               <ul key={copia} aria-hidden={copia === 1 || undefined}>
                 {MARCAS.map((marca) => (
-                  <li key={marca}>{marca}</li>
+                  <li key={marca.archivo}>
+                    <Image
+                      src={`/marcas/${marca.archivo}.png`}
+                      alt={copia === 0 ? marca.nombre : ''}
+                      width={140}
+                      height={56}
+                    />
+                  </li>
                 ))}
               </ul>
             ))}
@@ -134,6 +141,13 @@ export default function PaginaVentaDeEquipos() {
           <ul className={styles.telecom}>
             {TELECOMUNICACIONES.map((t, i) => (
               <li key={t.titulo} className={i === 0 ? styles.starlink : styles.claro} {...revelarAlScroll(i)}>
+                <Image
+                  src={i === 0 ? '/fotos/starlink.jpg' : '/fotos/claro.jpg'}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className={styles.foto}
+                />
                 <span className={styles.senal} aria-hidden="true">
                   <i />
                   <i />

@@ -94,14 +94,20 @@
   padding-right: 12px;
 }
 .pista li {
-  padding: 14px 26px;
+  display: grid;
+  place-items: center;
+  width: 190px;
+  height: 96px;
+  padding: 16px 24px;
   border: 1px solid var(--linea);
-  border-radius: 999px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--tinta);
-  white-space: nowrap;
+  border-radius: 18px;
+  background: #fff;
+}
+.pista img {
+  width: auto;
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
 }
 @keyframes desplazar {
   to {
@@ -169,7 +175,7 @@
   color: rgb(255 255 255 / 0.8);
 }
 .telecom h3 {
-  margin-top: 64px;
+  margin-top: 0;
   font-size: 1.6rem;
   color: #fff;
 }
@@ -177,11 +183,26 @@
   max-width: 46ch;
   margin-top: 10px;
 }
-.starlink {
-  background: linear-gradient(160deg, #16141f, #2a2550);
+.foto {
+  z-index: -1;
+  object-fit: cover;
 }
+.telecom li {
+  isolation: isolate;
+}
+.telecom li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgb(22 20 31 / 0.92) 25%, rgb(22 20 31 / 0.35));
+}
+.starlink,
 .claro {
-  background: linear-gradient(160deg, #2a1499, #16141f);
+  min-height: 340px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .senal {
   position: absolute;

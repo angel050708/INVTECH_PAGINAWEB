@@ -3,7 +3,7 @@ export interface Aplicacion {
   logo: string;
 }
 
-/** Aplicaciones de Microsoft que InvTech menciona en invtech.pro. Logos en /public/logos. */
+/** Aplicaciones de Microsoft que InvTech menciona en invtech.pro y en sus presentaciones. Logos en /public/logos. */
 export const APLICACIONES: Aplicacion[] = [
   { nombre: 'Business Central', logo: 'dynamics-365-businesscentral' },
   { nombre: 'Dynamics 365 Finance', logo: 'dynamics-365-finance' },
@@ -19,6 +19,8 @@ export const APLICACIONES: Aplicacion[] = [
   { nombre: 'SharePoint', logo: 'sharepoint' },
   { nombre: 'Power Apps', logo: 'power-apps' },
   { nombre: 'Microsoft 365', logo: 'office-365' },
+  { nombre: 'Outlook', logo: 'outlook' },
+  { nombre: 'Excel', logo: 'excel' },
   { nombre: 'Microsoft Teams', logo: 'teams' },
   { nombre: 'Microsoft Azure', logo: 'azure' },
   { nombre: 'Dynamics NAV', logo: 'dynamics-nav' },

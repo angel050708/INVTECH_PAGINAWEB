@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Icono } from '@/components/ui/Icono';
+import { SelloPartner } from '@/components/ui/SelloPartner';
 import { CurvaApps } from '@/components/ui/CurvaApps';
 import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import styles from './HeroInicio.module.css';
@@ -27,6 +28,9 @@ export function HeroInicio() {
             <Link href="/servicios/" className="boton boton-borde boton-grande">
               Ver servicios
             </Link>
+          </div>
+          <div className={styles.sello}>
+            <SelloPartner />
           </div>
         </div>
       </div>

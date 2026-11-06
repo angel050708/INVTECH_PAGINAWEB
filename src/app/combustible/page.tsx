@@ -51,6 +51,14 @@ const DASHBOARD = [
   },
 ];
 
+const INTEGRA = [
+  { texto: 'Dispensadores', icono: 'surtidor' as const },
+  { texto: 'Sondas de tanques', icono: 'grafica' as const },
+  { texto: 'Puntos de venta', icono: 'tarjeta' as const },
+  { texto: 'Pasarela de pago', icono: 'banco' as const },
+  { texto: 'Business Central', icono: 'nube' as const },
+];
+
 export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/combustible/');
 
 export default function PaginaCombustible() {
@@ -71,19 +79,25 @@ export default function PaginaCombustible() {
       </CabeceraPagina>
 
       <section className="seccion">
-        <div className={`contenedor ${paginas.dosColumnas}`}>
-          <h2 className="titulo-seccion" {...revelarAlScroll()}>
-            Diseñado para
-          </h2>
-          <div {...revelarAlScroll(1)}>
-            <p className={paginas.texto}>{COMBUSTIBLE_PARA}</p>
-            <p className={styles.destacado}>Integramos en un solo sistema:</p>
-            <ul className={styles.chips}>
-              {['Dispensadores', 'Sondas', 'Puntos de venta', 'Pasarela de pago', 'Business Central'].map(
-                (c) => (
-                  <li key={c}>{c}</li>
-                ),
-              )}
+        <div className={`contenedor ${styles.disenado}`}>
+          <div {...revelarAlScroll()}>
+            <p className="etiqueta">Diseñado para</p>
+            <h2 className="titulo-seccion">Cadenas y operadores de estaciones de servicio</h2>
+            <p className={paginas.texto} style={{ marginTop: 20 }}>
+              {COMBUSTIBLE_PARA}
+            </p>
+          </div>
+          <div className={styles.tarjetaIntegra} {...revelarAlScroll(1)}>
+            <h3>Integramos en un solo sistema</h3>
+            <ul>
+              {INTEGRA.map((item) => (
+                <li key={item.texto}>
+                  <span>
+                    <Icono nombre={item.icono} tamano={20} />
+                  </span>
+                  {item.texto}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
