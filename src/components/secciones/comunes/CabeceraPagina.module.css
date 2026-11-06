@@ -74,8 +74,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgb(12 10 18 / 0.9) 0%, rgb(12 10 18 / 0.7) 32%, transparent 62%);
+  background: linear-gradient(90deg, rgb(12 10 18 / 0.9) 0%, rgb(12 10 18 / 0.7) 32%, transparent 62%);
 }
 .fotoFondo {
   z-index: -2;

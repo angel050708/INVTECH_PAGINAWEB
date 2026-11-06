@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
+import { CatalogoPestanas } from '@/components/secciones/equipos/CatalogoPestanas';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
@@ -31,7 +32,7 @@ export default function PaginaVentaDeEquipos() {
         <ul className={styles.indice} aria-label="Lo que vendemos">
           {CATALOGO.map((c) => (
             <li key={c.titulo}>
-              <Icono nombre={c.icono} tamano={16} /> {c.titulo}
+              <Icono nombre={c.icono} tamano={16} /> {c.pestana}
             </li>
           ))}
         </ul>
@@ -53,21 +54,7 @@ export default function PaginaVentaDeEquipos() {
               Le cotizamos el equipo, lo instalamos y le damos soporte técnico y mantenimiento.
             </p>
           </div>
-          <ul className={styles.catalogo}>
-            {CATALOGO.map((categoria, i) => (
-              <li key={categoria.titulo} {...revelarAlScroll(i)}>
-                <span className={styles.icono}>
-                  <Icono nombre={categoria.icono} tamano={24} />
-                </span>
-                <h3>{categoria.titulo}</h3>
-                <ul>
-                  {categoria.productos.map((producto) => (
-                    <li key={producto}>{producto}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+          <CatalogoPestanas />
         </div>
       </section>
 
