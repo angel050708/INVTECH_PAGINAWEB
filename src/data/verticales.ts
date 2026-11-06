@@ -318,6 +318,8 @@ export interface Categoria {
   icono: NombreIcono;
   /** Foto en /public/equipos */
   foto: string;
+  /** Foto de producto sobre fondo blanco (se muestra completa) */
+  fotoProducto?: boolean;
   productos: Producto[];
 }
 
@@ -330,7 +332,8 @@ export const CATALOGO: Categoria[] = [
     descripcion:
       'Equipos para oficinas, cajas y administración, listos para trabajar con Microsoft 365 y Business Central.',
     icono: 'terminal',
-    foto: '/equipos/computadoras-oficina.jpg',
+    foto: '/equipos/computadoras-hp-dell.jpg',
+    fotoProducto: true,
     productos: [
       { nombre: 'HP Mini PC', marca: 'hp' },
       { nombre: 'HP Power Desktop', marca: 'hp' },
@@ -383,7 +386,7 @@ export const CATALOGO: Categoria[] = [
     descripcion:
       'Equipos para controlar las bombas y medir el combustible de los tanques en estaciones de servicio.',
     icono: 'surtidor',
-    foto: '/equipos/combustible.jpg',
+    foto: '/equipos/surtidores.jpg',
     productos: [
       { nombre: 'Controladores para estaciones de servicio' },
       { nombre: 'Sondas para medición de combustibles' },

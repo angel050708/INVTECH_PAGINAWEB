@@ -71,7 +71,7 @@ export function CatalogoPestanas() {
             Cotizar {categoria.pestana.toLowerCase()} <Icono nombre="flecha" tamano={18} />
           </Link>
         </div>
-        <div className={styles.foto}>
+        <div className={unirClases(styles.foto, categoria.fotoProducto && styles.fotoProducto)}>
           <Image src={categoria.foto} alt="" fill sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </div>
