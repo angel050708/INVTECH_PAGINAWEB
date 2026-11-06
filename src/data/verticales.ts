@@ -330,7 +330,7 @@ export const CATALOGO: Categoria[] = [
     descripcion:
       'Equipos para oficinas, cajas y administración, listos para trabajar con Microsoft 365 y Business Central.',
     icono: 'terminal',
-    foto: '/equipos/computadoras.jpg',
+    foto: '/equipos/computadoras-oficina.jpg',
     productos: [
       { nombre: 'HP Mini PC', marca: 'hp' },
       { nombre: 'HP Power Desktop', marca: 'hp' },
@@ -361,8 +361,8 @@ export const CATALOGO: Categoria[] = [
     icono: 'antena',
     foto: '/equipos/redes.jpg',
     productos: [
-      { nombre: 'Switch MikroTik' },
-      { nombre: 'Switch Aruba' },
+      { nombre: 'Switch MikroTik', marca: 'mikrotik' },
+      { nombre: 'Switch Aruba', marca: 'aruba' },
       { nombre: 'Puntos de acceso UniFi', marca: 'ubiquiti' },
     ],
   },
