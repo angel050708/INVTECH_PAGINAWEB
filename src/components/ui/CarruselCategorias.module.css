@@ -76,8 +76,16 @@
 @media (prefers-reduced-motion: reduce) {
   .pista {
     animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .pista ul + ul {
+    display: none;
+  }
+  .pista ul {
+    flex-wrap: wrap;
   }
   .carrusel {
-    overflow-x: auto;
+    mask-image: none;
   }
 }
