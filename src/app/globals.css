@@ -280,3 +280,7 @@ a {
 .seccion-compacta {
   padding: clamp(40px, 5vw, 64px) 0;
 }
+
+.carrusel-separado {
+  margin-top: 48px;
+}

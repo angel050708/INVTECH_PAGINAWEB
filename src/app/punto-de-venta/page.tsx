@@ -9,13 +9,13 @@ import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
+import { CarruselCategorias } from '@/components/ui/CarruselCategorias';
 import { Icono } from '@/components/ui/Icono';
 import { LogosApp } from '@/components/ui/LogosApp';
 import {
   BCPOS_FLUJO,
   BCPOS_INTEGRACIONES,
   BCPOS_QUE_ES,
-  BCPOS_RUBROS,
   LEAL_CLIENTE,
   LEAL_NEGOCIO,
 } from '@/data/verticales';
@@ -56,12 +56,10 @@ export default function PaginaPuntoDeVenta() {
             {BCPOS_QUE_ES.map((parrafo) => (
               <p key={parrafo}>{parrafo}</p>
             ))}
-            <ul className={styles.chips} aria-label="Dónde se usa">
-              {BCPOS_RUBROS.map((rubro) => (
-                <li key={rubro}>{rubro}</li>
-              ))}
-            </ul>
           </div>
+        </div>
+        <div className="carrusel-separado" {...revelarAlScroll(2)}>
+          <CarruselCategorias />
         </div>
       </section>
 

@@ -12,7 +12,6 @@ import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import {
   BCHUB_CONEXIONES,
   COMBUSTIBLE_INTRO,
-  COMBUSTIBLE_PARA,
   MODULOS_COMBUSTIBLE,
   OTRAS_INTEGRACIONES,
   PROBLEMA_SOLUCION,
@@ -51,14 +50,6 @@ const DASHBOARD = [
   },
 ];
 
-const INTEGRA = [
-  { texto: 'Dispensadores', icono: 'surtidor' as const },
-  { texto: 'Sondas de tanques', icono: 'grafica' as const },
-  { texto: 'Puntos de venta', icono: 'tarjeta' as const },
-  { texto: 'Pasarela de pago', icono: 'banco' as const },
-  { texto: 'Business Central', icono: 'nube' as const },
-];
-
 export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/combustible/');
 
 export default function PaginaCombustible() {
@@ -94,31 +85,6 @@ export default function PaginaCombustible() {
           />
           <div style={{ marginTop: 56 }}>
             <Elementos elementos={TERMINAL_MOVIL} columnas={3} />
-          </div>
-        </div>
-      </section>
-
-      <section className="seccion">
-        <div className={`contenedor ${styles.disenado}`}>
-          <div {...revelarAlScroll()}>
-            <p className="etiqueta">Diseñado para</p>
-            <h2 className="titulo-seccion">Cadenas y operadores de estaciones de servicio</h2>
-            <p className={paginas.texto} style={{ marginTop: 20 }}>
-              {COMBUSTIBLE_PARA}
-            </p>
-          </div>
-          <div className={styles.tarjetaIntegra} {...revelarAlScroll(1)}>
-            <h3>Integramos en un solo sistema</h3>
-            <ul>
-              {INTEGRA.map((item) => (
-                <li key={item.texto}>
-                  <span>
-                    <Icono nombre={item.icono} tamano={20} />
-                  </span>
-                  {item.texto}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </section>
