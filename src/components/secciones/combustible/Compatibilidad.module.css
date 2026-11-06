@@ -256,3 +256,35 @@
     animation: none;
   }
 }
+
+/* Equipo real: foto del sistema y las líneas compatibles */
+.equipo {
+  margin: 8px 0 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  background: #e9e9ec;
+  max-width: 340px;
+}
+.equipo img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.equipo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px;
+  background: #fff;
+}
+.equipo figcaption span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #efedf7;
+  color: #16141f;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

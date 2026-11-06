@@ -468,28 +468,34 @@ export const GASOLINERAS: MarcaCompatible[] = [
   { nombre: 'Puma Energy', logo: '/compatibles/puma.svg' },
   { nombre: 'Shell', logo: '/compatibles/shell.png' },
   { nombre: 'Texaco', logo: '/compatibles/texaco.png' },
-  { nombre: 'BIP', nota: 'Bay Islands Petroleum' },
+  { nombre: 'BIP', logo: '/compatibles/bip.png', nota: 'Bay Island Petroleum' },
 ];
 
 /** Equipo de pista, en el orden en que viaja el dato: surtidor, controlador, sonda. */
-export const EQUIPO_PISTA: { titulo: string; texto: string; marcas: MarcaCompatible[] }[] = [
+export const EQUIPO_PISTA: {
+  titulo: string;
+  texto: string;
+  marcas: MarcaCompatible[];
+  foto?: { src: string; alt: string };
+}[] = [
   {
     titulo: 'Surtidores',
     texto: 'Leemos cada despacho directo del dispensador.',
-    marcas: [{ nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' }, { nombre: 'Wayne' }],
+    marcas: [
+      { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
+      { nombre: 'Wayne', logo: '/compatibles/wayne.png' },
+    ],
   },
   {
     titulo: 'Controladores',
     texto: 'El controlador autoriza la bomba y entrega la venta al punto de venta.',
-    marcas: [
-      { nombre: 'VOX', de: 'Gilbarco' },
-      { nombre: 'DOMS', de: 'Gilbarco' },
-      { nombre: 'Fusion', de: 'Wayne' },
-    ],
+    marcas: [{ nombre: 'VOX' }, { nombre: 'DOMS' }, { nombre: 'Fusion' }],
+    foto: { src: '/compatibles/vox-controlador.jpg', alt: 'Controlador de pista VOX de Gilbarco con su consulta en tableta y celular' },
   },
   {
     titulo: 'Sondas',
     texto: 'El inventario de cada tanque llega solo a Business Central.',
-    marcas: [{ nombre: 'Veeder-Root', logo: '/compatibles/veeder-root.svg' }, { nombre: 'Wayne' }],
+    marcas: [{ nombre: 'Veeder-Root' }, { nombre: 'Wayne' }],
+    foto: { src: '/compatibles/tls-450plus.jpg', alt: 'Consola de medición de tanques TLS-450PLUS de Veeder-Root' },
   },
 ];

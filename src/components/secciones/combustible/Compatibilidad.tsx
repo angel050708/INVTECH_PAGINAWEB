@@ -55,7 +55,7 @@ export function Compatibilidad() {
         </h3>
         <ul className={styles.oculto}>
           {GASOLINERAS.map((g) => (
-            <li key={g.nombre}>{g.nota ? `${g.nombre} (${g.nota}), bandera blanca` : g.nombre}</li>
+            <li key={g.nombre}>{g.nota ? `${g.nombre} (${g.nota})` : g.nombre}</li>
           ))}
         </ul>
         <div className={styles.cinta} aria-hidden="true">
@@ -77,11 +77,22 @@ export function Compatibilidad() {
               <span className={styles.nodo}>{ICONOS[i]}</span>
               <h4>{etapa.titulo}</h4>
               <p>{etapa.texto}</p>
-              <div className={styles.marcas}>
-                {etapa.marcas.map((m) => (
-                  <Placa key={m.nombre} marca={m} />
-                ))}
-              </div>
+              {etapa.foto ? (
+                <figure className={styles.equipo}>
+                  <Image src={etapa.foto.src} alt={etapa.foto.alt} width={368} height={320} />
+                  <figcaption>
+                    {etapa.marcas.map((m) => (
+                      <span key={m.nombre}>{m.nombre}</span>
+                    ))}
+                  </figcaption>
+                </figure>
+              ) : (
+                <div className={styles.marcas}>
+                  {etapa.marcas.map((m) => (
+                    <Placa key={m.nombre} marca={m} />
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ol>
