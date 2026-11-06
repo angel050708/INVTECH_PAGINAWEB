@@ -471,31 +471,22 @@ export const GASOLINERAS: MarcaCompatible[] = [
   { nombre: 'BIP', logo: '/compatibles/bip.png', nota: 'Bay Island Petroleum' },
 ];
 
-/** Equipo de pista, en el orden en que viaja el dato: surtidor, controlador, sonda. */
-export const EQUIPO_PISTA: {
-  titulo: string;
-  texto: string;
-  marcas: MarcaCompatible[];
-  foto?: { src: string; alt: string };
-}[] = [
-  {
-    titulo: 'Surtidores',
-    texto: 'Leemos cada despacho directo del dispensador.',
-    marcas: [
-      { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
-      { nombre: 'Wayne', logo: '/compatibles/wayne.png' },
-    ],
-  },
+/** Fabricantes de surtidores. */
+export const PROVEEDORES: MarcaCompatible[] = [
+  { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
+  { nombre: 'Wayne Fueling Systems', logo: '/compatibles/wayne.png' },
+];
+
+/** Sistemas de pista con los que se integra BCPOS. */
+export const SISTEMAS_PISTA: { titulo: string; texto: string; nombres: string[] }[] = [
   {
     titulo: 'Controladores',
-    texto: 'El controlador autoriza la bomba y entrega la venta al punto de venta.',
-    marcas: [{ nombre: 'VOX' }, { nombre: 'DOMS' }, { nombre: 'Fusion' }],
-    foto: { src: '/compatibles/vox-controlador.jpg', alt: 'Controlador de pista VOX de Gilbarco con su consulta en tableta y celular' },
+    texto: 'Autorizan la bomba y entregan cada venta al punto de venta.',
+    nombres: ['VOX', 'DOMS', 'Fusion'],
   },
   {
     titulo: 'Sondas',
     texto: 'El inventario de cada tanque llega solo a Business Central.',
-    marcas: [{ nombre: 'Veeder-Root' }, { nombre: 'Wayne' }],
-    foto: { src: '/compatibles/tls-450plus.jpg', alt: 'Consola de medición de tanques TLS-450PLUS de Veeder-Root' },
+    nombres: ['Veeder-Root', 'Wayne'],
   },
 ];
