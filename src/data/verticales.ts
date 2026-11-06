@@ -473,6 +473,6 @@ export const GASOLINERAS: MarcaCompatible[] = [
 
 /** Fabricantes de surtidores. */
 export const PROVEEDORES: MarcaCompatible[] = [
-  { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
+  { nombre: 'Gilbarco Veeder-Root', logo: '/compatibles/gilbarco-veeder-root.svg' },
   { nombre: 'Wayne Fueling Systems', logo: '/compatibles/wayne.png' },
 ];
