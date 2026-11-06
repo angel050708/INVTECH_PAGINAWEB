@@ -453,3 +453,20 @@ export const TELECOMUNICACIONES: Elemento[] = [
     icono: 'telefono',
   },
 ];
+
+/** Marcas y proveedores con los que trabaja la solución de combustible. */
+export const COMPATIBILIDAD: { titulo: string; nombres: { nombre: string; detalle?: string }[] }[] = [
+  {
+    titulo: 'Marcas de gasolineras',
+    nombres: [
+      { nombre: 'UNO' },
+      { nombre: 'Puma' },
+      { nombre: 'Shell' },
+      { nombre: 'Texaco' },
+      { nombre: 'BIP', detalle: 'Bay Islands Petroleum · bandera blanca' },
+    ],
+  },
+  { titulo: 'Surtidores', nombres: [{ nombre: 'Gilbarco' }, { nombre: 'Wayne' }] },
+  { titulo: 'Controladores', nombres: [{ nombre: 'VOX' }, { nombre: 'DOMS' }, { nombre: 'Fusion' }] },
+  { titulo: 'Sondas de tanque', nombres: [{ nombre: 'Wayne' }, { nombre: 'Veeder-Root' }] },
+];
