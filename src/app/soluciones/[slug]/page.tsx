@@ -47,7 +47,7 @@ export default async function PaginaSolucion({ params }: Props) {
       extra={
         esBusinessCentral && (
           <>
-            <section className="seccion">
+            <section className="seccion seccion-pegada">
               <div className="contenedor">
                 <DiagramaModulos />
               </div>

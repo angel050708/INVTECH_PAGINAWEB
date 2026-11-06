@@ -314,3 +314,8 @@ a {
 .carrusel-separado {
   margin-top: 48px;
 }
+
+/* Sección que continúa la anterior, sin el espacio superior completo */
+.seccion-pegada {
+  padding-top: 0;
+}
