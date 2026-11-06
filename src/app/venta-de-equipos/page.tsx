@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { RedEquipos } from '@/components/animaciones/RedEquipos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
-import { LineasCircuito } from '@/components/ui/LineasCircuito';
-import { EQUIPOS, INFRAESTRUCTURA, TELECOMUNICACIONES } from '@/data/verticales';
+import { rutaLogo } from '@/data/aplicaciones';
+import { APPS_365, CATALOGO, INFRAESTRUCTURA, MARCAS, TELECOMUNICACIONES } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
+import styles from './equipos.module.css';
 
-const TITULO = 'Venta de equipos tecnológicos, infraestructura y telecomunicaciones';
+const TITULO = 'Venta de computadoras, servidores y equipos de red';
 const DESCRIPCION =
-  'Puntos de venta, servidores, controladores y sondas, redes, CCTV, fibra óptica y conexión Starlink para empresas en Honduras.';
+  'Computadoras HP, Dell y Lenovo, servidores, switches MikroTik y Aruba, UniFi, puntos de venta, licencias Microsoft 365, CCTV y Starlink.';
 
 export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/venta-de-equipos/');
 
@@ -23,11 +26,17 @@ export default function PaginaVentaDeEquipos() {
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/venta-de-equipos/')} />
       <CabeceraPagina
         etiqueta="Venta de equipos"
-        titulo="Equipos tecnológicos y periféricos"
-        bajada="Suministramos tecnología de punta para cualquier tipo de empresa, junto con la infraestructura y la conexión que la hacen funcionar."
-        visual={<LineasCircuito />}
+        titulo="Computadoras, servidores y equipos de red para su empresa"
+        bajada="Vendemos equipos HP, Dell y Lenovo, switches y puntos de acceso, equipos de punto de venta y controladores para estaciones de servicio. También instalamos la red, el CCTV y la conexión."
       >
-        <p style={{ marginTop: 32 }}>
+        <ul className={styles.indice} aria-label="Lo que vendemos">
+          {CATALOGO.map((c) => (
+            <li key={c.titulo}>
+              <Icono nombre={c.icono} tamano={16} /> {c.titulo}
+            </li>
+          ))}
+        </ul>
+        <p style={{ marginTop: 28 }}>
           <Link href="/contacto/?interes=venta-de-equipos" className="boton boton-acento boton-grande">
             Solicitar cotización <Icono nombre="flecha" tamano={18} />
           </Link>
@@ -36,10 +45,9 @@ export default function PaginaVentaDeEquipos() {
 
       <section className="seccion">
         <div className="contenedor">
-          <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <h2 className="titulo-seccion">Equipos</h2>
+          <div {...revelarAlScroll()}>
+            <RedEquipos />
           </div>
-          <Elementos elementos={EQUIPOS} columnas={4} />
         </div>
       </section>
 
@@ -47,20 +55,95 @@ export default function PaginaVentaDeEquipos() {
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <div>
-              <p className="etiqueta">Infraestructura y servicios en la nube</p>
-              <h2 className="titulo-seccion">Soluciones de infraestructura tecnológica</h2>
+              <p className="etiqueta">Catálogo</p>
+              <h2 className="titulo-seccion">Qué vendemos</h2>
+            </div>
+            <p className="entrada" style={{ marginTop: 0, maxWidth: '44ch' }}>
+              Le cotizamos el equipo, lo instalamos y le damos soporte técnico y mantenimiento.
+            </p>
+          </div>
+          <ul className={styles.catalogo}>
+            {CATALOGO.map((categoria, i) => (
+              <li key={categoria.titulo} {...revelarAlScroll(i)}>
+                <span className={styles.icono}>
+                  <Icono nombre={categoria.icono} tamano={24} />
+                </span>
+                <h3>{categoria.titulo}</h3>
+                <ul>
+                  {categoria.productos.map((producto) => (
+                    <li key={producto}>{producto}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className={styles.marcas} aria-labelledby="titulo-marcas">
+        <div className="contenedor centrado">
+          <h2 id="titulo-marcas" className="titulo-seccion">
+            Marcas con las que trabajamos
+          </h2>
+        </div>
+        <div className={styles.marquesina}>
+          <div className={styles.pista}>
+            {[0, 1].map((copia) => (
+              <ul key={copia} aria-hidden={copia === 1 || undefined}>
+                {MARCAS.map((marca) => (
+                  <li key={marca}>{marca}</li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="seccion fondo-alterno">
+        <div className={`contenedor ${styles.infra}`}>
+          <div {...revelarAlScroll()}>
+            <p className="etiqueta">Infraestructura y servicios en la nube</p>
+            <h2 className="titulo-seccion">Licencias, red, cámaras y servidores</h2>
+            <div style={{ marginTop: 28 }}>
+              <Elementos elementos={INFRAESTRUCTURA} columnas={2} variante="lista" />
             </div>
           </div>
-          <Elementos elementos={INFRAESTRUCTURA} columnas={4} variante="lista" />
+          <div className={styles.licencias} {...revelarAlScroll(1)}>
+            <p className="etiqueta">Licencias de software corporativo</p>
+            <h3>Microsoft 365</h3>
+            <p>Correo, Office, Teams, SharePoint, Power BI y Power Apps para su equipo.</p>
+            <ul>
+              {APPS_365.map((app, i) => (
+                <li key={app} style={{ animationDelay: `${i * 0.4}s` }}>
+                  <Image src={rutaLogo(app)} alt="" width={40} height={40} unoptimized />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
       <section className="seccion">
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <h2 className="titulo-seccion">Servicios de telecomunicaciones</h2>
+            <div>
+              <p className="etiqueta">Telecomunicaciones</p>
+              <h2 className="titulo-seccion">Internet para su empresa en cualquier parte de Honduras</h2>
+            </div>
           </div>
-          <Elementos elementos={TELECOMUNICACIONES} columnas={2} />
+          <ul className={styles.telecom}>
+            {TELECOMUNICACIONES.map((t, i) => (
+              <li key={t.titulo} className={i === 0 ? styles.starlink : styles.claro} {...revelarAlScroll(i)}>
+                <span className={styles.senal} aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <h3>{t.titulo}</h3>
+                <p>{t.texto}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

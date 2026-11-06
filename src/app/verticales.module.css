@@ -75,3 +75,29 @@
     display: none !important;
   }
 }
+
+.leal {
+  background: radial-gradient(50% 60% at 90% 10%, rgb(255 214 0 / 0.22), transparent 70%), var(--papel);
+  border-block: 1px solid var(--linea);
+}
+.lealRejilla {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  margin-bottom: 64px;
+}
+.lealLogo {
+  width: 64px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.subtitulo {
+  margin: 48px 0 20px;
+  font-size: 1.3rem;
+}
+@media (max-width: 1000px) {
+  .lealRejilla {
+    grid-template-columns: 1fr;
+  }
+}

@@ -13,10 +13,10 @@ const PASOS = [
   },
 ];
 
-const TECLAS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', ''];
+const TECLAS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '0', '⌫'];
 
 /**
- * Terminal bancaria (tipo PAX de BAC) con BCPOS: consulta del saldo de un cliente de crédito.
+ * Terminal bancaria PAX A920 (POS BAC) con BCPOS: consulta del saldo de un cliente de crédito.
  * Ciclo de 16 s con dos clientes de ejemplo: uno activo y uno bloqueado.
  */
 export function TerminalPax() {
@@ -38,67 +38,77 @@ export function TerminalPax() {
       </ol>
 
       <div className={styles.terminal} aria-hidden="true">
-        <div className={styles.marca}>PAX</div>
-        <div className={styles.pantalla}>
-          <div className={styles.barraApp}>
-            <span>BCPOS</span>
-            <span>Bomba 3</span>
-          </div>
-
-          {/* Pantalla 1 y 3: ingreso del código */}
-          <div className={`${styles.vista} ${styles.vistaCodigo}`}>
-            <small>Consulta de crédito</small>
-            <span className={styles.etiqueta}>Código de cliente</span>
-            <span className={styles.campo}>
-              <span className={styles.escrito}>0801-1999-04521</span>
-            </span>
-            <span className={styles.botonApp}>Consultar</span>
-          </div>
-
-          {/* Pantalla 2: buscando */}
-          <div className={`${styles.vista} ${styles.vistaBuscando} ${styles.b1}`}>
-            <span className={styles.giro} />
-            <small>Consultando Business Central…</small>
-          </div>
-
-          {/* Pantalla 3: cliente activo */}
-          <div className={`${styles.vista} ${styles.vistaActivo}`}>
+        <div className={styles.impresora}>
+          <span className={styles.comprobante}>
+            <b>BCPOS</b>
+            <small>Venta al crédito</small>
             <small>Transportes del Valle</small>
-            <span className={`${styles.estado} ${styles.activo}`}>ACTIVO</span>
-            <dl>
-              <dt>Límite</dt>
-              <dd>L 150,000.00</dd>
-              <dt>Saldo</dt>
-              <dd>L 112,579.50</dd>
-            </dl>
-            <span className={styles.disponible}>
-              Disponible <b>L 37,420.50</b>
-            </span>
-            <span className={styles.medidor}>
+            <i />
+            <b>L 1,248.00</b>
+          </span>
+        </div>
+        <div className={styles.cuerpo}>
+          <div className={styles.sensor} />
+          <div className={styles.pantalla}>
+            <div className={styles.barraApp}>
+              <span>BCPOS</span>
+              <span>POS BAC · Bomba 3</span>
+            </div>
+
+            {/* Ingreso del código, con teclado en pantalla */}
+            <div className={`${styles.vista} ${styles.vistaCodigo}`}>
+              <small>Consulta de crédito</small>
+              <span className={styles.etiqueta}>Código de cliente</span>
+              <span className={styles.campo}>
+                <span className={styles.escrito}>0801-1999-04521</span>
+              </span>
+              <span className={styles.tecladoPantalla}>
+                {TECLAS.map((tecla, i) => (
+                  <span key={i}>{tecla}</span>
+                ))}
+              </span>
+              <span className={styles.botonApp}>Consultar</span>
+            </div>
+
+            <div className={`${styles.vista} ${styles.vistaBuscando}`}>
+              <span className={styles.giro} />
+              <small>Consultando Business Central…</small>
+            </div>
+
+            <div className={`${styles.vista} ${styles.vistaActivo}`}>
+              <small>Transportes del Valle</small>
+              <span className={`${styles.estado} ${styles.activo}`}>ACTIVO</span>
+              <dl>
+                <dt>Límite</dt>
+                <dd>L 150,000.00</dd>
+                <dt>Saldo</dt>
+                <dd>L 112,579.50</dd>
+              </dl>
+              <span className={styles.disponible}>
+                Disponible <b>L 37,420.50</b>
+              </span>
+              <span className={styles.medidor}>
+                <i />
+              </span>
+              <span className={`${styles.botonApp} ${styles.botonVerde}`}>Facturar al crédito</span>
+            </div>
+
+            <div className={`${styles.vista} ${styles.vistaBloqueado}`}>
+              <small>Ferretería Los Andes</small>
+              <span className={`${styles.estado} ${styles.bloqueado}`}>BLOQUEADO</span>
+              <p>Cuenta bloqueada por límite de crédito. No se autoriza el despacho.</p>
+              <span className={`${styles.botonApp} ${styles.botonRojo}`}>Volver</span>
+            </div>
+
+            <div className={styles.navegacionAndroid}>
               <i />
-            </span>
-            <span className={styles.botonApp}>Facturar al crédito</span>
+              <i />
+              <i />
+            </div>
           </div>
-
-          {/* Pantalla 4: cliente bloqueado */}
-          <div className={`${styles.vista} ${styles.vistaBloqueado}`}>
-            <small>Ferretería Los Andes</small>
-            <span className={`${styles.estado} ${styles.bloqueado}`}>BLOQUEADO</span>
-            <p>Cuenta bloqueada por límite de crédito. No se autoriza el despacho.</p>
-            <span className={`${styles.botonApp} ${styles.botonGris}`}>Volver</span>
-          </div>
+          <div className={styles.marca}>PAX</div>
         </div>
-
-        <div className={styles.teclado}>
-          {TECLAS.map((tecla, i) => (
-            <span key={i} className={tecla ? undefined : styles.vacia}>
-              {tecla}
-            </span>
-          ))}
-          <span className={styles.rojo} />
-          <span className={styles.amarillo} />
-          <span className={styles.verde} />
-        </div>
+        <div className={styles.lector} />
       </div>
     </figure>
   );
