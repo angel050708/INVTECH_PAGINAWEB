@@ -330,18 +330,22 @@ function PantallaBomba({ paso }: { paso: number }) {
         ['SUPER', 'Manguera 1'],
         ['REGULAR', 'Manguera 2'],
         ['DIESEL', 'Manguera 3'],
-      ].map(([producto, manguera]) => (
-        <div
-          key={producto}
-          className={unirClases(styles.opcion, producto === 'REGULAR' && paso >= 2 && styles.opcionElegida)}
-        >
-          <span className={styles.radio} />
-          <span>
-            <b>{producto}</b>
-            <small>{manguera}</small>
-          </span>
-        </div>
-      ))}
+      ]
+        // Al pasar al tipo de autorización, solo queda el combustible elegido (como en la app)
+        .filter(([producto]) => paso < 3 || producto === 'REGULAR')
+        .map(([producto, manguera]) => (
+          <div
+            key={producto}
+            className={unirClases(styles.opcion, producto === 'REGULAR' && paso >= 2 && styles.opcionElegida)}
+          >
+            <span className={styles.radio} />
+            <span>
+              <b>{producto}</b>
+              <small>{manguera}</small>
+            </span>
+            {paso >= 3 && <span className={styles.cambiar}>Cambiar</span>}
+          </div>
+        ))}
       {paso >= 3 && (
         <>
           <small className={styles.subtitulo}>2. Tipo de autorización</small>
