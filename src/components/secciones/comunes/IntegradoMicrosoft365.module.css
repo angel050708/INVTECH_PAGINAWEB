@@ -1,5 +1,6 @@
 /* Sección oscura a propósito (igual en modo claro y oscuro) */
 .seccion {
+  margin-bottom: clamp(64px, 8vw, 112px);
   padding: clamp(64px, 8vw, 112px) 0;
   background: radial-gradient(50% 70% at 85% 30%, rgb(42 20 153 / 0.45), transparent 70%), #16141f;
   color: rgb(255 255 255 / 0.8);

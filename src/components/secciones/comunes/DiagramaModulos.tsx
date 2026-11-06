@@ -3,14 +3,14 @@ import type { CSSProperties } from 'react';
 import { Icono, type NombreIcono } from '@/components/ui/Icono';
 import styles from './DiagramaModulos.module.css';
 
-/** Cada área con un color propio, en tonos que combinan con el morado de la marca. */
+/** Cada área con un tono de la misma familia: morados de la marca, azules y verde azulado. */
 const MODULOS: { titulo: string; icono: NombreIcono; color: string }[] = [
-  { titulo: 'Gestión de proyectos', icono: 'calendario', color: '#7c5cff' },
-  { titulo: 'Operaciones', icono: 'engranaje', color: '#0ea5a4' },
-  { titulo: 'Informes y análisis', icono: 'grafica', color: '#f59e0b' },
-  { titulo: 'Cadena de suministro', icono: 'caja', color: '#2563eb' },
-  { titulo: 'Ventas y servicio', icono: 'persona', color: '#db2777' },
-  { titulo: 'Finanzas', icono: 'billete', color: '#16a34a' },
+  { titulo: 'Gestión de proyectos', icono: 'calendario', color: '#4c3bd1' },
+  { titulo: 'Operaciones', icono: 'engranaje', color: '#0f766e' },
+  { titulo: 'Informes y análisis', icono: 'grafica', color: '#1d4ed8' },
+  { titulo: 'Cadena de suministro', icono: 'caja', color: '#0369a1' },
+  { titulo: 'Ventas y servicio', icono: 'persona', color: '#6d28d9' },
+  { titulo: 'Finanzas', icono: 'billete', color: '#2a1499' },
 ];
 
 /** Áreas que cubre Business Central, alrededor del nombre del producto. */

@@ -43,6 +43,24 @@ const CATEGORIAS: Categoria[] = [
 const INTERVALO = 3500;
 
 /**
+ * Las tarjetas van tres veces seguidas y la vista se mantiene en la copia del medio:
+ * al acercarse a un extremo salta sin animación a la posición equivalente, así el giro es infinito
+ * y siempre hay espacio para desplazar, aunque la pantalla sea muy ancha.
+ */
+function recentrar(el: HTMLElement) {
+  const copia = el.scrollWidth / 3;
+  if (el.scrollLeft < copia * 0.5) el.scrollLeft += copia;
+  else if (el.scrollLeft > copia * 1.5) el.scrollLeft -= copia;
+}
+
+function avanzar(el: HTMLElement, direccion: 1 | -1) {
+  recentrar(el);
+  const tarjeta = el.querySelector('li');
+  const paso = tarjeta ? tarjeta.getBoundingClientRect().width + 16 : 320;
+  el.scrollBy({ left: paso * direccion, behavior: 'smooth' });
+}
+
+/**
  * Carrusel de rubros: avanza solo cada pocos segundos y el usuario puede deslizarlo,
  * arrastrarlo o usar las flechas. Se pausa mientras el usuario interactúa.
  */
@@ -50,21 +68,22 @@ export function CarruselCategorias() {
   const pista = useRef<HTMLUListElement>(null);
   const [pausado, setPausado] = useState(false);
 
-  const mover = (direccion: 1 | -1) => {
+  useEffect(() => {
     const el = pista.current;
     if (!el) return;
-    const tarjeta = el.querySelector('li');
-    const paso = tarjeta ? tarjeta.getBoundingClientRect().width + 16 : 320;
-    const alFinal = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-    const alInicio = el.scrollLeft <= 4;
-    if (direccion === 1 && alFinal) el.scrollTo({ left: 0, behavior: 'smooth' });
-    else if (direccion === -1 && alInicio) el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
-    else el.scrollBy({ left: paso * direccion, behavior: 'smooth' });
-  };
+    el.scrollLeft = el.scrollWidth / 3;
+    let espera = 0;
+    const alDesplazar = () => {
+      window.clearTimeout(espera);
+      espera = window.setTimeout(() => recentrar(el), 150);
+    };
+    el.addEventListener('scroll', alDesplazar, { passive: true });
+    return () => el.removeEventListener('scroll', alDesplazar);
+  }, []);
 
   useEffect(() => {
     if (pausado || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const id = window.setInterval(() => mover(1), INTERVALO);
+    const id = window.setInterval(() => pista.current && avanzar(pista.current, 1), INTERVALO);
     return () => window.clearInterval(id);
   }, [pausado]);
 
@@ -110,23 +129,37 @@ export function CarruselCategorias() {
       onBlur={() => setPausado(false)}
     >
       <ul ref={pista} className={styles.pista} aria-label="Rubros donde funciona BCPOS" tabIndex={0}>
-        {CATEGORIAS.map((c) => (
-          <li key={c.nombre} className={styles.tarjeta}>
-            <Image src={c.foto} alt="" fill sizes="340px" className={styles.foto} draggable={false} />
-            <div className={styles.texto}>
-              <h3>{c.nombre}</h3>
-              <p>{c.texto}</p>
-            </div>
-          </li>
-        ))}
+        {[0, 1, 2].flatMap((copia) =>
+          CATEGORIAS.map((c) => (
+            <li
+              key={`${copia}-${c.nombre}`}
+              className={styles.tarjeta}
+              aria-hidden={copia !== 1 || undefined}
+            >
+              <Image src={c.foto} alt="" fill sizes="340px" className={styles.foto} draggable={false} />
+              <div className={styles.texto}>
+                <h3>{c.nombre}</h3>
+                <p>{c.texto}</p>
+              </div>
+            </li>
+          )),
+        )}
       </ul>
       <div className={styles.flechas}>
-        <button type="button" onClick={() => mover(-1)} aria-label="Rubro anterior">
+        <button
+          type="button"
+          onClick={() => pista.current && avanzar(pista.current, -1)}
+          aria-label="Rubro anterior"
+        >
           <span className={styles.izquierda}>
             <Icono nombre="flecha" tamano={20} />
           </span>
         </button>
-        <button type="button" onClick={() => mover(1)} aria-label="Rubro siguiente">
+        <button
+          type="button"
+          onClick={() => pista.current && avanzar(pista.current, 1)}
+          aria-label="Rubro siguiente"
+        >
           <Icono nombre="flecha" tamano={20} />
         </button>
       </div>
