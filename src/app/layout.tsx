@@ -41,14 +41,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#16141f',
+  themeColor: '#13111b',
 };
 
-// Se ejecuta antes de pintar: activa las animaciones y aplica el tema guardado (o el del sistema),
+// Se ejecuta antes de pintar: activa las animaciones y aplica el tema guardado (oscuro por defecto),
 // para que la página no parpadee en claro al cargar en modo oscuro.
 const SCRIPT_ACTIVAR_ANIMACIONES =
   "var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('tema');" +
-  "d.dataset.tema=t||(matchMedia('(prefers-color-scheme: dark)').matches?'oscuro':'claro')}catch(e){d.dataset.tema='claro'}";
+  "d.dataset.tema=t||'oscuro'}catch(e){d.dataset.tema='oscuro'}";
 
 export default function LayoutRaiz({ children }: { children: ReactNode }) {
   return (
