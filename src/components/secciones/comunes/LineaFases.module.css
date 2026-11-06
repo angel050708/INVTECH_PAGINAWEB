@@ -21,7 +21,7 @@
   transition: background-color 0.3s;
 }
 .fase:hover::before {
-  background: var(--acento);
+  background: var(--acento-fondo);
 }
 .numero {
   display: block;

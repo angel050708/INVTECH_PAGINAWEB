@@ -1,5 +1,5 @@
 .pie {
-  background: var(--tinta);
+  background: var(--oscuro);
   color: rgb(255 255 255 / 0.7);
   padding: 80px var(--margen) 28px;
   font-size: 0.95rem;
@@ -22,7 +22,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--papel);
+  color: #fff;
 }
 .pie ul {
   display: grid;

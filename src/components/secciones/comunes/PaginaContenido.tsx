@@ -22,10 +22,12 @@ interface Props {
   interes?: string;
   /** Bloque opcional que se muestra después de la primera sección */
   extra?: ReactNode;
+  /** Secciones que se reemplazan por un bloque propio, por título */
+  reemplazos?: Record<string, ReactNode>;
 }
 
 /** Plantilla de las páginas de Soluciones y Servicios. */
-export function PaginaContenido({ etiqueta, pagina, logos, interes, extra }: Props) {
+export function PaginaContenido({ etiqueta, pagina, logos, interes, extra, reemplazos = {} }: Props) {
   const secciones = pagina.secciones.slice(0, MAX_SECCIONES).map(resumir);
   return (
     <>
@@ -51,25 +53,29 @@ export function PaginaContenido({ etiqueta, pagina, logos, interes, extra }: Pro
 
       {secciones.map((seccion, indice) => (
         <div key={seccion.titulo}>
-          <section className={unirClases('seccion', indice % 2 === 1 && styles.alterna)}>
-            <div className="contenedor">
-              <div className={styles.cabeza} {...revelarAlScroll()}>
-                <h2 className="titulo-seccion">{seccion.titulo}</h2>
-                {seccion.intro.length > 0 && (
-                  <div className={styles.intro}>
-                    {seccion.intro.map((parrafo) => (
-                      <p key={parrafo}>{parrafo}</p>
-                    ))}
-                  </div>
+          {seccion.titulo in reemplazos ? (
+            reemplazos[seccion.titulo]
+          ) : (
+            <section className={unirClases('seccion', indice % 2 === 1 && styles.alterna)}>
+              <div className="contenedor">
+                <div className={styles.cabeza} {...revelarAlScroll()}>
+                  <h2 className="titulo-seccion">{seccion.titulo}</h2>
+                  {seccion.intro.length > 0 && (
+                    <div className={styles.intro}>
+                      {seccion.intro.map((parrafo) => (
+                        <p key={parrafo}>{parrafo}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {seccion.titulo.startsWith('Enfoque de implementación') ? (
+                  <LineaFases />
+                ) : (
+                  seccion.items.length > 0 && <Items items={seccion.items} />
                 )}
               </div>
-              {seccion.titulo.startsWith('Enfoque de implementación') ? (
-                <LineaFases />
-              ) : (
-                seccion.items.length > 0 && <Items items={seccion.items} />
-              )}
-            </div>
-          </section>
+            </section>
+          )}
           {indice === 0 && extra}
         </div>
       ))}

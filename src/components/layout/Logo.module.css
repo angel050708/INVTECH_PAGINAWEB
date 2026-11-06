@@ -10,3 +10,12 @@
   width: auto;
   height: 44px;
 }
+.paraOscuro {
+  display: none;
+}
+:global([data-tema='oscuro']) .paraClaro {
+  display: none;
+}
+:global([data-tema='oscuro']) .paraOscuro {
+  display: block;
+}

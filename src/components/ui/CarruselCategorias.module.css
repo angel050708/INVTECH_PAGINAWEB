@@ -1,58 +1,52 @@
 .carrusel {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  position: relative;
 }
 .pista {
   display: flex;
-  width: max-content;
-  animation: desplazar 40s linear infinite;
-}
-.carrusel:hover .pista {
-  animation-play-state: paused;
-}
-.pista ul {
-  display: flex;
   gap: 16px;
-  padding-right: 16px;
+  padding: 4px var(--margen) 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+.pista::-webkit-scrollbar {
+  display: none;
+}
+.arrastrando {
+  cursor: grabbing;
+  scroll-snap-type: none;
 }
 .tarjeta {
   position: relative;
   isolation: isolate;
+  flex: none;
   display: flex;
   align-items: flex-end;
-  width: 320px;
-  height: 380px;
+  width: 340px;
+  height: 400px;
   overflow: hidden;
   border-radius: var(--radio-lg);
-  background: var(--tinta);
+  background: #16141f;
+  scroll-snap-align: start;
 }
 .tarjeta::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(0deg, rgb(22 20 31 / 0.9) 15%, transparent 60%);
+  background: linear-gradient(0deg, rgb(22 20 31 / 0.92) 15%, transparent 60%);
 }
 .foto {
   z-index: -2;
   object-fit: cover;
-  object-position: center 75%;
-}
-.ilustracion {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  display: grid;
-  place-items: center;
-  padding-bottom: 80px;
-  background:
-    radial-gradient(60% 60% at 50% 35%, rgb(169 155 255 / 0.35), transparent 70%),
-    linear-gradient(160deg, #2a1499, #16141f);
-  color: #fff;
+  object-position: center 70%;
+  pointer-events: none;
 }
 .texto {
   padding: 24px;
-  color: rgb(255 255 255 / 0.8);
+  color: rgb(255 255 255 / 0.85);
 }
 .texto h3 {
   font-size: 1.35rem;
@@ -62,30 +56,40 @@
   margin-top: 6px;
   font-size: 0.95rem;
 }
-@keyframes desplazar {
-  to {
-    transform: translateX(-50%);
-  }
+.flechas {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 0 var(--margen);
+}
+.flechas button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--linea);
+  border-radius: 50%;
+  background: var(--papel);
+  color: var(--tinta);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+.flechas button:hover {
+  border-color: var(--acento);
+}
+.flechas button:active {
+  transform: scale(0.95);
+}
+.izquierda {
+  display: grid;
+  transform: rotate(180deg);
 }
 @media (max-width: 640px) {
   .tarjeta {
-    width: 260px;
-    height: 320px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .pista {
-    animation: none;
-    flex-wrap: wrap;
-    width: auto;
-  }
-  .pista ul + ul {
-    display: none;
-  }
-  .pista ul {
-    flex-wrap: wrap;
-  }
-  .carrusel {
-    mask-image: none;
+    width: 270px;
+    height: 330px;
   }
 }

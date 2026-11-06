@@ -7,9 +7,39 @@
 .diagrama::before {
   content: '';
   position: absolute;
-  inset: 17%;
-  border: 1px dashed var(--linea);
+  inset: 12%;
   border-radius: 50%;
+  background: radial-gradient(circle, rgb(169 155 255 / 0.28), transparent 68%);
+}
+/* Anillo de colores que gira detrás de los módulos */
+.anillo {
+  position: absolute;
+  inset: 17%;
+  border-radius: 50%;
+  background: conic-gradient(#7c5cff, #0ea5a4, #f59e0b, #2563eb, #db2777, #16a34a, #7c5cff);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  opacity: 0.7;
+  animation: girar 24s linear infinite;
+}
+.disco {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 26px 30px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  align-content: center;
+  background: linear-gradient(160deg, #2a1499, #16141f);
+  box-shadow: 0 30px 50px -24px rgb(42 20 153 / 0.7);
+}
+.disco img {
+  margin-bottom: 6px;
+}
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .centro {
   position: absolute;
@@ -23,13 +53,13 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--tinta);
+  color: rgb(255 255 255 / 0.75);
 }
 .centro strong {
-  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
-  font-weight: 500;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--tinta);
+  color: #fff;
 }
 .modulos li {
   --angulo: calc(var(--i) * 60deg - 90deg);
@@ -52,17 +82,30 @@
   place-items: center;
   width: 52px;
   height: 52px;
-  border: 1px solid var(--linea);
-  border-radius: 14px;
-  background: var(--papel);
-  color: var(--acento);
+  border-radius: 16px;
+  background: var(--color);
+  color: #fff;
+  box-shadow: 0 14px 24px -14px var(--color);
+  transition: transform 0.3s var(--curva);
+}
+.modulos li:hover .icono {
+  transform: translateY(-4px) scale(1.05);
+}
+.modulos li {
+  font-weight: 600;
+  color: var(--tinta) !important;
 }
 @media (max-width: 520px) {
   .diagrama {
     aspect-ratio: auto;
   }
-  .diagrama::before {
+  .diagrama::before,
+  .anillo {
     display: none;
+  }
+  .disco {
+    border-radius: var(--radio-lg);
+    aspect-ratio: auto;
   }
   .centro {
     position: static;
@@ -78,4 +121,13 @@
     width: auto;
     transform: none;
   }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anillo {
+    animation: none;
+  }
+}
+
+:global([data-tema='oscuro']) .disco {
+  border: 1px solid rgb(169 155 255 / 0.35);
 }

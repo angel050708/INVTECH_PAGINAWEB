@@ -106,7 +106,7 @@
 .barraMonitor {
   height: 8px;
   border-radius: 2px;
-  background: var(--acento);
+  background: var(--acento-fondo);
 }
 .lineaMonitor {
   height: 6px;

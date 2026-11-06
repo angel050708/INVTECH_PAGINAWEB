@@ -1,5 +1,16 @@
 /* Ciclo de 10 s: cada documento se emite, viaja y se registra con 0.9 s de diferencia. */
 .flujo {
+  /* Ilustración de pantallas claras: mismos colores en modo claro y oscuro */
+  --tinta: #16141f;
+  --papel: #ffffff;
+  --papel-2: #f6f5fa;
+  --linea: #e5e3ee;
+  --texto: #2b2838;
+  --texto-suave: #625f70;
+  --acento: #2a1499;
+  --acento-suave: #eeebfb;
+  --verde: #12805c;
+  color: var(--texto);
   --ciclo: 10s;
   --paso: 0.9s;
   display: grid;
@@ -167,7 +178,7 @@
   height: 14px;
   margin-top: -7px;
   border-radius: 4px;
-  background: var(--acento);
+  background: var(--acento-fondo);
   box-shadow: 0 0 0 4px var(--acento-suave);
   opacity: 0;
   animation: viajar var(--ciclo) var(--curva-mov) infinite;

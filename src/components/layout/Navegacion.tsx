@@ -7,6 +7,7 @@ import { Icono } from '@/components/ui/Icono';
 import { LogosApp } from '@/components/ui/LogosApp';
 import { unirClases } from '@/lib/clases';
 import { CONTACTO, NAVEGACION } from '@/data/sitio';
+import { BotonTema } from './BotonTema';
 import { Logo } from './Logo';
 import styles from './Navegacion.module.css';
 
@@ -93,6 +94,7 @@ export function Navegacion() {
         </ul>
 
         <div className={styles.acciones}>
+          <BotonTema />
           <a
             href={CONTACTO.telefonoEnlace}
             className={styles.telefono}

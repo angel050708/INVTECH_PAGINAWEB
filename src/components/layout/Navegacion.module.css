@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(255 255 255 / 0.9);
+  background: var(--barra-fondo);
   backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid transparent;
   transition:
@@ -18,7 +18,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 7px var(--margen);
-  background: var(--tinta);
+  background: var(--oscuro);
   color: rgb(255 255 255 / 0.72);
   font-size: 0.8rem;
 }
@@ -27,7 +27,7 @@
   gap: 20px;
 }
 .franja a {
-  color: var(--papel);
+  color: #fff;
   text-decoration: none;
 }
 .franja a:hover {
@@ -200,8 +200,8 @@
     height: 44px;
     border: 0;
     border-radius: 10px;
-    background: var(--tinta);
-    color: var(--papel);
+    background: var(--oscuro);
+    color: #fff;
     cursor: pointer;
   }
   .soloMovil {
