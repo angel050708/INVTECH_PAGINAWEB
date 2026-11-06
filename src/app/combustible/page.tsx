@@ -12,7 +12,6 @@ import { Icono } from '@/components/ui/Icono';
 import {
   COMBUSTIBLE_INTRO,
   MODULOS_COMBUSTIBLE,
-  OTRAS_INTEGRACIONES,
   PROBLEMA_SOLUCION,
   TERMINAL_MOVIL,
 } from '@/data/verticales';
@@ -142,12 +141,6 @@ export default function PaginaCombustible() {
       <section className="seccion fondo-alterno">
         <div className="contenedor">
           <Compatibilidad />
-          <div className={styles.bloque}>
-            <h2 className="titulo-seccion" style={{ marginBottom: 24 }}>
-              Otras integraciones
-            </h2>
-            <Elementos elementos={OTRAS_INTEGRACIONES} columnas={3} variante="lista" />
-          </div>
         </div>
       </section>
 

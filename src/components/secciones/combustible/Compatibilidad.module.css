@@ -1,8 +1,6 @@
 .envoltura {
-  --curva: cubic-bezier(0.23, 1, 0.32, 1);
   display: grid;
-  gap: 56px;
-  margin-bottom: 72px;
+  gap: 72px;
 }
 
 .cabeza {
@@ -10,7 +8,10 @@
   gap: 16px 64px;
   align-items: end;
 }
-.cabeza p {
+.cabeza p,
+.proveedores p,
+.sistema p {
+  margin: 0;
   max-width: 52ch;
   color: var(--texto-suave);
   line-height: 1.6;
@@ -26,8 +27,9 @@
   gap: 22px;
 }
 .subtitulo {
-  font-size: 1.15rem;
-  font-weight: 600;
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: 650;
 }
 
 .oculto {
@@ -39,10 +41,11 @@
   white-space: nowrap;
 }
 
-/* Parte 1: cinta de banderas */
+/* Gasolineras: cinta a todo el ancho de la pantalla */
 .cinta {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 .pista {
   display: flex;
@@ -59,186 +62,118 @@
   }
 }
 
-/* Placas: siempre blancas, para que cada logo conserve sus colores oficiales */
-.placa {
+/* Placas blancas: los logos conservan sus colores oficiales en ambos temas */
+.placa,
+.placaGrande {
   display: grid;
   place-items: center;
-  height: 76px;
-  min-width: 104px;
-  padding: 12px 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   background: #fff;
   border: 1px solid var(--linea);
-  box-shadow: 0 10px 24px -18px rgba(22, 20, 31, 0.5);
+  box-shadow: 0 12px 28px -20px rgba(22, 20, 31, 0.5);
 }
-.placaGrande {
+.placa {
   height: 112px;
   min-width: 220px;
   padding: 20px 34px;
 }
 .logo {
   width: auto;
-  height: 40px;
-  max-width: 130px;
-  object-fit: contain;
-}
-.placaGrande .logo {
   height: 68px;
   max-width: 180px;
+  object-fit: contain;
 }
 .palabra {
-  display: grid;
-  justify-items: center;
-  gap: 2px;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #16141f;
 }
-.palabra strong {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
+
+/* Proveedores: dos logos grandes */
+.proveedores {
+  display: grid;
+  gap: 28px;
+  align-items: center;
 }
-.placaGrande .palabra strong {
-  font-size: 2.4rem;
+.logosGrandes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
-.palabra small {
-  font-size: 0.72rem;
-  color: #545163;
+.placaGrande {
+  height: clamp(130px, 18vw, 200px);
+  padding: 28px;
+}
+.placaGrande .logo {
+  height: clamp(56px, 8vw, 96px);
+  max-width: 85%;
+}
+@media (min-width: 900px) {
+  .proveedores {
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+  }
 }
 
-/* Parte 2: la ruta del dato, surtidor → controlador → sonda */
-.ruta {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Controladores y sondas: texto y espacio para la imagen */
+.sistemas {
   display: grid;
-  gap: 40px;
-  position: relative;
+  gap: 32px;
+  align-items: stretch;
 }
-.etapa {
-  position: relative;
+.sistemasTexto {
   display: grid;
   align-content: start;
-  gap: 10px;
+  gap: 28px;
 }
-.etapa h4 {
-  font-size: 1.25rem;
-  margin: 8px 0 0;
+.sistema {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  border-left: 2px solid var(--acento);
 }
-.etapa p {
+.sistema h4 {
   margin: 0;
-  color: var(--texto-suave);
-  line-height: 1.55;
-  max-width: 34ch;
+  font-size: 1.1rem;
 }
-.marcas {
+.sistema ul {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 8px;
 }
-
-.nodo {
-  position: relative;
-  z-index: 1;
+.sistema li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.espacioImagen {
   display: grid;
   place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  min-height: 320px;
+  border-radius: 20px;
+  border: 1.5px dashed var(--linea);
   background: var(--papel);
-  border: 1.5px solid var(--acento);
-  color: var(--acento);
+  color: var(--texto-suave);
 }
-.nodo svg {
-  width: 30px;
-  height: 30px;
+.espacioImagen svg {
+  width: 56px;
+  height: 56px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
+  stroke-width: 1.5;
   stroke-linejoin: round;
+  opacity: 0.6;
 }
-/* Pulso que sale de cada nodo, escalonado en el orden del recorrido */
-.nodo::after {
-  content: '';
-  position: absolute;
-  inset: -1.5px;
-  border-radius: inherit;
-  border: 1.5px solid var(--acento);
-  opacity: 0;
-  animation: pulso 3.6s var(--curva) infinite;
-}
-.etapa:nth-child(2) .nodo::after {
-  animation-delay: 1.2s;
-}
-.etapa:nth-child(3) .nodo::after {
-  animation-delay: 2.4s;
-}
-@keyframes pulso {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  40%,
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-
-/* Ducto que une los nodos; el combustible corre de izquierda a derecha */
-.ruta::before {
-  content: '';
-  position: absolute;
-  left: 31px;
-  top: 32px;
-  bottom: 32px;
-  width: 2px;
-  background: repeating-linear-gradient(180deg, var(--acento) 0 10px, transparent 10px 22px);
-  background-size: 100% 22px;
-  opacity: 0.55;
-  animation: fluirV 1.1s linear infinite;
-}
-@keyframes fluirV {
-  to {
-    background-position: 0 22px;
-  }
-}
-
 @media (min-width: 900px) {
-  .ruta {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-  .ruta::before {
-    left: 32px;
-    right: calc((100% - 64px) / 3 - 32px);
-    top: 31px;
-    bottom: auto;
-    width: auto;
-    height: 2px;
-    background: repeating-linear-gradient(90deg, var(--acento) 0 10px, transparent 10px 22px);
-    background-size: 22px 100%;
-    animation-name: fluirH;
-  }
-  @keyframes fluirH {
-    to {
-      background-position: 22px 0;
-    }
-  }
-}
-@media (max-width: 899px) {
-  .etapa {
-    padding-left: 88px;
-  }
-  .nodo {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .etapa h4 {
-    margin-top: 0;
+  .sistemas {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
   }
 }
 
@@ -247,44 +182,9 @@
     animation: none;
     flex-wrap: wrap;
     width: auto;
+    justify-content: center;
   }
   .pista > :nth-child(n + 6) {
     display: none;
   }
-  .nodo::after,
-  .ruta::before {
-    animation: none;
-  }
-}
-
-/* Equipo real: foto del sistema y las líneas compatibles */
-.equipo {
-  margin: 8px 0 0;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--linea);
-  background: #e9e9ec;
-  max-width: 340px;
-}
-.equipo img {
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: 50% 0;
-}
-.equipo figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 12px;
-  background: #fff;
-}
-.equipo figcaption span {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: #efedf7;
-  color: #16141f;
-  font-size: 0.85rem;
-  font-weight: 600;
 }
