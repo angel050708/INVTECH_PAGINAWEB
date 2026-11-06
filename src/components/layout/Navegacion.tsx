@@ -63,6 +63,11 @@ export function Navegacion() {
                 aria-current={esActual(enlace.href) ? 'page' : undefined}
               >
                 {enlace.etiqueta}
+                {enlace.submenu && (
+                  <span className={styles.chevron}>
+                    <Icono nombre="chevron" tamano={14} />
+                  </span>
+                )}
               </Link>
               {enlace.submenu && (
                 <div className={styles.submenu}>
@@ -70,7 +75,13 @@ export function Navegacion() {
                     {enlace.submenu.map((sub, indice) => (
                       <li key={sub.slug} style={{ '--i': indice } as CSSProperties}>
                         <Link href={sub.href ?? `${enlace.base}${sub.slug}/`}>
-                          <LogosApp logos={sub.logos.slice(0, 1)} tamano={22} />
+                          {sub.icono ? (
+                            <span className={styles.iconoMenu}>
+                              <Icono nombre={sub.icono} tamano={20} />
+                            </span>
+                          ) : (
+                            <LogosApp logos={sub.logos.slice(0, 1)} tamano={22} />
+                          )}
                           <span>
                             <strong>{sub.etiqueta}</strong>
                             <small>{sub.resumen}</small>

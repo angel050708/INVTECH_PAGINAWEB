@@ -36,17 +36,12 @@ export default function PaginaPuntoDeVenta() {
     <>
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/punto-de-venta/')} />
       <CabeceraPagina
+        contacto={'el punto de venta BCPOS'}
         etiqueta="Punto de venta"
         titulo="BCPOS: la caja de su negocio, conectada a Business Central"
         bajada="La venta que se hace frente al cliente llega al ERP en cuestión de segundos. Inventario, cuentas y reportes se actualizan sin doble digitación."
         visual={<LogosApp logos={['dynamics-365-businesscentral', 'dynamics-365-commerce']} tamano={64} />}
-      >
-        <p style={{ marginTop: 32 }}>
-          <Link href="/contacto/?interes=punto-de-venta" className="boton boton-acento boton-grande">
-            Hablar con un consultor <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
-      </CabeceraPagina>
+      />
       <SelectorNegocio />
 
       <section className="seccion">

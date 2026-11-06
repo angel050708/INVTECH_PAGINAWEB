@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { DashboardCombustible } from '@/components/animaciones/DashboardCombustible';
 import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
@@ -10,7 +9,6 @@ import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorN
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Icono } from '@/components/ui/Icono';
 import { COMBUSTIBLE_INTRO, MODULOS_COMBUSTIBLE, PROBLEMA_SOLUCION, TERMINAL_MOVIL } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
@@ -51,6 +49,7 @@ export default function PaginaCombustible() {
     <>
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/punto-de-venta/combustible/')} />
       <CabeceraPagina
+        contacto={'el sistema para estaciones de servicio'}
         etiqueta="Combustible"
         titulo="Gestión integral para estaciones de servicio"
         bajada={COMBUSTIBLE_INTRO}
@@ -58,13 +57,7 @@ export default function PaginaCombustible() {
           src: '/fotos/estacion-noche-hd.jpg',
           alt: 'Estación de servicio iluminada al anochecer, con bombas de combustible bajo el techo',
         }}
-      >
-        <p style={{ marginTop: 32 }}>
-          <Link href="/contacto/?interes=combustible" className="boton boton-acento boton-grande">
-            Hablar con un consultor <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
-      </CabeceraPagina>
+      />
       <SelectorNegocio />
 
       <section className="seccion fondo-alterno seccion-compacta">

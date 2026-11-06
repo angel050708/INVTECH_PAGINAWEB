@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { TicketRetail } from '@/components/animaciones/TicketRetail';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
@@ -7,7 +6,6 @@ import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorN
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { Icono } from '@/components/ui/Icono';
 import { LogosApp } from '@/components/ui/LogosApp';
 import { RETAIL_BENEFICIOS, RETAIL_RUBROS } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
@@ -24,6 +22,7 @@ export default function PaginaRetail() {
     <>
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/punto-de-venta/retail/')} />
       <CabeceraPagina
+        contacto={'el punto de venta para retail'}
         etiqueta="Retail"
         titulo="Caja, inventario y contabilidad en un solo sistema"
         bajada="Para ferreterías, farmacias, tiendas de conveniencia y supermercados: BCPOS en la caja y Business Central en la administración, también para empresas con varias sucursales."
@@ -33,13 +32,7 @@ export default function PaginaRetail() {
             tamano={64}
           />
         }
-      >
-        <p style={{ marginTop: 32 }}>
-          <Link href="/contacto/?interes=retail" className="boton boton-acento boton-grande">
-            Hablar con un consultor <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
-      </CabeceraPagina>
+      />
       <SelectorNegocio />
 
       <section className="seccion">

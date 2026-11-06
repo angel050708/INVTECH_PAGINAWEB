@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { Icono } from '@/components/ui/Icono';
@@ -27,12 +26,13 @@ interface Props {
 }
 
 /** Plantilla de las páginas de Soluciones y Servicios. */
-export function PaginaContenido({ etiqueta, pagina, logos, interes, extra, reemplazos = {} }: Props) {
+export function PaginaContenido({ etiqueta, pagina, logos, extra, reemplazos = {} }: Props) {
   const secciones = pagina.secciones.slice(0, MAX_SECCIONES).map(resumir);
   return (
     <>
       <CabeceraPagina
         etiqueta={etiqueta}
+        contacto={pagina.titulo}
         titulo={pagina.titulo}
         bajada={pagina.bajada[0] ?? ''}
         visual={
@@ -40,16 +40,7 @@ export function PaginaContenido({ etiqueta, pagina, logos, interes, extra, reemp
             <LogosApp logos={logos} tamano={logos.length > 1 ? 64 : 96} />
           </div>
         }
-      >
-        <p className={styles.accion}>
-          <Link
-            href={interes ? `/contacto/?interes=${interes}` : '/contacto/'}
-            className="boton boton-acento boton-grande"
-          >
-            Hablar con un consultor <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
-      </CabeceraPagina>
+      />
 
       {secciones.map((seccion, indice) => (
         <div key={seccion.titulo}>

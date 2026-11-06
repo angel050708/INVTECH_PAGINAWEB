@@ -34,6 +34,11 @@ const TRAZOS = {
   menu: 'M4 7h16M4 12h16M4 17h16',
   cerrar: 'M6 6l12 12M18 6L6 18',
   ubicacion: 'M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11zM12 12a2 2 0 100-4 2 2 0 000 4z',
+  cajaRegistradora: 'M7 3h10v6H7zM9.5 6h5M12 9v3M5 12h14l1 5H4zM3 17h18v4H3zM10 19h4',
+  gasolinera:
+    'M4 21V5a2 2 0 012-2h6a2 2 0 012 2v16M3 21h12M6.5 6.5h5V10h-5zM14 9h2.5A1.5 1.5 0 0118 10.5V16a1.5 1.5 0 003 0V8.5L18.5 6M9 13.5c-.9 1.1-1.3 1.9-1.3 2.5a1.3 1.3 0 002.6 0c0-.6-.4-1.4-1.3-2.5z',
+  carrito: 'M3 4h2l2.4 11h11.2L21 8H6.3M9 20a1 1 0 100-2 1 1 0 000 2zM18 20a1 1 0 100-2 1 1 0 000 2z',
+  chevron: 'M6 9l6 6 6-6',
 } as const;
 
 export type NombreIcono = keyof typeof TRAZOS;

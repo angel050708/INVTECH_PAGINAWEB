@@ -4,11 +4,11 @@ import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { RedEmpresa } from '@/components/secciones/servicio-it/RedEmpresa';
+import { ExpansionImagen } from '@/components/ui/ExpansionImagen';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
 import { rutaLogo } from '@/data/aplicaciones';
 import { PASOS_IT, SERVICIOS_IT, SOPORTE_BENEFICIOS, SOPORTE_PLANES } from '@/data/servicio-it';
-import { CONTACTO, enlaceWhatsapp } from '@/data/sitio';
 import { APPS_365, TELECOMUNICACIONES } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
@@ -20,35 +20,33 @@ const DESCRIPCION =
 
 export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/servicio-it/');
 
-const MENSAJE = 'Hola, me interesa el servicio IT de InvTech.';
-
 export default function PaginaServicioIt() {
   return (
     <>
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/servicio-it/')} />
       <CabeceraPagina
         etiqueta="Servicio IT"
+        contacto="el servicio IT"
         titulo="Infraestructura y soporte tecnológico para su empresa"
         bajada="Redes, servidores, correo corporativo, cámaras, licencias y conexión a internet: lo instalamos, lo configuramos y le damos soporte técnico y mantenimiento."
         fondo={{
           src: '/fotos/it-fibra-4k.jpg',
           alt: 'Cables de fibra óptica conectados a un equipo de red en un rack',
         }}
+      />
+
+      <ExpansionImagen
+        src="/fotos/it-racks-4k.jpg"
+        alt="Racks de servidores con cableado de red ordenado en un centro de datos"
+        fondo="/fotos/it-racks-fondo.jpg"
+        etiqueta="Servicio IT"
+        titulo={['Infraestructura', 'en orden']}
+        indicacion="Siga bajando"
       >
-        <div className={styles.acciones}>
-          <a
-            href={enlaceWhatsapp(MENSAJE)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="boton boton-acento boton-grande"
-          >
-            <Icono nombre="whatsapp" tamano={20} /> Escribir por WhatsApp
-          </a>
-          <a href={`mailto:${CONTACTO.correo}?subject=Servicio%20IT`} className={styles.correo}>
-            <Icono nombre="correo" tamano={20} /> {CONTACTO.correo}
-          </a>
-        </div>
-      </CabeceraPagina>
+        <p className={styles.expansionTexto}>
+          Servidores, redes y cableado instalados y configurados por nuestro equipo técnico.
+        </p>
+      </ExpansionImagen>
 
       <section className="seccion">
         <div className="contenedor">
