@@ -51,7 +51,7 @@ export function QueEsBusinessCentral() {
               </li>
             ))}
           </ul>
-          <Link href="/metodologia/" className="enlace-flecha">
+          <Link href="/servicios/implementacion/" className="enlace-flecha">
             Ver la implementación en seis fases <Icono nombre="flecha" tamano={18} />
           </Link>
         </div>

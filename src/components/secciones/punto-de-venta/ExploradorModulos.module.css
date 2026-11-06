@@ -1,0 +1,121 @@
+.explorador {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 860px) {
+  .explorador {
+    grid-template-columns: minmax(260px, 1fr) 1.4fr;
+    gap: 28px;
+  }
+}
+
+.lista {
+  display: grid;
+  gap: 6px;
+}
+@media (max-width: 859px) {
+  .lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.lista button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--texto-suave);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.lista button:active {
+  transform: scale(0.98);
+}
+@media (hover: hover) and (pointer: fine) {
+  .lista button:hover {
+    color: var(--tinta);
+    background: var(--papel);
+  }
+}
+.lista button[aria-selected='true'] {
+  color: var(--tinta);
+  background: var(--papel);
+  border-color: var(--linea);
+  box-shadow: inset 3px 0 0 var(--acento);
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-content: center;
+  min-height: 260px;
+  border-radius: 20px;
+  border: 1px solid var(--linea);
+  background: var(--papel);
+  padding: clamp(24px, 4vw, 44px);
+}
+.contenido {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  animation: entrar 260ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(2px);
+  }
+}
+.icono {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--acento-fondo);
+  color: #fff;
+}
+.contenido h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.02em;
+}
+.contenido p {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+/* Icono grande de fondo: llena el panel sin competir con el texto */
+.marca {
+  position: absolute;
+  right: -28px;
+  bottom: -36px;
+  color: var(--acento);
+  opacity: 0.08;
+  pointer-events: none;
+}
+.contador {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contenido {
+    animation: none;
+  }
+}

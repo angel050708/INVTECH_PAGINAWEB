@@ -1,0 +1,295 @@
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 32px;
+}
+.correo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Infraestructura: red animada + servicios */
+.infra {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: stretch;
+}
+@media (min-width: 960px) {
+  .infra {
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .red {
+    align-self: center;
+  }
+}
+.servicios {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.servicios li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  transition: background-color 160ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .servicios li:hover {
+    background: var(--papel-2);
+  }
+}
+.servicios h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.servicios p {
+  margin: 4px 0 0;
+  color: var(--texto-suave);
+  line-height: 1.55;
+}
+.icono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--acento-fondo);
+  color: #fff;
+}
+
+/* Licencias Microsoft 365 */
+.licencias {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: 28px;
+  border: 1px solid var(--linea);
+  background: var(--papel);
+}
+@media (min-width: 900px) {
+  .licencias {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.texto {
+  margin: 14px 0 0;
+  max-width: 48ch;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+.apps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+.apps li {
+  display: grid;
+  place-items: center;
+  width: clamp(72px, 9vw, 104px);
+  aspect-ratio: 1;
+  border-radius: 20px;
+  background: var(--papel-2);
+  border: 1px solid var(--linea);
+  animation: flotar 3.4s ease-in-out infinite;
+}
+.apps img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+@keyframes flotar {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Soporte */
+.soporte {
+  display: grid;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: stretch;
+}
+@media (min-width: 900px) {
+  .soporte {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.fotoSoporte {
+  position: relative;
+  min-height: 420px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+.fotoSoporte img {
+  object-fit: cover;
+}
+.beneficios {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 20px;
+}
+.beneficios li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.beneficios li svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--acento);
+}
+.subtitulo {
+  margin: 36px 0 14px;
+  font-size: 1.1rem;
+}
+.planes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+.planes li {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid var(--linea);
+  background: var(--papel-2);
+}
+.planes span {
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+/* Telecomunicaciones */
+.telecom {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .telecom {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.telecom li {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 360px;
+  padding: clamp(28px, 3vw, 40px);
+  overflow: hidden;
+  border-radius: 24px;
+  color: rgb(255 255 255 / 0.85);
+}
+.telecom li::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgb(22 20 31 / 0.92) 25%, rgb(22 20 31 / 0.3));
+}
+.fotoTelecom {
+  z-index: -2;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .telecom li:hover .fotoTelecom {
+    transform: scale(1.04);
+  }
+}
+.telecom h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.telecom p {
+  margin: 10px 0 0;
+  max-width: 46ch;
+}
+
+/* Pasos */
+.pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+  position: relative;
+}
+@media (min-width: 900px) {
+  .pasos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .pasos::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: calc(25% - 24px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--acento), color-mix(in srgb, var(--acento) 20%, transparent));
+  }
+}
+.pasos li {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.numero {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--acento-fondo);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 0 0 6px var(--papel);
+}
+.pasos h3 {
+  margin: 8px 0 0;
+  font-size: 1.2rem;
+}
+.pasos p {
+  margin: 0;
+  color: var(--texto-suave);
+  line-height: 1.55;
+  max-width: 30ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apps li {
+    animation: none;
+  }
+}

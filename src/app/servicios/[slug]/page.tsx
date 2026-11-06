@@ -1,3 +1,4 @@
+import { ConceptosImplementacion } from '@/components/secciones/comunes/ConceptosImplementacion';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { PaginaContenido } from '@/components/secciones/comunes/PaginaContenido';
@@ -43,7 +44,13 @@ export default async function PaginaServicio({ params }: Props) {
   return (
     <>
       <JsonLd datos={datosServicio(pagina.titulo, pagina.bajada[0] ?? '', `/servicios/${slug}/`)} />
-      <PaginaContenido etiqueta="Servicio" pagina={pagina} logos={entrada.logos} interes={slug} />
+      <PaginaContenido
+        etiqueta="Servicio"
+        pagina={pagina}
+        logos={entrada.logos}
+        interes={slug}
+        extra={slug === 'implementacion' ? <ConceptosImplementacion /> : undefined}
+      />
     </>
   );
 }

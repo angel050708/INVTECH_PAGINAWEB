@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { TicketRetail } from '@/components/animaciones/TicketRetail';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
+import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorNegocio';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -16,12 +17,12 @@ const TITULO = 'Punto de venta y ERP para retail: ferreterías, farmacias y supe
 const DESCRIPCION =
   'BCPOS y Business Central para ferreterías, farmacias, tiendas de conveniencia y supermercados: caja, inventario y contabilidad conectados.';
 
-export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/retail/');
+export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/punto-de-venta/retail/');
 
 export default function PaginaRetail() {
   return (
     <>
-      <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/retail/')} />
+      <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/punto-de-venta/retail/')} />
       <CabeceraPagina
         etiqueta="Retail"
         titulo="Caja, inventario y contabilidad en un solo sistema"
@@ -39,6 +40,7 @@ export default function PaginaRetail() {
           </Link>
         </p>
       </CabeceraPagina>
+      <SelectorNegocio />
 
       <section className="seccion">
         <div className="contenedor">
