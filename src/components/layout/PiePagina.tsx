@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CONTACTO, NAVEGACION } from '@/data/sitio';
 import { SERVICIOS_MENU, SOLUCIONES_MENU } from '@/data/paginas';
+import { SelloPartner } from '@/components/ui/SelloPartner';
 import { AnioActual } from './AnioActual';
 import { Logo } from './Logo';
 import styles from './PiePagina.module.css';
@@ -15,6 +16,9 @@ export function PiePagina() {
             Implementamos y adaptamos Microsoft Dynamics 365 Business Central para empresas en {CONTACTO.pais}
             .
           </p>
+          <div style={{ marginTop: 20 }}>
+            <SelloPartner oscuro />
+          </div>
         </div>
 
         <nav aria-label="Compañía">

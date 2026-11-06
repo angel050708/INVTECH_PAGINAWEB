@@ -1,0 +1,153 @@
+.escena {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  margin: 0;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  box-shadow: var(--sombra);
+}
+
+/* Órbita: el anillo gira y cada logo gira al revés para quedar derecho */
+.orbita {
+  --radio: 150px;
+  position: relative;
+  width: calc(var(--radio) * 2 + 96px);
+  aspect-ratio: 1;
+}
+.orbita::before {
+  content: '';
+  position: absolute;
+  inset: 48px;
+  border: 1px dashed var(--linea);
+  border-radius: 50%;
+}
+.centro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.centro strong {
+  max-width: 11ch;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--tinta);
+}
+.centro small {
+  margin-top: 6px;
+  color: var(--texto-suave);
+}
+.anillo {
+  position: absolute;
+  inset: 0;
+  animation: girar 50s linear infinite;
+}
+.anillo li {
+  --angulo: calc(var(--i) * 360deg / var(--total));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(var(--angulo)) translateY(calc(var(--radio) * -1)) rotate(calc(var(--angulo) * -1));
+}
+.logo {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  overflow: hidden;
+  border: 2px solid var(--linea);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 12px 24px -16px rgb(22 20 31 / 0.5);
+  animation: girar 50s linear infinite reverse;
+}
+.logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Sistemas conectados */
+.sistemas {
+  display: grid;
+  gap: 12px;
+}
+.sistemas li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--tinta);
+  font-weight: 600;
+  color: #fff;
+  animation: resaltar 10s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 2s);
+}
+.sistemas li:nth-child(even) {
+  background: var(--acento);
+}
+.icono {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--acento);
+}
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes resaltar {
+  0%,
+  20%,
+  100% {
+    transform: none;
+  }
+  8% {
+    transform: translateX(8px);
+  }
+}
+@media (max-width: 960px) {
+  .escena {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .sistemas {
+    width: 100%;
+  }
+}
+@media (max-width: 420px) {
+  .orbita {
+    --radio: 115px;
+  }
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+  }
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anillo,
+  .logo,
+  .sistemas li {
+    animation: none;
+  }
+}

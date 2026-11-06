@@ -101,3 +101,48 @@
     grid-template-columns: 1fr;
   }
 }
+
+.disenado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+}
+.tarjetaIntegra {
+  padding: clamp(24px, 3vw, 36px);
+  border-radius: var(--radio-lg);
+  background: var(--tinta);
+  color: #fff;
+}
+.tarjetaIntegra h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.tarjetaIntegra ul {
+  display: grid;
+  gap: 10px;
+}
+.tarjetaIntegra li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 12px;
+  font-weight: 500;
+}
+.tarjetaIntegra li span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgb(169 155 255 / 0.18);
+  color: var(--acento-claro);
+}
+@media (max-width: 900px) {
+  .disenado {
+    grid-template-columns: 1fr;
+  }
+}

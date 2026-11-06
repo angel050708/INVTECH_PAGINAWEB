@@ -4,6 +4,7 @@ import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { LineasCircuito } from '@/components/ui/LineasCircuito';
+import { SelloPartner } from '@/components/ui/SelloPartner';
 import { VALORES } from '@/data/empresa';
 import styles from '../paginas.module.css';
 
@@ -47,9 +48,12 @@ export default function PaginaQuienesSomos() {
         bajada="Los negocios no se tratan solo de brindar soluciones a los problemas: se trata de brindar soluciones que ayuden a mejorar la vida."
         visual={<LineasCircuito />}
       >
-        <p className={styles.experiencia}>
-          <strong>+10 años</strong> de experiencia en Business Central
-        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginTop: 32 }}>
+          <p className={styles.experiencia} style={{ marginTop: 0 }}>
+            <strong>+10 años</strong> de experiencia en Business Central
+          </p>
+          <SelloPartner />
+        </div>
       </CabeceraPagina>
 
       {BLOQUES.map((bloque, indice) => (

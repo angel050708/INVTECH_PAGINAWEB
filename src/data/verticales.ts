@@ -111,7 +111,7 @@ export const COMBUSTIBLE_INTRO =
   'Un sistema integral que centraliza ventas, turnos, conciliación de POS y control de combustible, diseñado específicamente para las exigencias operativas de una red de estaciones de servicio.';
 
 export const COMBUSTIBLE_PARA =
-  'Cadenas y operadores de estaciones de servicio que necesitan visibilidad centralizada, control de pérdidas por diferencias de turno y cumplimiento normativo automatizado, desde una hasta cientos de estaciones.';
+  'Para quienes necesitan ver todas sus estaciones en un solo lugar, controlar las pérdidas por diferencias de turno y automatizar el cumplimiento normativo, desde una hasta cientos de estaciones.';
 
 export const BCHUB_CONEXIONES: Elemento[] = [
   {
@@ -344,24 +344,23 @@ export const CATALOGO: Categoria[] = [
 ];
 
 /** Marcas que aparecen en la presentación de InvTech. */
-export const MARCAS = [
-  'HP',
-  'Dell',
-  'Lenovo',
-  'Hewlett Packard Enterprise',
-  'Cisco',
-  'Huawei',
-  'Ubiquiti',
-  'TP-Link',
-  'Linksys',
-  'Microsoft',
-  'ASUS',
-  'LG',
-  'Dahua',
-  'Tripp Lite',
-  'CDP',
-  'Kaseya',
-  'SentinelOne',
+export const MARCAS: { nombre: string; archivo: string }[] = [
+  { nombre: 'HP', archivo: 'hp' },
+  { nombre: 'Dell', archivo: 'dell' },
+  { nombre: 'Lenovo', archivo: 'lenovo' },
+  { nombre: 'Cisco', archivo: 'cisco' },
+  { nombre: 'Huawei', archivo: 'huawei' },
+  { nombre: 'Ubiquiti', archivo: 'ubiquiti' },
+  { nombre: 'TP-Link', archivo: 'tp-link' },
+  { nombre: 'Linksys', archivo: 'linksys' },
+  { nombre: 'Microsoft', archivo: 'microsoft' },
+  { nombre: 'ASUS', archivo: 'asus' },
+  { nombre: 'LG', archivo: 'lg' },
+  { nombre: 'Dahua', archivo: 'dahua' },
+  { nombre: 'Tripp Lite', archivo: 'tripp-lite' },
+  { nombre: 'CDP', archivo: 'cdp' },
+  { nombre: 'Kaseya', archivo: 'kaseya' },
+  { nombre: 'SentinelOne', archivo: 'sentinelone' },
 ];
 
 /** Aplicaciones de Microsoft 365 que muestra la presentación (licencias de software corporativo). */

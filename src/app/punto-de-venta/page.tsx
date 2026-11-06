@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AppLeal } from '@/components/animaciones/AppLeal';
+import { IntegracionesOrbita } from '@/components/animaciones/IntegracionesOrbita';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -126,9 +127,20 @@ export default function PaginaPuntoDeVenta() {
       <section className="seccion fondo-alterno">
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <h2 className="titulo-seccion">Integraciones</h2>
+            <div>
+              <p className="etiqueta">Integraciones</p>
+              <h2 className="titulo-seccion">Conectamos su punto de venta con bancos, bombas y su ERP</h2>
+            </div>
+            <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
+              Conexión segura y certificada con entidades financieras para pagos y conciliaciones automáticas.
+            </p>
           </div>
-          <Elementos elementos={BCPOS_INTEGRACIONES} columnas={2} />
+          <div {...revelarAlScroll(1)}>
+            <IntegracionesOrbita />
+          </div>
+          <div style={{ marginTop: 40 }}>
+            <Elementos elementos={BCPOS_INTEGRACIONES} columnas={2} />
+          </div>
           <div className={styles.siguientes} style={{ marginTop: 48 }}>
             <Link href="/combustible/" className="enlace-flecha">
               BCPOS para estaciones de servicio <Icono nombre="flecha" tamano={18} />
