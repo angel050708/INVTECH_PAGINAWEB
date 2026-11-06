@@ -361,8 +361,8 @@ export const CATALOGO: Categoria[] = [
     icono: 'antena',
     foto: '/equipos/redes.jpg',
     productos: [
-      { nombre: 'Switch MikroTik' },
-      { nombre: 'Switch Aruba' },
+      { nombre: 'Switch MikroTik', marca: 'mikrotik' },
+      { nombre: 'Switch Aruba', marca: 'aruba' },
       { nombre: 'Puntos de acceso UniFi', marca: 'ubiquiti' },
     ],
   },
