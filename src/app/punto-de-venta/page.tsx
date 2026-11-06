@@ -40,7 +40,7 @@ export default function PaginaPuntoDeVenta() {
         titulo="BCPOS: la caja de su negocio, conectada a Business Central"
         bajada="La venta que se hace frente al cliente llega al ERP en cuestión de segundos. Inventario, cuentas y reportes se actualizan sin doble digitación."
         fondo={{
-          src: '/fotos/bcpos-caja-v2-4k.jpg',
+          src: '/fotos/bcpos-caja-v3-4k.jpg',
           alt: 'Cajero frente a una caja con la pantalla de venta de BCPOS',
         }}
       />
