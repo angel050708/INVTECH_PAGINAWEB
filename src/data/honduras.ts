@@ -52,7 +52,7 @@ export const ESPECIALIDADES: Especialidad[] = [
     ],
     relacionadas: [
       { href: '/servicios/business-central/', etiqueta: 'Implementación de Business Central' },
-      { href: '/metodologia/', etiqueta: 'Implementación en seis fases' },
+      { href: '/servicios/implementacion/', etiqueta: 'Implementación en seis fases' },
       { href: '/servicios/soporte-post-go-live/', etiqueta: 'Soporte post go-live' },
     ],
   },
@@ -77,7 +77,7 @@ export const ESPECIALIDADES: Especialidad[] = [
     ],
     relacionadas: [
       { href: '/servicios/soporte/', etiqueta: 'Soporte de Dynamics 365' },
-      { href: '/metodologia/', etiqueta: 'Implementación en seis fases' },
+      { href: '/servicios/implementacion/', etiqueta: 'Implementación en seis fases' },
       { href: '/servicios/business-central/', etiqueta: 'Implementación de Business Central' },
     ],
   },

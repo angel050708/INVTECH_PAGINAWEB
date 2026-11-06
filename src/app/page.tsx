@@ -25,7 +25,7 @@ export default function PaginaInicio() {
               <p className="etiqueta">Enfoque de implementación</p>
               <h2 className="titulo-seccion">Implementación en seis fases</h2>
             </div>
-            <Link href="/metodologia/" className="enlace-flecha">
+            <Link href="/servicios/implementacion/" className="enlace-flecha">
               Ver la metodología <Icono nombre="flecha" tamano={18} />
             </Link>
           </div>

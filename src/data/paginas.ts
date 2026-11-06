@@ -162,14 +162,14 @@ export const VERTICALES: EntradaMenu[] = [
     etiqueta: 'Combustible',
     logos: ['dynamics-365-businesscentral'],
     resumen: 'Estaciones de servicio',
-    href: '/combustible/',
+    href: '/punto-de-venta/combustible/',
   },
   {
     slug: 'retail',
     etiqueta: 'Retail',
     logos: ['dynamics-365-commerce'],
     resumen: 'Ferreterías, farmacias y supermercados',
-    href: '/retail/',
+    href: '/punto-de-venta/retail/',
   },
   {
     slug: 'venta-de-equipos',
@@ -183,6 +183,13 @@ export const VERTICALES: EntradaMenu[] = [
 /** Opciones de interés que aparecen en el formulario de contacto. */
 export const INTERESES: EntradaMenu[] = [
   ...VERTICALES,
+  {
+    slug: 'servicio-it',
+    etiqueta: 'Servicio IT',
+    logos: ['office-365'],
+    resumen: 'Redes, servidores y soporte técnico',
+    href: '/servicio-it/',
+  },
   ...ESPECIALIDADES.map(({ slug, etiqueta, logos, resumen }) => ({ slug, etiqueta, logos, resumen })),
   ...SERVICIOS_DYNAMICS,
 ];

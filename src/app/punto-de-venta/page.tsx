@@ -5,6 +5,7 @@ import { AppLeal } from '@/components/animaciones/AppLeal';
 import { IntegracionesOrbita } from '@/components/animaciones/IntegracionesOrbita';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
+import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorNegocio';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -46,6 +47,7 @@ export default function PaginaPuntoDeVenta() {
           </Link>
         </p>
       </CabeceraPagina>
+      <SelectorNegocio />
 
       <section className="seccion">
         <div className={`contenedor ${paginas.dosColumnas}`}>
@@ -140,10 +142,10 @@ export default function PaginaPuntoDeVenta() {
             <Elementos elementos={BCPOS_INTEGRACIONES} columnas={2} />
           </div>
           <div className={styles.siguientes} style={{ marginTop: 48 }}>
-            <Link href="/combustible/" className="enlace-flecha">
+            <Link href="/punto-de-venta/combustible/" className="enlace-flecha">
               BCPOS para estaciones de servicio <Icono nombre="flecha" tamano={18} />
             </Link>
-            <Link href="/retail/" className="enlace-flecha">
+            <Link href="/punto-de-venta/retail/" className="enlace-flecha">
               BCPOS para retail <Icono nombre="flecha" tamano={18} />
             </Link>
           </div>

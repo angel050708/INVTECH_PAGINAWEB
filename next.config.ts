@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      { source: '/metodologia/', destination: '/servicios/implementacion/', permanent: true },
+      { source: '/combustible/', destination: '/punto-de-venta/combustible/', permanent: true },
+      { source: '/retail/', destination: '/punto-de-venta/retail/', permanent: true },
       { source: '/business-central/', destination: '/soluciones/business-central/', permanent: true },
       { source: '/servicios/integracion-punto-de-venta/', destination: '/punto-de-venta/', permanent: true },
       { source: '/soluciones/comercio/', destination: '/soluciones/', permanent: true },

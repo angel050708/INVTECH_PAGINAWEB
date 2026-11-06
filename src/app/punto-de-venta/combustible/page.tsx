@@ -5,6 +5,8 @@ import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { Compatibilidad } from '@/components/secciones/combustible/Compatibilidad';
+import { ExploradorModulos } from '@/components/secciones/punto-de-venta/ExploradorModulos';
+import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorNegocio';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -12,7 +14,7 @@ import { Icono } from '@/components/ui/Icono';
 import { COMBUSTIBLE_INTRO, MODULOS_COMBUSTIBLE, PROBLEMA_SOLUCION, TERMINAL_MOVIL } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
-import styles from '../verticales.module.css';
+import styles from '../../verticales.module.css';
 
 const TITULO = 'Sistema para estaciones de servicio con BCPOS y Business Central';
 const DESCRIPCION =
@@ -42,12 +44,12 @@ const DASHBOARD = [
   },
 ];
 
-export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/combustible/');
+export const metadata: Metadata = metadatosPagina(TITULO, DESCRIPCION, '/punto-de-venta/combustible/');
 
 export default function PaginaCombustible() {
   return (
     <>
-      <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/combustible/')} />
+      <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/punto-de-venta/combustible/')} />
       <CabeceraPagina
         etiqueta="Combustible"
         titulo="Gestión integral para estaciones de servicio"
@@ -63,6 +65,7 @@ export default function PaginaCombustible() {
           </Link>
         </p>
       </CabeceraPagina>
+      <SelectorNegocio />
 
       <section className="seccion fondo-alterno seccion-compacta">
         <div className="contenedor">
@@ -109,7 +112,7 @@ export default function PaginaCombustible() {
               <h2 className="titulo-seccion">Del despacho en el surtidor a la declaración mensual</h2>
             </div>
           </div>
-          <Elementos elementos={MODULOS_COMBUSTIBLE} columnas={4} />
+          <ExploradorModulos modulos={MODULOS_COMBUSTIBLE} />
         </div>
       </section>
 
