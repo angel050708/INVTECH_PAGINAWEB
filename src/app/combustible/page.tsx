@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DashboardCombustible } from '@/components/animaciones/DashboardCombustible';
-import { TerminalPax } from '@/components/animaciones/TerminalPax';
+import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -78,6 +78,25 @@ export default function PaginaCombustible() {
         </p>
       </CabeceraPagina>
 
+      <section className="seccion fondo-alterno">
+        <div className="contenedor">
+          <div className="cabeza-seccion" {...revelarAlScroll()}>
+            <div>
+              <p className="etiqueta">Punto de venta en terminal móvil</p>
+              <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
+            </div>
+            <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
+              El pistero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la misma
+              terminal con la que cobra, junto al surtidor.
+            </p>
+          </div>
+          <TerminalBcpos />
+          <div style={{ marginTop: 56 }}>
+            <Elementos elementos={TERMINAL_MOVIL} columnas={3} />
+          </div>
+        </div>
+      </section>
+
       <section className="seccion">
         <div className={`contenedor ${styles.disenado}`}>
           <div {...revelarAlScroll()}>
@@ -99,27 +118,6 @@ export default function PaginaCombustible() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="seccion fondo-alterno">
-        <div className="contenedor">
-          <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <div>
-              <p className="etiqueta">Punto de venta en terminal móvil</p>
-              <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
-            </div>
-            <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
-              El pistero consulta el saldo de un cliente de crédito y factura desde la misma terminal con la
-              que cobra, junto a la bomba.
-            </p>
-          </div>
-          <div {...revelarAlScroll(1)}>
-            <TerminalPax />
-          </div>
-          <div style={{ marginTop: 56 }}>
-            <Elementos elementos={TERMINAL_MOVIL} columnas={3} />
           </div>
         </div>
       </section>
