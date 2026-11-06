@@ -1,0 +1,242 @@
+.indice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.indice li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--papel);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--tinta);
+}
+.indice svg {
+  color: var(--acento);
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.catalogo > li {
+  padding: 28px;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  transition:
+    transform 0.3s var(--curva),
+    border-color 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .catalogo > li:hover {
+    transform: translateY(-3px);
+    border-color: var(--acento);
+  }
+}
+.icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: var(--acento);
+  color: #fff;
+}
+.catalogo h3 {
+  font-size: 1.25rem;
+}
+.catalogo ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+.catalogo ul li {
+  display: flex;
+  gap: 10px;
+  color: var(--texto);
+}
+.catalogo ul li::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 0.6em;
+  border-radius: 50%;
+  background: var(--acento);
+}
+
+.marcas {
+  padding: clamp(56px, 7vw, 96px) 0;
+}
+.marquesina {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.pista {
+  display: flex;
+  width: max-content;
+  animation: desplazar 45s linear infinite;
+}
+.marquesina:hover .pista {
+  animation-play-state: paused;
+}
+.pista ul {
+  display: flex;
+  gap: 12px;
+  padding-right: 12px;
+}
+.pista li {
+  padding: 14px 26px;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  white-space: nowrap;
+}
+@keyframes desplazar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.infra {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.licencias {
+  padding: clamp(24px, 3vw, 36px);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra);
+}
+.licencias h3 {
+  font-size: 1.6rem;
+}
+.licencias > p:not(:global(.etiqueta)) {
+  margin-top: 8px;
+  color: var(--texto-suave);
+}
+.licencias ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+.licencias li {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+  background: var(--papel-2);
+  animation: flotar 3s ease-in-out infinite;
+}
+.licencias img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+@keyframes flotar {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.telecom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.telecom li {
+  position: relative;
+  min-height: 260px;
+  padding: clamp(28px, 3vw, 40px);
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  color: rgb(255 255 255 / 0.8);
+}
+.telecom h3 {
+  margin-top: 64px;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.telecom p {
+  max-width: 46ch;
+  margin-top: 10px;
+}
+.starlink {
+  background: linear-gradient(160deg, #16141f, #2a2550);
+}
+.claro {
+  background: linear-gradient(160deg, #2a1499, #16141f);
+}
+.senal {
+  position: absolute;
+  top: 28px;
+  left: clamp(28px, 3vw, 40px);
+  width: 56px;
+  height: 56px;
+}
+.senal i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgb(255 255 255 / 0.7);
+  border-radius: 50%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  opacity: 0;
+  animation: onda 2.4s ease-out infinite;
+}
+.senal i:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.senal i:nth-child(3) {
+  animation-delay: 1.6s;
+}
+@keyframes onda {
+  from {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .catalogo {
+    grid-template-columns: 1fr 1fr;
+  }
+  .infra {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .catalogo,
+  .telecom {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pista,
+  .licencias li,
+  .senal i {
+    animation: none;
+  }
+  .senal i {
+    opacity: 1;
+  }
+}

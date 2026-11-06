@@ -1,0 +1,232 @@
+.escena {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  align-items: center;
+  margin: 0;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: var(--radio-lg);
+  background: radial-gradient(60% 80% at 50% 0%, rgb(169 155 255 / 0.18), transparent 70%), #120f1e;
+}
+.escena small {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #c9c7d6;
+}
+
+/* Servidor torre */
+.servidorFrente {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  width: 120px;
+  height: 200px;
+  padding: 16px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #2b2838, #1b1926);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.08),
+    0 30px 40px -24px #000;
+}
+.boton {
+  justify-self: end;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+.disco {
+  position: relative;
+  height: 18px;
+  border-radius: 4px;
+  background: #3a3650;
+}
+.disco i {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a99bff;
+  animation: parpadear 1.1s steps(2) infinite;
+  animation-delay: calc(var(--i) * -0.27s);
+}
+.rejilla {
+  height: 48px;
+  margin-top: 6px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(0deg, #2f2c40 0 3px, transparent 3px 7px);
+}
+
+/* Switch */
+.switchFrente {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  width: 170px;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #2b2838, #1b1926);
+  box-shadow: 0 30px 40px -24px #000;
+}
+.puerto {
+  position: relative;
+  height: 16px;
+  border-radius: 2px;
+  background: #0b0a12;
+}
+.puerto i {
+  position: absolute;
+  top: -4px;
+  left: 2px;
+  width: 4px;
+  height: 3px;
+  background: #22c55e;
+  animation: parpadear 0.8s steps(2) infinite;
+  animation-delay: calc(var(--i) * -0.13s);
+}
+
+/* Computadora */
+.monitor {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  width: 150px;
+  height: 100px;
+  padding: 10px;
+  border: 5px solid #2b2838;
+  border-radius: 8px;
+  background: #f6f5fa;
+}
+.barraMonitor {
+  height: 8px;
+  border-radius: 2px;
+  background: var(--acento);
+}
+.lineaMonitor {
+  height: 6px;
+  width: 80%;
+  border-radius: 2px;
+  background: #d9d6e6;
+}
+.graficaMonitor {
+  height: 26px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    #a99bff 0 18%,
+    transparent 18% 22%,
+    #a99bff 22% 46%,
+    transparent 46% 50%,
+    #a99bff 50% 62%,
+    transparent 62% 66%,
+    #a99bff 66% 90%,
+    transparent 90%
+  );
+  clip-path: inset(0 100% 0 0);
+  animation: graficar 4s var(--curva) infinite;
+}
+.base {
+  display: block;
+  width: 50px;
+  height: 18px;
+  margin: 0 auto;
+  background: #2b2838;
+  clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+}
+
+/* Cables con datos */
+.cable {
+  position: relative;
+  height: 3px;
+  margin: 0 12px 28px;
+  border-radius: 2px;
+  background: #3a3650;
+}
+.cable span {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 10px;
+  height: 9px;
+  border-radius: 3px;
+  background: #a99bff;
+  box-shadow: 0 0 10px #a99bff;
+  animation: datos 2.4s linear infinite;
+}
+/* El cable cambia de largo según la pantalla: el paquete recorre de 0 a 100 % del ancho */
+@keyframes datos {
+  from {
+    left: 0;
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  to {
+    left: calc(100% - 10px);
+    opacity: 0;
+  }
+}
+@keyframes parpadear {
+  50% {
+    opacity: 0.2;
+  }
+}
+@keyframes graficar {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  40%,
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@media (max-width: 860px) {
+  .escena {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+  }
+  .cable {
+    width: 3px;
+    height: 40px;
+    margin: 0;
+  }
+  .cable span {
+    animation-name: datosAbajo;
+  }
+}
+@keyframes datosAbajo {
+  from {
+    left: -3px;
+    top: 0;
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  to {
+    left: -3px;
+    top: 32px;
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .disco i,
+  .puerto i,
+  .cable span,
+  .graficaMonitor {
+    animation: none;
+  }
+  .graficaMonitor {
+    clip-path: none;
+  }
+}

@@ -1,0 +1,316 @@
+.escena {
+  --ciclo: 12s;
+  --leal: #ffd600;
+  display: grid;
+  grid-template-columns: 1fr 80px auto;
+  align-items: center;
+  margin: 0;
+}
+.caja {
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  border-radius: 18px;
+  background: var(--papel);
+  box-shadow: var(--sombra);
+}
+.cajaBarra {
+  padding: 12px 18px;
+  background: var(--tinta);
+  font-weight: 600;
+  color: #fff;
+}
+.cajaCuerpo {
+  display: grid;
+  gap: 4px;
+  padding: 20px 18px;
+}
+.cajaCuerpo span {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+.cajaCuerpo b {
+  margin-bottom: 8px;
+  color: var(--tinta);
+}
+.monto {
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+.cajaBoton {
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--acento);
+  text-align: center;
+  font-weight: 600;
+  color: #fff !important;
+  animation: presionar var(--ciclo) infinite;
+}
+.conexion {
+  position: relative;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--linea) 0 6px, transparent 6px 12px);
+}
+.conexion span {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--leal);
+  box-shadow: 0 0 0 4px rgb(255 214 0 / 0.3);
+  opacity: 0;
+  animation: viajar var(--ciclo) var(--curva-mov) infinite;
+}
+
+/* Teléfono */
+.telefono {
+  position: relative;
+  width: 250px;
+  padding: 12px;
+  border-radius: 40px;
+  background: #16141f;
+  box-shadow: 0 40px 70px -30px rgb(22 20 31 / 0.6);
+  transform: rotate(3deg);
+}
+.isla {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 70px;
+  height: 18px;
+  margin-left: -35px;
+  border-radius: 999px;
+  background: #000;
+  z-index: 1;
+}
+.app {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  padding: 46px 14px 16px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #fafafa;
+  color: #16141f;
+}
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.saldo {
+  display: grid;
+  gap: 2px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--leal);
+}
+.saldo small {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.puntos {
+  position: relative;
+  height: 2.6rem;
+  overflow: hidden;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.antes,
+.despues {
+  position: absolute;
+  left: 0;
+}
+.antes {
+  animation: salir var(--ciclo) var(--curva) infinite;
+}
+.despues {
+  animation: entrar var(--ciclo) var(--curva) infinite;
+}
+.notificacion {
+  display: grid;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #16141f;
+  color: #fff;
+  opacity: 0;
+  animation: notificar var(--ciclo) var(--curva) infinite;
+}
+.notificacion b {
+  color: var(--leal);
+}
+.notificacion small {
+  color: #c9c7d6;
+}
+.promo {
+  display: grid;
+  gap: 2px;
+  padding: 14px;
+  border: 1px solid #ececf2;
+  border-radius: 14px;
+  background: #fff;
+  opacity: 0;
+  animation: mostrarPromo var(--ciclo) var(--curva) infinite;
+}
+.promo small {
+  font-weight: 700;
+  color: #8a6d00;
+}
+.promo span {
+  font-size: 0.8rem;
+  color: #625f70;
+}
+.qr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #ececf2;
+}
+.qr span {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  background:
+    conic-gradient(#16141f 25%, transparent 0 50%, #16141f 0 75%, transparent 0) 0 0 / 13px 13px,
+    #fff;
+  border: 3px solid #16141f;
+  border-radius: 4px;
+}
+.qr small {
+  font-size: 0.78rem;
+  color: #625f70;
+}
+
+@keyframes presionar {
+  0%,
+  14%,
+  18%,
+  100% {
+    transform: none;
+  }
+  16% {
+    transform: scale(0.96);
+  }
+}
+@keyframes viajar {
+  0%,
+  16% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  17% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 1;
+    transform: translateX(64px);
+  }
+  27%,
+  100% {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+}
+@keyframes notificar {
+  0%,
+  26% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  30%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes salir {
+  0%,
+  28% {
+    transform: none;
+    opacity: 1;
+  }
+  33%,
+  92% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes entrar {
+  0%,
+  28% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  33%,
+  92% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes mostrarPromo {
+  0%,
+  48% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  54%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 860px) {
+  .escena {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+  }
+  .caja {
+    width: 100%;
+  }
+  .conexion {
+    display: none;
+  }
+  .telefono {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cajaBoton,
+  .conexion span,
+  .antes,
+  .despues,
+  .notificacion,
+  .promo {
+    animation: none;
+  }
+  .antes {
+    opacity: 0;
+  }
+  .notificacion,
+  .promo {
+    opacity: 1;
+  }
+}

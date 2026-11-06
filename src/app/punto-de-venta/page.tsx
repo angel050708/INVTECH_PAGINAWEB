@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { AppLeal } from '@/components/animaciones/AppLeal';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -8,7 +10,14 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
 import { Icono } from '@/components/ui/Icono';
 import { LogosApp } from '@/components/ui/LogosApp';
-import { BCPOS_FLUJO, BCPOS_INTEGRACIONES, BCPOS_QUE_ES, BCPOS_RUBROS } from '@/data/verticales';
+import {
+  BCPOS_FLUJO,
+  BCPOS_INTEGRACIONES,
+  BCPOS_QUE_ES,
+  BCPOS_RUBROS,
+  LEAL_CLIENTE,
+  LEAL_NEGOCIO,
+} from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
 import paginas from '../paginas.module.css';
@@ -82,12 +91,44 @@ export default function PaginaPuntoDeVenta() {
         </div>
       </section>
 
+      <section className={`seccion ${styles.leal}`} aria-labelledby="titulo-leal">
+        <div className="contenedor">
+          <div className={styles.lealRejilla}>
+            <div {...revelarAlScroll()}>
+              <Image
+                src="/logos/leal.svg"
+                alt="Leal"
+                width={64}
+                height={62}
+                unoptimized
+                className={styles.lealLogo}
+              />
+              <p className="etiqueta">Partners oficiales de Leal en Centroamérica</p>
+              <h2 id="titulo-leal" className="titulo-seccion">
+                Sus clientes acumulan puntos en cada compra que pasa por BCPOS
+              </h2>
+              <p className={paginas.texto} style={{ marginTop: 20 }}>
+                Leal 360 usa inteligencia artificial para que sus clientes vuelvan a comprar y gasten más en
+                cada visita. Lo conectamos con BCPOS y con Business Central.
+              </p>
+            </div>
+            <div {...revelarAlScroll(1)}>
+              <AppLeal />
+            </div>
+          </div>
+          <h3 className={styles.subtitulo}>Lo que recibe su cliente</h3>
+          <Elementos elementos={LEAL_CLIENTE} columnas={4} />
+          <h3 className={styles.subtitulo}>Lo que gana su negocio</h3>
+          <Elementos elementos={LEAL_NEGOCIO} columnas={4} variante="lista" />
+        </div>
+      </section>
+
       <section className="seccion fondo-alterno">
         <div className="contenedor">
           <div className="cabeza-seccion" {...revelarAlScroll()}>
             <h2 className="titulo-seccion">Integraciones</h2>
           </div>
-          <Elementos elementos={BCPOS_INTEGRACIONES} columnas={3} />
+          <Elementos elementos={BCPOS_INTEGRACIONES} columnas={2} />
           <div className={styles.siguientes} style={{ marginTop: 48 }}>
             <Link href="/combustible/" className="enlace-flecha">
               BCPOS para estaciones de servicio <Icono nombre="flecha" tamano={18} />

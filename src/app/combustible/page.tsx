@@ -11,7 +11,6 @@ import { Icono } from '@/components/ui/Icono';
 import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import {
   BCHUB_CONEXIONES,
-  COMBUSTIBLE_INTEGRACION,
   COMBUSTIBLE_INTRO,
   COMBUSTIBLE_PARA,
   MODULOS_COMBUSTIBLE,
@@ -78,9 +77,14 @@ export default function PaginaCombustible() {
           </h2>
           <div {...revelarAlScroll(1)}>
             <p className={paginas.texto}>{COMBUSTIBLE_PARA}</p>
-            <p className={styles.destacado}>
-              Vertical de combustible: {COMBUSTIBLE_INTEGRACION.toLowerCase()}
-            </p>
+            <p className={styles.destacado}>Integramos en un solo sistema:</p>
+            <ul className={styles.chips}>
+              {['Dispensadores', 'Sondas', 'Puntos de venta', 'Pasarela de pago', 'Business Central'].map(
+                (c) => (
+                  <li key={c}>{c}</li>
+                ),
+              )}
+            </ul>
           </div>
         </div>
       </section>

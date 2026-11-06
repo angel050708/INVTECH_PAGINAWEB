@@ -45,17 +45,58 @@ export const BCPOS_RUBROS = [
   'Supermercados',
 ];
 
+/** Leal 360, según la presentación de InvTech (partners oficiales en Centroamérica). */
+export const LEAL_CLIENTE: Elemento[] = [
+  {
+    titulo: 'Programa de puntos',
+    texto: 'Sus clientes acumulan y canjean puntos por compras, con reglas y recompensas que usted define.',
+    icono: 'sello',
+  },
+  {
+    titulo: 'Promociones personalizadas',
+    texto: 'Campañas armadas con el historial de compras de cada cliente.',
+    icono: 'tarjeta',
+  },
+  {
+    titulo: 'App móvil y portal web',
+    texto: 'Su cliente consulta sus puntos, recibe promociones y canjea recompensas desde el celular.',
+    icono: 'telefono',
+  },
+  {
+    titulo: 'Puntos en todas las sucursales',
+    texto: 'El cliente acumula en cualquiera de sus tiendas o estaciones.',
+    icono: 'ubicacion',
+  },
+];
+
+export const LEAL_NEGOCIO: Elemento[] = [
+  {
+    titulo: 'Datos de clientes en un solo lugar',
+    texto: 'Leal se sincroniza con su punto de venta, su ERP y su comercio electrónico.',
+    icono: 'sincronizar',
+  },
+  {
+    titulo: 'Segmentación',
+    texto: 'Agrupe a sus clientes por lo que compran y cada cuánto vuelven.',
+    icono: 'persona',
+  },
+  {
+    titulo: 'Métricas en tiempo real',
+    texto: 'Use los datos de compra para decidir productos, ventas y promociones.',
+    icono: 'grafica',
+  },
+  {
+    titulo: 'Correo, SMS y WhatsApp',
+    texto: 'Programe campañas y mensajes en todos los canales desde una sola plataforma.',
+    icono: 'correo',
+  },
+];
+
 export const BCPOS_INTEGRACIONES: Elemento[] = [
   {
     titulo: 'Integraciones bancarias',
     texto: 'Conexión segura y certificada con entidades financieras para pagos y conciliaciones automáticas.',
     icono: 'banco',
-  },
-  {
-    titulo: 'Integración con Leal',
-    texto:
-      'Partners oficiales de Leal en Centroamérica: programa de puntos, promociones personalizadas y app para sus clientes.',
-    icono: 'persona',
   },
   {
     titulo: 'Cumplimiento fiscal',
@@ -71,9 +112,6 @@ export const COMBUSTIBLE_INTRO =
 
 export const COMBUSTIBLE_PARA =
   'Cadenas y operadores de estaciones de servicio que necesitan visibilidad centralizada, control de pérdidas por diferencias de turno y cumplimiento normativo automatizado, desde una hasta cientos de estaciones.';
-
-export const COMBUSTIBLE_INTEGRACION =
-  'Integración completa de dispensadores, sondas, puntos de venta, pasarela de pago y ERP.';
 
 export const BCHUB_CONEXIONES: Elemento[] = [
   {
@@ -265,23 +303,71 @@ export const RETAIL_BENEFICIOS: Elemento[] = [
 
 /* ---------- Venta de equipos ---------- */
 
-export const EQUIPOS: Elemento[] = [
+export interface Categoria {
+  titulo: string;
+  icono: NombreIcono;
+  productos: string[];
+}
+
+/** Lo que InvTech vende, con los modelos que muestra la presentación. */
+export const CATALOGO: Categoria[] = [
   {
-    titulo: 'Puntos de venta y servidores',
-    texto: 'Equipos para cajas, tiendas y oficinas.',
+    titulo: 'Computadoras',
     icono: 'terminal',
+    productos: ['HP Mini PC', 'HP Power Desktop', 'Lenovo', 'Dell Inspiron (portátil)', 'Dell de escritorio'],
+  },
+  {
+    titulo: 'Servidores',
+    icono: 'servidor',
+    productos: ['Servidor HP', 'Servidor Lenovo ThinkSystem', 'Servidor Dell T40'],
+  },
+  {
+    titulo: 'Equipos de telecomunicación',
+    icono: 'antena',
+    productos: ['Switch MikroTik', 'Switch Aruba', 'Puntos de acceso UniFi Ubiquiti'],
+  },
+  {
+    titulo: 'Puntos de venta',
+    icono: 'tarjeta',
+    productos: ['Equipos de punto de venta', 'Periféricos'],
   },
   {
     titulo: 'Controladores y sondas',
-    texto: 'Para la medición de combustibles en estaciones de servicio.',
     icono: 'surtidor',
+    productos: ['Controladores para estaciones de servicio', 'Sondas para medición de combustibles'],
   },
-  { titulo: 'Sistemas de respaldo', texto: 'Para que la operación no se detenga.', icono: 'servidor' },
-  { titulo: 'Suministros tecnológicos', texto: 'Periféricos y suministros asociados.', icono: 'caja' },
+  {
+    titulo: 'Respaldo y suministros',
+    icono: 'caja',
+    productos: ['Sistemas de respaldo', 'Suministros tecnológicos asociados'],
+  },
 ];
 
+/** Marcas que aparecen en la presentación de InvTech. */
+export const MARCAS = [
+  'HP',
+  'Dell',
+  'Lenovo',
+  'Hewlett Packard Enterprise',
+  'Cisco',
+  'Huawei',
+  'Ubiquiti',
+  'TP-Link',
+  'Linksys',
+  'Microsoft',
+  'ASUS',
+  'LG',
+  'Dahua',
+  'Tripp Lite',
+  'CDP',
+  'Kaseya',
+  'SentinelOne',
+];
+
+/** Aplicaciones de Microsoft 365 que muestra la presentación (licencias de software corporativo). */
+export const APPS_365 = ['office-365', 'outlook', 'excel', 'teams', 'sharepoint', 'power-bi', 'power-apps'];
+
 export const INFRAESTRUCTURA: Elemento[] = [
-  { titulo: 'Licencias de software corporativo', texto: '', icono: 'documento' },
   { titulo: 'CCTV y control de accesos', texto: '', icono: 'camara' },
   { titulo: 'Correo corporativo', texto: '', icono: 'correo' },
   { titulo: 'Redes', texto: '', icono: 'sincronizar' },

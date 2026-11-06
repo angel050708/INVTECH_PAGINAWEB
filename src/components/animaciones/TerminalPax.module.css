@@ -107,47 +107,107 @@
   }
 }
 
-/* Terminal */
+/* Terminal PAX A920: cuerpo blanco, impresora arriba, pantalla táctil y lector abajo */
 .terminal {
   position: relative;
-  width: 280px;
-  padding: 18px 18px 22px;
-  border-radius: 34px 34px 44px 44px;
-  background: linear-gradient(180deg, #f4f4f7, #dcdce3);
-  box-shadow:
-    0 40px 70px -30px rgb(22 20 31 / 0.55),
-    inset 0 2px 0 #fff,
-    inset 0 -6px 12px rgb(0 0 0 / 0.08);
+  width: 270px;
   transform: rotate(-4deg);
+  filter: drop-shadow(0 40px 50px rgb(22 20 31 / 0.35));
+}
+.impresora {
+  position: relative;
+  height: 46px;
+  margin: 0 18px;
+  border-radius: 26px 26px 0 0;
+  background: linear-gradient(180deg, #fbfbfd, #e6e6ec);
+}
+.comprobante {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  display: grid;
+  gap: 2px;
+  width: 150px;
+  padding: 10px 12px 14px;
+  margin-left: -75px;
+  background: #fff;
+  border: 1px solid #e3e3ea;
+  font: 0.68rem var(--mono);
+  color: #2b2838;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: imprimir var(--ciclo) var(--curva) infinite;
+}
+.comprobante i {
+  height: 1px;
+  margin: 4px 0;
+  border-top: 1px dashed #c9c9d2;
+}
+.cuerpo {
+  position: relative;
+  padding: 14px 12px 12px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff, #ececf1);
+  box-shadow:
+    inset 0 2px 0 #fff,
+    inset 0 -6px 12px rgb(0 0 0 / 0.06);
+}
+.sensor {
+  width: 8px;
+  height: 8px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #2a2a33;
 }
 .marca {
-  margin: 0 auto 10px;
+  margin: 10px auto 0;
   width: max-content;
-  font: 800 0.8rem var(--sans);
-  letter-spacing: 0.2em;
-  color: #7a7a88;
+  font: 800 0.75rem var(--sans);
+  letter-spacing: 0.24em;
+  color: #9a9aa8;
+}
+.lector {
+  height: 22px;
+  margin: -4px 40px 0;
+  border-radius: 0 0 14px 14px;
+  background: #d9d9e1;
 }
 .pantalla {
   position: relative;
-  height: 250px;
+  height: 380px;
   overflow: hidden;
-  border: 6px solid #22212b;
-  border-radius: 12px;
-  background: #0d1424;
-  color: #e7e9f2;
+  border: 5px solid #1d1c24;
+  border-radius: 14px;
+  background: #f4f6fb;
+  color: #1d2235;
   font-size: 0.78rem;
 }
 .barraApp {
   display: flex;
   justify-content: space-between;
-  padding: 6px 10px;
-  background: #2f5bd3;
+  padding: 8px 10px;
+  background: #d71920;
   font-weight: 700;
   color: #fff;
 }
+.navegacionAndroid {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  padding: 8px;
+  background: #1d1c24;
+}
+.navegacionAndroid i {
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid #9a9aa8;
+  border-radius: 2px;
+}
 .vista {
   position: absolute;
-  inset: 30px 0 0;
+  inset: 34px 0 24px;
   display: grid;
   align-content: start;
   gap: 8px;
@@ -155,8 +215,8 @@
   opacity: 0;
 }
 .vista small {
-  font-weight: 600;
-  color: #c8cde0;
+  font-weight: 700;
+  color: #1d2235;
 }
 .etiqueta {
   font-size: 0.68rem;
@@ -166,9 +226,9 @@
 }
 .campo {
   padding: 8px;
-  border: 1px solid #2f5bd3;
-  border-radius: 6px;
-  background: #050a16;
+  border: 1px solid #d71920;
+  border-radius: 8px;
+  background: #fff;
   font-family: var(--mono);
 }
 .escrito {
@@ -176,30 +236,47 @@
   overflow: hidden;
   white-space: nowrap;
   vertical-align: bottom;
-  border-right: 2px solid #2f5bd3;
+  border-right: 2px solid #d71920;
 }
 .botonApp {
   margin-top: 4px;
-  padding: 8px;
-  border-radius: 6px;
-  background: #2f5bd3;
+  padding: 9px;
+  border-radius: 8px;
+  background: #1d2235;
   text-align: center;
   font-weight: 700;
   color: #fff;
 }
-.botonGris {
-  background: #2c3346;
+.botonVerde {
+  background: #12805c;
+}
+.botonRojo {
+  background: #b42318;
+}
+.tecladoPantalla {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.tecladoPantalla span {
+  display: grid;
+  place-items: center;
+  height: 26px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 0 #d5d8e3;
+  font-weight: 600;
 }
 .vistaBuscando {
   justify-items: center;
   align-content: center;
-  inset: 30px 0 0;
+  inset: 34px 0 24px;
 }
 .giro {
   width: 34px;
   height: 34px;
-  border: 3px solid #2c3346;
-  border-top-color: #2f5bd3;
+  border: 3px solid #dfe2ec;
+  border-top-color: #d71920;
   border-radius: 50%;
   animation: girar 0.8s linear infinite;
 }
@@ -211,12 +288,12 @@
   font-weight: 800;
 }
 .activo {
-  background: rgb(34 197 94 / 0.18);
-  color: #4ade80;
+  background: #dcf5e8;
+  color: #0a5c40;
 }
 .bloqueado {
-  background: rgb(239 68 68 / 0.2);
-  color: #f87171;
+  background: #fde4e2;
+  color: #a1160d;
 }
 .vista dl {
   display: grid;
@@ -225,7 +302,7 @@
   margin: 0;
 }
 .vista dt {
-  color: #8a91aa;
+  color: #5d6478;
 }
 .vista dd {
   margin: 0;
@@ -235,16 +312,16 @@
 .disponible {
   display: flex;
   justify-content: space-between;
-  color: #8a91aa;
+  color: #5d6478;
 }
 .disponible b {
   font-family: var(--mono);
-  color: #4ade80;
+  color: #0a5c40;
 }
 .medidor {
   height: 6px;
   border-radius: 999px;
-  background: #2c3346;
+  background: #dfe2ec;
   overflow: hidden;
 }
 .medidor i {
@@ -252,11 +329,11 @@
   height: 100%;
   width: 25%;
   border-radius: inherit;
-  background: #4ade80;
+  background: #12805c;
   transform-origin: left;
 }
 .vistaBloqueado p {
-  color: #c8cde0;
+  color: #3b4257;
   line-height: 1.4;
 }
 
@@ -378,50 +455,24 @@
   }
 }
 
-/* Teclado */
-.teclado {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 16px;
-}
-.teclado span {
-  display: grid;
-  place-items: center;
-  height: 30px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 0 #b9b9c4;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #3b3b48;
-}
-.teclado .vacia {
-  visibility: hidden;
-}
-.teclado .rojo {
-  background: #e5484d;
-}
-.teclado .amarillo {
-  background: #f5c542;
-}
-.teclado .verde {
-  background: #2fb36d;
-  animation: pulsar var(--ciclo) infinite;
-}
-@keyframes pulsar {
+@keyframes imprimir {
   0%,
-  15%,
-  17.5%,
-  65%,
-  67.5%,
-  100% {
-    transform: none;
+  36% {
+    transform: translateY(100%);
+    opacity: 0;
   }
-  16%,
-  66% {
-    transform: translateY(2px) scale(0.96);
-    box-shadow: none;
+  38% {
+    opacity: 1;
+  }
+  44%,
+  48% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
   }
 }
 
@@ -437,7 +488,7 @@
 @media (prefers-reduced-motion: reduce) {
   .vista,
   .pasos li,
-  .teclado .verde,
+  .comprobante,
   .escrito,
   .medidor i,
   .giro {
