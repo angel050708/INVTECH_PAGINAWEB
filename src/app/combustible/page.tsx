@@ -9,12 +9,7 @@ import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
-import {
-  COMBUSTIBLE_INTRO,
-  MODULOS_COMBUSTIBLE,
-  PROBLEMA_SOLUCION,
-  TERMINAL_MOVIL,
-} from '@/data/verticales';
+import { COMBUSTIBLE_INTRO, MODULOS_COMBUSTIBLE, PROBLEMA_SOLUCION, TERMINAL_MOVIL } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
 import styles from '../verticales.module.css';
