@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { CatalogoPestanas } from '@/components/secciones/equipos/CatalogoPestanas';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
@@ -25,6 +24,7 @@ export default function PaginaVentaDeEquipos() {
     <>
       <JsonLd datos={datosServicio(TITULO, DESCRIPCION, '/venta-de-equipos/')} />
       <CabeceraPagina
+        contacto={'la venta de equipos'}
         etiqueta="Venta de equipos"
         titulo="Computadoras, servidores y equipos de red para su empresa"
         bajada="Vendemos equipos HP, Dell y Lenovo, switches y puntos de acceso, equipos de punto de venta y controladores para estaciones de servicio. También instalamos la red, el CCTV y la conexión."
@@ -36,11 +36,6 @@ export default function PaginaVentaDeEquipos() {
             </li>
           ))}
         </ul>
-        <p style={{ marginTop: 28 }}>
-          <Link href="/contacto/?interes=venta-de-equipos" className="boton boton-acento boton-grande">
-            Solicitar cotización <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
       </CabeceraPagina>
 
       <section className="seccion fondo-alterno">

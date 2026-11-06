@@ -1,0 +1,100 @@
+/* --p va de 0 (imagen pequeña) a 1 (pantalla completa) según el scroll */
+.seccion {
+  --p: 0;
+  position: relative;
+  height: 260vh;
+  background: #0b0a12;
+}
+.fijo {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.fondo {
+  object-fit: cover;
+  opacity: calc(0.55 * (1 - var(--p)));
+  filter: blur(6px) saturate(0.8);
+  transform: scale(1.08);
+}
+.medio {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(min(340px, 70vw) + var(--p) * (100vw - min(340px, 70vw)));
+  height: calc(min(440px, 55dvh) + var(--p) * (100dvh - min(440px, 55dvh)));
+  border-radius: calc(24px * (1 - var(--p)));
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 0.7);
+  will-change: width, height;
+}
+.foto {
+  object-fit: cover;
+}
+.velo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 45%, rgb(11 10 18 / calc(var(--p) * 0.9))),
+    rgb(11 10 18 / calc(0.55 - var(--p) * 0.25));
+}
+.titulo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 0 var(--margen);
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+}
+.titulo h2 {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+  font-size: clamp(2.2rem, 6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 30px rgb(0 0 0 / 0.45);
+}
+.izquierda {
+  transform: translateX(calc(var(--p) * -30vw));
+  opacity: calc(1 - var(--p) * 1.4);
+}
+.derecha {
+  transform: translateX(calc(var(--p) * 30vw));
+  opacity: calc(1 - var(--p) * 1.4);
+}
+.etiqueta,
+.indicacion {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #c9c1ff;
+  opacity: calc(1 - var(--p) * 2);
+}
+.contenido {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(32px, 8vh, 80px);
+  z-index: 2;
+  width: min(760px, calc(100% - 2 * var(--margen)));
+  color: #fff;
+  text-align: center;
+  opacity: clamp(0, calc((var(--p) - 0.7) * 3.4), 1);
+  transform: translate(-50%, calc((1 - var(--p)) * 30px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seccion {
+    height: auto;
+  }
+  .fijo {
+    position: relative;
+    height: 80vh;
+  }
+}

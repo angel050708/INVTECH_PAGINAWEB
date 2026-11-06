@@ -15,17 +15,12 @@ export function PaginaEspecialidad({ especialidad: e }: { especialidad: Especial
     <>
       <JsonLd datos={datosServicio(e.tituloSeo, e.descripcion, `/servicios/${e.slug}/`)} />
       <CabeceraPagina
+        contacto={e.etiqueta}
         etiqueta="Servicio para empresas de Honduras"
         titulo={e.etiqueta}
         bajada={e.descripcion}
         visual={<LogosApp logos={e.logos} tamano={e.logos.length > 1 ? 64 : 96} />}
-      >
-        <p style={{ marginTop: 32 }}>
-          <Link href={`/contacto/?interes=${e.slug}`} className="boton boton-acento boton-grande">
-            Hablar con un consultor <Icono nombre="flecha" tamano={18} />
-          </Link>
-        </p>
-      </CabeceraPagina>
+      />
 
       <section className="seccion">
         <div className={`contenedor ${styles.rejilla}`}>

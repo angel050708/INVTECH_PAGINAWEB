@@ -1,4 +1,5 @@
 import { ESPECIALIDADES } from './honduras';
+import type { NombreIcono } from '@/components/ui/Icono';
 import contenido from './contenido-original.json';
 
 export interface ItemContenido {
@@ -27,6 +28,8 @@ export interface EntradaMenu {
   resumen: string;
   /** Dirección propia cuando la página vive en otra sección */
   href?: string;
+  /** Icono propio en lugar del logo de la aplicación */
+  icono?: NombreIcono;
 }
 
 /** Contenido de las páginas de Soluciones y Servicios tomado de invtech.pro. */
@@ -152,6 +155,7 @@ export const SERVICIOS_MENU: EntradaMenu[] = enServicios([
 export const VERTICALES: EntradaMenu[] = [
   {
     slug: 'punto-de-venta',
+    icono: 'cajaRegistradora',
     etiqueta: 'Punto de venta BCPOS',
     logos: ['dynamics-365-commerce'],
     resumen: 'La caja conectada a Business Central',
@@ -159,6 +163,7 @@ export const VERTICALES: EntradaMenu[] = [
   },
   {
     slug: 'combustible',
+    icono: 'gasolinera',
     etiqueta: 'Combustible',
     logos: ['dynamics-365-businesscentral'],
     resumen: 'Estaciones de servicio',
@@ -166,6 +171,7 @@ export const VERTICALES: EntradaMenu[] = [
   },
   {
     slug: 'retail',
+    icono: 'carrito',
     etiqueta: 'Retail',
     logos: ['dynamics-365-commerce'],
     resumen: 'Ferreterías, farmacias y supermercados',
@@ -173,6 +179,7 @@ export const VERTICALES: EntradaMenu[] = [
   },
   {
     slug: 'venta-de-equipos',
+    icono: 'servidor',
     etiqueta: 'Venta de equipos',
     logos: ['office-365'],
     resumen: 'Equipos, infraestructura y telecomunicaciones',
@@ -185,6 +192,7 @@ export const INTERESES: EntradaMenu[] = [
   ...VERTICALES,
   {
     slug: 'servicio-it',
+    icono: 'soporte',
     etiqueta: 'Servicio IT',
     logos: ['office-365'],
     resumen: 'Redes, servidores y soporte técnico',
