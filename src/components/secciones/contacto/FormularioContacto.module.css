@@ -122,3 +122,66 @@
     grid-template-columns: 1fr;
   }
 }
+.telefono {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+.telefono:focus-within {
+  border-color: var(--tinta);
+  box-shadow: 0 0 0 3px rgb(42 20 153 / 0.25);
+}
+.telefono span {
+  display: grid;
+  place-items: center;
+  padding: 0 14px;
+  border-right: 1px solid var(--linea);
+  background: var(--papel-2);
+  font-weight: 600;
+  color: var(--tinta);
+}
+.telefono input {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.ayuda {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+.opcionesCorreo {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  background: var(--papel-2);
+}
+.opcionesCorreo p {
+  font-weight: 600;
+  color: var(--tinta);
+}
+.opcionesCorreo div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.opcionesCorreo div a {
+  padding: 10px 18px;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 600;
+  color: var(--tinta);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.opcionesCorreo div a:hover {
+  border-color: var(--acento);
+}
+.opcionesCorreo small {
+  color: var(--texto-suave);
+}
