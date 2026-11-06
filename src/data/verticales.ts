@@ -476,17 +476,3 @@ export const PROVEEDORES: MarcaCompatible[] = [
   { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
   { nombre: 'Wayne Fueling Systems', logo: '/compatibles/wayne.png' },
 ];
-
-/** Sistemas de pista con los que se integra BCPOS. */
-export const SISTEMAS_PISTA: { titulo: string; texto: string; nombres: string[] }[] = [
-  {
-    titulo: 'Controladores',
-    texto: 'Autorizan la bomba y entregan cada venta al punto de venta.',
-    nombres: ['VOX', 'DOMS', 'Fusion'],
-  },
-  {
-    titulo: 'Sondas',
-    texto: 'El inventario de cada tanque llega solo a Business Central.',
-    nombres: ['Veeder-Root', 'Wayne'],
-  },
-];
