@@ -17,6 +17,7 @@ export default function PaginaServicios() {
   return (
     <>
       <CabeceraPagina
+        contacto="los servicios"
         etiqueta="Servicios"
         titulo="Servicios de Business Central para empresas de Honduras"
         bajada="Implementamos Business Central, lo adaptamos a la operación local y le damos soporte después de salir en vivo."

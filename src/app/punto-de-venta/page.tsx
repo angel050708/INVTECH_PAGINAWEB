@@ -12,7 +12,6 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { FlujoFacturas } from '@/components/ui/FlujoFacturas';
 import { CarruselCategorias } from '@/components/ui/CarruselCategorias';
 import { Icono } from '@/components/ui/Icono';
-import { LogosApp } from '@/components/ui/LogosApp';
 import {
   BCPOS_FLUJO,
   BCPOS_INTEGRACIONES,
@@ -40,7 +39,10 @@ export default function PaginaPuntoDeVenta() {
         etiqueta="Punto de venta"
         titulo="BCPOS: la caja de su negocio, conectada a Business Central"
         bajada="La venta que se hace frente al cliente llega al ERP en cuestión de segundos. Inventario, cuentas y reportes se actualizan sin doble digitación."
-        visual={<LogosApp logos={['dynamics-365-businesscentral', 'dynamics-365-commerce']} tamano={64} />}
+        fondo={{
+          src: '/fotos/pos-caja-4k.jpg',
+          alt: 'Cajero usando una caja con pantalla táctil en el mostrador de un comercio',
+        }}
       />
       <SelectorNegocio />
 
