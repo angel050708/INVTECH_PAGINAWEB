@@ -45,7 +45,7 @@
   color: var(--tinta);
 }
 .activa {
-  background: var(--tinta);
+  background: var(--oscuro);
   color: #fff;
 }
 .activa:hover {

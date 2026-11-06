@@ -33,7 +33,7 @@
     color 0.3s;
 }
 .fila:hover .flecha {
-  background: var(--acento);
+  background: var(--acento-fondo);
   color: #fff;
 }
 @media (max-width: 760px) {

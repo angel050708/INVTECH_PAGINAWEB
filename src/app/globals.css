@@ -13,6 +13,12 @@
   --acento-oscuro: #1f0e75;
   --acento-claro: #a99bff;
   --acento-suave: #eeebfb;
+  /* Superficies que siempre son oscuras (pie, bandas, tarjetas destacadas) */
+  --oscuro: #16141f;
+  /* Fondo de botones y chips de acento; el texto encima siempre es blanco */
+  --acento-fondo: #2a1499;
+  --acento-hover: #1f0e75;
+  --barra-fondo: rgb(255 255 255 / 0.9);
   --verde: #12805c;
 
   /* Las variables --fuente-* las define next/font en app/layout.tsx */
@@ -30,6 +36,30 @@
   --curva-mov: cubic-bezier(0.77, 0, 0.175, 1);
 
   color-scheme: light;
+}
+
+/* =========================================================
+   Modo oscuro (se activa con data-tema="oscuro" en <html>)
+   ========================================================= */
+:root[data-tema='oscuro'] {
+  --tinta: #f1f0f7;
+  --tinta-2: #2a2738;
+  --papel: #13111b;
+  --papel-2: #1b1826;
+  --linea: #2e2a3d;
+  --texto: #d6d4e0;
+  --texto-suave: #a7a4b6;
+  --acento: #a99bff;
+  --acento-oscuro: #c4baff;
+  --acento-claro: #c4baff;
+  --acento-suave: #262041;
+  --acento-fondo: #5643e0;
+  --acento-hover: #4532c7;
+  --verde: #4ade80;
+  --oscuro: #0c0a12;
+  --barra-fondo: rgb(19 17 27 / 0.9);
+  --sombra: 0 24px 48px -28px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
 }
 
 @media (max-width: 960px) {
@@ -114,8 +144,8 @@ a {
   top: -60px;
   z-index: 100;
   padding: 10px 16px;
-  background: var(--tinta);
-  color: var(--papel);
+  background: var(--oscuro);
+  color: #fff;
   border-radius: 8px;
 }
 .saltar-al-contenido:focus {
@@ -184,11 +214,11 @@ a {
   transition-duration: 100ms;
 }
 .boton-acento {
-  background: var(--acento);
+  background: var(--acento-fondo);
   color: #fff;
 }
 .boton-acento:hover {
-  background: var(--acento-oscuro);
+  background: var(--acento-hover);
 }
 .boton-borde {
   border-color: currentColor;

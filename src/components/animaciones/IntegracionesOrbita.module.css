@@ -87,14 +87,14 @@
   gap: 14px;
   padding: 14px 18px;
   border-radius: 14px;
-  background: var(--tinta);
+  background: var(--oscuro);
   font-weight: 600;
   color: #fff;
   animation: resaltar 10s ease-in-out infinite;
   animation-delay: calc(var(--i) * 2s);
 }
 .sistemas li:nth-child(even) {
-  background: var(--acento);
+  background: var(--acento-fondo);
 }
 .icono {
   flex: none;
