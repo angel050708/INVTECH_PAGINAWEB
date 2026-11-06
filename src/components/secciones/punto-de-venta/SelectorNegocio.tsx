@@ -9,7 +9,7 @@ const VISTAS: { href: string; etiqueta: string; detalle: string; icono: NombreIc
   {
     href: '/punto-de-venta/',
     etiqueta: 'General',
-    detalle: 'Restaurantes y comercios',
+    detalle: 'Lo que ofrece BCPOS',
     icono: 'cajaRegistradora',
   },
   {

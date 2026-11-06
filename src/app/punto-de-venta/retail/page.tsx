@@ -6,7 +6,6 @@ import { SelectorNegocio } from '@/components/secciones/punto-de-venta/SelectorN
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { LogosApp } from '@/components/ui/LogosApp';
 import { RETAIL_BENEFICIOS, RETAIL_RUBROS } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
@@ -26,12 +25,10 @@ export default function PaginaRetail() {
         etiqueta="Retail"
         titulo="Caja, inventario y contabilidad en un solo sistema"
         bajada="Para ferreterías, farmacias, tiendas de conveniencia y supermercados: BCPOS en la caja y Business Central en la administración, también para empresas con varias sucursales."
-        visual={
-          <LogosApp
-            logos={['dynamics-365-commerce', 'dynamics-365-businesscentral', 'power-bi']}
-            tamano={64}
-          />
-        }
+        fondo={{
+          src: '/fotos/retail-cobro-4k.jpg',
+          alt: 'Cliente pagando con tarjeta en la caja de una tienda, con su canasta de compras',
+        }}
       />
       <SelectorNegocio />
 

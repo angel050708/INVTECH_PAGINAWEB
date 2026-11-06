@@ -15,6 +15,7 @@ export default function PaginaSoluciones() {
   return (
     <>
       <CabeceraPagina
+        contacto="las soluciones"
         etiqueta="Soluciones"
         titulo="Aplicaciones de Microsoft Dynamics 365"
         bajada="Cada aplicación resuelve un área de su empresa y todas trabajan conectadas."

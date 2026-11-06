@@ -58,7 +58,7 @@ export const SOPORTE_BENEFICIOS = [
 
 /** Modalidades de soporte publicadas en invtech.pro. */
 export const SOPORTE_PLANES = [
-  { titulo: 'Soporte ad hoc', texto: 'Atención cuando la necesite, por caso.' },
+  { titulo: 'Soporte por caso', texto: 'Nos llama cuando surge un problema y lo atendemos.' },
   { titulo: 'Horas prepagadas', texto: 'Un paquete de horas que su equipo usa según la demanda.' },
   { titulo: 'Soporte anual', texto: 'Cobertura continua durante todo el año.' },
 ];
