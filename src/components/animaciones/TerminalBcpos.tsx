@@ -307,7 +307,12 @@ function PantallaBomba({ paso }: { paso: number }) {
                     <small>FACTURADO</small>
                   </span>
                 )}
-                {!estado && <span className={styles.iconoBomba} />}
+                {!estado && (
+                  <svg className={styles.iconoBomba} viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 3.5A1.5 1.5 0 0 1 5.5 2h7A1.5 1.5 0 0 1 14 3.5V20h1v2H3v-2h1zM6 4v6h6V4z" />
+                    <path d="M15 5.2 16.4 4l3.1 3.1c.3.3.5.7.5 1.1V16a2 2 0 0 1-4 0v-3a.5.5 0 0 0-.5-.5H15V11h.5a2 2 0 0 1 2 2v3a.5.5 0 0 0 1 0v-5.3a2 2 0 0 1-1.5-1.9V7.5z" />
+                  </svg>
+                )}
                 <span className={unirClases(styles.autorizar, n === 3 && paso === 1 && styles.presionado)}>
                   Autorizar
                 </span>
