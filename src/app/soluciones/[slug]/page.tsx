@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Beneficios } from '@/components/secciones/comunes/Beneficios';
-import { DiagramaModulos } from '@/components/secciones/comunes/DiagramaModulos';
 import { IntegradoMicrosoft365 } from '@/components/secciones/comunes/IntegradoMicrosoft365';
+import { QueEsBcSolucion } from '@/components/secciones/comunes/QueEsBcSolucion';
 import { PaginaContenido } from '@/components/secciones/comunes/PaginaContenido';
 import { paginaSolucion, SOLUCIONES } from '@/data/paginas';
 import { metadatosPagina } from '@/lib/metadatos';
@@ -41,17 +41,15 @@ export default async function PaginaSolucion({ params }: Props) {
       interes="implementacion"
       reemplazos={
         esBusinessCentral
-          ? { '¿Cómo Business Central puede marcar la diferencia?': <IntegradoMicrosoft365 /> }
+          ? {
+              '¿Qué es Business Central?': <QueEsBcSolucion />,
+              '¿Cómo Business Central puede marcar la diferencia?': <IntegradoMicrosoft365 />,
+            }
           : undefined
       }
       extra={
         esBusinessCentral && (
           <>
-            <section className="seccion seccion-pegada">
-              <div className="contenedor">
-                <DiagramaModulos />
-              </div>
-            </section>
             <Beneficios />
           </>
         )
