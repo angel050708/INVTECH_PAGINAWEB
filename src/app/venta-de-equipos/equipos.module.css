@@ -20,59 +20,6 @@
   color: var(--acento);
 }
 
-.catalogo {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.catalogo > li {
-  padding: 28px;
-  border: 1px solid var(--linea);
-  border-radius: var(--radio-lg);
-  background: var(--papel);
-  transition:
-    transform 0.3s var(--curva),
-    border-color 0.2s ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .catalogo > li:hover {
-    transform: translateY(-3px);
-    border-color: var(--acento);
-  }
-}
-.icono {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  background: var(--acento-fondo);
-  color: #fff;
-}
-.catalogo h3 {
-  font-size: 1.25rem;
-}
-.catalogo ul {
-  display: grid;
-  gap: 8px;
-  margin-top: 14px;
-}
-.catalogo ul li {
-  display: flex;
-  gap: 10px;
-  color: var(--texto);
-}
-.catalogo ul li::before {
-  content: '';
-  flex: none;
-  width: 6px;
-  height: 6px;
-  margin-top: 0.6em;
-  border-radius: 50%;
-  background: var(--acento-fondo);
-}
-
 .marcas {
   padding: clamp(56px, 7vw, 96px) 0;
 }
@@ -238,15 +185,11 @@
 }
 
 @media (max-width: 1000px) {
-  .catalogo {
-    grid-template-columns: 1fr 1fr;
-  }
   .infra {
     grid-template-columns: 1fr;
   }
 }
 @media (max-width: 640px) {
-  .catalogo,
   .telecom {
     grid-template-columns: 1fr;
   }

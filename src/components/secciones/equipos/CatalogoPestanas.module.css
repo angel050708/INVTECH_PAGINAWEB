@@ -1,0 +1,113 @@
+.pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+  background: var(--papel);
+  width: max-content;
+  max-width: 100%;
+}
+.pestana {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  font: 600 0.92rem var(--sans);
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.pestana:hover {
+  color: var(--tinta);
+}
+.activa,
+.activa:hover {
+  background: var(--acento-fondo);
+  color: #fff;
+}
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  margin-top: 28px;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio-lg);
+  background: var(--papel);
+  animation: entrar 0.35s var(--curva) both;
+}
+.info h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+.info > p {
+  margin-top: 10px;
+  max-width: 50ch;
+  color: var(--texto-suave);
+}
+.productos {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 28px;
+}
+.productos li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  font-weight: 500;
+  color: var(--tinta);
+}
+.marca {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 40px;
+  border-radius: 8px;
+  background: #fff;
+  color: #2a1499;
+}
+.marca img {
+  width: auto;
+  max-width: 52px;
+  max-height: 28px;
+  object-fit: contain;
+}
+.foto {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.foto img {
+  object-fit: cover;
+}
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+  .foto {
+    order: -1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

@@ -8,7 +8,6 @@ import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
-import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import {
   BCHUB_CONEXIONES,
   COMBUSTIBLE_INTRO,
@@ -60,7 +59,10 @@ export default function PaginaCombustible() {
         etiqueta="Combustible"
         titulo="Gestión integral para estaciones de servicio"
         bajada={COMBUSTIBLE_INTRO}
-        visual={<LineasCircuito />}
+        fondo={{
+          src: '/fotos/estacion-servicio.jpg',
+          alt: 'Estación de servicio iluminada al anochecer, con bombas de combustible bajo el techo',
+        }}
       >
         <p style={{ marginTop: 32 }}>
           <Link href="/contacto/?interes=combustible" className="boton boton-acento boton-grande">
@@ -77,7 +79,7 @@ export default function PaginaCombustible() {
                 <p className="etiqueta">Punto de venta en terminal móvil</p>
                 <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
                 <p className="entrada" style={{ marginTop: 12, marginBottom: 24 }}>
-                  El pistero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la
+                  El bombero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la
                   misma terminal con la que cobra.
                 </p>
               </>

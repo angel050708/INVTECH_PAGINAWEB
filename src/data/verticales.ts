@@ -220,7 +220,7 @@ export const PROBLEMA_SOLUCION: { problema: string; solucion: string }[] = [
   },
   {
     problema: 'Sin visibilidad del desempeño por turno o punto de venta.',
-    solucion: 'Desglose por pistero, turno y método de pago: efectivo, tarjetas y crédito.',
+    solucion: 'Desglose por bombero, turno y método de pago: efectivo, tarjetas y crédito.',
   },
   {
     problema: 'Clientes de crédito sin control centralizado de saldos y límites.',
@@ -303,43 +303,104 @@ export const RETAIL_BENEFICIOS: Elemento[] = [
 
 /* ---------- Venta de equipos ---------- */
 
-export interface Categoria {
-  titulo: string;
-  icono: NombreIcono;
-  productos: string[];
+export interface Producto {
+  nombre: string;
+  /** Archivo en /public/marcas, si el producto tiene marca */
+  marca?: string;
 }
 
-/** Lo que InvTech vende, con los modelos que muestra la presentación. */
+export interface Categoria {
+  slug: string;
+  /** Nombre corto para la pestaña */
+  pestana: string;
+  titulo: string;
+  descripcion: string;
+  icono: NombreIcono;
+  /** Foto en /public/equipos */
+  foto: string;
+  productos: Producto[];
+}
+
+/** Lo que InvTech vende, con los modelos que muestra la presentación (página 20). */
 export const CATALOGO: Categoria[] = [
   {
-    titulo: 'Computadoras',
+    slug: 'computadoras',
+    pestana: 'Computadoras',
+    titulo: 'Computadoras de escritorio y portátiles',
+    descripcion:
+      'Equipos para oficinas, cajas y administración, listos para trabajar con Microsoft 365 y Business Central.',
     icono: 'terminal',
-    productos: ['HP Mini PC', 'HP Power Desktop', 'Lenovo', 'Dell Inspiron (portátil)', 'Dell de escritorio'],
+    foto: '/equipos/computadoras.jpg',
+    productos: [
+      { nombre: 'HP Mini PC', marca: 'hp' },
+      { nombre: 'HP Power Desktop', marca: 'hp' },
+      { nombre: 'Computadoras Lenovo', marca: 'lenovo' },
+      { nombre: 'Dell Inspiron (portátil)', marca: 'dell' },
+      { nombre: 'Dell de escritorio', marca: 'dell' },
+    ],
   },
   {
-    titulo: 'Servidores',
+    slug: 'servidores',
+    pestana: 'Servidores',
+    titulo: 'Servidores para su operación',
+    descripcion: 'Servidores para alojar sus sistemas en sitio. También configuramos servidores en la nube.',
     icono: 'servidor',
-    productos: ['Servidor HP', 'Servidor Lenovo ThinkSystem', 'Servidor Dell T40'],
+    foto: '/equipos/servidores.jpg',
+    productos: [
+      { nombre: 'Servidor HP', marca: 'hp' },
+      { nombre: 'Servidor Lenovo ThinkSystem', marca: 'lenovo' },
+      { nombre: 'Servidor Dell T40', marca: 'dell' },
+    ],
   },
   {
+    slug: 'redes',
+    pestana: 'Redes',
     titulo: 'Equipos de telecomunicación',
+    descripcion:
+      'Switches y puntos de acceso para conectar oficinas, tiendas y estaciones. Instalamos la red completa.',
     icono: 'antena',
-    productos: ['Switch MikroTik', 'Switch Aruba', 'Puntos de acceso UniFi Ubiquiti'],
+    foto: '/equipos/redes.jpg',
+    productos: [
+      { nombre: 'Switch MikroTik' },
+      { nombre: 'Switch Aruba' },
+      { nombre: 'Puntos de acceso UniFi', marca: 'ubiquiti' },
+    ],
   },
   {
-    titulo: 'Puntos de venta',
+    slug: 'punto-de-venta',
+    pestana: 'Punto de venta',
+    titulo: 'Equipos de punto de venta',
+    descripcion:
+      'Cajas, pantallas y periféricos listos para BCPOS, en tiendas, restaurantes y estaciones de servicio.',
     icono: 'tarjeta',
-    productos: ['Equipos de punto de venta', 'Periféricos'],
+    foto: '/equipos/punto-de-venta.jpg',
+    productos: [{ nombre: 'Equipos de punto de venta' }, { nombre: 'Periféricos' }],
   },
   {
+    slug: 'combustible',
+    pestana: 'Combustible',
     titulo: 'Controladores y sondas',
+    descripcion:
+      'Equipos para controlar las bombas y medir el combustible de los tanques en estaciones de servicio.',
     icono: 'surtidor',
-    productos: ['Controladores para estaciones de servicio', 'Sondas para medición de combustibles'],
+    foto: '/equipos/combustible.jpg',
+    productos: [
+      { nombre: 'Controladores para estaciones de servicio' },
+      { nombre: 'Sondas para medición de combustibles' },
+    ],
   },
   {
+    slug: 'respaldo',
+    pestana: 'Respaldo',
     titulo: 'Respaldo y suministros',
+    descripcion:
+      'Sistemas de respaldo para que su operación no se detenga, y suministros tecnológicos asociados.',
     icono: 'caja',
-    productos: ['Sistemas de respaldo', 'Suministros tecnológicos asociados'],
+    foto: '/equipos/respaldo.jpg',
+    productos: [
+      { nombre: 'Sistemas de respaldo', marca: 'tripp-lite' },
+      { nombre: 'Suministros tecnológicos asociados' },
+    ],
   },
 ];
 
