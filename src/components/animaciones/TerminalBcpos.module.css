@@ -123,35 +123,50 @@
   height: 30px;
   margin: 0 20px;
   border-radius: 26px 26px 0 0;
-  background: linear-gradient(180deg, #fbfbfd, #e6e6ec);
+  background: linear-gradient(180deg, #ef3b2f, #d71920);
 }
 .cuerpo {
-  padding: 14px 12px 12px;
+  padding: 12px 12px 12px;
   border-radius: 28px;
-  background: linear-gradient(180deg, #ffffff, #ececf1);
+  background: linear-gradient(180deg, #e62a20, #c4161c);
   box-shadow:
-    inset 0 2px 0 #fff,
-    inset 0 -6px 12px rgb(0 0 0 / 0.06);
+    inset 0 2px 0 rgb(255 255 255 / 0.25),
+    inset 0 -6px 12px rgb(0 0 0 / 0.15);
 }
-.sensor {
-  width: 8px;
-  height: 8px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  background: #2a2a33;
-}
-.marca {
-  margin: 10px auto 0;
+/* Terminal roja de BAC ("POS BAC") */
+.etiquetaPos {
   width: max-content;
-  font: 800 0.75rem var(--sans);
-  letter-spacing: 0.24em;
-  color: #9a9aa8;
+  margin: -2px auto 10px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #fff;
+  font: 900 0.8rem var(--sans);
+  letter-spacing: 0.02em;
+  color: #d71920;
+}
+.etiquetaPos span {
+  margin-left: 2px;
+}
+.tarjetas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font: 800 0.6rem var(--sans);
+  color: rgb(255 255 255 / 0.9);
+}
+.tarjetas i {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgb(255 255 255 / 0.85);
 }
 .lector {
   height: 22px;
   margin: -4px 44px 0;
   border-radius: 0 0 14px 14px;
-  background: #d9d9e1;
+  background: #a81217;
 }
 .pantalla {
   position: relative;

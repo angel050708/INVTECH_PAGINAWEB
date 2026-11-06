@@ -161,7 +161,9 @@ export function TerminalBcpos({ encabezado }: { encabezado?: ReactNode }) {
           )}
         </div>
         <div className={styles.cuerpo}>
-          <div className={styles.sensor} />
+          <div className={styles.etiquetaPos}>
+            POS <span>BAC</span>
+          </div>
           <div className={styles.pantalla}>
             <div className={styles.barraEstado}>
               <span>
@@ -176,7 +178,11 @@ export function TerminalBcpos({ encabezado }: { encabezado?: ReactNode }) {
             </div>
             <MenuInferior activo={escena.id === 'bomba' ? 'surtidores' : 'carrito'} />
           </div>
-          <div className={styles.marca}>PAX</div>
+          <div className={styles.tarjetas}>
+            <i />
+            <span>VISA</span>
+            <span>Mastercard</span>
+          </div>
         </div>
         <div className={styles.lector} />
       </div>
