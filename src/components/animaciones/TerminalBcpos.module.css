@@ -115,7 +115,7 @@
 .terminal {
   position: relative;
   width: 280px;
-  transform: rotate(-3deg);
+  transform: none;
   filter: drop-shadow(0 40px 50px rgb(22 20 31 / 0.35));
 }
 .impresora {
