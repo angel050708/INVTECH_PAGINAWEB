@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { DashboardCombustible } from '@/components/animaciones/DashboardCombustible';
 import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
@@ -8,7 +9,6 @@ import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
-import { LineasCircuito } from '@/components/ui/LineasCircuito';
 import {
   BCHUB_CONEXIONES,
   COMBUSTIBLE_INTRO,
@@ -60,7 +60,17 @@ export default function PaginaCombustible() {
         etiqueta="Combustible"
         titulo="Gestión integral para estaciones de servicio"
         bajada={COMBUSTIBLE_INTRO}
-        visual={<LineasCircuito />}
+        visual={
+          <Image
+            src="/fotos/gasolinera.jpg"
+            alt="Estación de servicio de noche, con un bombero atendiendo a un cliente junto a la bomba"
+            width={1024}
+            height={1024}
+            priority
+            sizes="(max-width: 860px) 100vw, 40vw"
+            className="foto-cabecera"
+          />
+        }
       >
         <p style={{ marginTop: 32 }}>
           <Link href="/contacto/?interes=combustible" className="boton boton-acento boton-grande">
@@ -77,7 +87,7 @@ export default function PaginaCombustible() {
                 <p className="etiqueta">Punto de venta en terminal móvil</p>
                 <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
                 <p className="entrada" style={{ marginTop: 12, marginBottom: 24 }}>
-                  El pistero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la
+                  El bombero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la
                   misma terminal con la que cobra.
                 </p>
               </>

@@ -220,7 +220,7 @@ export const PROBLEMA_SOLUCION: { problema: string; solucion: string }[] = [
   },
   {
     problema: 'Sin visibilidad del desempeño por turno o punto de venta.',
-    solucion: 'Desglose por pistero, turno y método de pago: efectivo, tarjetas y crédito.',
+    solucion: 'Desglose por bombero, turno y método de pago: efectivo, tarjetas y crédito.',
   },
   {
     problema: 'Clientes de crédito sin control centralizado de saldos y límites.',

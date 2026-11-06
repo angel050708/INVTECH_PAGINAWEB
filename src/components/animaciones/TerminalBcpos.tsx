@@ -27,7 +27,7 @@ const ESCENAS: DatosEscena[] = [
   {
     id: 'credito',
     pestana: 'Consulta de crédito',
-    titulo: 'El pistero consulta el saldo del cliente de crédito antes de facturar',
+    titulo: 'El bombero consulta el saldo del cliente de crédito antes de facturar',
     pasos: [
       'Elige Crédito en el carrito',
       'Busca al cliente por nombre o RTN',
