@@ -1,53 +1,15 @@
 .sello {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px 10px 12px;
+  padding: 10px 16px;
   border: 1px solid var(--linea);
   border-radius: 12px;
   background: #fff;
-  color: var(--tinta);
-  line-height: 1.15;
 }
-.sello small {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--texto-suave);
-}
-.sello strong {
-  font-size: 0.95rem;
-  color: #8a6d00;
-}
-.cuadros {
-  display: grid;
-  grid-template-columns: repeat(2, 11px);
-  gap: 2px;
-}
-.cuadros i {
-  width: 11px;
-  height: 11px;
-}
-.cuadros i:nth-child(1) {
-  background: #f25022;
-}
-.cuadros i:nth-child(2) {
-  background: #7fba00;
-}
-.cuadros i:nth-child(3) {
-  background: #00a4ef;
-}
-.cuadros i:nth-child(4) {
-  background: #ffb900;
+.sello img {
+  width: auto;
+  height: 44px;
 }
 .oscuro {
-  border-color: rgb(255 255 255 / 0.16);
-  background: rgb(255 255 255 / 0.06);
-  color: #fff;
-}
-.oscuro small {
-  color: rgb(255 255 255 / 0.7);
-}
-.oscuro strong {
-  color: #f5c542;
+  border-color: transparent;
 }

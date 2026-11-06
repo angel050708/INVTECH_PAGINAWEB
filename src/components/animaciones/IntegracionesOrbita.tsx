@@ -6,11 +6,11 @@ import styles from './IntegracionesOrbita.module.css';
 /** Logos de la presentación de InvTech ("Nuestras integraciones"). */
 const LOGOS = [
   { archivo: 'business-central', nombre: 'Microsoft Dynamics 365 Business Central' },
-  { archivo: 'banco-azul', nombre: 'Banco integrado' },
+  { archivo: 'banco-ficohsa', nombre: 'Banco Ficohsa' },
   { archivo: 'gilbarco-veeder-root', nombre: 'Gilbarco Veeder-Root' },
   { archivo: 'dover', nombre: 'Dover' },
   { archivo: 'sap-business-one', nombre: 'SAP Business One' },
-  { archivo: 'banco-rojo', nombre: 'Banco integrado' },
+  { archivo: 'banco-atlantida', nombre: 'Banco Atlántida' },
   { archivo: 'leal', nombre: 'Leal' },
 ];
 
