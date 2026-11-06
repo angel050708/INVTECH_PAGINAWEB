@@ -276,3 +276,7 @@ a {
   background: var(--papel-2);
   border-block: 1px solid var(--linea);
 }
+
+.seccion-compacta {
+  padding: clamp(40px, 5vw, 64px) 0;
+}
