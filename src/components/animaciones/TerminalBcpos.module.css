@@ -524,11 +524,9 @@
 .iconoBomba {
   justify-self: center;
   align-self: center;
-  width: 22px;
-  height: 28px;
-  border-radius: 4px 4px 2px 2px;
-  background: var(--bc-azul);
-  box-shadow: inset 0 6px 0 0 #0f0f13;
+  width: 34px;
+  height: 34px;
+  fill: var(--bc-azul);
 }
 .autorizar {
   padding: 5px;
