@@ -111,3 +111,11 @@
     animation: none;
   }
 }
+
+.fotoProducto {
+  background: #fff;
+}
+.fotoProducto img {
+  object-fit: contain;
+  padding: 24px;
+}

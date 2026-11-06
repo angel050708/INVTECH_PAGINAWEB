@@ -60,7 +60,7 @@ export default function PaginaCombustible() {
         titulo="Gestión integral para estaciones de servicio"
         bajada={COMBUSTIBLE_INTRO}
         fondo={{
-          src: '/fotos/estacion-servicio.jpg',
+          src: '/fotos/estacion-noche-hd.jpg',
           alt: 'Estación de servicio iluminada al anochecer, con bombas de combustible bajo el techo',
         }}
       >
