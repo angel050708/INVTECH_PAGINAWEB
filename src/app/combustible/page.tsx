@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { DashboardCombustible } from '@/components/animaciones/DashboardCombustible';
 import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
@@ -60,17 +59,10 @@ export default function PaginaCombustible() {
         etiqueta="Combustible"
         titulo="Gestión integral para estaciones de servicio"
         bajada={COMBUSTIBLE_INTRO}
-        visual={
-          <Image
-            src="/fotos/gasolinera.jpg"
-            alt="Estación de servicio de noche, con un bombero atendiendo a un cliente junto a la bomba"
-            width={1024}
-            height={1024}
-            priority
-            sizes="(max-width: 860px) 100vw, 40vw"
-            className="foto-cabecera"
-          />
-        }
+        fondo={{
+          src: '/fotos/estacion-servicio.jpg',
+          alt: 'Estación de servicio iluminada al anochecer, con bombas de combustible bajo el techo',
+        }}
       >
         <p style={{ marginTop: 32 }}>
           <Link href="/contacto/?interes=combustible" className="boton boton-acento boton-grande">

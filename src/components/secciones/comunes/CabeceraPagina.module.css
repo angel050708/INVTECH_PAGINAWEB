@@ -52,3 +52,49 @@
     justify-items: start;
   }
 }
+
+/* Encabezado con foto de fondo: siempre oscuro, con el texto en blanco */
+.conFondo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(78vh, 640px);
+  display: flex;
+  align-items: center;
+  border-bottom: 0;
+  background: #0c0a12;
+  color: rgb(255 255 255 / 0.85);
+}
+.conFondo .interior {
+  width: 100%;
+}
+.conFondo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgb(12 10 18 / 0.95) 0%, rgb(12 10 18 / 0.82) 38%, rgb(12 10 18 / 0.15) 75%),
+    linear-gradient(0deg, rgb(12 10 18 / 0.6), transparent 40%);
+}
+.fotoFondo {
+  z-index: -2;
+  object-fit: cover;
+  object-position: 70% center;
+}
+.conFondo h1 {
+  max-width: 16ch;
+  color: #fff;
+}
+.conFondo .bajada {
+  max-width: 52ch;
+  color: rgb(255 255 255 / 0.82);
+}
+.conFondo :global(.etiqueta) {
+  color: #c4baff;
+}
+@media (max-width: 760px) {
+  .conFondo::after {
+    background: rgb(12 10 18 / 0.78);
+  }
+}
