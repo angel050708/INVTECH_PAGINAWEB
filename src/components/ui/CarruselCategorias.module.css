@@ -1,0 +1,91 @@
+.carrusel {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.pista {
+  display: flex;
+  width: max-content;
+  animation: desplazar 40s linear infinite;
+}
+.carrusel:hover .pista {
+  animation-play-state: paused;
+}
+.pista ul {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+.tarjeta {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  width: 320px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  background: var(--tinta);
+}
+.tarjeta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgb(22 20 31 / 0.9) 15%, transparent 60%);
+}
+.foto {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 75%;
+}
+.ilustracion {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: grid;
+  place-items: center;
+  padding-bottom: 80px;
+  background:
+    radial-gradient(60% 60% at 50% 35%, rgb(169 155 255 / 0.35), transparent 70%),
+    linear-gradient(160deg, #2a1499, #16141f);
+  color: #fff;
+}
+.texto {
+  padding: 24px;
+  color: rgb(255 255 255 / 0.8);
+}
+.texto h3 {
+  font-size: 1.35rem;
+  color: #fff;
+}
+.texto p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+@keyframes desplazar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 640px) {
+  .tarjeta {
+    width: 260px;
+    height: 320px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pista {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .pista ul + ul {
+    display: none;
+  }
+  .pista ul {
+    flex-wrap: wrap;
+  }
+  .carrusel {
+    mask-image: none;
+  }
+}

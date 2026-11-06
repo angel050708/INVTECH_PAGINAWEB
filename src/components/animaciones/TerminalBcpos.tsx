@@ -31,10 +31,11 @@ const ESCENAS: DatosEscena[] = [
     pasos: [
       'Elige Crédito en el carrito',
       'Busca al cliente por nombre o RTN',
-      'Ve su estado y saldo disponible',
+      'Consulta el saldo para el monto de la venta',
+      'Cobra e imprime la factura',
     ],
-    tiempos: [1400, 1300, 2200, 1600, 3200],
-    paso: [0, 0, 1, 1, 2],
+    tiempos: [1400, 1300, 2200, 1500, 1800, 2000, 1400, 3000],
+    paso: [0, 0, 1, 1, 2, 2, 3, 3],
   },
   {
     id: 'bomba',
@@ -52,9 +53,14 @@ const ESCENAS: DatosEscena[] = [
     id: 'leal',
     pestana: 'Leal',
     titulo: 'El cliente acumula puntos Leal en la misma factura',
-    pasos: ['Elige LEAL en el carrito', 'Busca al cliente por su DNI', 'Asigna el cliente y suma puntos'],
-    tiempos: [1400, 1300, 2200, 1600, 3200],
-    paso: [0, 0, 1, 1, 2],
+    pasos: [
+      'Elige LEAL en el carrito',
+      'Busca al cliente por su DNI',
+      'Asigna el cliente a la factura',
+      'Cobra e imprime la factura con sus puntos',
+    ],
+    tiempos: [1400, 1300, 2200, 1600, 1800, 1400, 3000],
+    paso: [0, 0, 1, 1, 2, 3, 3],
   },
 ];
 
@@ -95,6 +101,7 @@ export function TerminalBcpos({ encabezado }: { encabezado?: ReactNode }) {
   // Con movimiento reducido se muestra el resultado de cada escena, sin animar
   const pasoVisible = sinMovimiento ? escena.tiempos.length - 1 : paso;
   const pasoLista = escena.paso[pasoVisible];
+  const imprime = (escena.id === 'credito' && pasoVisible >= 7) || (escena.id === 'leal' && pasoVisible >= 6);
 
   return (
     <div className={styles.escena}>
@@ -138,7 +145,21 @@ export function TerminalBcpos({ encabezado }: { encabezado?: ReactNode }) {
       </div>
 
       <div className={styles.terminal} aria-hidden="true">
-        <div className={styles.impresora} />
+        <div className={styles.impresora}>
+          {imprime && (
+            <span className={styles.comprobante} key={`${escena.id}-recibo`}>
+              <b>BCPOS · FACTURA</b>
+              <small>
+                {escena.id === 'credito' ? 'Crédito · Transportes del Valle' : 'Leal · María Fernanda López'}
+              </small>
+              <i />
+              <span>
+                REGULAR <b>L. 500.00</b>
+              </span>
+              {escena.id === 'leal' && <small>+50 puntos Leal</small>}
+            </span>
+          )}
+        </div>
         <div className={styles.cuerpo}>
           <div className={styles.sensor} />
           <div className={styles.pantalla}>
@@ -180,14 +201,28 @@ function Chips({ presionado }: { presionado?: 'Crédito' | 'LEAL' }) {
   );
 }
 
-function Totales({ total, listo }: { total: string; listo?: boolean }) {
+function Impreso() {
+  return (
+    <div className={styles.impreso}>
+      <span className={styles.chequeImpreso}>✓</span>
+      <b>Factura impresa</b>
+      <small>Entregue el comprobante al cliente</small>
+    </div>
+  );
+}
+
+function Totales({ total, listo, presionado }: { total: string; listo?: boolean; presionado?: boolean }) {
   return (
     <div className={styles.totales}>
       <div>
         <span>TOTAL</span>
         <b>Lps. {total}</b>
       </div>
-      <span className={unirClases(styles.cobrar, listo && styles.cobrarListo)}>Cobrar</span>
+      <span
+        className={unirClases(styles.cobrar, listo && styles.cobrarListo, presionado && styles.presionado)}
+      >
+        Cobrar
+      </span>
     </div>
   );
 }
@@ -237,15 +272,15 @@ function Carrito({ conProducto }: { conProducto: boolean }) {
 }
 
 function PantallaCredito({ paso }: { paso: number }) {
-  const seleccionado = paso >= 4;
+  const seleccionado = paso >= 6;
   return (
     <>
       <div className={unirClases(styles.cliente, seleccionado && styles.clienteCredito)}>
         {seleccionado ? (
           <>
             <b>TRANSPORTES DEL VALLE</b>
-            <span className={styles.etiquetaCredito}>CRÉDITO · ACTIVO</span>
-            <small>Disponible: L. 37,420.50 de L. 150,000.00</small>
+            <span className={styles.etiquetaCredito}>CRÉDITO</span>
+            <small>Cta: CE00254 | RTN: 0801199904521</small>
           </>
         ) : (
           <b>Sin cliente seleccionado</b>
@@ -253,7 +288,7 @@ function PantallaCredito({ paso }: { paso: number }) {
       </div>
       <Chips presionado={paso === 1 ? 'Crédito' : undefined} />
       <Carrito conProducto />
-      <Totales total="500.00" listo={seleccionado} />
+      <Totales total="500.00" listo={seleccionado} presionado={paso === 6} />
       {(paso === 2 || paso === 3) && (
         <Modal titulo="Buscar Cliente" subtitulo="Crédito" color="naranja">
           <div className={styles.buscador}>
@@ -263,13 +298,30 @@ function PantallaCredito({ paso }: { paso: number }) {
             <div className={styles.resultado}>
               <span>
                 <b>TRANSPORTES DEL VALLE</b>
-                <small>RTN 0801-1999-04521</small>
+                <small>0801199904521 · # CE00254</small>
               </span>
-              <span className={styles.activo}>ACTIVO</span>
+              <span className={styles.billetera} />
             </div>
           )}
         </Modal>
       )}
+      {(paso === 4 || paso === 5) && (
+        <Modal titulo="Consultar saldo" subtitulo="TRANSPORTES DEL VALLE" color="naranja">
+          <small className={styles.subtitulo}>Monto a evaluar</small>
+          <div className={styles.buscador}>
+            <span className={styles.lempiras}>L.</span> 500.00
+          </div>
+          {paso === 5 ? (
+            <div className={styles.saldoOk}>
+              <b>Saldo suficiente</b>
+              <small>Disponible: L. 37,420.50</small>
+            </div>
+          ) : (
+            <span className={styles.botonNaranja}>Consultar</span>
+          )}
+        </Modal>
+      )}
+      {paso >= 7 && <Impreso />}
     </>
   );
 }
@@ -378,7 +430,7 @@ function PantallaLeal({ paso }: { paso: number }) {
       </div>
       <Chips presionado={paso === 1 ? 'LEAL' : undefined} />
       <Carrito conProducto />
-      <Totales total="500.00" listo={asignado} />
+      <Totales total="500.00" listo={asignado} presionado={paso === 5} />
       {(paso === 2 || paso === 3) && (
         <Modal titulo="Cliente LEAL" color="naranja">
           <div className={styles.buscarPor}>
@@ -401,6 +453,7 @@ function PantallaLeal({ paso }: { paso: number }) {
           )}
         </Modal>
       )}
+      {paso >= 6 && <Impreso />}
     </>
   );
 }

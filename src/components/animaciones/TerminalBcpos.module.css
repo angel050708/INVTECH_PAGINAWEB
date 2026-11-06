@@ -119,6 +119,7 @@
   filter: drop-shadow(0 40px 50px rgb(22 20 31 / 0.35));
 }
 .impresora {
+  position: relative;
   height: 30px;
   margin: 0 20px;
   border-radius: 26px 26px 0 0;
@@ -614,4 +615,103 @@
   font-size: 0.62rem;
   font-weight: 600;
   color: #93c5fd;
+}
+
+/* Comprobante que sale por la impresora */
+.comprobante {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  display: grid;
+  gap: 3px;
+  width: 170px;
+  margin-left: -85px;
+  padding: 10px 12px 14px;
+  border: 1px solid #e3e3ea;
+  background: #fff;
+  font: 0.62rem var(--mono);
+  color: #2b2838;
+  animation: imprimir 1.2s var(--curva) both;
+  z-index: -1;
+}
+.comprobante i {
+  border-top: 1px dashed #c9c9d2;
+  margin: 3px 0;
+}
+.comprobante > span {
+  display: flex;
+  justify-content: space-between;
+}
+@keyframes imprimir {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.impreso {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  background: rgb(11 11 14 / 0.88);
+  text-align: center;
+  animation: entrar 0.3s var(--curva) both;
+}
+.impreso small {
+  color: var(--bc-suave);
+}
+.chequeImpreso {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(22 163 74 / 0.25);
+  font-size: 1.1rem;
+  color: #86efac;
+}
+.lempiras {
+  color: var(--bc-leal);
+}
+.botonNaranja {
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--bc-leal);
+  text-align: center;
+  font-weight: 700;
+  color: #1c1300;
+}
+.saldoOk {
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+  border: 1px solid var(--bc-verde);
+  border-radius: 8px;
+  background: rgb(22 163 74 / 0.15);
+  animation: entrar 0.3s var(--curva) both;
+}
+.saldoOk b {
+  color: #86efac;
+}
+.saldoOk small {
+  color: var(--bc-texto);
+}
+.billetera {
+  width: 16px;
+  height: 13px;
+  border: 1.5px solid var(--bc-leal);
+  border-radius: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .comprobante,
+  .impreso,
+  .saldoOk {
+    animation: none;
+  }
 }
