@@ -453,3 +453,49 @@ export const TELECOMUNICACIONES: Elemento[] = [
     icono: 'telefono',
   },
 ];
+
+export interface MarcaCompatible {
+  nombre: string;
+  logo?: string;
+  /** Fabricante, cuando el nombre es un producto. */
+  de?: string;
+  nota?: string;
+}
+
+/** Banderas con las que trabajamos. */
+export const GASOLINERAS: MarcaCompatible[] = [
+  { nombre: 'UNO', logo: '/compatibles/uno.png' },
+  { nombre: 'Puma Energy', logo: '/compatibles/puma.svg' },
+  { nombre: 'Shell', logo: '/compatibles/shell.png' },
+  { nombre: 'Texaco', logo: '/compatibles/texaco.png' },
+  { nombre: 'BIP', logo: '/compatibles/bip.png', nota: 'Bay Island Petroleum' },
+];
+
+/** Equipo de pista, en el orden en que viaja el dato: surtidor, controlador, sonda. */
+export const EQUIPO_PISTA: {
+  titulo: string;
+  texto: string;
+  marcas: MarcaCompatible[];
+  foto?: { src: string; alt: string };
+}[] = [
+  {
+    titulo: 'Surtidores',
+    texto: 'Leemos cada despacho directo del dispensador.',
+    marcas: [
+      { nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' },
+      { nombre: 'Wayne', logo: '/compatibles/wayne.png' },
+    ],
+  },
+  {
+    titulo: 'Controladores',
+    texto: 'El controlador autoriza la bomba y entrega la venta al punto de venta.',
+    marcas: [{ nombre: 'VOX' }, { nombre: 'DOMS' }, { nombre: 'Fusion' }],
+    foto: { src: '/compatibles/vox-controlador.jpg', alt: 'Controlador de pista VOX de Gilbarco con su consulta en tableta y celular' },
+  },
+  {
+    titulo: 'Sondas',
+    texto: 'El inventario de cada tanque llega solo a Business Central.',
+    marcas: [{ nombre: 'Veeder-Root' }, { nombre: 'Wayne' }],
+    foto: { src: '/compatibles/tls-450plus.jpg', alt: 'Consola de medición de tanques TLS-450PLUS de Veeder-Root' },
+  },
+];

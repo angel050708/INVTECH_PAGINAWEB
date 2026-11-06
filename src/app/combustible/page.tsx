@@ -4,12 +4,12 @@ import { DashboardCombustible } from '@/components/animaciones/DashboardCombusti
 import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
+import { Compatibilidad } from '@/components/secciones/combustible/Compatibilidad';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
 import {
-  BCHUB_CONEXIONES,
   COMBUSTIBLE_INTRO,
   MODULOS_COMBUSTIBLE,
   OTRAS_INTEGRACIONES,
@@ -18,7 +18,6 @@ import {
 } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
-import paginas from '../paginas.module.css';
 import styles from '../verticales.module.css';
 
 const TITULO = 'Sistema para estaciones de servicio con BCPOS y Business Central';
@@ -142,20 +141,7 @@ export default function PaginaCombustible() {
 
       <section className="seccion fondo-alterno">
         <div className="contenedor">
-          <div className={`${paginas.dosColumnas} ${styles.bloque}`}>
-            <div {...revelarAlScroll()}>
-              <p className="etiqueta">BCHUB by BCPOS</p>
-              <h2 className="titulo-seccion">Un solo punto de conexión para toda la estación</h2>
-            </div>
-            <p className={paginas.texto} {...revelarAlScroll(1)}>
-              BCHUB es el centro de integración donde confluyen las transacciones de pista, tienda de
-              conveniencia y demás comercios de la estación, conectadas con el punto de venta BCPOS, el banco
-              y Business Central.
-            </p>
-          </div>
-          <div className={styles.bloque}>
-            <Elementos elementos={BCHUB_CONEXIONES} columnas={3} />
-          </div>
+          <Compatibilidad />
           <div className={styles.bloque}>
             <h2 className="titulo-seccion" style={{ marginBottom: 24 }}>
               Otras integraciones
