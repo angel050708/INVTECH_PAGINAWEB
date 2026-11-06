@@ -4,13 +4,13 @@ import { DashboardCombustible } from '@/components/animaciones/DashboardCombusti
 import { TerminalBcpos } from '@/components/animaciones/TerminalBcpos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
+import { Compatibilidad } from '@/components/secciones/combustible/Compatibilidad';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
 import { Elementos } from '@/components/secciones/comunes/Elementos';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { Icono } from '@/components/ui/Icono';
 import {
   COMBUSTIBLE_INTRO,
-  COMPATIBILIDAD,
   MODULOS_COMBUSTIBLE,
   OTRAS_INTEGRACIONES,
   PROBLEMA_SOLUCION,
@@ -18,7 +18,6 @@ import {
 } from '@/data/verticales';
 import { datosServicio } from '@/lib/datos-estructurados';
 import { metadatosPagina } from '@/lib/metadatos';
-import paginas from '../paginas.module.css';
 import styles from '../verticales.module.css';
 
 const TITULO = 'Sistema para estaciones de servicio con BCPOS y Business Central';
@@ -142,31 +141,7 @@ export default function PaginaCombustible() {
 
       <section className="seccion fondo-alterno">
         <div className="contenedor">
-          <div className={`${paginas.dosColumnas} ${styles.bloque}`}>
-            <div {...revelarAlScroll()}>
-              <p className="etiqueta">Compatibilidad</p>
-              <h2 className="titulo-seccion">Trabajamos con todas las marcas y proveedores</h2>
-            </div>
-            <p className={paginas.texto} {...revelarAlScroll(1)}>
-              Sea de bandera o independiente, conectamos su estación con BCPOS y Business Central sin cambiar
-              sus surtidores, controladores ni sondas.
-            </p>
-          </div>
-          <div className={`${styles.bloque} ${styles.compatibles}`}>
-            {COMPATIBILIDAD.map((grupo, i) => (
-              <div key={grupo.titulo} className={styles.grupoCompatible} {...revelarAlScroll(i)}>
-                <h3>{grupo.titulo}</h3>
-                <ul>
-                  {grupo.nombres.map((n) => (
-                    <li key={n.nombre}>
-                      <strong>{n.nombre}</strong>
-                      {n.detalle && <span>{n.detalle}</span>}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <Compatibilidad />
           <div className={styles.bloque}>
             <h2 className="titulo-seccion" style={{ marginBottom: 24 }}>
               Otras integraciones

@@ -454,19 +454,42 @@ export const TELECOMUNICACIONES: Elemento[] = [
   },
 ];
 
-/** Marcas y proveedores con los que trabaja la solución de combustible. */
-export const COMPATIBILIDAD: { titulo: string; nombres: { nombre: string; detalle?: string }[] }[] = [
+export interface MarcaCompatible {
+  nombre: string;
+  logo?: string;
+  /** Fabricante, cuando el nombre es un producto. */
+  de?: string;
+  nota?: string;
+}
+
+/** Banderas con las que trabajamos. */
+export const GASOLINERAS: MarcaCompatible[] = [
+  { nombre: 'UNO', logo: '/compatibles/uno.png' },
+  { nombre: 'Puma Energy', logo: '/compatibles/puma.svg' },
+  { nombre: 'Shell', logo: '/compatibles/shell.png' },
+  { nombre: 'Texaco', logo: '/compatibles/texaco.png' },
+  { nombre: 'BIP', nota: 'Bay Islands Petroleum' },
+];
+
+/** Equipo de pista, en el orden en que viaja el dato: surtidor, controlador, sonda. */
+export const EQUIPO_PISTA: { titulo: string; texto: string; marcas: MarcaCompatible[] }[] = [
   {
-    titulo: 'Marcas de gasolineras',
-    nombres: [
-      { nombre: 'UNO' },
-      { nombre: 'Puma' },
-      { nombre: 'Shell' },
-      { nombre: 'Texaco' },
-      { nombre: 'BIP', detalle: 'Bay Islands Petroleum · bandera blanca' },
+    titulo: 'Surtidores',
+    texto: 'Leemos cada despacho directo del dispensador.',
+    marcas: [{ nombre: 'Gilbarco', logo: '/compatibles/gilbarco-logo.svg' }, { nombre: 'Wayne' }],
+  },
+  {
+    titulo: 'Controladores',
+    texto: 'El controlador autoriza la bomba y entrega la venta al punto de venta.',
+    marcas: [
+      { nombre: 'VOX', de: 'Gilbarco' },
+      { nombre: 'DOMS', de: 'Gilbarco' },
+      { nombre: 'Fusion', de: 'Wayne' },
     ],
   },
-  { titulo: 'Surtidores', nombres: [{ nombre: 'Gilbarco' }, { nombre: 'Wayne' }] },
-  { titulo: 'Controladores', nombres: [{ nombre: 'VOX' }, { nombre: 'DOMS' }, { nombre: 'Fusion' }] },
-  { titulo: 'Sondas de tanque', nombres: [{ nombre: 'Wayne' }, { nombre: 'Veeder-Root' }] },
+  {
+    titulo: 'Sondas',
+    texto: 'El inventario de cada tanque llega solo a Business Central.',
+    marcas: [{ nombre: 'Veeder-Root', logo: '/compatibles/veeder-root.svg' }, { nombre: 'Wayne' }],
+  },
 ];
