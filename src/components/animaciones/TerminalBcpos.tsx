@@ -58,7 +58,7 @@ const ESCENAS: DatosEscena[] = [
   },
 ];
 
-export function TerminalBcpos() {
+export function TerminalBcpos({ encabezado }: { encabezado?: ReactNode }) {
   const [indice, setIndice] = useState(0);
   const [paso, setPaso] = useState(0);
   const [fijada, setFijada] = useState(false);
@@ -99,6 +99,7 @@ export function TerminalBcpos() {
   return (
     <div className={styles.escena}>
       <div className={styles.texto}>
+        {encabezado}
         <div className={styles.pestanas} role="tablist" aria-label="Funciones de BCPOS en la terminal">
           {ESCENAS.map((e, i) => (
             <button

@@ -78,19 +78,20 @@ export default function PaginaCombustible() {
         </p>
       </CabeceraPagina>
 
-      <section className="seccion fondo-alterno">
+      <section className="seccion fondo-alterno seccion-compacta">
         <div className="contenedor">
-          <div className="cabeza-seccion" {...revelarAlScroll()}>
-            <div>
-              <p className="etiqueta">Punto de venta en terminal móvil</p>
-              <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
-            </div>
-            <p className="entrada" style={{ marginTop: 0, maxWidth: '46ch' }}>
-              El pistero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la misma
-              terminal con la que cobra, junto al surtidor.
-            </p>
-          </div>
-          <TerminalBcpos />
+          <TerminalBcpos
+            encabezado={
+              <>
+                <p className="etiqueta">Punto de venta en terminal móvil</p>
+                <h2 className="titulo-seccion">BCPOS dentro de la terminal bancaria de BAC</h2>
+                <p className="entrada" style={{ marginTop: 12, marginBottom: 24 }}>
+                  El pistero consulta el crédito del cliente, autoriza la bomba y suma puntos Leal desde la
+                  misma terminal con la que cobra.
+                </p>
+              </>
+            }
+          />
           <div style={{ marginTop: 56 }}>
             <Elementos elementos={TERMINAL_MOVIL} columnas={3} />
           </div>

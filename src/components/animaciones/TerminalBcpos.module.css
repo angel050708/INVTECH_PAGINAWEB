@@ -12,7 +12,9 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: clamp(32px, 6vw, 96px);
+  gap: clamp(24px, 3vw, 48px);
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 /* Pestañas y pasos */
@@ -71,20 +73,20 @@
 }
 .titulo {
   max-width: 26ch;
-  margin-top: 28px;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  margin-top: 18px;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
   line-height: 1.2;
 }
 .pasos {
   display: grid;
-  gap: 10px;
-  margin-top: 24px;
+  gap: 8px;
+  margin-top: 18px;
 }
 .pasos li {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 18px;
+  padding: 11px 16px;
   border: 1px solid var(--linea);
   border-radius: var(--radio);
   background: var(--papel);
@@ -114,12 +116,12 @@
 /* Terminal PAX A920 */
 .terminal {
   position: relative;
-  width: 300px;
+  width: 280px;
   transform: rotate(-3deg);
   filter: drop-shadow(0 40px 50px rgb(22 20 31 / 0.35));
 }
 .impresora {
-  height: 40px;
+  height: 30px;
   margin: 0 20px;
   border-radius: 26px 26px 0 0;
   background: linear-gradient(180deg, #fbfbfd, #e6e6ec);
@@ -156,7 +158,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 440px;
   overflow: hidden;
   border: 5px solid #1d1c24;
   border-radius: 14px;
@@ -512,7 +514,7 @@
 .surtidor {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 150px;
+  height: 130px;
   padding: 8px;
   border: 1px solid var(--bc-borde);
   border-radius: 10px;

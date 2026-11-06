@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RedEquipos } from '@/components/animaciones/RedEquipos';
 import { revelarAlScroll } from '@/components/efectos/revelar';
 import { BandaLlamado } from '@/components/secciones/BandaLlamado';
 import { CabeceraPagina } from '@/components/secciones/comunes/CabeceraPagina';
@@ -42,14 +41,6 @@ export default function PaginaVentaDeEquipos() {
           </Link>
         </p>
       </CabeceraPagina>
-
-      <section className="seccion">
-        <div className="contenedor">
-          <div {...revelarAlScroll()}>
-            <RedEquipos />
-          </div>
-        </div>
-      </section>
 
       <section className="seccion fondo-alterno">
         <div className="contenedor">
